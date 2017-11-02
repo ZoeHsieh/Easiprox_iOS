@@ -1,0 +1,169 @@
+/*
+ Localizable.strings
+ E3AK
+ 
+ Created by nsdi36 on 2017/7/7.
+ Copyright © 2017年 com.E3AK. All rights reserved.
+ */
+
+"OPEN" = "Apri";
+"DOOR CLOSED" = "PORTA CHIUSA";
+"DOOR OPENED" = "PORTA APERTA";
+Welcome = "Welcome";
+"Searching" = "Sto cercando..";
+"AUTO_ENABLE_CONFLICT" = "Prima disinserire AUTO";
+"enroll_dialog_title" = "Registra Utente:";
+"Open"= "Apri";
+ "settings_device_vr" = "Versione firmware";
+
+Next = "Next";
+Skip = "Skip";
+"Search result" = "Search result";
+"Please press Next to continue" = "Please press \"Next\" to continue";
+"Your ID" = "Your ID";
+Password = "Password";
+"You can find default password from the manual. Please change your Admin password for security control." = "You can find default password from the manual. Please change your Admin password for security control.";
+"There's no users, add now?" = "Non ci sono utenti, aggiungerli ora?";
+Add = "Aggiungi";
+"Confirm" = "Conferma";
+Cancel = "Cancella";
+"Please Choose" = "Prego scegliere";
+Auto = "Auto";
+Settings = "Impostazioni";
+Enroll = "Registra";
+Users = "Utenti";
+"Activity History" = "Audit Trail";
+Backup = "Backup Dati";
+Restore = "Ripristina Dati";
+"Device Name" = "Nome dispositivo";
+"Door Sensor" = "Sensore porta";
+"Door Lock Action" = "Azione porta";
+"Use Re-lock Time" = "Usa tempo di chiusura";
+"Door Always Unlocked" = "Porta sempre chiusa";
+"Door Always Locked" = "Porta sempre aperta";
+"Tamper Sensor" = "Anti-tamper";
+"Proximity Read Range" = "Raggio di azione";
+"Door Re-lock Time" = "Tempo di chiusura";
+"Sec." = "Sec.";
+"Please choose" = "Scegliere prego";
+"Can't find device" = "Non trovo il dispositivo";
+"please try later" = "Prova più tardi";
+"Searching…" = "Sto cercando..";
+"Please wait a moment…" = "Un attimo…";
+"Device Distance" = "Distanza del dispositivo";
+"Proximity Read Range Settings" = "Raggio di azione";
+"Edit Door Re-lock Time (1~1800 seconds)" = "Modifica il tempo di richiusura (1-1800 sec.)";
+"Please enter the number of seconds" = "Prego digitare il numero di secondi scelto";
+ID = "Nome";
+"Password/PIN Code" = "Password/Codice";
+"Password" = "Password";
+"Add Users" = "Aggiungi utente";
+"Please Provide Up to 16 characters" = "Fino a 16 caratteri";
+"4~8 digits" = "4-8 numeri";
+"User Info" = "Info utente";
+Delete = "Cancella";
+"Password/PIN Code (4~8 Digits)" = "Password/Pin (4-8 numeri)";
+"Enable Keypad PIN Code to Access" = "Accesso con tastiera";
+"Access Types/Schedule" = "Tipo di accesso";/*"Access Types/Schedule";*/
+TYPES = "Tipo di accesso";
+Permanent = "Permanente";
+Schedule = "Programmato";
+"Access Times" = "Numero di accessi consentito";
+"Please enter access times" = "Prego inserire gli accessi consentiti (0~255)";
+Recurrent = "Ricorrente";
+Start = "Inizio";
+End = "Fine";
+Repeat = "Repeat";
+Start = "Inizio";
+End = "Fine";
+"Repeat Select" = "Ripetere";
+Monday = "Ogni Lunedì";
+Tuesday = "Ogni Martedì";
+Wednesday = "Ogni Mercoledì";
+Thursday = "Ogni Giovedì";
+Friday = "Ogni Venerdì";
+Saturday = "Ogni Sabato";
+Sunday = "Ogni Domenica";
+Date = "Data";
+"Lock Action" = "Aperto da";
+"Add more" = "giungi altro";
+"Finish Done" = "Fatto";
+"Please Setting Proximity Read Range" = "Raggio di azione";
+"Incorrect password. Please try again" = "Password sbagliata. Riprova";
+"Please enter ID" = "Inserisci nome";
+"Please enter password" = "Inserisci password";
+//"4~8 digits" = "4-8 numeri";
+//"Edit Device Name" = "Modifica nome dispositivo";
+"Up to 16 characters" = "Fino a 16 caratteri";
+"Edit Device Name" = "Modifica nome dispositivo";
+"Delete User?" = "Cancello utente?";
+"Restore all data now?" = "Recupero tutti i dati adesso?";
+"Backup all data now?" = "Eseguo il backup adesso?";
+"Backup…" = "Sto eseguendo il Backup";
+"Restoring…" = "Sto recuperando i dati";
+"Backup Done" = "Backup completato";
+"Restore Done" = "Recupero completato";
+"You must connect to a Bluetooth device to set up" = "Devi collegarti ad un dispositivo";
+"If you forgot your ID or password, please contact your administrator." = "Se hai dimenticato il tuo ID o password, contatta l'amministratore";
+"Device Time" = "Ora del dispositivo";
+"About Us" = "Chi siamo";
+"Automatic Setting" = "Auto setting";
+"Search" = "Sto cercando";
+"Keypad Access" = "Accesso con tastiera";
+"Time in" = "Time";
+"User Name" = "Nome";
+
+
+/*settings result toast*/
+"program_success" = "Success";
+"program_fail" = "Fail";
+
+/*restore dialog*/
+"restore_check_dialog_title" = "Recupero tutti i dati adesso?";
+"restore_status_file_not_found" = "File di Backup non trovato Fare prima il Backup";
+"restore_status" = "Stato del recupero";
+"restore_completed" = "Completato";
+"restore_dialog_title" = "Recupero dati";
+"restore_dialog_message" = "Sto recuperando i dati";
+
+/*backup dialog*/
+"backup_dialog_title" = "Backup dei dati";
+"backup_dialog_message" = "Sto eseguendo il Backup";
+"backup_status" = "Stato Backup";
+"backup_completed" = "Backup completato";
+
+/*download dialog*/
+"download_dialog_title" = "Scarica";
+"download_dialog_message" = "Sto caricando…";
+"settings_users_manage_list" = " Lista utenti";
+"settings_history_list" = " Elenco eventi";
+"settings_Admin_pwd_Edit" = "Modifica password Amministratore";
+
+/*user data check*/
+"users_manage_edit_status_Admin_name" = "Invalid ID !!";
+"users_manage_edit_status_Admin_pwd" = "Invalid Password!!";
+"users_manage_edit_status_busy" = "System busy!!";
+"users_manage_edit_status_duplication_name" = "ID duplicato !!";
+"users_manage_edit_status_duplication_password" = "Password duplicata!!";
+"settings_Admin_pwd" = "Password Admin";
+"wrong format!" = "Format error!";
+"users_id_edit_dialog_title" = "Modifica nome:(16 caratteri)";
+"users_pwd_edit_dialog_title" = "Modifica password";
+"progress_dialog_hide_btn_title" = "NASCONDI";
+"progress_dialog_cancel_btn_title" = "Cancella";
+"users_edit_access_control_dialog_type_times_mark" = "Numero di accessi impostato:";
+"weekly_Sun" = "[DOM]";
+"weekly_Mon" = "[LUN]";
+"weekly_Tue" = "[MAR]";
+"weekly_Wed" = "[MERC]";
+"weekly_Thu" = "[GIOV]";
+"weekly_Fri" = "[VEN]";
+"weekly_Sat" = "[SAB]";
+"Every Week" = "Ogni settimana";
+"openType_Button" = "Pulsante";
+"openType_Alarm" = "Allarme";
+"openType_Keypad" = "Tastiera";
+"Device Model" = "Modello dispositivo:";
+"APP version" = "Versione APP:";
+"no_user_note" = "Non ci sono utenti, aggiungerli ora?";
+

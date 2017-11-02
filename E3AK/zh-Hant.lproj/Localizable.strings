@@ -1,0 +1,179 @@
+/*
+ Localizable.strings
+ E3AK
+ 
+ Created by nsdi36 on 2017/7/7.
+ Copyright © 2017年 com.E3AK. All rights reserved.
+ */
+
+"OPEN" = "OPEN";
+"DOOR CLOSED" = "DOOR CLOSED";
+"DOOR OPENED" = "DOOR OPENED";
+Welcome = "歡迎使用 E5AR";
+"Searching" = "搜尋中請稍候";
+"AUTO_ENABLE_CONFLICT" = "請先取消AUTO";
+"enroll_dialog_title" = "註冊使用者";
+ "settings_device_vr" = "韌體版本";
+
+"Open"= "開啟";
+Next = "下一步";
+Skip = "略過";
+"Search result" = "已搜尋到裝置";
+"Please press Next to continue" = "請按下一步進行設定";
+"Your ID" = "請輸入帳號";
+Password = "請輸入密碼";
+"You can find default password from the manual. Please change your Admin password for security control." = "密碼請參閱說明書";
+"There's no users, add now?" = "目前沒有使用者，要現在新增嗎？";
+Add = "新增";
+"Confirm" = "確定";
+Cancel = "取消";
+"Please Choose" = "請選擇裝置";
+Auto = "自動感應開門";
+Settings = "設定";
+Enroll = "註冊";
+Users = "使用者";
+"Activity History" = "歷史進出紀錄";
+Backup = "資料備份";
+Restore = "資料還原";
+"Device Name" = "裝置名稱";
+"Door Sensor" = "門位偵測";
+"Door Lock Action" = "門鎖動作";
+"Use Re-lock Time" = "依據延遲上鎖時間";
+"Door Always Unlocked" = "常開";
+"Door Always Locked" = "常閉";
+"Tamper Sensor" = "防拆感應";
+"Tamper Sensor Level" = "防拆感應等級";
+"Proximity Read Range" = "感應距離";
+"Door Re-lock Time" = "延遲上鎖時間";
+"Sec." = "秒";
+"Please choose" = "請選擇";
+"Can't find device" = "目前找不到裝置";
+"please try later" = "請稍候再試";
+"Searching…" = "搜尋中";
+"Please wait a moment…" = "請稍候";
+"Device Distance" = "您目前距離裝置";
+"Proximity Read Range Settings" = "感應距離設定";
+"Edit Door Re-lock Time (1~1800 seconds)" = "請輸入上鎖時間 (1~1800秒)";
+"Please enter the number of seconds" = "請輸入秒數";
+ID = "帳號";
+"Password/PIN Code" = "密碼";
+"Password" = "密碼";
+"Card" = "卡片";
+"Add Users" = "新增使用者";
+"Please Provide Up to 16 characters" = "請輸入 (最多只能16個字元)";
+"4~8 digits" = "4~8碼";
+"User Info" = "使用者資訊";
+Delete = "刪除";
+"Password/PIN Code (4~8 Digits)" = "密碼(4~8個字元)";
+"Enable Keypad PIN Code to Access" = "啟用按鍵密碼開門";
+"Access Types/Schedule" = "進出管制模式";
+TYPES = "請選擇模式";
+Permanent = "永久開門的權限";
+Schedule = "起迄時間";
+"Access Times" = "限制開門次數";
+"Please enter access times" = "請輸入次數(0~255)";
+Recurrent = "週期排程";
+Start = "開始";
+End = "結束";
+Repeat = "週期";
+Start = "開始時間";
+End = "結束時間";
+"Repeat Select" = "選擇週期";
+Monday = "星期一";
+Tuesday = "星期二";
+Wednesday = "星期三";
+Thursday = "星期四";
+Friday = "星期五";
+Saturday = "星期六";
+Sunday = "星期天";
+Date = "日期";
+"Lock Action" = "開鎖方式";
+"Add more" = "新增更多  ";
+"Finish Done" = "完成";
+"Please Setting Proximity Read Range" = "請設定感測距離";
+"Incorrect password. Please try again" = "密碼錯誤，請重新輸入";
+"Please enter ID" = "請輸入帳號";
+"Please enter password" = "請輸入密碼";
+//"4~8 digits" = "密碼需4到8個字元";
+"Edit Device Name" = "編輯裝置名稱";
+"Up to 16 characters" = "最多16個位元組";
+//"Edit Device Name" = "請輸入裝置名稱";
+"Delete User?" = "確定要刪除？";
+"Restore all data now?" = "確定要還原備份資料？";
+"Backup all data now?" = "確定要備份資料？";
+"Backup…" = "備份中…";
+"Restoring…" = "還原中…";
+"Backup Done" = "備份完成";
+"Restore Done" = "還原成功";
+"You must connect to a Bluetooth device to set up" = "需要連結裝置才能進行設定";
+"If you forgot your ID or password, please contact your administrator." = "如果您忘記了密碼或是帳號，請聯絡您的管理員";
+"Device Time" = "裝置時間";
+"About Us" = "關於我們";
+"Automatic Setting" = "自動設定";
+"Search" = "搜尋";
+"Keypad Access" = "啟用按鍵密碼開門";
+"Phone Access" = "啟用手機開門";
+"Card Access" = "啟用卡片開門";
+"Time in" = "時間為";
+"User Name" = "使用者名稱";
+
+/*settings result toast*/
+"program_success" = "成功";
+"program_fail" = "失敗";
+
+/*restore dialog*/
+"restore_check_dialog_title" = "確定要還原這個裝置?";
+"restore_status_file_not_found" = "沒有備份檔案!! 請先執行備份！";
+"restore_status" = "還原狀態";
+"restore_completed" = "還原完成！！";
+"restore_dialog_title" = "還原裝置資料";
+"restore_dialog_message" = "還原中...";
+
+/*backup dialog*/
+"backup_dialog_title" = "備份裝置資料";
+"backup_dialog_message" = "備份中...";
+"backup_status" = "備份狀態";
+"backup_completed" = "備份完成!!";
+
+/*download dialog*/
+"download_dialog_title" = "下載";
+"download_dialog_message" = "載入中...";
+"settings_users_manage_list" = "使用者資料";
+"settings_history_list" = "進出紀錄資料";
+"settings_Admin_pwd_Edit" = "編輯管理者密碼";
+"settings_Admin_card_Edit" = "編輯管理者卡片";
+/*user data check*/
+"users_manage_edit_status_Admin_name" = "無效的ID!!";
+"users_manage_edit_status_Admin_pwd" = "無效的密碼!!";
+"users_manage_edit_status_busy" = "系統忙碌!!";
+"users_manage_edit_status_duplication_name" = "ID重複!!";
+"users_manage_edit_status_duplication_password" = "密碼重複!!";
+"users_manage_edit_status_duplication_card" = "卡片重複!!";
+"settings_Admin_pwd" = "管理者密碼";
+"settings_Admin_card" = "管理者卡片";
+
+"wrong format!" = "格式錯誤!";
+"users_id_edit_dialog_title" = "編輯帳號: (16 字元)";
+"users_pwd_edit_dialog_title" = "編輯密碼: (4~8 數字)";
+"users_card_edit_dialog_title" = "編輯卡片: (10 數字)";
+"progress_dialog_hide_btn_title" = "隱藏";
+"progress_dialog_cancel_btn_title" = "取消";
+"users_edit_access_control_dialog_type_times_mark" = "剩餘次數:";
+"weekly_Sun" = "[日]";
+"weekly_Mon" = "[一]";
+"weekly_Tue" = "[二]";
+"weekly_Wed" = "[三]";
+"weekly_Thu" = "[四]";
+"weekly_Fri" = "[五]";
+"weekly_Sat" = "[六]";
+"Every Week" = "每週";
+"openType_Button" = "按鈕";
+"openType_Alarm" = "警報";
+"openType_Keypad" = "鍵盤";
+"Device Model" = "裝置型號:";
+"APP version" = "APP 版本:";
+"no_user_note" = "目前沒有使用者！！";
+"Level 1" = "等級1";
+"Level 2" = "等級2";
+"Level 3" = "等級3";
+

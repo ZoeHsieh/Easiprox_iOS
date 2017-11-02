@@ -1,0 +1,252 @@
+//
+//  Intro_WelcomeViewController.swift
+//  E3AK
+//
+//  Created by nsdi36 on 2017/6/7.
+//  Copyright © 2017年 com.E3AK. All rights reserved.
+//
+
+import UIKit
+import Foundation
+import ChameleonFramework
+import CoreBluetooth
+
+enum SearchStatus {
+    case Searching
+    case Finished
+}
+
+
+
+class Intro_WelcomeViewController: BLE_ViewController {
+
+    @IBOutlet weak var rightButton: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var searchingView: UIView!
+    @IBOutlet weak var findDeviceView: UIView!
+    @IBOutlet weak var loadingImageView: UIImageView!
+    @IBOutlet weak var gradientView: UIView!
+    @IBOutlet weak var deviceNameLabel: UILabel!
+    @IBOutlet weak var welcomeLabel: UILabel!
+    @IBOutlet weak var searchingLabel: UILabel!
+    @IBOutlet weak var searchResultLabel: UILabel!
+    @IBOutlet weak var pleasePressNextLabel: UILabel!
+    var deviceInfoList: [DeviceInfo] = [];
+    var selectDeviceIndex:Int = 0
+    var searchStatus: SearchStatus = .Searching
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        welcomeLabel.text = "Welcome".localized()
+        searchingLabel.text = "Searching".localized()
+        searchResultLabel.text = "Search result".localized()
+        pleasePressNextLabel.text = "Please press Next to continue".localized()
+        nextButton.setTitle("Next".localized(), for: .normal)
+        rightButton.setTitle("Skip".localized(), for: .normal)
+        loadingImageView.rotate360Degree()
+        rightButton.addTarget(self, action: #selector(didTapSkipItem), for: .touchUpInside)
+        gradientView.gradientBackground(percent: 160/667)
+        nextButton.setShadowWithColor(color: HexColor("a4aab3"), opacity: 0.3, offset: CGSize(width: 0, height: 6), radius: 5, viewCornerRadius: 0)
+        let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTapChooseDevice))
+        deviceNameLabel.addGestureRecognizer(gestureRecognizer)
+         Config.bleManager.Init(delegate: self)
+       
+        let when = DispatchTime.now() + 10 // change 2 to desired number of seconds
+        DispatchQueue.main.asyncAfter(deadline: when) {
+              self.changeRightButtonStatus()
+        }
+        
+    }
+    
+    public override func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        
+        if ( central.state == .poweredOn ) {
+           Config.bleManager.ScanBLE()
+        } else if ( central.state == .poweredOff ) {
+            
+            //Open BlueTooth Setting
+            openBlueTooth_Setting();
+        }
+
+        
+    }
+    public override func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        let name: String = advertisementData["kCBAdvDataLocalName"] as! String
+        let uuid: UUID = peripheral.identifier
+        
+       // let expect_level: Int = readExpectLevelFromDbByUUID(uuid.uuidString);
+        
+        //print("expect_level = \(expect_level)")
+        
+        if((RSSI.intValue <= 0) && (RSSI.intValue >= Config.BLE_RSSI_MIN)) {
+            
+            var tmp: DeviceInfo = DeviceInfo(UUID: uuid, name: name, peripheral: peripheral, rssi: RSSI.intValue, current_level: Convert_RSSI_to_LEVEL(RSSI.intValue), expect_level: 0, alive: 3)
+            
+            if( deviceInfoList.contains(tmp)) {
+                
+                let du_idx:Int = deviceInfoList.index(of: tmp)!
+                
+                //print("UUID Dulicate!! Index = \(du_idx)")
+                
+                //AVG RSSI
+                let avg_rssi: Int = (RSSI.intValue + deviceInfoList[du_idx].rssi) / 2;
+                tmp.rssi = avg_rssi;
+                tmp.current_level = Convert_RSSI_to_LEVEL(avg_rssi)
+                
+                //print("RSSI: \(RSSI.intValue), LEVEL: \(tmp.current_level)")
+                
+                deviceInfoList[du_idx] = tmp;
+            }
+            else {
+                deviceInfoList.append(tmp)
+                
+                //Save to DB
+              //  saveExpectLevelToDbByUUID(uuid.uuidString, expect_level)
+            }
+        }
+        
+        
+        deviceInfoList.sort();
+        
+
+    }
+    
+    func didTapChooseDevice() {
+        var deviceList:[String] = []
+        
+        for i in 0 ... deviceList.count{
+            
+         deviceList.append(deviceInfoList[i].name)
+        }
+        
+        UIAlertController.showActionSheet(
+            in: self,
+            withTitle: "請選擇裝置",
+            message: nil,
+            cancelButtonTitle: "取消",
+            destructiveButtonTitle: nil,
+            otherButtonTitles: deviceList, popoverPresentationControllerBlock: nil) { (controller, action, buttonIndex) in
+                
+                if (buttonIndex == controller.cancelButtonIndex)
+                {
+                    print("Cancel Tapped")
+                }
+                else if (buttonIndex == controller.destructiveButtonIndex)
+                {
+                    print("Delete Tapped")
+                }
+                else if (buttonIndex >= controller.firstOtherButtonIndex)
+                {
+                    print("Other Button Index \(buttonIndex - controller.firstOtherButtonIndex)")
+                    if self.deviceInfoList.count > 0{
+                       self.deviceNameLabel.text = self.deviceInfoList[buttonIndex - controller.firstOtherButtonIndex].name
+                        self.selectDeviceIndex = (buttonIndex - controller.firstOtherButtonIndex)
+                       }
+                    
+                  }
+               
+              }
+    }
+    
+    func changeRightButtonStatus() {
+        
+        switch searchStatus
+        {
+        case .Searching: // Scan time out
+        
+            rightButton.removeTarget(nil, action: nil, for: .allEvents)
+            rightButton.addTarget(self, action: #selector(didTapReloadItem), for: .touchUpInside)
+            rightButton.setTitle("", for: .normal)
+            rightButton.setImage(R.image.researchGreen(), for: .normal)
+            
+            loadingImageView.stopRotate()
+            searchingView.isHidden = true
+            findDeviceView.isHidden = false
+            
+            searchStatus = .Finished
+            nextButton.isUserInteractionEnabled = true
+            nextButton.setBackgroundImage(R.image.btnGreen(), for: .normal)
+            nextButton.setShadowWithColor(color: HexColor("00b900"), opacity: 0.3, offset: CGSize(width: 0, height: 6), radius: 5, viewCornerRadius: 0)
+            Config.bleManager.ScanBLEStop()
+            if deviceInfoList.count == 0{
+                
+                deviceNameLabel.text = "沒有找到裝置"
+            }
+            deviceNameLabel.text =  deviceInfoList[0].name
+        case .Finished:// start BLE scan
+            
+            rightButton.removeTarget(nil, action: nil, for: .allEvents)
+            rightButton.addTarget(self, action: #selector(didTapSkipItem), for: .touchUpInside)
+            rightButton.setTitle("略過", for: .normal)
+            rightButton.setImage(nil, for: .normal)
+            
+            loadingImageView.rotate360Degree()
+            searchingView.isHidden = false
+            findDeviceView.isHidden = true
+            
+            searchStatus = .Searching
+            nextButton.isUserInteractionEnabled = false
+            nextButton.setBackgroundImage(R.image.btnGray(), for: .normal)
+            nextButton.setShadowWithColor(color: HexColor("a4aab3"), opacity: 0.3, offset: CGSize(width: 0, height: 6), radius: 5, viewCornerRadius: 0)
+              Config.bleManager.ScanBLE()
+        }
+    }
+    
+    func didTapReloadItem() {
+        
+        changeRightButtonStatus()
+        let when = DispatchTime.now() + 10
+            
+        // change 2 to desired number of seconds
+      
+        DispatchQueue.main.asyncAfter(deadline: when){
+            
+            self.changeRightButtonStatus()
+        }
+    }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "intro_Pass") {
+            let nvc = segue.destination  as! Intro_PasswordViewController
+            
+            ///let vc = nvc.topViewController as! Intro_PasswordViewController
+             nvc.selectedDevice = deviceInfoList[selectDeviceIndex].peripheral
+        }
+        
+    }
+    
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        
+        /*if(identifier == "enroll") {
+            if(isAutoMode) {
+                //print("Need Disable 'AUTO-MODE' First!!")
+                showAlert(message: GetSimpleLocalizedString("k_ALERT_DETAIL"));
+                
+                return false;
+            }
+            else {
+                return true
+            }
+        }*/
+        
+        return true
+    }
+    
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
+    }
+    */
+
+}

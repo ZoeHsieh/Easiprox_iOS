@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llm-lL-Icb"/>
+                        <viewControllerLayoutGuide type="bottom" id="xb3-aO-Qok"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UDy-66-ygI">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I12-QH-c6f">
+                                        <rect key="frame" x="73.5" y="214" width="228" height="72"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E3AK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glr-h3-cF6">
+                                                <rect key="frame" x="0.0" y="0.0" width="228" height="44"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="36"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bluetooth Access Control System" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QBy-e4-mYc">
+                                                <rect key="frame" x="0.0" y="55" width="228" height="17"/>
+                                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="Glr-h3-cF6" secondAttribute="trailing" id="6Y2-om-L9S"/>
+                                            <constraint firstAttribute="trailing" secondItem="QBy-e4-mYc" secondAttribute="trailing" id="9R2-yk-1QY"/>
+                                            <constraint firstAttribute="bottom" secondItem="QBy-e4-mYc" secondAttribute="bottom" id="EcN-pw-UsL"/>
+                                            <constraint firstItem="Glr-h3-cF6" firstAttribute="leading" secondItem="I12-QH-c6f" secondAttribute="leading" id="ORj-rc-hAT"/>
+                                            <constraint firstItem="Glr-h3-cF6" firstAttribute="top" secondItem="I12-QH-c6f" secondAttribute="top" id="Qfg-jA-aQa"/>
+                                            <constraint firstItem="QBy-e4-mYc" firstAttribute="top" secondItem="Glr-h3-cF6" secondAttribute="bottom" constant="11" id="iB8-V3-kZ9"/>
+                                            <constraint firstItem="QBy-e4-mYc" firstAttribute="leading" secondItem="I12-QH-c6f" secondAttribute="leading" id="zoK-4y-Nng"/>
+                                        </constraints>
+                                    </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-door" translatesAutoresizingMaskIntoConstraints="NO" id="NKz-jg-IWc">
+                                        <rect key="frame" x="97" y="343" width="180" height="190"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="NKz-jg-IWc" secondAttribute="height" multiplier="18:19" id="sAS-of-f7w"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.72549019607843135" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="NKz-jg-IWc" firstAttribute="centerX" secondItem="UDy-66-ygI" secondAttribute="centerX" id="2xg-ED-1GA"/>
+                                    <constraint firstItem="I12-QH-c6f" firstAttribute="centerY" secondItem="UDy-66-ygI" secondAttribute="centerY" id="Un3-YA-ayu"/>
+                                    <constraint firstItem="I12-QH-c6f" firstAttribute="centerX" secondItem="UDy-66-ygI" secondAttribute="centerX" id="XNt-J2-ijN"/>
+                                    <constraint firstItem="NKz-jg-IWc" firstAttribute="top" secondItem="UDy-66-ygI" secondAttribute="bottom" multiplier="0.685" id="fv3-iA-GNU"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="© 2017 Anxell Technology Coproration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jfr-Dc-TZR">
+                                <rect key="frame" x="0.0" y="623" width="375" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UDy-66-ygI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="E1u-mV-ckX"/>
+                            <constraint firstItem="UDy-66-ygI" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="GIs-xA-uiH"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="Jfr-Dc-TZR" secondAttribute="bottom" multiplier="1.047" id="P7y-E9-JPj"/>
+                            <constraint firstAttribute="trailing" secondItem="Jfr-Dc-TZR" secondAttribute="trailing" id="V4d-As-KaI"/>
+                            <constraint firstItem="NKz-jg-IWc" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="190:667" id="XKE-gh-TAx"/>
+                            <constraint firstAttribute="trailing" secondItem="UDy-66-ygI" secondAttribute="trailing" id="bIi-g7-hO0"/>
+                            <constraint firstItem="UDy-66-ygI" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" multiplier="500/667" id="tBA-JI-cwb"/>
+                            <constraint firstItem="Jfr-Dc-TZR" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="zXm-zc-diO"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch-screen-door" width="180" height="190"/>
+    </resources>
+</document>
