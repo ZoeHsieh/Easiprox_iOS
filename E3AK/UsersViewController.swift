@@ -93,9 +93,10 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate {
         SearchBar.placeholder = GetSimpleLocalizedString("Search")
         SearchBar.delegate = self
         SearchBar.returnKeyType = UIReturnKeyType.done
-       
+        SearchBar.placeholder = self.GetSimpleLocalizedString("UserList_search_placeHolder")
+        
         if Config.deviceType == Config.deviceType_Keypad{
-            print("1 fail")
+            
             
             tableView.register(R.nib.usersTableViewCell_Keypad)
             
@@ -276,8 +277,8 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate {
         var userCardArray = [UInt8]()
         var isCardSpaceCnt = 0
         for j in 0 ... 3{
-            print(String(format:"%02x",userData[j]))
-            if userData[j+24]==0xFF || userData[j+24] == 0x00{
+            print(String(format:"%02x",userData[j+24]))
+            if userData[j+24]==0xFF /*|| userData[j+24] == 0x00*/{
                 isCardSpaceCnt+=1
                 
             }
@@ -291,7 +292,7 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate {
         var userCard = Util.UINT8toStringDecForCard(data: userCardArray, len: 4)
         let userIndex = Int16(UInt16(userData[28])<<8 | UInt16(userData[29] & 0x00FF))
         
-        if isCardSpaceCnt == 3{
+        if isCardSpaceCnt == 4{
             userCard = BPprotocol.spaceCardStr
         }
         
@@ -513,6 +514,12 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         
         
     }
+    override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        self.downloadFrame.removeFromSuperview()
     
+   
+        backToMainPage()
+        
+    }
     
   }

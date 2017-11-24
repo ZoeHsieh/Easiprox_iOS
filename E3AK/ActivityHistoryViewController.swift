@@ -77,7 +77,7 @@ class ActivityHistoryViewController: BLE_ViewController,UISearchBarDelegate{
         //searchBar.isHidden = false
         searchBar.delegate = self
         searchBar.returnKeyType = UIReturnKeyType.done
-        
+        searchBar.placeholder = self.GetSimpleLocalizedString("History_search_placeHolder")
         tableView.register(R.nib.activityHistoryTableViewCell)
        
               
@@ -486,7 +486,13 @@ extension ActivityHistoryViewController: UITableViewDataSource, UITableViewDeleg
     
     
    
-   
+    override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        self.downloadFrame.removeFromSuperview()
+        
+        
+        backToMainPage()
+        
+    }
    
 }
 

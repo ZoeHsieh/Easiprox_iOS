@@ -16,7 +16,7 @@ enum settingStatesCase:Int {
     case config_deviceTime = 2
     case sensor_level = 3
 }
-class SettingsTableViewController: BLE_tableViewController {
+class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate {
     
     @IBOutlet weak var usersButton: UIButton!
     @IBOutlet weak var activityHistoryButton: UIButton!
@@ -89,39 +89,40 @@ class SettingsTableViewController: BLE_tableViewController {
     
 
    
-    @IBAction func progress_cancel_Action(_ sender: Any) {
-        if setupStatus == setupRestore{
-           
-        
-            
-            Config.bleManager.disconnectByCMD(char: bpChar)
-            
-            
-            backToMainPage()
-            self.restoreCount = 0;
-        }else if setupStatus == setupBackup{
-            self.backupCount = 0;
-            isCancel = true
-        }
-        self.msgFrame.removeFromSuperview();
-        
-
-    }
-    @IBAction func msg_dg_okAction(_ sender: Any) {
-        
-        self.msgFrame.removeFromSuperview();
-        self.backupCount = 0;
-        self.backupMax = 0
-        
-        if setupStatus == setupRestore{
-            
-            Config.bleManager.disconnectByCMD(char: bpChar)
-             setupStatus = setupHandle
-            self.backToMainPage()
-        }
-
-        
-    }
+   
+    @IBOutlet weak var EditCardDialogTitle: UILabel!
+    
+    @IBOutlet weak var CardDialogCancelBtn: UIButton!
+    
+    
+    @IBOutlet weak var CardDialogConfirmBtn: UIButton!
+    
+    @IBOutlet var CardDialogFrame: UIView!
+    
+    @IBOutlet weak var CardDialogView: UIView!
+    
+    @IBOutlet weak var CardInput1: UITextField!
+    
+    @IBOutlet weak var CardInput2: UITextField!
+    
+    
+    @IBOutlet weak var CardInput3: UITextField!
+    
+    @IBOutlet weak var CardInput4: UITextField!
+    
+    
+    @IBOutlet weak var CardInput5: UITextField!
+    
+    @IBOutlet weak var CardInput6: UITextField!
+    
+    @IBOutlet weak var CardInput7: UITextField!
+    
+    @IBOutlet weak var CardInput8: UITextField!
+    
+    @IBOutlet weak var CardInput9: UITextField!
+    
+    
+    @IBOutlet weak var CardInput10: UITextField!
     
     
     var selectedDevice:CBPeripheral!
@@ -155,9 +156,143 @@ class SettingsTableViewController: BLE_tableViewController {
     let setupRestore:Int = 2
     let setupLogin:Int = 3
     
+    var displayAlerDialog:UIAlertController? = nil
+    
     @IBOutlet weak var deviceTimeLabel: UILabel!
     
     @IBOutlet weak var backButton: UIBarButtonItem!
+    /*Admin card edit function*/
+    @IBAction func CardConfirmBtnListener(_ sender: Any) {
+        
+        var cardNum = 0
+        let CardInputs = [ CardInput1,CardInput2,
+                           CardInput3, CardInput4,
+                           CardInput5,CardInput6,
+                           CardInput7,CardInput8,
+                           CardInput9, CardInput10]
+        var newCard = ""
+        for i in 0 ... CardInputs.count - 1{
+            if CardInputs[i]?.text != " "{
+            newCard += (CardInputs[i]?.text)!
+            
+                cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                
+            }
+        }
+        if newCard == "" && cardNum == 0{
+           newCard = BPprotocol.spaceCardStr
+        }
+        self.CardDialogFrame.removeFromSuperview();
+        print("cardNum = \(cardNum) newCard=\(newCard)")
+        if (cardNum != 0) && (cardNum != 10 ){
+            
+            self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
+            return
+        }
+        
+      if(newCard != BPprotocol.spaceCardStr){
+        
+        guard UInt32(newCard) != nil
+            
+            else{
+                self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
+                return
+        }
+       
+        if newCard == BPprotocol.INVALID_CARD{
+            self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
+            return
+        }
+        
+        
+        
+        let cardArr = Config.userListArr.map{ $0["card"] as! String }
+        
+        
+        if cardArr.contains(newCard){
+            
+            self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_card"))
+            return
+        }
+        
+        
+     
+        self.tmpAdminCard = newCard
+        
+        let cardUint8 = Util.StringDecToUINT8(data: self.tmpAdminCard!, len: (self.tmpAdminCard?.characters.count)!)
+        
+        
+        
+        
+        
+        let cmd = Config.bpProtocol.setAdminCard(Card: cardUint8)
+        Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
+        
+        for j in 0 ... cmd.count - 1{
+            
+            print(String(format:"%02x ",cmd[j]))
+        }
+        
+    }else{
+        
+    let cardData:[UInt8] = [0xFF,0xFF,0xFF,0xFF]
+    let cmd = Config.bpProtocol.setAdminCard(Card: cardData)
+    Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
+    self.tmpAdminCard = BPprotocol.spaceCardStr
+    
+    }
+    
+    
+    
+    
+    
+    self.CardDialogFrame.removeFromSuperview();
+}
+
+
+
+@IBAction func CardCancelBtnListener(_ sender: Any) {
+    
+    self.CardDialogFrame.removeFromSuperview();
+    
+    
+}
+
+@IBAction func progress_cancel_Action(_ sender: Any) {
+    if setupStatus == setupRestore{
+        
+        
+        
+        Config.bleManager.disconnectByCMD(char: bpChar)
+        
+        
+        backToMainPage()
+        self.restoreCount = 0;
+    }else if setupStatus == setupBackup{
+        self.backupCount = 0;
+        isCancel = true
+    }
+    self.msgFrame.removeFromSuperview();
+    
+    
+}
+@IBAction func msg_dg_okAction(_ sender: Any) {
+    
+    self.msgFrame.removeFromSuperview();
+    self.backupCount = 0;
+    self.backupMax = 0
+    
+    if setupStatus == setupRestore{
+        
+        Config.bleManager.disconnectByCMD(char: bpChar)
+        setupStatus = setupHandle
+        self.backToMainPage()
+    }
+    
+    
+}
+
+    
     @IBAction func backPageListener(_ sender: Any) {
         
        
@@ -170,6 +305,7 @@ class SettingsTableViewController: BLE_tableViewController {
                 
                 Config.bleManager.disconnect()
             }
+          
             backToMainPage()
             
             
@@ -230,6 +366,9 @@ class SettingsTableViewController: BLE_tableViewController {
         })
         Config.deviceUUID = self.selectedDevice.identifier.uuidString
     SettingsTableViewController.settingStatus = settingStatesCase.setting_none.rawValue
+        
+        
+     
     }
     
    
@@ -372,29 +511,10 @@ class SettingsTableViewController: BLE_tableViewController {
         return Config.adminSettingMenuItem
     }
     
-//    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = Bundle.main.loadNibNamed("MyTableViewSectionHeader",
-//                                                  owner: self, options: nil)?[0] as! UIView
-////        let titleLabel = headerView.viewWithTag(1) as! UILabel
-////        titleLabel.text = self.adHeaders?[section]
-//        return headerView
-//    }
-//    
-//    //返回分区头部高度
-//    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-//        return 50
-//    }
+
 
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
-        //let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.usersTableViewCell.identifier, for: indexPath) as! UsersTableViewCell
-//        cell.accountLabel.text = "\(accountArr[indexPath.row])"
-        
-//        return cell
-        
-//        let footerView = R.nib.settingsTableViewSectionFooter.instantiate(withOwner: nil, options: nil)
-//        return footerView
-        
+       
         let footerView = R.nib.settingsTableViewSectionFooter.firstView(owner: nil)
         footerView?.setVersion(version: newFwVersion!)
         return footerView
@@ -412,7 +532,7 @@ class SettingsTableViewController: BLE_tableViewController {
         switch indexPath.row
         {
         case 0:
-            alertWithTextField(title: self.GetSimpleLocalizedString("Edit Device Name"), subTitle: "", placeHolder: self.GetSimpleLocalizedString("Up to 16 characters"), keyboard: .default, defaultValue: deviceNameLabel.text! ,Tag: 0,handler: { (inputText) in
+            self.displayAlerDialog = alertWithTextField(title: self.GetSimpleLocalizedString("Edit Device Name"), subTitle: "", placeHolder: self.GetSimpleLocalizedString("Up to 16 characters"), keyboard: .default, defaultValue: deviceNameLabel.text! ,Tag: 0,handler: { (inputText) in
                 
                 guard var newName: String = inputText else{
                     self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("Wrong format!"))
@@ -460,7 +580,7 @@ class SettingsTableViewController: BLE_tableViewController {
                 checkFlag = true
             }
             if Config.isUserListOK || checkFlag {
-                alertWithTextField(title: self.GetSimpleLocalizedString("settings_Admin_pwd_Edit"), subTitle: "", placeHolder: self.GetSimpleLocalizedString("4~8 digits"), keyboard: .numberPad, defaultValue: adminPWDLabel.text!, Tag: 1, handler: { (inputText) in
+                self.displayAlerDialog = alertWithTextField(title: self.GetSimpleLocalizedString("settings_Admin_pwd_Edit"), subTitle: "", placeHolder: self.GetSimpleLocalizedString("4~8 digits"), keyboard: .numberPad, defaultValue: adminPWDLabel.text!, Tag: 1, handler: { (inputText) in
                     guard let newPWD: String = inputText else{
                         
                         //self.showAlert(message: "Wrong format!")
@@ -502,75 +622,12 @@ class SettingsTableViewController: BLE_tableViewController {
                     } })
             }
         case 2:
-              var defaultValue = adminCardLabel.text!
-              if defaultValue == BPprotocol.spaceCardStr{
-                defaultValue = ""
-              }
+            
+            
+            showEditCardDialog(Title: self.GetSimpleLocalizedString("settings_Admin_card_Edit"), CardValue: adminCardLabel.text!)
+            
            
-                alertWithTextField(title: self.GetSimpleLocalizedString("settings_Admin_card_Edit"), subTitle: "", placeHolder: self.GetSimpleLocalizedString("10 digits"), keyboard: .numberPad, defaultValue: defaultValue, Tag: 4, handler: { (inputText) in
-                    guard let newCard: String = inputText else{
-                        
-                        //self.showAlert(message: "Wrong format!")
-                        return
-                    }
-                    if !((inputText?.isEmpty)!){
-                        guard  (inputText?.characters.count)! == BPprotocol.userCardID_maxLen || (inputText?.characters.count == 0) else{
-                            
-                            self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
-                            return
-                        }
-                        guard (inputText!) != BPprotocol.INVALID_CARD
-                            
-                            else{
-                                 self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
-                                return
-                        }
-
-                        guard UInt32(inputText!) != nil || (inputText?.characters.count == 0)
-                            
-                            else{
-                                print("String to int fail")
-                                self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
-                                return
-                        }
-                        
-                        let cardArr = Config.userListArr.map{ $0["card"] as! String }
-                        
-                        
-                        if cardArr.contains(inputText!){
-                            
-                            self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_card"))
-                            return
-                        }
-                        
-                        
-                        
-                        self.tmpAdminCard = newCard
-                        
-                        let cardUint8 = Util.StringDecToUINT8(data: self.tmpAdminCard!, len: (self.tmpAdminCard?.characters.count)!)
-                        
-                        
-                       
-                        
-                        
-                        let cmd = Config.bpProtocol.setAdminCard(Card: cardUint8)
-                        Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
-                        
-                        for j in 0 ... cmd.count - 1{
-                            
-                            print(String(format:"%02x ",cmd[j]))
-                        }
-                        
-                    }else{
-                        let cardData:[UInt8] = [0xFF,0xFF,0xFF,0xFF]
-                        let cmd = Config.bpProtocol.setAdminCard(Card: cardData)
-                        Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
-                        self.tmpAdminCard = BPprotocol.spaceCardStr
-                        
-                    }
-                    
-                })
-                
+            
             
         case 3:
             
@@ -609,7 +666,7 @@ class SettingsTableViewController: BLE_tableViewController {
             let vc = DoorRe_lockTimeViewController(nib: R.nib.doorReLockTimeViewController)
             navigationController?.pushViewController(vc, animated: true)*/
             
-             alertWithTextField(title:self.GetSimpleLocalizedString( "Edit Door Re-lock Time (1~1800 seconds)"), subTitle: "", placeHolder: "1~1800", keyboard: .numberPad, defaultValue: delayTimeLabel.text!, Tag: 2, handler: { (inputText) in
+              self.displayAlerDialog = alertWithTextField(title:self.GetSimpleLocalizedString( "Edit Door Re-lock Time (1~1800 seconds)"), subTitle: "", placeHolder: "1~1800", keyboard: .numberPad, defaultValue: delayTimeLabel.text!, Tag: 2, handler: { (inputText) in
                 guard let newDelayTime: String = inputText else{
                     
                     //self.showAlert(message: "Wrong format!")
@@ -1157,6 +1214,8 @@ class SettingsTableViewController: BLE_tableViewController {
                     Config.ADMINPWD = adminPWDLabel.text!
                     break
                     
+                }else{
+                      self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_password"))
                 }
             
           break
@@ -1195,6 +1254,8 @@ class SettingsTableViewController: BLE_tableViewController {
             adminCardLabel.text = tmpAdminCard
             Config.ADMINCARD = tmpAdminCard!
              
+           }else{
+            self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_card"))
            }
            
             break
@@ -1473,7 +1534,98 @@ class SettingsTableViewController: BLE_tableViewController {
         isCancel = false
         
     }
+    func showEditCardDialog(Title:String, CardValue:String) {
+        
+        
+        //Set Initial Value
+        EditCardDialogTitle.text = Title
+        CardDialogConfirmBtn.titleLabel?.text = GetSimpleLocalizedString("Confirm")
+        CardDialogCancelBtn.titleLabel?.text = GetSimpleLocalizedString("Cancel")
+        
+       CardDialogFrame.frame = CGRect(origin: CGPoint(x:0 ,y:0), size: CGSize(width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.height))
+        CardDialogView.center = CGPoint(x: UIScreen.main.bounds.size.width / 2, y: UIScreen.main.bounds.size.height / 2)
+        
+        UIApplication.shared.keyWindow?.addSubview(self.CardDialogFrame)
+        
+        let CardInputs = [ CardInput1,CardInput2,
+                           CardInput3, CardInput4,
+                           CardInput5,CardInput6,
+                           CardInput7,CardInput8,
+                           CardInput9, CardInput10]
+        
+       
+        for i in 0 ... CardInputs.count - 1{
+        
+            
+            if CardValue != BPprotocol.spaceCardStr{
+                let start = CardValue.index(CardValue.startIndex, offsetBy: i)
+                let end = CardValue.index(CardValue.startIndex, offsetBy: i+1)
+                let range = start..<end
+                CardInputs[i]?.text = CardValue.substring(with: range)
+                
+              }else{
+                CardInputs[i]?.text = " "
+            }
+            
+            CardInputs[i]?.keyboardType = .numberPad
+            CardInputs[i]?.delegate = self
+            CardInputs[i]?.tag = 200
+            CardInputs[i]?.addTarget(self, action: #selector(self.CardEditChange(field:)), for: UIControlEvents.editingChanged)
+         
+        }
+            CardInputs[0]?.becomeFirstResponder()
     
+        
+        
+    }
+   
+    func CardEditChange(field: UITextField){
+        var cardNum = 0
+        let CardInputs = [ CardInput1,CardInput2,
+                           CardInput3, CardInput4,
+                           CardInput5,CardInput6,
+                           CardInput7,CardInput8,
+                           CardInput9, CardInput10]
+        
+        
+        if ( (field.text?.characters.count)! > 1 ) {
+           
+            let start = field.text?.index(after:(field.text?.startIndex)! )
+            let end = field.text?.endIndex
+            let range = start..<end
+            field.text = field.text?.substring(with: range)
+        }
+        for i in 0 ... CardInputs.count - 1{
+            if CardInputs[i]?.text != " "{
+                cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                
+            }
+        }
+        
+        for i in 0 ... CardInputs.count - 1{
+            if (CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! ){
+                
+                if(i < (CardInputs.count - 1)){
+                CardInputs[i+1]?.becomeFirstResponder()
+            
+                }else{
+                CardInputs[i]?.resignFirstResponder()
+                    
+                }
+                break
+            }
+            
+        }
+        
+        if (cardNum != 0 && cardNum != 10){
+            CardDialogConfirmBtn.isEnabled = false
+        }else{
+            
+            CardDialogConfirmBtn.isEnabled = true
+        }
+        
+        
+    }
     
     func showMessageDialog(Title:String, Message:String) {
         
@@ -1537,6 +1689,7 @@ class SettingsTableViewController: BLE_tableViewController {
         
         
     }
+    
     func connectTimeOutTask(){
         print("connect time out");
         Config.bleManager.disconnect()
@@ -1573,7 +1726,73 @@ class SettingsTableViewController: BLE_tableViewController {
         }
         currConfig = data
     }
-
+    
+    /*check backspace*/
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool
+    {   if textField.tag == 200{
+        let CardInputs = [ CardInput1,CardInput2,
+                           CardInput3, CardInput4,
+                           CardInput5,CardInput6,
+                           CardInput7,CardInput8,
+                           CardInput9, CardInput10]
+        
+        let  char = string.cString(using: String.Encoding.utf8)!
+        let isBackSpace = strcmp(char, "\\b")
+       
+        
+        var cardNum = 0
+        if (isBackSpace == -92) {
+           
+           
+          for i in 0 ... CardInputs.count - 1{
+            
+            
+            if(CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! && (i != 0)){
+                    CardInputs[i]?.text = " "
+                    CardInputs[i-1]?.becomeFirstResponder()
+                
+                }else if ((i == 0) && (CardInputs[i]?.isEditing)!){
+                    CardInputs[i]?.text = " "
+                
+                }
+                
+            }
+            
+            for i in 0 ... CardInputs.count - 1{
+                if CardInputs[i]?.text != " "{
+                    cardNum += (CardInputs[i]?.text?.characters.count)!
+                }
+                
+            }
+            if (cardNum != 0 && cardNum != 10){
+                CardDialogConfirmBtn.isEnabled = false
+            }else{
+                
+                CardDialogConfirmBtn.isEnabled = true
+            }
+             return false
+        }
+        
+    
+        
+       }
+        return true
+    }
+    
+   override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+    self.CardDialogFrame.removeFromSuperview()
+    self.msgFrame.removeFromSuperview()
+    
+    //self.downloadFrame.removeFromSuperview()
+    if(displayAlerDialog != nil){
+     displayAlerDialog?.dismiss(animated: true, completion: nil)
+        
+    }
+        backToMainPage()
+        
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "showUserList"){
             let nvc = segue.destination  as!

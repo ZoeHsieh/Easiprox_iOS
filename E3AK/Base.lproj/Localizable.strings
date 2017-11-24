@@ -182,3 +182,6 @@ Date = "Date";
 "Level 1" = "Level 1";
 "Level 2" = "Level 2";
 "Level 3" = "Level 3";
+"over_range_alarm" = "Over range";
+"History_search_placeHolder" = "Please Input User ID";
+"UserList_search_placeHolder" = "Please Input User ID";

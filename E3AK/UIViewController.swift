@@ -14,7 +14,7 @@ import CoreBluetooth
 extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
     
 
-    public func openBlueTooth_Setting() {
+    public func openBlueTooth_Setting()->UIAlertController {
         let url = URL(string: "APP-Prefs:root=Bluetooth") //for Bluetooth Setting
         let app = UIApplication.shared
         
@@ -31,7 +31,7 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
         
         self.present(alertController, animated: true, completion: nil)
         
-        //app.openURL(url!)
+        return alertController
     }
 
     func setNavigationBarItemWithImage(imageName: String) {
@@ -166,9 +166,10 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
         
     }
 
-    func alertWithTextField(title: String, subTitle: String, placeHolder: String, keyboard: UIKeyboardType, defaultValue: String,Tag:Int,handler: @escaping ((_ inputText: String?) -> Void)){
+    func alertWithTextField(title: String, subTitle: String, placeHolder: String, keyboard: UIKeyboardType, defaultValue: String,Tag:Int,handler: @escaping ((_ inputText: String?) -> Void))->UIAlertController{
         
         let alertController = UIAlertController(title: title, message: subTitle, preferredStyle: .alert)
+        
         alertController.addTextField(configurationHandler: { (textField) in
             var PlaceHolder = NSMutableAttributedString()
                         // Set the Font
@@ -179,7 +180,7 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
             
             // Add attribute        
             
-           textField.attributedPlaceholder = PlaceHolder
+            textField.attributedPlaceholder = PlaceHolder
             textField.keyboardType = keyboard
             textField.tag = Tag
             textField.text = defaultValue
@@ -201,6 +202,8 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = CGRect(origin: CGPoint(x: 1.0,y :1.0), size: CGSize(width: self.view.bounds.size.width / 2.0, height: self.view.bounds.size.height / 2.0))
         self.present(alertController, animated: true, completion: nil)
+        
+        return alertController
     }
        
     func editAlertTextFieldDidChange(field: UITextField){
@@ -254,7 +257,7 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
         
     }
    
-    func loginAlert(title: String, subTitle: String, placeHolder1: String, placeHolder2: String, keyboard1: UIKeyboardType, keyboard2: UIKeyboardType, handler: @escaping ((_ inputText1: String?, _ inputText2: String?) -> Void)){
+    func loginAlert(title: String, subTitle: String, placeHolder1: String, placeHolder2: String, keyboard1: UIKeyboardType, keyboard2: UIKeyboardType, handler: @escaping ((_ inputText1: String?, _ inputText2: String?) -> Void))->UIAlertController{
         
         
         let alertController = UIAlertController(title: title, message: subTitle, preferredStyle: .alert)
@@ -266,11 +269,7 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
             textField.textColor = UIColor.black
             textField.addTarget(self, action: #selector(self.alertTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
         })
-        /*alertController.addTextField(configurationHandler: { (textField) in
-         textField.placeholder = "User Name"
-         textField.backgroundColor = UIColor.lightGray.withAlphaComponent(0.3)
-         textField.isEnabled = false
-         })*/
+       
         alertController.addTextField(configurationHandler: { (textField) in
             textField.placeholder = placeHolder2
             textField.keyboardType = keyboard2
@@ -296,10 +295,12 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
         alertController.popoverPresentationController?.sourceView = self.view
         alertController.popoverPresentationController?.sourceRect = CGRect(origin: CGPoint(x: 1.0,y :1.0), size: CGSize(width: self.view.bounds.size.width / 2.0, height: self.view.bounds.size.height / 2.0))
         self.present(alertController, animated: true, completion: nil)
+        
+        return alertController
     }
     
 
-    func alertTextFieldDidChange(field: UITextField){
+    func alertTextFieldDidChange(field: UITextField)->UIAlertController{
         let alertController: UIAlertController = self.presentedViewController as! UIAlertController
         let textField_id: UITextField = alertController.textFields![0];
         let textField_password: UITextField = alertController.textFields![1];
@@ -314,8 +315,9 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
             textField_password.deleteBackward();
         }
         
-        addAction.isEnabled = ((textField_id.text?.characters.count)! >= 1 ) && ((textField_password.text?.characters.count)! >= 4 );
+        addAction.isEnabled = ((textField_id.text?.characters.count)! >= 1 ) && ((textField_password.text?.characters.count)! >= 4 )
         
+        return alertController
     }
 
    

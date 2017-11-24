@@ -30,6 +30,17 @@ class Util{
         return tmpData
     }
     
+    public static func StringtoUINT8(data: String, len: Int) -> [UInt8]{
+        
+        //let dataUInt8: [UInt8] = data.unicodeScalars.map{ UInt8($0.value) }
+        
+        let dataUInt8: [UInt8] = Array(data.utf8)
+        
+        
+        
+        return dataUInt8
+    }
+    
     public static func StringDecToUINT8(data:String, len:Int)-> [UInt8]{
         
         var tmpData = [UInt8]()

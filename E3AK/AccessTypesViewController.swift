@@ -312,6 +312,7 @@ extension AccessTypesViewController: UITableViewDataSource, UITableViewDelegate 
                 accessTimesTableViewCell.accessTimesTextField.becomeFirstResponder()
                 
                 accessTimesTableViewCell.setTimesValue(times: AccessTypesViewController.openTimes)
+                accessTimesTableViewCell.setViewController(controller: self)
                 cell = accessTimesTableViewCell
                 
             case .Recurrent:
@@ -558,6 +559,43 @@ extension AccessTypesViewController: UITableViewDataSource, UITableViewDelegate 
         }
     }
     
+    
+    func didEdit(accessTimesTextField: UITextField){
+        print("before count=\(accessTimesTextField.text?.utf8.count)")
+        print("data=\(accessTimesTextField.text)")
+        if ( ( accessTimesTextField.text?.utf8.count)! > 3) {
+            accessTimesTextField.deleteBackward();
+        }
+        print("after count=\(accessTimesTextField.text?.utf8.count)")
+        print("data=\(accessTimesTextField.text)")
+        if accessTimesTextField.text != ""{
+            if((accessTimesTextField.text?.contains("(format error)"))!){
+                accessTimesTextField.text = String(format:"%d",AccessTypesViewController.openTimes)
+            }
+            
+            if (accessTimesTextField.text?.utf8.count)! > 0  {
+                AccessTypesViewController.openTimes = Int(accessTimesTextField.text!)!
+            }
+            
+            if !((accessTimesTextField.text?.utf8.count)! > 0
+                && (Int(accessTimesTextField.text!)!<=255)) {
+                
+                
+                
+                accessTimesTextField.text = accessTimesTextField.text! + NSLocalizedString("(format error)", comment: "")
+                accessTimesTextField.textColor = UIColor.red
+                
+            }else{
+                accessTimesTextField.textColor = UIColor.darkGray
+                UserInfoTableViewController.tmpCMD[8] = 0x02
+                UserInfoTableViewController.tmpCMD[23] = UInt8(accessTimesTextField.text!)!
+                AccessTypesViewController.openTimes = Int(accessTimesTextField.text!)!
+                
+            }
+        }
+        
+        
+    }
     
     /*! Reveals the date picker inline for the given indexPath, called by "didSelectRowAtIndexPath".
      

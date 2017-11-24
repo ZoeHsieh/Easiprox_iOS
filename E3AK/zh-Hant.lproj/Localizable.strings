@@ -176,4 +176,6 @@ Date = "日期";
 "Level 1" = "等級1";
 "Level 2" = "等級2";
 "Level 3" = "等級3";
-
+"over_range_alarm" = "超過範圍";
+"History_search_placeHolder" = "請輸入User ID";
+"UserList_search_placeHolder" = "請輸入User ID";

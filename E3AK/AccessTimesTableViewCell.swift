@@ -9,15 +9,16 @@
 import UIKit
 
 class AccessTimesTableViewCell: UITableViewCell {
-
+    
     
     @IBOutlet weak var accessTimesTextField: UITextField!
+    var ViewController: UIViewController?
     var openTimes:Int = 0
     override func awakeFromNib() {
         super.awakeFromNib()
         accessTimesTextField.placeholder =  NSLocalizedString("Please enter access times", comment: "")
-        accessTimesTextField.addTarget(self, action: #selector(AccessTimesTableViewCell.checkLen), for: .editingChanged)
-        accessTimesTextField.addTarget(self, action: #selector(AccessTimesTableViewCell.didEdit), for: .editingDidEnd)
+        accessTimesTextField.addTarget(self, action: #selector(AccessTimesTableViewCell.didEdit), for: .editingChanged)
+        
         
     }
 
@@ -38,6 +39,9 @@ class AccessTimesTableViewCell: UITableViewCell {
         }
     }
     
+    func setViewController(controller:UIViewController){
+        ViewController = controller
+    }
       
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
@@ -46,42 +50,35 @@ class AccessTimesTableViewCell: UITableViewCell {
     }
     
     func didEdit(){
-        if((accessTimesTextField.text?.contains("(format error)"))!){
-            accessTimesTextField.text = String(format:"%d",openTimes)
-            
+        if ( ( accessTimesTextField.text?.utf8.count)! > 3) {
+            accessTimesTextField.deleteBackward();
         }
-        if (accessTimesTextField.text?.utf8.count)! > 0  {
-            openTimes = Int(accessTimesTextField.text!)!
-        }
-    
-        if !((accessTimesTextField.text?.utf8.count)! > 0
-        && (Int(accessTimesTextField.text!)!<=255)) {
+        
+        if accessTimesTextField.text != ""{
             
            
         
-            accessTimesTextField.text = accessTimesTextField.text! + NSLocalizedString("(format error)", comment: "")
-            accessTimesTextField.textColor = UIColor.red
+          if !((accessTimesTextField.text?.utf8.count)! > 0
+          && (Int(accessTimesTextField.text!)!<=255)) {
             
-        }else{
+            ViewController?.showToastDialog(title: "", message: (ViewController?.GetSimpleLocalizedString("over_range_alarm"))!)
+            
+          }else{
             accessTimesTextField.textColor = UIColor.darkGray
+            
                 UserInfoTableViewController.tmpCMD[8] = 0x02
              UserInfoTableViewController.tmpCMD[23] = UInt8(accessTimesTextField.text!)!
+            
             AccessTypesViewController.openTimes = Int(accessTimesTextField.text!)!
            
-        }
-    
-    
-    
-    }
-    
-    
-    func checkLen(){
-        if ( ( accessTimesTextField.text?.utf8.count)! > 3) {
-             accessTimesTextField.deleteBackward();
-        }
+           }
+       }
         
-     
+    
     }
+    
+    
+  
     
     
     

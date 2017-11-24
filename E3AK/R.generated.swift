@@ -666,7 +666,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This `R.string.localizable` struct is generated, and contains static references to 149 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 152 localization keys.
     struct localizable {
       /// Base translation:  Event List
       /// 
@@ -1032,6 +1032,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let `open` = Rswift.StringResource(key: "Open", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Over range
+      /// 
+      /// Locales: zh-Hant, Base
+      static let over_range_alarm = Rswift.StringResource(key: "over_range_alarm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
       /// Base translation: Password
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1056,6 +1060,14 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base
       static let phoneAccess = Rswift.StringResource(key: "Phone Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Base translation: Please Input User ID
+      /// 
+      /// Locales: zh-Hant, Base
+      static let history_search_placeHolder = Rswift.StringResource(key: "History_search_placeHolder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Base translation: Please Input User ID
+      /// 
+      /// Locales: zh-Hant, Base
+      static let userList_search_placeHolder = Rswift.StringResource(key: "UserList_search_placeHolder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
       /// Base translation: Please disable 'AUTO' first!!
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1902,6 +1914,13 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Open", bundle: R.hostingBundle, value: "Open", comment: "")
       }
       
+      /// Base translation: Over range
+      /// 
+      /// Locales: zh-Hant, Base
+      static func over_range_alarm(_: Void = ()) -> String {
+        return NSLocalizedString("over_range_alarm", bundle: R.hostingBundle, value: "Over range", comment: "")
+      }
+      
       /// Base translation: Password
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1942,6 +1961,20 @@ struct R: Rswift.Validatable {
       /// Locales: zh-Hant, Base
       static func phoneAccess(_: Void = ()) -> String {
         return NSLocalizedString("Phone Access", bundle: R.hostingBundle, value: "Phone Access", comment: "")
+      }
+      
+      /// Base translation: Please Input User ID
+      /// 
+      /// Locales: zh-Hant, Base
+      static func history_search_placeHolder(_: Void = ()) -> String {
+        return NSLocalizedString("History_search_placeHolder", bundle: R.hostingBundle, value: "Please Input User ID", comment: "")
+      }
+      
+      /// Base translation: Please Input User ID
+      /// 
+      /// Locales: zh-Hant, Base
+      static func userList_search_placeHolder(_: Void = ()) -> String {
+        return NSLocalizedString("UserList_search_placeHolder", bundle: R.hostingBundle, value: "Please Input User ID", comment: "")
       }
       
       /// Base translation: Please disable 'AUTO' first!!
