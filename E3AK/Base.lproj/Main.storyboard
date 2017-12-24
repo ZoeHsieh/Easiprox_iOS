@@ -67,7 +67,7 @@
                                 <rect key="frame" x="32" y="303" width="76" height="54"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green-dot" translatesAutoresizingMaskIntoConstraints="NO" id="QlI-mD-oiJ">
-                                <rect key="frame" x="87.5" y="44.5" width="10" height="10"/>
+                                <rect key="frame" x="87.5" y="45" width="10" height="10"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jzd-AD-XRA">
                                 <rect key="frame" x="256" y="45" width="49" height="24"/>
@@ -111,7 +111,7 @@
                                 <rect key="frame" x="145" y="457" width="30" height="30"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="triangle" translatesAutoresizingMaskIntoConstraints="NO" id="m60-Z3-7Pj">
-                                <rect key="frame" x="223.5" y="46.5" width="9" height="6"/>
+                                <rect key="frame" x="223.5" y="47" width="9" height="6"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="43g-pZ-Hqp">
                                 <rect key="frame" x="97" y="516" width="126" height="20"/>

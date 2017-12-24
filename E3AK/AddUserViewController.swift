@@ -14,7 +14,7 @@ protocol AddUserViewControllerDelegate {
     func didTapAdd()
 }
 
-class AddUserViewController: BLE_ViewController {
+class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
 
     var delegate: AddUserViewControllerDelegate?
     
@@ -25,7 +25,32 @@ class AddUserViewController: BLE_ViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var cardTitle: UILabel!
-    @IBOutlet weak var cardTextField: UITextField!
+   
+    
+    @IBOutlet weak var CardInput1: UITextField!
+    
+    @IBOutlet weak var CardInput2: UITextField!
+    
+    
+    @IBOutlet weak var CardInput3: UITextField!
+    
+    @IBOutlet weak var CardInput4: UITextField!
+    
+    
+    @IBOutlet weak var CardInput5: UITextField!
+    
+    @IBOutlet weak var CardInput6: UITextField!
+    
+    @IBOutlet weak var CardInput7: UITextField!
+    
+    @IBOutlet weak var CardInput8: UITextField!
+    
+    @IBOutlet weak var CardInput9: UITextField!
+    
+    
+    @IBOutlet weak var CardInput10: UITextField!
+    
+    @IBOutlet weak var EditCardUI: UIStackView!
     
     var tmpID:String = ""
     var tmpPassword:String = ""
@@ -55,10 +80,31 @@ class AddUserViewController: BLE_ViewController {
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         if Config.deviceType == Config.deviceType_Keypad{
-            
-            cardTextField.isHidden = true
-            cardTitle.isHidden = true
+            EditCardUI.isHidden = true
+             cardTitle.isHidden = true
         }
+        
+        let CardInputs = [ CardInput1,CardInput2,
+                           CardInput3, CardInput4,
+                           CardInput5,CardInput6,
+                           CardInput7,CardInput8,
+                           CardInput9, CardInput10]
+        
+        
+        for i in 0 ... CardInputs.count - 1{
+            
+            CardInputs[i]?.text = " "
+            CardInputs[i]?.keyboardType = .numberPad
+            CardInputs[i]?.delegate = self
+            CardInputs[i]?.tag = 200
+            CardInputs[i]?.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
+            
+        }
+        CardInputs[0]?.becomeFirstResponder()
+        
+        
+        
+    
     
     }
 
@@ -121,7 +167,19 @@ class AddUserViewController: BLE_ViewController {
         
     }
     func userAddTextFieldDidChange(field: UITextField){
+        var cardNum = 0
+        let CardInputs = [ CardInput1,CardInput2,
+                           CardInput3, CardInput4,
+                           CardInput5,CardInput6,
+                           CardInput7,CardInput8,
+                           CardInput9, CardInput10]
         
+        for i in 0 ... CardInputs.count - 1{
+            if CardInputs[i]?.text != " "{
+                cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                
+            }
+        }
         
         
         if field.tag == 0{// for user id
@@ -130,31 +188,53 @@ class AddUserViewController: BLE_ViewController {
                 field.deleteBackward();
             }
        
-     self.navigationItem.rightBarButtonItem?.isEnabled = ((field.text?.utf8.count)! >= 1 ) && ((self.passwordTextField.text?.utf8.count)! >= 4)
+     
             
         }else if field.tag == 1{ // for user pwd
             
             if ( (field.text?.utf8.count)! > BPprotocol.userPD_maxLen ) {
                 field.deleteBackward();
             }
-         self.navigationItem.rightBarButtonItem?.isEnabled = ((field.text?.characters.count)! >= 4 ) && ((self.accountTextField.text?.utf8.count)! >= 1 )
-        }else if field.tag == 2{ // for user card id
+         
+        }else if field.tag == 200{ // for user card id
             
             
-           if ((self.passwordTextField.text?.utf8.count)! >= 4) &&
-            ((self.accountTextField.text?.utf8.count)! >= 1 ){
-            
-             self.navigationItem.rightBarButtonItem?.isEnabled = ((field.text?.characters.count)! == 0 ) || ((field.text?.characters.count)! == BPprotocol.userCardID_maxLen )
-            
+            if ( (field.text?.characters.count)! > 1 ) {
+                
+                let start = field.text?.index(after:(field.text?.startIndex)! )
+                let end = field.text?.endIndex
+                let range = start..<end
+                field.text = field.text?.substring(with: range)
             }
-            if ( (field.text?.utf8.count)! > BPprotocol.userCardID_maxLen) {
-                field.deleteBackward();
+            
+            
+            for i in 0 ... CardInputs.count - 1{
+                if (CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! ){
+                    
+                    if(i < (CardInputs.count - 1)){
+                        CardInputs[i+1]?.becomeFirstResponder()
+                        
+                    }else{
+                        CardInputs[i]?.resignFirstResponder()
+                        
+                    }
+                    break
+                }
+                
             }
+            
             
         }
         
-        
-        //Check Length
+        if ((self.passwordTextField.text?.utf8.count)! >= 4) &&
+            ((self.accountTextField.text?.utf8.count)! >= 1 ){
+            
+            self.navigationItem.rightBarButtonItem?.isEnabled = (cardNum == 0 ) || (cardNum == BPprotocol.userCardID_maxLen )
+            
+        }else{
+            self.navigationItem.rightBarButtonItem?.isEnabled = false
+            
+        }
         
         
     }
@@ -201,44 +281,73 @@ class AddUserViewController: BLE_ViewController {
                 return
                 
             }
-            guard  (cardTextField.text!.characters.count) == BPprotocol.userCardID_maxLen || (cardTextField.text!.characters.count <= 0)else{
+            
+            var cardNum = 0
+            let CardInputs = [ CardInput1,CardInput2,
+                               CardInput3, CardInput4,
+                               CardInput5,CardInput6,
+                               CardInput7,CardInput8,
+                               CardInput9, CardInput10]
+            var newCard = ""
+            for i in 0 ... CardInputs.count - 1{
+                if CardInputs[i]?.text != " "{
+                    newCard += (CardInputs[i]?.text)!
+                    
+                    cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                    
+                }
+            }
+            if newCard == "" && cardNum == 0{
+                newCard = BPprotocol.spaceCardStr
+            }
+        
+            print("cardNum = \(cardNum) newCard=\(newCard)")
+            if (cardNum != 0) && (cardNum != 10 ){
                 
                 self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
                 return
             }
-            guard (cardTextField.text!) != BPprotocol.INVALID_CARD
+            
+            if(newCard != BPprotocol.spaceCardStr){
                 
-                else{
+                guard UInt32(newCard) != nil
+                    
+                    else{
+                        self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
+                        return
+                }
+                
+                if newCard == BPprotocol.INVALID_CARD{
                     self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
                     return
-            }
-            
-            guard UInt32(cardTextField.text!) != nil || (cardTextField.text!.characters.count <= 0)
+                }
                 
-                else{
-                    print("String to int fail")
+                if  newCard  == Config.ADMINCARD && newCard  != ""{
+                    
                     self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
                     return
+                    
+                }
+                
+                let cardArr = Config.userListArr.map{ $0["card"] as! String }
+                
+                
+                if cardArr.contains(newCard){
+                    
+                    self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_card"))
+                    return
+                }
+              tmpCard = newCard
+               
+            }else{
+                tmpCard = BPprotocol.spaceCardStr
             }
             
             
-            if cardTextField.text != "" && cardArr.contains((cardTextField.text)!){
-                self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_card"))
-                return
-                
-            }
-            if  cardTextField.text == Config.ADMINCARD && cardTextField.text != ""{
-                
-                self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
-                return
-                
-            }
-            if (cardTextField.text?.characters.count)! <= 0 {
-                cardTextField.text = BPprotocol.spaceCardStr
-            }
+            
             tmpID = accountTextField.text!
             tmpPassword = passwordTextField.text!
-            tmpCard = cardTextField.text!
+            
             print("tmp id= \(tmpID)")
             print("tmp pwd= \(tmpPassword)")
             print("tmp card= \(tmpCard)")
@@ -246,11 +355,19 @@ class AddUserViewController: BLE_ViewController {
             
             let userPWD:[UInt8] = Util.StringtoUINT8(data: tmpPassword, len: BPprotocol.userPD_maxLen, fillData: BPprotocol.nullData)
             var cmdData = Data()
-            
-            if tmpCard.characters.count >= 9{
+            if Config.deviceType != Config.deviceType_Keypad{
+                
+                
+            if  cardNum == 10{
             let userCard:[UInt8] = Util.StringDecToUINT8(data: tmpCard, len: BPprotocol.userCardID_maxLen)
             
                 cmdData = Config.bpProtocol.setUserAdd(Password: userPWD, ID: userID, card:userCard)
+            }else{
+                 let cardData:[UInt8] = [0xFF,0xFF,0xFF,0xFF]
+                
+                cmdData = Config.bpProtocol.setUserAdd(Password: userPWD, ID: userID, card:userCard)
+            }
+            
             }else{
                 
                cmdData = Config.bpProtocol.setUserAdd(Password: userPWD, ID: userID)
@@ -269,6 +386,61 @@ class AddUserViewController: BLE_ViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    /*check backspace*/
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
+                   replacementString string: String) -> Bool
+    {   if textField.tag == 200{
+        let CardInputs = [ CardInput1,CardInput2,
+                           CardInput3, CardInput4,
+                           CardInput5,CardInput6,
+                           CardInput7,CardInput8,
+                           CardInput9, CardInput10]
+        
+        let  char = string.cString(using: String.Encoding.utf8)!
+        let isBackSpace = strcmp(char, "\\b")
+        
+        
+        var cardNum = 0
+        if (isBackSpace == -92) {
+            
+            
+            for i in 0 ... CardInputs.count - 1{
+                
+                
+                if(CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! && (i != 0)){
+                    CardInputs[i]?.text = " "
+                    CardInputs[i-1]?.becomeFirstResponder()
+                    
+                }else if ((i == 0) && (CardInputs[i]?.isEditing)!){
+                    CardInputs[i]?.text = " "
+                    
+                }
+                
+            }
+            
+            for i in 0 ... CardInputs.count - 1{
+                if CardInputs[i]?.text != " "{
+                    cardNum += (CardInputs[i]?.text?.characters.count)!
+                }
+                
+            }
+            if ((self.passwordTextField.text?.utf8.count)! >= 4) &&
+                ((self.accountTextField.text?.utf8.count)! >= 1 ){
+                
+                self.navigationItem.rightBarButtonItem?.isEnabled = (cardNum == 0 ) || (cardNum == BPprotocol.userCardID_maxLen )
+                
+            }else{
+                self.navigationItem.rightBarButtonItem?.isEnabled = false
+                
+            }
+            return false
+        }
+        
+        
+        
+        }
+        return true
     }
     
 
