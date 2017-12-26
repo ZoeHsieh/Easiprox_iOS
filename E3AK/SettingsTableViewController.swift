@@ -782,7 +782,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate 
             break
         case BPprotocol.cmd_bd_addr:
             
-            Config.deviceType = Config.deviceType_Card
+           // Config.deviceType = Config.deviceType_Card
             //Config.deviceType_Keypad
 
             

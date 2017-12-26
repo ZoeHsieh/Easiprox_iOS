@@ -52,6 +52,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
     
     @IBOutlet weak var EditCardUI: UIStackView!
     
+    @IBOutlet weak var EditCardBG: UITextField!
     var tmpID:String = ""
     var tmpPassword:String = ""
     var tmpCard:String = ""
@@ -65,7 +66,6 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         passwordTitle.text = GetSimpleLocalizedString("Password/PIN Code")
         passwordTextField.placeholder = GetSimpleLocalizedString("4~8 digits")
         cardTitle.text = GetSimpleLocalizedString("Card")
-        cardTextField.placeholder = GetSimpleLocalizedString("10 digits")
         Config.bleManager.setPeripheralDelegate(vc_delegate: self)
         accountTextField.tag = 0
         accountTextField.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
@@ -73,15 +73,13 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         passwordTextField.tag = 1
         passwordTextField.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
         passwordTextField.keyboardType = .numberPad
-        cardTextField.tag = 2
-        cardTextField.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
-        cardTextField.keyboardType = .numberPad
-        
+        EditCardBG.isUserInteractionEnabled  = false
         self.navigationItem.rightBarButtonItem?.isEnabled = false
         
         if Config.deviceType == Config.deviceType_Keypad{
             EditCardUI.isHidden = true
              cardTitle.isHidden = true
+            EditCardBG.isHidden = true
         }
         
         let CardInputs = [ CardInput1,CardInput2,
@@ -125,8 +123,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         passwordTextField.setTextFieldPaddingView()
         passwordTextField.setTextFieldBorder()
         
-        cardTextField.setTextFieldPaddingView()
-        cardTextField.setTextFieldBorder()
+        
     }
     
     override func cmdAnalysis(cmd:[UInt8]){
@@ -174,12 +171,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
                            CardInput7,CardInput8,
                            CardInput9, CardInput10]
         
-        for i in 0 ... CardInputs.count - 1{
-            if CardInputs[i]?.text != " "{
-                cardNum +=   (CardInputs[i]?.text?.characters.count)!
-                
-            }
-        }
+    
         
         
         if field.tag == 0{// for user id
@@ -206,7 +198,16 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
                 let range = start..<end
                 field.text = field.text?.substring(with: range)
             }
-            
+            for i in 0 ... CardInputs.count - 1{
+                if CardInputs[i]?.text != " "{
+                    cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                    
+                    if (CardInputs[i]?.text?.contains(" "))!{
+                        cardNum -= 1
+                    }
+                    
+                }
+            }
             
             for i in 0 ... CardInputs.count - 1{
                 if (CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! ){
@@ -230,6 +231,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             ((self.accountTextField.text?.utf8.count)! >= 1 ){
             
             self.navigationItem.rightBarButtonItem?.isEnabled = (cardNum == 0 ) || (cardNum == BPprotocol.userCardID_maxLen )
+            print("cardNum= \(cardNum)\r\n")
             
         }else{
             self.navigationItem.rightBarButtonItem?.isEnabled = false
@@ -358,14 +360,14 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             if Config.deviceType != Config.deviceType_Keypad{
                 
                 
-            if  cardNum == 10{
+            if  (cardNum-1) == 10{
             let userCard:[UInt8] = Util.StringDecToUINT8(data: tmpCard, len: BPprotocol.userCardID_maxLen)
             
                 cmdData = Config.bpProtocol.setUserAdd(Password: userPWD, ID: userID, card:userCard)
             }else{
                  let cardData:[UInt8] = [0xFF,0xFF,0xFF,0xFF]
                 
-                cmdData = Config.bpProtocol.setUserAdd(Password: userPWD, ID: userID, card:userCard)
+                cmdData = Config.bpProtocol.setUserAdd(Password: userPWD, ID: userID, card:cardData)
             }
             
             }else{
@@ -428,6 +430,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             if ((self.passwordTextField.text?.utf8.count)! >= 4) &&
                 ((self.accountTextField.text?.utf8.count)! >= 1 ){
                 
+               print("cardNum= \(cardNum)\r\n")
                 self.navigationItem.rightBarButtonItem?.isEnabled = (cardNum == 0 ) || (cardNum == BPprotocol.userCardID_maxLen )
                 
             }else{

@@ -697,7 +697,7 @@ class HomeViewController: BLE_ViewController{
                 
                
                 vc.current_level_RSSI = GetCurrLevel(targetUUID: (selectSetDevice?.peripheral.identifier.uuidString)!)
-                
+                print("c rssi=\(vc.current_level_RSSI)\r\n")
                 navigationController?.isNavigationBarHidden = false
                 navigationController?.pushViewController(vc, animated: true)
                 return false

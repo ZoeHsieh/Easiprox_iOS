@@ -61,6 +61,7 @@ class UserSettingsTableViewController: BLE_tableViewController {
         aboutTitle.text = GetSimpleLocalizedString("About Us")
         
      
+        print("up rssi=\(current_level_RSSI)\r\n")
         
       
         
@@ -110,7 +111,7 @@ class UserSettingsTableViewController: BLE_tableViewController {
        
             
         case 1:
-            let vc = ProximityReadRangeViewController(nib: R.nib.proximityReadRangeViewController)
+            let vc = UserProximityReadRangeViewController(nib: R.nib.proximityReadRangeViewController)
             vc.selectedDevice = selectedDevice.peripheral
             vc.current_level_RSSI = current_level_RSSI
             navigationController?.pushViewController(vc, animated: true)

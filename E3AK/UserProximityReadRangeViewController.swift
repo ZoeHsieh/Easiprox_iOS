@@ -52,15 +52,12 @@ class UserProximityReadRangeViewController: UIViewController {
         title = GetSimpleLocalizedString("Proximity Read Range")
         deviceDistanceTitle.text = GetSimpleLocalizedString("Device Distance")
         proximityReadRangeTitle.text = GetSimpleLocalizedString("Proximity Read Range Settings")
-        deviceNameTitle.text = GetSimpleLocalizedString("Device Name") + ":"
-        deviceModelTitle.text = GetSimpleLocalizedString("Device Model")
-        deviceModelValue.text = "E3AK"
+      
+     
         deviceDistanceView.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)
         distanceSettingView.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)
-        deviceNameView.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)
-        deviceModelView.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)
         
-        label_DeviceName.text = selectedDevice.name
+       
         let setupRSSILevel = readExpectLevelFromDbByUUID(selectedDevice.identifier.uuidString)
         
         Label_CurrentRSSILevel.text = String(format:"%d",current_level_RSSI)

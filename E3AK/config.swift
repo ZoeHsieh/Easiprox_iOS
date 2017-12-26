@@ -76,7 +76,13 @@ class Config{
     public static var ADMINCARD:String = ""
     public static var deviceName:String = ""
     public static var deviceUUID:String = ""
-    public static var deviceType:String = ""
+    /*
+     E5AK
+     deviceType:String = Config.deviceType_Keypad_Card
+     E5AR
+     deviceType:String = Config.deviceType_Card
+     */
+    public static var deviceType:String = Config.deviceType_Keypad_Card
     public static var deviceModel:String = "E5AR"
     public static var doorSensor: UInt8?
     public static var doorLockType: UInt8?
