@@ -360,7 +360,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             if Config.deviceType != Config.deviceType_Keypad{
                 
                 
-            if  (cardNum-1) == 10{
+            if  cardNum == 10{
             let userCard:[UInt8] = Util.StringDecToUINT8(data: tmpCard, len: BPprotocol.userCardID_maxLen)
             
                 cmdData = Config.bpProtocol.setUserAdd(Password: userPWD, ID: userID, card:userCard)
