@@ -83,7 +83,7 @@ class Config{
      deviceType:String = Config.deviceType_Card
      */
     public static var deviceType:String = Config.deviceType_Keypad_Card
-    public static var deviceModel:String = "E5AR"
+    public static var deviceModel:String = "E5AKR"
     public static var doorSensor: UInt8?
     public static var doorLockType: UInt8?
     public static var doorOpenTime: UInt16?

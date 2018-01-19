@@ -98,7 +98,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             CardInputs[i]?.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
             
         }
-        CardInputs[0]?.becomeFirstResponder()
+//        CardInputs[0]?.becomeFirstResponder()
         
         
         

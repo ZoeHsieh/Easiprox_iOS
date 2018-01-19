@@ -359,7 +359,11 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate {
             
             localUserArr = Config.userListArr
         } else {
-            
+            if Config.userListArr.count == 0
+            {
+                localUserArr = Config.userListArr
+                return
+            }
             
             localUserArr  = []
             

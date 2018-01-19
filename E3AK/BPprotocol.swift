@@ -87,6 +87,8 @@ class BPprotocol{
     public static let enable_card:UInt8 = 0x01
     public static let enable_phone:UInt8 = 0x02
     public static let enable_keypad:UInt8 = 0x04
+    public static let open_fail_PD:UInt8 = 0x01 //Permission denied
+    public static let open_fail_no_eroll:UInt8 = 0x02
     
     private let openType:UInt8 = 0x02
     private let openTypeKeep:UInt8 = 0x12

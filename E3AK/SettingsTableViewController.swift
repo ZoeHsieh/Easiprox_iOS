@@ -10,13 +10,17 @@ import UIKit
 import UIAlertController_Blocks
 import CoreBluetooth
 
+protocol PassDataDelegate {
+    func setcurrentdate()
+}
+
 enum settingStatesCase:Int {
     case setting_none = 0
     case config_device = 1
     case config_deviceTime = 2
     case sensor_level = 3
 }
-class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate {
+class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,PassDataDelegate {
     
     @IBOutlet weak var usersButton: UIButton!
     @IBOutlet weak var activityHistoryButton: UIButton!
@@ -802,7 +806,8 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate 
                     
                     UI_updateDevConfig(data: data)
                     setUIVisable(enable: true)
-                
+            
+            self.setcurrentdate()
             
                 break
                 
@@ -1816,4 +1821,39 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate 
         
         
     }
+    
+    
+    
+    
+    
+    override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        print("TTTTTTTTTT")
+        self.setcurrentdate()
+    }
+    
+    
+    
+    
+    
+    func setcurrentdate(){
+        let calendar = Calendar.current
+        let dateComponents =  calendar.dateComponents([.year,.month, .day, .hour,.minute,.second], from: Date())
+        
+        SettingsTableViewController.startTimeArr[0] = dateComponents.year!
+        SettingsTableViewController.startTimeArr[1] = dateComponents.month!
+        SettingsTableViewController.startTimeArr[2] = dateComponents.day!
+        SettingsTableViewController.startTimeArr[3] = dateComponents.hour!
+        SettingsTableViewController.startTimeArr[4] = dateComponents.minute!
+        SettingsTableViewController.startTimeArr[5] = dateComponents.second!
+        
+        let timeUInt8 = Util.toUInt8date(SettingsTableViewController.startTimeArr)
+        let cmd = Config.bpProtocol.setDeviceTime(deviceTime: timeUInt8)
+        Config.bleManager.writeData(cmd: cmd, characteristic: bpChar)
+        
+        self.tmpDeviceTime = cmd
+    }
+    
+    
+    
+    
 }

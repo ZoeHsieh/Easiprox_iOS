@@ -166,4 +166,8 @@ Date = "Date";
 "Device Model" = "Modèle dispositif:";
 "APP version" = "Version APP:";
 "no_user_note" = "Pas d'usagers présents, les ajouter maintenant?";
-
+"open_fail_permission_denied" = "accès refusé – contacter l’administrateur";
+"open_fail_no_eroll" = "accès refusé - effectuer avant tout l’enregistrement";
+"open_fail_unknown" = "accès refusé";
+"eroll_fail" = "enregistrement échoué";
+"eroll_success" = "ok, vous êtes enregistrés";

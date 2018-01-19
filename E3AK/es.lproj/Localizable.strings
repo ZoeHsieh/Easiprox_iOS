@@ -166,4 +166,8 @@ Date = "Fecha";
 "Device Model" = "Modelo del dispositivo:";
 "APP version" = " Versión App:";
 "no_user_note" = "No hay usuarios, añadir ahora?";
-
+"open_fail_permission_denied" = "Acceso negado. Ponte en contacto con el Administrador";
+"open_fail_no_eroll" = "Acceso negado. Realizar antes el registro";
+"open_fail_unknown" = "Acceso negado";
+"eroll_fail" = "Registro fallido";
+"eroll_success" = "Correcto, estás registrado";

@@ -87,8 +87,12 @@ class ActivityHistoryViewController: BLE_ViewController,UISearchBarDelegate{
        
         navigationItem.rightBarButtonItem?.tintColor = HexColor("00B900")
         Config.bleManager.setPeripheralDelegate(vc_delegate: self)
-        let cmd = Config.bpProtocol.getHistoryCount()
-        Config.bleManager.writeData(cmd: cmd, characteristic: bpChar)
+        
+        if !Config.isHistoryDataOK
+        {
+            let cmd = Config.bpProtocol.getHistoryCount()
+            Config.bleManager.writeData(cmd: cmd, characteristic: bpChar)
+        }
     }
     override func viewWillAppear(_ animated: Bool) {
         print("UserAppear")
@@ -144,7 +148,7 @@ class ActivityHistoryViewController: BLE_ViewController,UISearchBarDelegate{
             case 0x31:
                 osStr = GetSimpleLocalizedString("openType_Button")
             case 0x32:
-                osStr = GetSimpleLocalizedString("card")
+                osStr = GetSimpleLocalizedString("Card")
             default:
                 
                 osStr = "unKnown"
@@ -374,7 +378,11 @@ class ActivityHistoryViewController: BLE_ViewController,UISearchBarDelegate{
             
             localHistoryArr = Config.historyListArr
         } else {
-            
+            if Config.historyListArr.count == 0
+            {
+                localHistoryArr = Config.historyListArr
+                return
+            }
             
             localHistoryArr = []
             
@@ -434,7 +442,7 @@ extension ActivityHistoryViewController: UITableViewDataSource, UITableViewDeleg
                 case 0x31:
                    osStr = GetSimpleLocalizedString("openType_Button")
                 case 0x32:
-                    osStr = GetSimpleLocalizedString("card")
+                    osStr = GetSimpleLocalizedString("Card")
                     
                 default:
                     

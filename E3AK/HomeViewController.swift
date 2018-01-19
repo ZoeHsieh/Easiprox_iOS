@@ -781,8 +781,10 @@ class HomeViewController: BLE_ViewController{
                 var isAdmin = false
                 if cmd[4] == BPprotocol.result_success {
                     isAdmin = true
+                    showToastDialog(title: "",message: GetSimpleLocalizedString("eroll_success"))
                 }else{
                     isAdmin = false
+                    showToastDialog(title: "",message: GetSimpleLocalizedString("eroll_fail"))
                 }
                 Config.saveParam.set(isAdmin, forKey:
                     (selectSetDevice?.peripheral.identifier.uuidString)!)
@@ -798,10 +800,53 @@ class HomeViewController: BLE_ViewController{
                     print("userIndex=\(userIndex)")
                     Config.saveParam.set(userIndex, forKey: (selectSetDevice?.peripheral.identifier.uuidString)! + Config.userIndexTag)
                     Config.saveParam.set(false, forKey: (selectSetDevice?.peripheral.identifier.uuidString)!)
-                    
+                    showToastDialog(title: "",message: GetSimpleLocalizedString("eroll_success"))
+                }else{
+                    showToastDialog(title: "",message: GetSimpleLocalizedString("eroll_fail"))
                 }
                 
                 break
+            case BPprotocol.cmd_admin_identify:
+                if(!isAutoMode){
+                    switch(cmd[4]){
+                        
+                        
+                    case BPprotocol.open_fail_PD:
+                        showToastDialog(title: "",message: GetSimpleLocalizedString("open_fail_permission_denied"))
+                        break
+                        
+                    case BPprotocol.open_fail_no_eroll:
+                        showToastDialog(title: "",message: GetSimpleLocalizedString("open_fail_no_eroll"))
+                        break
+                        
+                        
+                    default:
+                        print("")
+                    }
+                    
+                }
+                break
+                
+            case BPprotocol.cmd_user_identify:
+                if(!isAutoMode){
+                    switch(cmd[4]){
+                        
+                        
+                    case BPprotocol.open_fail_PD:
+                        showToastDialog(title: "",message: GetSimpleLocalizedString("open_fail_permission_denied"))
+                        break
+                        
+                    case BPprotocol.open_fail_no_eroll:
+                        showToastDialog(title: "",message: GetSimpleLocalizedString("open_fail_no_eroll"))
+                        break
+                        
+                        
+                    default:
+                        print("")
+                    }
+                }
+                break
+                
             case BPprotocol.cmd_device_config:
                 var cmdData = Data()
                 for i in 0 ... cmd.count - 5{

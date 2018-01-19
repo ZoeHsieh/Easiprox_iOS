@@ -132,7 +132,7 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
         
         let messageDailog = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        delayOnMainQueue(delay: 1, closure: {
+        delayOnMainQueue(delay: 3, closure: {
             messageDailog.dismiss(animated: true, completion: nil)
             
         })

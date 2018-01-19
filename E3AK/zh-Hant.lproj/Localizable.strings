@@ -7,9 +7,9 @@
  */
 
 "OPEN" = "OPEN";
-"DOOR CLOSED" = "DOOR CLOSED";
-"DOOR OPENED" = "DOOR OPENED";
-Welcome = "歡迎使用 E5AR";
+"DOOR CLOSED" = "LOCKED";
+"DOOR OPENED" = "UNLOCKED";
+Welcome = "歡迎使用 E5AKR";
 "Searching" = "搜尋中請稍候";
 "AUTO_ENABLE_CONFLICT" = "請先取消AUTO";
 "enroll_dialog_title" = "註冊使用者";
@@ -173,6 +173,12 @@ Date = "日期";
 "Device Model" = "裝置型號:";
 "APP version" = "APP 版本:";
 "no_user_note" = "目前沒有使用者！！";
+"open_fail_permission_denied" = "Access Denied. Please Contact Your Administrator.";
+"open_fail_no_eroll" = "Access Denied. Please Login First to Get Access.";
+"open_fail_unknown" = "Access Denied. Please Contact Your Administrator.";
+"eroll_fail" = "Login Failed. Please Verify Your Login Information Or Contact Your Administrator.";
+"eroll_success" = "You Have Successfully Logged In. You May Now Unlock A Door.";
+
 "Level 1" = "等級1";
 "Level 2" = "等級2";
 "Level 3" = "等級3";

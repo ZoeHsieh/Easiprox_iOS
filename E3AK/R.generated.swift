@@ -666,7 +666,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This `R.string.localizable` struct is generated, and contains static references to 152 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 157 localization keys.
     struct localizable {
       /// Base translation:  Event List
       /// 
@@ -676,10 +676,6 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let settings_users_manage_list = Rswift.StringResource(key: "settings_users_manage_list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: 4~8 digits
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let digits = Rswift.StringResource(key: "4~8 digits", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: APP version:
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -688,6 +684,18 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let aboutUs = Rswift.StringResource(key: "About Us", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Access Denied. Please Contact Your Administrator.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let open_fail_permission_denied = Rswift.StringResource(key: "open_fail_permission_denied", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Access Denied. Please Contact Your Administrator.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let open_fail_unknown = Rswift.StringResource(key: "open_fail_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Access Denied. Please Login First to Get Access.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let open_fail_no_eroll = Rswift.StringResource(key: "open_fail_no_eroll", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Access Types
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -708,11 +716,11 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let addMore = Rswift.StringResource(key: "Add more", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Admin Card
+      /// Base translation: Admin Card/Fob
       /// 
       /// Locales: zh-Hant, Base
       static let settings_Admin_card = Rswift.StringResource(key: "settings_Admin_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Admin Password
+      /// Base translation: Admin Passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let settings_Admin_pwd = Rswift.StringResource(key: "settings_Admin_pwd", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
@@ -732,6 +740,18 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let auto = Rswift.StringResource(key: "Auto", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Auto Proximity Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let pleaseSettingProximityReadRange = Rswift.StringResource(key: "Please Setting Proximity Read Range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Auto Proximity Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let proximityReadRange = Rswift.StringResource(key: "Proximity Read Range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Auto Proximity Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let proximityReadRangeSettings = Rswift.StringResource(key: "Proximity Read Range Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Automatic Setting
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -780,15 +800,15 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Card
+      /// Base translation: Card/Fob
       /// 
       /// Locales: zh-Hant, Base
       static let card = Rswift.StringResource(key: "Card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Card Access
+      /// Base translation: Card/Fob Access
       /// 
       /// Locales: zh-Hant, Base
       static let cardAccess = Rswift.StringResource(key: "Card Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Card Duplication!!
+      /// Base translation: Card/Fob Duplication!!
       /// 
       /// Locales: zh-Hant, Base
       static let users_manage_edit_status_duplication_card = Rswift.StringResource(key: "users_manage_edit_status_duplication_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
@@ -800,14 +820,6 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let users_edit_access_control_dialog_type_times_mark = Rswift.StringResource(key: "users_edit_access_control_dialog_type_times_mark", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: DOOR CLOSED
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let dOORCLOSED = Rswift.StringResource(key: "DOOR CLOSED", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: DOOR OPENED
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let dOOROPENED = Rswift.StringResource(key: "DOOR OPENED", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Date
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -864,15 +876,15 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let download_dialog_title = Rswift.StringResource(key: "download_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Edit Admin Card
+      /// Base translation: Edit Admin Card/Fob
       /// 
       /// Locales: zh-Hant, Base
       static let settings_Admin_card_Edit = Rswift.StringResource(key: "settings_Admin_card_Edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Edit Admin Password
+      /// Base translation: Edit Admin Passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let settings_Admin_pwd_Edit = Rswift.StringResource(key: "settings_Admin_pwd_Edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Edit Card: (10 digits)
+      /// Base translation: Edit Card/Fob: (10 digits)
       /// 
       /// Locales: zh-Hant, Base
       static let users_card_edit_dialog_title = Rswift.StringResource(key: "users_card_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
@@ -888,7 +900,7 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let users_id_edit_dialog_title = Rswift.StringResource(key: "users_id_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Edit Password: (4~8 digits)
+      /// Base translation: Edit Passcode: (4~8 digits)
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let users_pwd_edit_dialog_title = Rswift.StringResource(key: "users_pwd_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
@@ -900,14 +912,6 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let end = Rswift.StringResource(key: "End", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Enroll
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let enroll = Rswift.StringResource(key: "Enroll", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Enroll User:
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let enroll_dialog_title = Rswift.StringResource(key: "enroll_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Every Friday
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -968,15 +972,19 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let users_manage_edit_status_duplication_name = Rswift.StringResource(key: "users_manage_edit_status_duplication_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: If you forgot your ID or password, please contact your administrator.
+      /// Base translation: ID: Up to 16 characters
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let pleaseProvideUpTo16Characters = Rswift.StringResource(key: "Please Provide Up to 16 characters", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: If you forgot your ID or passcode, please contact your administrator.
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let ifYouForgotYourIDOrPasswordPleaseContactYourAdministrator = Rswift.StringResource(key: "If you forgot your ID or password, please contact your administrator.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Incorrect password. Please try again
+      /// Base translation: Incorrect passcode. Please try again
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let incorrectPasswordPleaseTryAgain = Rswift.StringResource(key: "Incorrect password. Please try again", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Invalid Card!!
+      /// Base translation: Invalid Card/Fob!!
       /// 
       /// Locales: Base
       static let users_manage_edit_status_Admin_card = Rswift.StringResource(key: "users_manage_edit_status_Admin_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
@@ -984,7 +992,7 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let users_manage_edit_status_Admin_name = Rswift.StringResource(key: "users_manage_edit_status_Admin_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Invalid Password!!
+      /// Base translation: Invalid Passcode!!
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let users_manage_edit_status_Admin_pwd = Rswift.StringResource(key: "users_manage_edit_status_Admin_pwd", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
@@ -996,6 +1004,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let keypadAccess = Rswift.StringResource(key: "Keypad Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: LOCKED
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let dOORCLOSED = Rswift.StringResource(key: "DOOR CLOSED", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Level 1
       /// 
       /// Locales: zh-Hant, Base
@@ -1016,6 +1028,18 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let doorLockAction = Rswift.StringResource(key: "Door Lock Action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Login
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let enroll = Rswift.StringResource(key: "Enroll", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Login Failed. Please Verify Your Login Information Or Contact Your Administrator.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let eroll_fail = Rswift.StringResource(key: "eroll_fail", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Login:
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let enroll_dialog_title = Rswift.StringResource(key: "enroll_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Next
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1036,22 +1060,26 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base
       static let over_range_alarm = Rswift.StringResource(key: "over_range_alarm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Password
+      /// Base translation: Passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let password = Rswift.StringResource(key: "Password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Password Duplication!!
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_manage_edit_status_duplication_password = Rswift.StringResource(key: "users_manage_edit_status_duplication_password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Password/PIN Code
+      /// Base translation: Passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let passwordPINCode = Rswift.StringResource(key: "Password/PIN Code", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Password/PIN Code (4~8 Digits)
+      /// Base translation: Passcode (4~8 Digits)
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let passwordPINCode48Digits = Rswift.StringResource(key: "Password/PIN Code (4~8 Digits)", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Passcode Duplication!!
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let users_manage_edit_status_duplication_password = Rswift.StringResource(key: "users_manage_edit_status_duplication_password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: Passcode: 4~8 digits
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let digits = Rswift.StringResource(key: "4~8 digits", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Permanent
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1080,7 +1108,7 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let pleaseEnterAccessTimes = Rswift.StringResource(key: "Please enter access times", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Please enter password
+      /// Base translation: Please enter passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let pleaseEnterPassword = Rswift.StringResource(key: "Please enter password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
@@ -1096,22 +1124,6 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let pleaseWaitAMoment = Rswift.StringResource(key: "Please wait a moment…", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Proximity Read Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseSettingProximityReadRange = Rswift.StringResource(key: "Please Setting Proximity Read Range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Proximity Read Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let proximityReadRange = Rswift.StringResource(key: "Proximity Read Range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Proximity Read Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let proximityReadRangeSettings = Rswift.StringResource(key: "Proximity Read Range Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Recurring
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let recurrent = Rswift.StringResource(key: "Recurrent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Repeat
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1152,10 +1164,10 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let restoring = Rswift.StringResource(key: "Restoring…", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Schedule
+      /// Base translation: Scheduled
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let schedule = Rswift.StringResource(key: "Schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      static let recurrent = Rswift.StringResource(key: "Recurrent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Search
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1188,7 +1200,7 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let users_manage_edit_status_busy = Rswift.StringResource(key: "users_manage_edit_status_busy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Tamper Sensor
+      /// Base translation: Tamper Alarm
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let tamperSensor = Rswift.StringResource(key: "Tamper Sensor", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
@@ -1196,11 +1208,15 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base
       static let tamperSensorLevel = Rswift.StringResource(key: "Tamper Sensor Level", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: There's no users!!
+      /// Base translation: Temporary
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let schedule = Rswift.StringResource(key: "Schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: There's no user. Tap "Add" to add new users.
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let no_user_note = Rswift.StringResource(key: "no_user_note", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: There's no users, add now?
+      /// Base translation: There's no user. Tap "Add" to add new users.
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let thereSNoUsersAddNow = Rswift.StringResource(key: "There's no users, add now?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
@@ -1208,14 +1224,14 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let timeIn = Rswift.StringResource(key: "Time in", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: UNLOCKED
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static let dOOROPENED = Rswift.StringResource(key: "DOOR OPENED", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Unlocked By
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let lockAction = Rswift.StringResource(key: "Lock Action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Up to 16 characters
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseProvideUpTo16Characters = Rswift.StringResource(key: "Please Provide Up to 16 characters", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
       /// Base translation: Up to 16 characters
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1232,10 +1248,14 @@ struct R: Rswift.Validatable {
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static let welcome = Rswift.StringResource(key: "Welcome", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: You can find default password from the manual. Please change your Admin password for security control.
+      /// Base translation: You Have Successfully Logged In. You May Now Unlock A Door.
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let youCanFindDefaultPasswordFromTheManualPleaseChangeYourAdminPasswordForSecurityControl = Rswift.StringResource(key: "You can find default password from the manual. Please change your Admin password for security control.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      static let eroll_success = Rswift.StringResource(key: "eroll_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Base translation: You can find default passcode from the manual. Please change your Admin passcode for security control.
+      /// 
+      /// Locales: Base
+      static let youCanFindDefaultPasscodeFromTheManualPleaseChangeYourAdminPasscodeForSecurityControl = Rswift.StringResource(key: "You can find default passcode from the manual. Please change your Admin passcode for security control.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
       /// Base translation: You must connect to a Bluetooth device to set up
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1291,13 +1311,6 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("settings_users_manage_list", bundle: R.hostingBundle, value: " Users List", comment: "")
       }
       
-      /// Base translation: 4~8 digits
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func digits(_: Void = ()) -> String {
-        return NSLocalizedString("4~8 digits", bundle: R.hostingBundle, value: "4~8 digits", comment: "")
-      }
-      
       /// Base translation: APP version:
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1310,6 +1323,27 @@ struct R: Rswift.Validatable {
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func aboutUs(_: Void = ()) -> String {
         return NSLocalizedString("About Us", bundle: R.hostingBundle, value: "About Us", comment: "")
+      }
+      
+      /// Base translation: Access Denied. Please Contact Your Administrator.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func open_fail_permission_denied(_: Void = ()) -> String {
+        return NSLocalizedString("open_fail_permission_denied", bundle: R.hostingBundle, value: "Access Denied. Please Contact Your Administrator.", comment: "")
+      }
+      
+      /// Base translation: Access Denied. Please Contact Your Administrator.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func open_fail_unknown(_: Void = ()) -> String {
+        return NSLocalizedString("open_fail_unknown", bundle: R.hostingBundle, value: "Access Denied. Please Contact Your Administrator.", comment: "")
+      }
+      
+      /// Base translation: Access Denied. Please Login First to Get Access.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func open_fail_no_eroll(_: Void = ()) -> String {
+        return NSLocalizedString("open_fail_no_eroll", bundle: R.hostingBundle, value: "Access Denied. Please Login First to Get Access.", comment: "")
       }
       
       /// Base translation: Access Types
@@ -1347,18 +1381,18 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Add more", bundle: R.hostingBundle, value: "Add more", comment: "")
       }
       
-      /// Base translation: Admin Card
+      /// Base translation: Admin Card/Fob
       /// 
       /// Locales: zh-Hant, Base
       static func settings_Admin_card(_: Void = ()) -> String {
-        return NSLocalizedString("settings_Admin_card", bundle: R.hostingBundle, value: "Admin Card", comment: "")
+        return NSLocalizedString("settings_Admin_card", bundle: R.hostingBundle, value: "Admin Card/Fob", comment: "")
       }
       
-      /// Base translation: Admin Password
+      /// Base translation: Admin Passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func settings_Admin_pwd(_: Void = ()) -> String {
-        return NSLocalizedString("settings_Admin_pwd", bundle: R.hostingBundle, value: "Admin Password", comment: "")
+        return NSLocalizedString("settings_Admin_pwd", bundle: R.hostingBundle, value: "Admin Passcode", comment: "")
       }
       
       /// Base translation: Alarm
@@ -1387,6 +1421,27 @@ struct R: Rswift.Validatable {
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func auto(_: Void = ()) -> String {
         return NSLocalizedString("Auto", bundle: R.hostingBundle, value: "Auto", comment: "")
+      }
+      
+      /// Base translation: Auto Proximity Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func pleaseSettingProximityReadRange(_: Void = ()) -> String {
+        return NSLocalizedString("Please Setting Proximity Read Range", bundle: R.hostingBundle, value: "Auto Proximity Range", comment: "")
+      }
+      
+      /// Base translation: Auto Proximity Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func proximityReadRange(_: Void = ()) -> String {
+        return NSLocalizedString("Proximity Read Range", bundle: R.hostingBundle, value: "Auto Proximity Range", comment: "")
+      }
+      
+      /// Base translation: Auto Proximity Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func proximityReadRangeSettings(_: Void = ()) -> String {
+        return NSLocalizedString("Proximity Read Range Settings", bundle: R.hostingBundle, value: "Auto Proximity Range", comment: "")
       }
       
       /// Base translation: Automatic Setting
@@ -1473,25 +1528,25 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Cancel", bundle: R.hostingBundle, value: "Cancel", comment: "")
       }
       
-      /// Base translation: Card
+      /// Base translation: Card/Fob
       /// 
       /// Locales: zh-Hant, Base
       static func card(_: Void = ()) -> String {
-        return NSLocalizedString("Card", bundle: R.hostingBundle, value: "Card", comment: "")
+        return NSLocalizedString("Card", bundle: R.hostingBundle, value: "Card/Fob", comment: "")
       }
       
-      /// Base translation: Card Access
+      /// Base translation: Card/Fob Access
       /// 
       /// Locales: zh-Hant, Base
       static func cardAccess(_: Void = ()) -> String {
-        return NSLocalizedString("Card Access", bundle: R.hostingBundle, value: "Card Access", comment: "")
+        return NSLocalizedString("Card Access", bundle: R.hostingBundle, value: "Card/Fob Access", comment: "")
       }
       
-      /// Base translation: Card Duplication!!
+      /// Base translation: Card/Fob Duplication!!
       /// 
       /// Locales: zh-Hant, Base
       static func users_manage_edit_status_duplication_card(_: Void = ()) -> String {
-        return NSLocalizedString("users_manage_edit_status_duplication_card", bundle: R.hostingBundle, value: "Card Duplication!!", comment: "")
+        return NSLocalizedString("users_manage_edit_status_duplication_card", bundle: R.hostingBundle, value: "Card/Fob Duplication!!", comment: "")
       }
       
       /// Base translation: Confirm
@@ -1506,20 +1561,6 @@ struct R: Rswift.Validatable {
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func users_edit_access_control_dialog_type_times_mark(_: Void = ()) -> String {
         return NSLocalizedString("users_edit_access_control_dialog_type_times_mark", bundle: R.hostingBundle, value: "Current number of times:", comment: "")
-      }
-      
-      /// Base translation: DOOR CLOSED
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func dOORCLOSED(_: Void = ()) -> String {
-        return NSLocalizedString("DOOR CLOSED", bundle: R.hostingBundle, value: "DOOR CLOSED", comment: "")
-      }
-      
-      /// Base translation: DOOR OPENED
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func dOOROPENED(_: Void = ()) -> String {
-        return NSLocalizedString("DOOR OPENED", bundle: R.hostingBundle, value: "DOOR OPENED", comment: "")
       }
       
       /// Base translation: Date
@@ -1620,25 +1661,25 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("download_dialog_title", bundle: R.hostingBundle, value: "Download", comment: "")
       }
       
-      /// Base translation: Edit Admin Card
+      /// Base translation: Edit Admin Card/Fob
       /// 
       /// Locales: zh-Hant, Base
       static func settings_Admin_card_Edit(_: Void = ()) -> String {
-        return NSLocalizedString("settings_Admin_card_Edit", bundle: R.hostingBundle, value: "Edit Admin Card", comment: "")
+        return NSLocalizedString("settings_Admin_card_Edit", bundle: R.hostingBundle, value: "Edit Admin Card/Fob", comment: "")
       }
       
-      /// Base translation: Edit Admin Password
+      /// Base translation: Edit Admin Passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func settings_Admin_pwd_Edit(_: Void = ()) -> String {
-        return NSLocalizedString("settings_Admin_pwd_Edit", bundle: R.hostingBundle, value: "Edit Admin Password", comment: "")
+        return NSLocalizedString("settings_Admin_pwd_Edit", bundle: R.hostingBundle, value: "Edit Admin Passcode", comment: "")
       }
       
-      /// Base translation: Edit Card: (10 digits)
+      /// Base translation: Edit Card/Fob: (10 digits)
       /// 
       /// Locales: zh-Hant, Base
       static func users_card_edit_dialog_title(_: Void = ()) -> String {
-        return NSLocalizedString("users_card_edit_dialog_title", bundle: R.hostingBundle, value: "Edit Card: (10 digits)", comment: "")
+        return NSLocalizedString("users_card_edit_dialog_title", bundle: R.hostingBundle, value: "Edit Card/Fob: (10 digits)", comment: "")
       }
       
       /// Base translation: Edit Device Name
@@ -1662,11 +1703,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("users_id_edit_dialog_title", bundle: R.hostingBundle, value: "Edit ID: (16 characters)", comment: "")
       }
       
-      /// Base translation: Edit Password: (4~8 digits)
+      /// Base translation: Edit Passcode: (4~8 digits)
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func users_pwd_edit_dialog_title(_: Void = ()) -> String {
-        return NSLocalizedString("users_pwd_edit_dialog_title", bundle: R.hostingBundle, value: "Edit Password: (4~8 digits)", comment: "")
+        return NSLocalizedString("users_pwd_edit_dialog_title", bundle: R.hostingBundle, value: "Edit Passcode: (4~8 digits)", comment: "")
       }
       
       /// Base translation: Enable Keypad PIN Code to Access
@@ -1681,20 +1722,6 @@ struct R: Rswift.Validatable {
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func end(_: Void = ()) -> String {
         return NSLocalizedString("End", bundle: R.hostingBundle, value: "End Time", comment: "")
-      }
-      
-      /// Base translation: Enroll
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func enroll(_: Void = ()) -> String {
-        return NSLocalizedString("Enroll", bundle: R.hostingBundle, value: "Enroll", comment: "")
-      }
-      
-      /// Base translation: Enroll User:
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func enroll_dialog_title(_: Void = ()) -> String {
-        return NSLocalizedString("enroll_dialog_title", bundle: R.hostingBundle, value: "Enroll User:", comment: "")
       }
       
       /// Base translation: Every Friday
@@ -1802,25 +1829,32 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("users_manage_edit_status_duplication_name", bundle: R.hostingBundle, value: "ID Duplication!!", comment: "")
       }
       
-      /// Base translation: If you forgot your ID or password, please contact your administrator.
+      /// Base translation: ID: Up to 16 characters
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func pleaseProvideUpTo16Characters(_: Void = ()) -> String {
+        return NSLocalizedString("Please Provide Up to 16 characters", bundle: R.hostingBundle, value: "ID: Up to 16 characters", comment: "")
+      }
+      
+      /// Base translation: If you forgot your ID or passcode, please contact your administrator.
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func ifYouForgotYourIDOrPasswordPleaseContactYourAdministrator(_: Void = ()) -> String {
-        return NSLocalizedString("If you forgot your ID or password, please contact your administrator.", bundle: R.hostingBundle, value: "If you forgot your ID or password, please contact your administrator.", comment: "")
+        return NSLocalizedString("If you forgot your ID or password, please contact your administrator.", bundle: R.hostingBundle, value: "If you forgot your ID or passcode, please contact your administrator.", comment: "")
       }
       
-      /// Base translation: Incorrect password. Please try again
+      /// Base translation: Incorrect passcode. Please try again
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func incorrectPasswordPleaseTryAgain(_: Void = ()) -> String {
-        return NSLocalizedString("Incorrect password. Please try again", bundle: R.hostingBundle, value: "Incorrect password. Please try again", comment: "")
+        return NSLocalizedString("Incorrect password. Please try again", bundle: R.hostingBundle, value: "Incorrect passcode. Please try again", comment: "")
       }
       
-      /// Base translation: Invalid Card!!
+      /// Base translation: Invalid Card/Fob!!
       /// 
       /// Locales: Base
       static func users_manage_edit_status_Admin_card(_: Void = ()) -> String {
-        return NSLocalizedString("users_manage_edit_status_Admin_card", bundle: R.hostingBundle, value: "Invalid Card!!", comment: "")
+        return NSLocalizedString("users_manage_edit_status_Admin_card", bundle: R.hostingBundle, value: "Invalid Card/Fob!!", comment: "")
       }
       
       /// Base translation: Invalid ID !!
@@ -1830,11 +1864,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("users_manage_edit_status_Admin_name", bundle: R.hostingBundle, value: "Invalid ID !!", comment: "")
       }
       
-      /// Base translation: Invalid Password!!
+      /// Base translation: Invalid Passcode!!
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func users_manage_edit_status_Admin_pwd(_: Void = ()) -> String {
-        return NSLocalizedString("users_manage_edit_status_Admin_pwd", bundle: R.hostingBundle, value: "Invalid Password!!", comment: "")
+        return NSLocalizedString("users_manage_edit_status_Admin_pwd", bundle: R.hostingBundle, value: "Invalid Passcode!!", comment: "")
       }
       
       /// Base translation: Keypad
@@ -1849,6 +1883,13 @@ struct R: Rswift.Validatable {
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func keypadAccess(_: Void = ()) -> String {
         return NSLocalizedString("Keypad Access", bundle: R.hostingBundle, value: "Keypad Access", comment: "")
+      }
+      
+      /// Base translation: LOCKED
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func dOORCLOSED(_: Void = ()) -> String {
+        return NSLocalizedString("DOOR CLOSED", bundle: R.hostingBundle, value: "LOCKED", comment: "")
       }
       
       /// Base translation: Level 1
@@ -1886,6 +1927,27 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Door Lock Action", bundle: R.hostingBundle, value: "Lock Action", comment: "")
       }
       
+      /// Base translation: Login
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func enroll(_: Void = ()) -> String {
+        return NSLocalizedString("Enroll", bundle: R.hostingBundle, value: "Login", comment: "")
+      }
+      
+      /// Base translation: Login Failed. Please Verify Your Login Information Or Contact Your Administrator.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func eroll_fail(_: Void = ()) -> String {
+        return NSLocalizedString("eroll_fail", bundle: R.hostingBundle, value: "Login Failed. Please Verify Your Login Information Or Contact Your Administrator.", comment: "")
+      }
+      
+      /// Base translation: Login:
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func enroll_dialog_title(_: Void = ()) -> String {
+        return NSLocalizedString("enroll_dialog_title", bundle: R.hostingBundle, value: "Login:", comment: "")
+      }
+      
       /// Base translation: Next
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
@@ -1921,32 +1983,39 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("over_range_alarm", bundle: R.hostingBundle, value: "Over range", comment: "")
       }
       
-      /// Base translation: Password
+      /// Base translation: Passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func password(_: Void = ()) -> String {
-        return NSLocalizedString("Password", bundle: R.hostingBundle, value: "Password", comment: "")
+        return NSLocalizedString("Password", bundle: R.hostingBundle, value: "Passcode", comment: "")
       }
       
-      /// Base translation: Password Duplication!!
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func users_manage_edit_status_duplication_password(_: Void = ()) -> String {
-        return NSLocalizedString("users_manage_edit_status_duplication_password", bundle: R.hostingBundle, value: "Password Duplication!!", comment: "")
-      }
-      
-      /// Base translation: Password/PIN Code
+      /// Base translation: Passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func passwordPINCode(_: Void = ()) -> String {
-        return NSLocalizedString("Password/PIN Code", bundle: R.hostingBundle, value: "Password/PIN Code", comment: "")
+        return NSLocalizedString("Password/PIN Code", bundle: R.hostingBundle, value: "Passcode", comment: "")
       }
       
-      /// Base translation: Password/PIN Code (4~8 Digits)
+      /// Base translation: Passcode (4~8 Digits)
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func passwordPINCode48Digits(_: Void = ()) -> String {
-        return NSLocalizedString("Password/PIN Code (4~8 Digits)", bundle: R.hostingBundle, value: "Password/PIN Code (4~8 Digits)", comment: "")
+        return NSLocalizedString("Password/PIN Code (4~8 Digits)", bundle: R.hostingBundle, value: "Passcode (4~8 Digits)", comment: "")
+      }
+      
+      /// Base translation: Passcode Duplication!!
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func users_manage_edit_status_duplication_password(_: Void = ()) -> String {
+        return NSLocalizedString("users_manage_edit_status_duplication_password", bundle: R.hostingBundle, value: "Passcode Duplication!!", comment: "")
+      }
+      
+      /// Base translation: Passcode: 4~8 digits
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func digits(_: Void = ()) -> String {
+        return NSLocalizedString("4~8 digits", bundle: R.hostingBundle, value: "Passcode: 4~8 digits", comment: "")
       }
       
       /// Base translation: Permanent
@@ -1998,11 +2067,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Please enter access times", bundle: R.hostingBundle, value: "Please enter Number of Times (0~255)", comment: "")
       }
       
-      /// Base translation: Please enter password
+      /// Base translation: Please enter passcode
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func pleaseEnterPassword(_: Void = ()) -> String {
-        return NSLocalizedString("Please enter password", bundle: R.hostingBundle, value: "Please enter password", comment: "")
+        return NSLocalizedString("Please enter password", bundle: R.hostingBundle, value: "Please enter passcode", comment: "")
       }
       
       /// Base translation: Please enter the number of seconds
@@ -2024,34 +2093,6 @@ struct R: Rswift.Validatable {
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func pleaseWaitAMoment(_: Void = ()) -> String {
         return NSLocalizedString("Please wait a moment…", bundle: R.hostingBundle, value: "Please wait a moment…", comment: "")
-      }
-      
-      /// Base translation: Proximity Read Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func pleaseSettingProximityReadRange(_: Void = ()) -> String {
-        return NSLocalizedString("Please Setting Proximity Read Range", bundle: R.hostingBundle, value: "Proximity Read Range", comment: "")
-      }
-      
-      /// Base translation: Proximity Read Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func proximityReadRange(_: Void = ()) -> String {
-        return NSLocalizedString("Proximity Read Range", bundle: R.hostingBundle, value: "Proximity Read Range", comment: "")
-      }
-      
-      /// Base translation: Proximity Read Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func proximityReadRangeSettings(_: Void = ()) -> String {
-        return NSLocalizedString("Proximity Read Range Settings", bundle: R.hostingBundle, value: "Proximity Read Range", comment: "")
-      }
-      
-      /// Base translation: Recurring
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func recurrent(_: Void = ()) -> String {
-        return NSLocalizedString("Recurrent", bundle: R.hostingBundle, value: "Recurring", comment: "")
       }
       
       /// Base translation: Repeat
@@ -2124,11 +2165,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Restoring…", bundle: R.hostingBundle, value: "Restoring…", comment: "")
       }
       
-      /// Base translation: Schedule
+      /// Base translation: Scheduled
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func schedule(_: Void = ()) -> String {
-        return NSLocalizedString("Schedule", bundle: R.hostingBundle, value: "Schedule", comment: "")
+      static func recurrent(_: Void = ()) -> String {
+        return NSLocalizedString("Recurrent", bundle: R.hostingBundle, value: "Scheduled", comment: "")
       }
       
       /// Base translation: Search
@@ -2187,11 +2228,11 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("users_manage_edit_status_busy", bundle: R.hostingBundle, value: "System busy!!", comment: "")
       }
       
-      /// Base translation: Tamper Sensor
+      /// Base translation: Tamper Alarm
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func tamperSensor(_: Void = ()) -> String {
-        return NSLocalizedString("Tamper Sensor", bundle: R.hostingBundle, value: "Tamper Sensor", comment: "")
+        return NSLocalizedString("Tamper Sensor", bundle: R.hostingBundle, value: "Tamper Alarm", comment: "")
       }
       
       /// Base translation: Tamper Sensor Level
@@ -2201,18 +2242,25 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Tamper Sensor Level", bundle: R.hostingBundle, value: "Tamper Sensor Level", comment: "")
       }
       
-      /// Base translation: There's no users!!
+      /// Base translation: Temporary
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func schedule(_: Void = ()) -> String {
+        return NSLocalizedString("Schedule", bundle: R.hostingBundle, value: "Temporary", comment: "")
+      }
+      
+      /// Base translation: There's no user. Tap "Add" to add new users.
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func no_user_note(_: Void = ()) -> String {
-        return NSLocalizedString("no_user_note", bundle: R.hostingBundle, value: "There's no users!!", comment: "")
+        return NSLocalizedString("no_user_note", bundle: R.hostingBundle, value: "There's no user. Tap \"Add\" to add new users.", comment: "")
       }
       
-      /// Base translation: There's no users, add now?
+      /// Base translation: There's no user. Tap "Add" to add new users.
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func thereSNoUsersAddNow(_: Void = ()) -> String {
-        return NSLocalizedString("There's no users, add now?", bundle: R.hostingBundle, value: "There's no users, add now?", comment: "")
+        return NSLocalizedString("There's no users, add now?", bundle: R.hostingBundle, value: "There's no user. Tap \"Add\" to add new users.", comment: "")
       }
       
       /// Base translation: Time
@@ -2222,18 +2270,18 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Time in", bundle: R.hostingBundle, value: "Time", comment: "")
       }
       
+      /// Base translation: UNLOCKED
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja
+      static func dOOROPENED(_: Void = ()) -> String {
+        return NSLocalizedString("DOOR OPENED", bundle: R.hostingBundle, value: "UNLOCKED", comment: "")
+      }
+      
       /// Base translation: Unlocked By
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
       static func lockAction(_: Void = ()) -> String {
         return NSLocalizedString("Lock Action", bundle: R.hostingBundle, value: "Unlocked By", comment: "")
-      }
-      
-      /// Base translation: Up to 16 characters
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func pleaseProvideUpTo16Characters(_: Void = ()) -> String {
-        return NSLocalizedString("Please Provide Up to 16 characters", bundle: R.hostingBundle, value: "Up to 16 characters", comment: "")
       }
       
       /// Base translation: Up to 16 characters
@@ -2264,11 +2312,18 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("Welcome", bundle: R.hostingBundle, value: "Welcome", comment: "")
       }
       
-      /// Base translation: You can find default password from the manual. Please change your Admin password for security control.
+      /// Base translation: You Have Successfully Logged In. You May Now Unlock A Door.
       /// 
       /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func youCanFindDefaultPasswordFromTheManualPleaseChangeYourAdminPasswordForSecurityControl(_: Void = ()) -> String {
-        return NSLocalizedString("You can find default password from the manual. Please change your Admin password for security control.", bundle: R.hostingBundle, value: "You can find default password from the manual. Please change your Admin password for security control.", comment: "")
+      static func eroll_success(_: Void = ()) -> String {
+        return NSLocalizedString("eroll_success", bundle: R.hostingBundle, value: "You Have Successfully Logged In. You May Now Unlock A Door.", comment: "")
+      }
+      
+      /// Base translation: You can find default passcode from the manual. Please change your Admin passcode for security control.
+      /// 
+      /// Locales: Base
+      static func youCanFindDefaultPasscodeFromTheManualPleaseChangeYourAdminPasscodeForSecurityControl(_: Void = ()) -> String {
+        return NSLocalizedString("You can find default passcode from the manual. Please change your Admin passcode for security control.", bundle: R.hostingBundle, value: "You can find default passcode from the manual. Please change your Admin passcode for security control.", comment: "")
       }
       
       /// Base translation: You must connect to a Bluetooth device to set up
