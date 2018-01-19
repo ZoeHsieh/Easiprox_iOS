@@ -22,7 +22,7 @@ class AboutUsViewController: BLE_ViewController {
         super.viewDidLoad()
 
         title = GetSimpleLocalizedString("About Us")
-        DeviceModelTitle.text = GetSimpleLocalizedString("Device Model") + Config.deviceModel
+        DeviceModelTitle.text = GetSimpleLocalizedString("Device Model") + deviceModel
         let version : String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         //DeviceModelValue.text = "E3AK"//deviceModel
         appversionButton.setTitle(GetSimpleLocalizedString("APP version") + version, for: .normal)

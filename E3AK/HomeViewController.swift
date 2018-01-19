@@ -228,6 +228,61 @@ class HomeViewController: BLE_ViewController{
     }
 
     public override func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        
+        guard let rawData = advertisementData["kCBAdvDataManufacturerData"] as? Data
+            
+            else{
+                return
+        }
+        
+        if rawData.count > 0{
+            let len:Int = (rawData.count)
+            for i in 0 ... len - 1 {
+                print(String(format:"raw[%d]=%02x\r\n",i,rawData[i]))
+            }
+            
+        }
+        //To check legal device by custom ID.
+        let customID:UInt16 = (UInt16(rawData[0]) << 8) | UInt16(rawData[1] & 0x00FF)
+        let deviceModel:UInt16 = (UInt16(rawData[2]) << 8) | UInt16(rawData[3] & 0x00FF)
+        let deviceCategory:UInt8 = rawData[4]
+        let deviceColor:UInt16 = (UInt16(rawData[5]) << 8) | UInt16(rawData[6] & 0x00FF)
+        let devicerReserved:UInt8 = rawData[7]
+        
+        //print("customID =\(AdvertisingData.CUSTOM_IDs[customID]!)\r\n")
+        //print("customID APP=\(Config.CustomID)\r\n")
+        guard let customStr = AdvertisingData.CUSTOM_IDs[customID] as? String
+            else{
+                return
+        }
+        
+        guard let deviceModelStr = AdvertisingData.dev_Model[deviceModel] as? String
+            else{
+                return
+        }
+        if !deviceModelStr.contains(Config.deviceSeries){
+            return
+            
+        }
+        
+        guard let deviceColorStr = AdvertisingData.dev_Color[deviceColor] as? String
+            else{
+                return
+        }
+        
+        guard let deviceCategoryStr = AdvertisingData.dev_Category[deviceCategory] as? String
+            else{
+                return
+        }
+        
+        
+        if Config.CustomID !=  customStr{
+            
+            return
+        }
+        
+        
+        
         guard let name: String = advertisementData["kCBAdvDataLocalName"] as? String
             
             else{
@@ -242,7 +297,8 @@ class HomeViewController: BLE_ViewController{
         
         if((RSSI.intValue <= 0) && (RSSI.intValue >= Config.BLE_RSSI_MIN)) {
             
-            var tmp: DeviceInfo = DeviceInfo(UUID: uuid, name: name, peripheral: peripheral, rssi: RSSI.intValue, current_level: Convert_RSSI_to_LEVEL(RSSI.intValue), expect_level: 0, alive: 18)
+            var tmp: DeviceInfo = DeviceInfo(UUID: uuid, name: name, peripheral: peripheral, model: deviceModelStr, color: deviceColorStr, customID: customStr, Category: deviceCategoryStr, reserved: devicerReserved, rssi: RSSI.intValue, current_level: Convert_RSSI_to_LEVEL(RSSI.intValue), expect_level: 0, alive: 18)
+            
             if selectSetDevice == nil && forceDevice == nil{
                selectSetDevice = tmp
                forceDevice = selectSetDevice
@@ -654,7 +710,8 @@ class HomeViewController: BLE_ViewController{
             ///let vc = nvc.topViewController as! Intro_PasswordViewController
           
             nvc.selectedDevice = selectSetDevice?.peripheral
-            
+            nvc.selectedModel = selectSetDevice?.model
+            Config.devCategory = (selectSetDevice?.Category)!
             }
         
     }

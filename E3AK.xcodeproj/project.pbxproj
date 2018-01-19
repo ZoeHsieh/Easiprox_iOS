@@ -24,6 +24,7 @@
 		749699E01F0A149A004F4DA3 /* BLE_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 749699DF1F0A149A004F4DA3 /* BLE_ViewController.swift */; };
 		74B02A6B1FA1AA70000E0E23 /* UsersTableViewCell_Keypad.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B02A691FA1AA6F000E0E23 /* UsersTableViewCell_Keypad.swift */; };
 		74B02A6C1FA1AA70000E0E23 /* UsersTableViewCell_Keypad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74B02A6A1FA1AA70000E0E23 /* UsersTableViewCell_Keypad.xib */; };
+		74B7B2C12011D5EF008AAAF8 /* AdvertisingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74B7B2C02011D5EF008AAAF8 /* AdvertisingData.swift */; };
 		74BA39FA1F1461850027E195 /* UserProximityReadRangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74BA39F91F1461850027E195 /* UserProximityReadRangeViewController.xib */; };
 		74E9B4AA1F164ADD00586B07 /* RepeatTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74E9B4A81F164ADD00586B07 /* RepeatTableViewCell.swift */; };
 		74E9B4AB1F164ADD00586B07 /* RepeatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 74E9B4A91F164ADD00586B07 /* RepeatTableViewCell.xib */; };
@@ -123,6 +124,7 @@
 		749699DF1F0A149A004F4DA3 /* BLE_ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BLE_ViewController.swift; sourceTree = "<group>"; };
 		74B02A691FA1AA6F000E0E23 /* UsersTableViewCell_Keypad.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell_Keypad.swift; sourceTree = "<group>"; };
 		74B02A6A1FA1AA70000E0E23 /* UsersTableViewCell_Keypad.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsersTableViewCell_Keypad.xib; sourceTree = "<group>"; };
+		74B7B2C02011D5EF008AAAF8 /* AdvertisingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvertisingData.swift; sourceTree = "<group>"; };
 		74BA39F91F1461850027E195 /* UserProximityReadRangeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserProximityReadRangeViewController.xib; sourceTree = "<group>"; };
 		74E9B4A81F164ADD00586B07 /* RepeatTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepeatTableViewCell.swift; sourceTree = "<group>"; };
 		74E9B4A91F164ADD00586B07 /* RepeatTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepeatTableViewCell.xib; sourceTree = "<group>"; };
@@ -213,6 +215,7 @@
 		74509C661F0245CC003E135A /* Transport */ = {
 			isa = PBXGroup;
 			children = (
+				74B7B2C02011D5EF008AAAF8 /* AdvertisingData.swift */,
 				740AF23C1F0A2FF800958B34 /* Util.swift */,
 				74750C921F0623E6007F91C3 /* StoreDeviceInfo.swift */,
 				74509C6B1F024720003E135A /* config.swift */,
@@ -559,6 +562,7 @@
 				A09BC3731EE7C55C00F38AB8 /* Intro_WelcomeViewController.swift in Sources */,
 				74509C6A1F02468D003E135A /* BPprotocol.swift in Sources */,
 				A09BC37B1EE7DAC200F38AB8 /* UIViewController.swift in Sources */,
+				74B7B2C12011D5EF008AAAF8 /* AdvertisingData.swift in Sources */,
 				A01EDB461EEF899500330CD7 /* UITextField.swift in Sources */,
 				A01EDB501EEFF8D300330CD7 /* UsersTableViewCell.swift in Sources */,
 				A0CCF7B91EEE475800EB1A99 /* Intro_UserViewController.swift in Sources */,

@@ -18,11 +18,16 @@ struct DeviceInfo {
     var UUID: UUID;
     var name: String;
     var peripheral: CBPeripheral;
+    var model:String;
+    var color:String;
+    var customID:String;
+    var Category:String;
+    var reserved:UInt8;
     var rssi: Int;
     var current_level: Int;
     var expect_level: Int;
     var alive: Int;
-
+    
 }
 
 extension DeviceInfo: Equatable {

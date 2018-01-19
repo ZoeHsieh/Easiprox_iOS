@@ -131,6 +131,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
     
     var selectedDevice:CBPeripheral!
     var tmpDeviceName:String?
+    var selectedModel:String!
     //var fwVersion:String = ""
     var newFwVersion:String? =  ""
     var tmpAdminPWD:String?
@@ -703,6 +704,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         
         case 10:
             let vc = AboutUsViewController(nib: R.nib.aboutUsViewController)
+           vc.deviceModel = selectedModel
             navigationController?.pushViewController(vc, animated: true)
             
         default:
@@ -806,8 +808,8 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                     
                     UI_updateDevConfig(data: data)
                     setUIVisable(enable: true)
-            
-            self.setcurrentdate()
+            //comment out for  solved app crash issue.
+            //self.setcurrentdate()
             
                 break
                 
@@ -1827,7 +1829,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
     
     
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        print("TTTTTTTTTT")
+        //print("TTTTTTTTTT")
         self.setcurrentdate()
     }
     

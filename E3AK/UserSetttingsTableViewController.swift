@@ -118,6 +118,7 @@ class UserSettingsTableViewController: BLE_tableViewController {
             
         case 2:
             let vc = AboutUsViewController(nib: R.nib.aboutUsViewController)
+           vc.deviceModel = selectedDevice.model
             navigationController?.pushViewController(vc, animated: true)
             
         default:
