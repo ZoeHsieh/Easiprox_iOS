@@ -86,20 +86,19 @@ class Intro_WelcomeViewController: BLE_ViewController {
             
         }
         //To check legal device by custom ID.
-        let customID:UInt16 = (UInt16(rawData[0]) << 8) | UInt16(rawData[1] & 0x00FF)
         let deviceModel:UInt16 = (UInt16(rawData[2]) << 8) | UInt16(rawData[3] & 0x00FF)
         let deviceCategory:UInt8 = rawData[4]
-        let deviceColor:UInt16 = (UInt16(rawData[5]) << 8) | UInt16(rawData[6] & 0x00FF)
+        let customID:UInt16 = (UInt16(rawData[5]) << 8) | UInt16(rawData[6] & 0x00FF)
         let devicerReserved:UInt8 = rawData[7]
         
         //print("customID =\(AdvertisingData.CUSTOM_IDs[customID]!)\r\n")
         //print("customID APP=\(Config.CustomID)\r\n")
-        guard let customStr = AdvertisingData.CUSTOM_IDs[customID] as? String
+        guard let customStr = AdvertisingData.CUSTOM_IDs[customID]
             else{
                 return
         }
         
-        guard let deviceModelStr = AdvertisingData.dev_Model[deviceModel] as? String
+        guard let deviceModelStr = AdvertisingData.dev_Model[deviceModel]
             else{
                 return
         }
@@ -108,12 +107,12 @@ class Intro_WelcomeViewController: BLE_ViewController {
             
         }
         
-        guard let deviceColorStr = AdvertisingData.dev_Color[deviceColor] as? String
-            else{
-                return
-        }
+//        guard let deviceColorStr = AdvertisingData.dev_Color[deviceColor] as? String
+//            else{
+//                return
+//        }
         
-        guard let deviceCategoryStr = AdvertisingData.dev_Category[deviceCategory] as? String
+        guard let deviceCategoryStr = AdvertisingData.dev_Category[deviceCategory]
             else{
                 return
         }
@@ -132,7 +131,7 @@ class Intro_WelcomeViewController: BLE_ViewController {
         
         if((RSSI.intValue <= 0) && (RSSI.intValue >= Config.BLE_RSSI_MIN)) {
             
-         var tmp: DeviceInfo = DeviceInfo(UUID: uuid, name: name, peripheral: peripheral, model: deviceModelStr, color: deviceColorStr, customID: customStr, Category: deviceCategoryStr, reserved: devicerReserved, rssi: RSSI.intValue, current_level: Convert_RSSI_to_LEVEL(RSSI.intValue), expect_level: 0, alive: 3)
+         var tmp: DeviceInfo = DeviceInfo(UUID: uuid, name: name, peripheral: peripheral, model: deviceModelStr, customID: customStr, Category: deviceCategoryStr, reserved: devicerReserved, rssi: RSSI.intValue, current_level: Convert_RSSI_to_LEVEL(RSSI.intValue), expect_level: 0, alive: 3)
             
             if( deviceInfoList.contains(tmp)) {
                 

@@ -171,3 +171,20 @@ Date = "Fecha";
 "open_fail_unknown" = "Acceso negado";
 "eroll_fail" = "Registro fallido";
 "eroll_success" = "Correcto, estás registrado";
+
+//0316
+"Card" = "Tarjeta/llavero";
+"Phone Access" = "Phone Access";
+"Card Access" = "Tarjeta/acceso con llavero";
+"settings_Admin_card_Edit" = "Modificación administrador tarjeta/llavero";
+"users_manage_edit_status_Admin_card" = "Tarjeta/llaveros inválida";
+"users_manage_edit_status_duplication_card" = "Duplicación tarjeta/llavero";
+"settings_Admin_card" = "Administrador tarjeta/llavero";
+"users_card_edit_dialog_title" = "Modificación tarjeta/llavero: 10 digitos";
+"Tamper Sensor Level" = "Nivel de sensor de tamper";
+"Level 1" = "Nivel 1 alta sensibilidad";
+"Level 2" = "Nivel 2 media sensibilidad";
+"Level 3" = "Nivel 3 baja sensibilidad";
+"over_range_alarm" = "Fuera de parámetro, escribir un número entre 0 y 255";
+"History_search_placeHolder" = "Escribir un ID para encontrar al usuario";
+"UserList_search_placeHolder" = "Escribir un ID para encontrar al usuario";

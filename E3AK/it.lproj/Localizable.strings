@@ -171,4 +171,20 @@ Date = "Data";
 "open_fail_unknown" = " Accesso negato";
 "eroll_fail" = "Registrazione fallita";
 "eroll_success" = "Ok sei registrato";
+//0316
+"Card" = "Carta/Portachiavi";
+"Phone Access" = "Phone Access";
+"Card Access" = "Carta/Accesso con portachiavi";
+"settings_Admin_card_Edit" = "Modifica Amministratore Carta/Portachiavi";
+"users_manage_edit_status_Admin_card" = "Carta/Portachiavi non validi!!";
+"users_manage_edit_status_duplication_card" = "Duplicazione Carta/Portachiavi";
+"settings_Admin_card" = "Amministratore Carta/Portachiavi";
+"users_card_edit_dialog_title" = "Modifica Carta/Portachiavi: (10 cifre)";
+"Tamper Sensor Level" = "Livello Sensore Tamper";
+"Level 1" = "Livello 1 (Alta Sensibilità)";
+"Level 2" = "Livello 2 (Sensibilità Media)";
+"Level 3" = "Livello 3 (Bassa Sensibilité)";
+"over_range_alarm" = "Fuori parametro!! Inserire numero compreso tra 0 e 255.";
+"History_search_placeHolder" = "Inserire un ID utilizzatore per cercare utilizzatore";
+"UserList_search_placeHolder" = "Inserire un ID utilizzatore per cercare utilizzatore";
 

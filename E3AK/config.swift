@@ -85,7 +85,7 @@ class Config{
     public static var deviceType:String = Config.deviceType_Keypad_Card
     public static var devCategory:String = ""
     public static var deviceModel:String = "E5AKR"
-    public static var deviceSeries:String = "E5"
+    public static var deviceSeries:String = "Easiprox⁺,DG-800⁺,Easiprox⁺ Slim,DG-160⁺"
     public static var doorSensor: UInt8?
     public static var doorLockType: UInt8?
     public static var doorOpenTime: UInt16?
@@ -114,7 +114,7 @@ class Config{
     public static let isAutoTag = "isAutoTag"
 
     public static let firstOpen = "FirstOpen"
-    public static let CustomID = AdvertisingData.CUSTOM_IDs[UInt16(0xFFFF)]
+    public static let CustomID = AdvertisingData.CUSTOM_IDs[UInt16(0xFFFE)] //只要找某客戶 ex:GEM
     //public static let SCAN_TIME_INTRO:Int = 10
 
 }

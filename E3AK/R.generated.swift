@@ -53,7 +53,7 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
-  /// This `R.image` struct is generated, and contains static references to 37 images.
+  /// This `R.image` struct is generated, and contains static references to 39 images.
   struct image {
     /// Image `Back Chevron`.
     static let backChevron = Rswift.ImageResource(bundle: R.hostingBundle, name: "Back Chevron")
@@ -79,6 +79,8 @@ struct R: Rswift.Validatable {
     static let doorOpen = Rswift.ImageResource(bundle: R.hostingBundle, name: "door-open")
     /// Image `export`.
     static let export = Rswift.ImageResource(bundle: R.hostingBundle, name: "export")
+    /// Image `gem-logo`.
+    static let gemLogo = Rswift.ImageResource(bundle: R.hostingBundle, name: "gem-logo")
     /// Image `green-dot`.
     static let greenDot = Rswift.ImageResource(bundle: R.hostingBundle, name: "green-dot")
     /// Image `history`.
@@ -109,6 +111,8 @@ struct R: Rswift.Validatable {
     static let revert = Rswift.ImageResource(bundle: R.hostingBundle, name: "revert")
     /// Image `setup`.
     static let setup = Rswift.ImageResource(bundle: R.hostingBundle, name: "setup")
+    /// Image `signal_icon`.
+    static let signal_icon = Rswift.ImageResource(bundle: R.hostingBundle, name: "signal_icon")
     /// Image `slid-dot-1`.
     static let slidDot1 = Rswift.ImageResource(bundle: R.hostingBundle, name: "slid-dot-1")
     /// Image `slid-dot-2`.
@@ -190,6 +194,11 @@ struct R: Rswift.Validatable {
       return UIKit.UIImage(resource: R.image.export, compatibleWith: traitCollection)
     }
     
+    /// `UIImage(named: "gem-logo", bundle: ..., traitCollection: ...)`
+    static func gemLogo(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.gemLogo, compatibleWith: traitCollection)
+    }
+    
     /// `UIImage(named: "green-dot", bundle: ..., traitCollection: ...)`
     static func greenDot(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.greenDot, compatibleWith: traitCollection)
@@ -263,6 +272,11 @@ struct R: Rswift.Validatable {
     /// `UIImage(named: "setup", bundle: ..., traitCollection: ...)`
     static func setup(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
       return UIKit.UIImage(resource: R.image.setup, compatibleWith: traitCollection)
+    }
+    
+    /// `UIImage(named: "signal_icon", bundle: ..., traitCollection: ...)`
+    static func signal_icon(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+      return UIKit.UIImage(resource: R.image.signal_icon, compatibleWith: traitCollection)
     }
     
     /// `UIImage(named: "slid-dot-1", bundle: ..., traitCollection: ...)`
@@ -631,34 +645,34 @@ struct R: Rswift.Validatable {
     struct launchScreen {
       /// it translation: Bluetooth Access Control System
       /// 
-      /// Locales: it, fr, es, ja
-      static let qByE4MYcText = Rswift.StringResource(key: "QBy-e4-mYc.text", tableName: "LaunchScreen", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let qByE4MYcText = Rswift.StringResource(key: "QBy-e4-mYc.text", tableName: "LaunchScreen", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: E3AK
       /// 
-      /// Locales: it, fr, es, ja
-      static let glrH3CF6Text = Rswift.StringResource(key: "Glr-h3-cF6.text", tableName: "LaunchScreen", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let glrH3CF6Text = Rswift.StringResource(key: "Glr-h3-cF6.text", tableName: "LaunchScreen", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: © 2017 Anxell Technology Coproration
       /// 
-      /// Locales: it, fr, es, ja
-      static let jfrDcTZRText = Rswift.StringResource(key: "Jfr-Dc-TZR.text", tableName: "LaunchScreen", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let jfrDcTZRText = Rswift.StringResource(key: "Jfr-Dc-TZR.text", tableName: "LaunchScreen", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       
       /// it translation: Bluetooth Access Control System
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func qByE4MYcText(_: Void = ()) -> String {
         return NSLocalizedString("QBy-e4-mYc.text", tableName: "LaunchScreen", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: E3AK
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func glrH3CF6Text(_: Void = ()) -> String {
         return NSLocalizedString("Glr-h3-cF6.text", tableName: "LaunchScreen", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: © 2017 Anxell Technology Coproration
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func jfrDcTZRText(_: Void = ()) -> String {
         return NSLocalizedString("Jfr-Dc-TZR.text", tableName: "LaunchScreen", bundle: R.hostingBundle, comment: "")
       }
@@ -670,1728 +684,1728 @@ struct R: Rswift.Validatable {
     struct localizable {
       /// Base translation:  Event List
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let settings_history_list = Rswift.StringResource(key: "settings_history_list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let settings_history_list = Rswift.StringResource(key: "settings_history_list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation:  Users List
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let settings_users_manage_list = Rswift.StringResource(key: "settings_users_manage_list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let settings_users_manage_list = Rswift.StringResource(key: "settings_users_manage_list", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: APP version:
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let aPPVersion = Rswift.StringResource(key: "APP version", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let aPPVersion = Rswift.StringResource(key: "APP version", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: About Us
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let aboutUs = Rswift.StringResource(key: "About Us", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let aboutUs = Rswift.StringResource(key: "About Us", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Access Denied. Please Contact Your Administrator.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let open_fail_permission_denied = Rswift.StringResource(key: "open_fail_permission_denied", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let open_fail_permission_denied = Rswift.StringResource(key: "open_fail_permission_denied", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Access Denied. Please Contact Your Administrator.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let open_fail_unknown = Rswift.StringResource(key: "open_fail_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let open_fail_unknown = Rswift.StringResource(key: "open_fail_unknown", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Access Denied. Please Login First to Get Access.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let open_fail_no_eroll = Rswift.StringResource(key: "open_fail_no_eroll", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let open_fail_no_eroll = Rswift.StringResource(key: "open_fail_no_eroll", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Access Types
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let accessTypesSchedule = Rswift.StringResource(key: "Access Types/Schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let accessTypesSchedule = Rswift.StringResource(key: "Access Types/Schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Access Types
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let tYPES = Rswift.StringResource(key: "TYPES", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let tYPES = Rswift.StringResource(key: "TYPES", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Add
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let add = Rswift.StringResource(key: "Add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let add = Rswift.StringResource(key: "Add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Add Users
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let addUsers = Rswift.StringResource(key: "Add Users", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let addUsers = Rswift.StringResource(key: "Add Users", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Add more
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let addMore = Rswift.StringResource(key: "Add more", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let addMore = Rswift.StringResource(key: "Add more", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Admin Card/Fob
       /// 
-      /// Locales: zh-Hant, Base
-      static let settings_Admin_card = Rswift.StringResource(key: "settings_Admin_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let settings_Admin_card = Rswift.StringResource(key: "settings_Admin_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Admin Passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let settings_Admin_pwd = Rswift.StringResource(key: "settings_Admin_pwd", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let settings_Admin_pwd = Rswift.StringResource(key: "settings_Admin_pwd", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Alarm
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let openType_Alarm = Rswift.StringResource(key: "openType_Alarm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let openType_Alarm = Rswift.StringResource(key: "openType_Alarm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Are you sure you want to restore this device?
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restore_check_dialog_title = Rswift.StringResource(key: "restore_check_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restore_check_dialog_title = Rswift.StringResource(key: "restore_check_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Audit Trail
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let activityHistory = Rswift.StringResource(key: "Activity History", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let activityHistory = Rswift.StringResource(key: "Activity History", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Auto
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let auto = Rswift.StringResource(key: "Auto", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Auto Proximity Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseSettingProximityReadRange = Rswift.StringResource(key: "Please Setting Proximity Read Range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Auto Proximity Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let proximityReadRange = Rswift.StringResource(key: "Proximity Read Range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Auto Proximity Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let proximityReadRangeSettings = Rswift.StringResource(key: "Proximity Read Range Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let auto = Rswift.StringResource(key: "Auto", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Automatic Setting
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let automaticSetting = Rswift.StringResource(key: "Automatic Setting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let automaticSetting = Rswift.StringResource(key: "Automatic Setting", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Backup Completed!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let backup_completed = Rswift.StringResource(key: "backup_completed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let backup_completed = Rswift.StringResource(key: "backup_completed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Backup Device Data
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let backup_dialog_title = Rswift.StringResource(key: "backup_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let backup_dialog_title = Rswift.StringResource(key: "backup_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Backup Done
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let backupDone = Rswift.StringResource(key: "Backup Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let backupDone = Rswift.StringResource(key: "Backup Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Backup File Not Found!! Please Do Backup First!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restore_status_file_not_found = Rswift.StringResource(key: "restore_status_file_not_found", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restore_status_file_not_found = Rswift.StringResource(key: "restore_status_file_not_found", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Backup Status
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let backup_status = Rswift.StringResource(key: "backup_status", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let backup_status = Rswift.StringResource(key: "backup_status", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Backup all data now?
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let backupAllDataNow = Rswift.StringResource(key: "Backup all data now?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let backupAllDataNow = Rswift.StringResource(key: "Backup all data now?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Backup...
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let backup_dialog_message = Rswift.StringResource(key: "backup_dialog_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let backup_dialog_message = Rswift.StringResource(key: "backup_dialog_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Button
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let openType_Button = Rswift.StringResource(key: "openType_Button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let openType_Button = Rswift.StringResource(key: "openType_Button", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: CANCEL
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let progress_dialog_cancel_btn_title = Rswift.StringResource(key: "progress_dialog_cancel_btn_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let progress_dialog_cancel_btn_title = Rswift.StringResource(key: "progress_dialog_cancel_btn_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Can't find device
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let canTFindDevice = Rswift.StringResource(key: "Can't find device", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let canTFindDevice = Rswift.StringResource(key: "Can't find device", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Cancel
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let cancel = Rswift.StringResource(key: "Cancel", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Card/Fob
       /// 
-      /// Locales: zh-Hant, Base
-      static let card = Rswift.StringResource(key: "Card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let card = Rswift.StringResource(key: "Card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Card/Fob Access
       /// 
-      /// Locales: zh-Hant, Base
-      static let cardAccess = Rswift.StringResource(key: "Card Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let cardAccess = Rswift.StringResource(key: "Card Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Card/Fob Duplication!!
       /// 
-      /// Locales: zh-Hant, Base
-      static let users_manage_edit_status_duplication_card = Rswift.StringResource(key: "users_manage_edit_status_duplication_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_manage_edit_status_duplication_card = Rswift.StringResource(key: "users_manage_edit_status_duplication_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Confirm
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let confirm = Rswift.StringResource(key: "Confirm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let confirm = Rswift.StringResource(key: "Confirm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Current number of times:
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_edit_access_control_dialog_type_times_mark = Rswift.StringResource(key: "users_edit_access_control_dialog_type_times_mark", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_edit_access_control_dialog_type_times_mark = Rswift.StringResource(key: "users_edit_access_control_dialog_type_times_mark", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Date
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let date = Rswift.StringResource(key: "Date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let date = Rswift.StringResource(key: "Date", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Delete
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let delete = Rswift.StringResource(key: "Delete", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let delete = Rswift.StringResource(key: "Delete", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Delete User?
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let deleteUser = Rswift.StringResource(key: "Delete User?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let deleteUser = Rswift.StringResource(key: "Delete User?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Device Distance
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let deviceDistance = Rswift.StringResource(key: "Device Distance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Device Model:
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let deviceDistance = Rswift.StringResource(key: "Device Distance", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Device Models:
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let deviceModel = Rswift.StringResource(key: "Device Model", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let deviceModel = Rswift.StringResource(key: "Device Model", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Device Name
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let deviceName = Rswift.StringResource(key: "Device Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let deviceName = Rswift.StringResource(key: "Device Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Device Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let deviceTime = Rswift.StringResource(key: "Device Time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let deviceTime = Rswift.StringResource(key: "Device Time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Done
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let finishDone = Rswift.StringResource(key: "Finish Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let finishDone = Rswift.StringResource(key: "Finish Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Door Always Locked
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let doorAlwaysLocked = Rswift.StringResource(key: "Door Always Locked", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let doorAlwaysLocked = Rswift.StringResource(key: "Door Always Locked", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Door Always Unlocked
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let doorAlwaysUnlocked = Rswift.StringResource(key: "Door Always Unlocked", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let doorAlwaysUnlocked = Rswift.StringResource(key: "Door Always Unlocked", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Door Re-lock Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let doorReLockTime = Rswift.StringResource(key: "Door Re-lock Time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let doorReLockTime = Rswift.StringResource(key: "Door Re-lock Time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Door Re-lock Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let useReLockTime = Rswift.StringResource(key: "Use Re-lock Time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let useReLockTime = Rswift.StringResource(key: "Use Re-lock Time", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Door Sensor
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let doorSensor = Rswift.StringResource(key: "Door Sensor", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let doorSensor = Rswift.StringResource(key: "Door Sensor", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Download
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let download_dialog_title = Rswift.StringResource(key: "download_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let download_dialog_title = Rswift.StringResource(key: "download_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Edit Admin Card/Fob
       /// 
-      /// Locales: zh-Hant, Base
-      static let settings_Admin_card_Edit = Rswift.StringResource(key: "settings_Admin_card_Edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let settings_Admin_card_Edit = Rswift.StringResource(key: "settings_Admin_card_Edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Edit Admin Passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let settings_Admin_pwd_Edit = Rswift.StringResource(key: "settings_Admin_pwd_Edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let settings_Admin_pwd_Edit = Rswift.StringResource(key: "settings_Admin_pwd_Edit", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Edit Card/Fob: (10 digits)
       /// 
-      /// Locales: zh-Hant, Base
-      static let users_card_edit_dialog_title = Rswift.StringResource(key: "users_card_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_card_edit_dialog_title = Rswift.StringResource(key: "users_card_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Edit Device Name
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let editDeviceName = Rswift.StringResource(key: "Edit Device Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let editDeviceName = Rswift.StringResource(key: "Edit Device Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Edit Door Re-lock Time (1~1800 seconds)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let editDoorReLockTime11800Seconds = Rswift.StringResource(key: "Edit Door Re-lock Time (1~1800 seconds)", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let editDoorReLockTime11800Seconds = Rswift.StringResource(key: "Edit Door Re-lock Time (1~1800 seconds)", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Edit ID: (16 characters)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_id_edit_dialog_title = Rswift.StringResource(key: "users_id_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_id_edit_dialog_title = Rswift.StringResource(key: "users_id_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Edit Passcode: (4~8 digits)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_pwd_edit_dialog_title = Rswift.StringResource(key: "users_pwd_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_pwd_edit_dialog_title = Rswift.StringResource(key: "users_pwd_edit_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Enable Keypad PIN Code to Access
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let enableKeypadPINCodeToAccess = Rswift.StringResource(key: "Enable Keypad PIN Code to Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let enableKeypadPINCodeToAccess = Rswift.StringResource(key: "Enable Keypad PIN Code to Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: End Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let end = Rswift.StringResource(key: "End", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let end = Rswift.StringResource(key: "End", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Enter an user ID to search user.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let history_search_placeHolder = Rswift.StringResource(key: "History_search_placeHolder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Enter an user ID to search user.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let userList_search_placeHolder = Rswift.StringResource(key: "UserList_search_placeHolder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Every Friday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let friday = Rswift.StringResource(key: "Friday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let friday = Rswift.StringResource(key: "Friday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Every Monday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let monday = Rswift.StringResource(key: "Monday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let monday = Rswift.StringResource(key: "Monday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Every Saturday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let saturday = Rswift.StringResource(key: "Saturday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let saturday = Rswift.StringResource(key: "Saturday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Every Sunday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let sunday = Rswift.StringResource(key: "Sunday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let sunday = Rswift.StringResource(key: "Sunday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Every Thursday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let thursday = Rswift.StringResource(key: "Thursday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let thursday = Rswift.StringResource(key: "Thursday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Every Tuesday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let tuesday = Rswift.StringResource(key: "Tuesday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let tuesday = Rswift.StringResource(key: "Tuesday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Every Wednesday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let wednesday = Rswift.StringResource(key: "Wednesday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let wednesday = Rswift.StringResource(key: "Wednesday", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Every Week
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let everyWeek = Rswift.StringResource(key: "Every Week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let everyWeek = Rswift.StringResource(key: "Every Week", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Fail
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let program_fail = Rswift.StringResource(key: "program_fail", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let program_fail = Rswift.StringResource(key: "program_fail", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Firmware version
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let settings_device_vr = Rswift.StringResource(key: "settings_device_vr", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let settings_device_vr = Rswift.StringResource(key: "settings_device_vr", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Format error!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let wrongFormat = Rswift.StringResource(key: "wrong format!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let wrongFormat = Rswift.StringResource(key: "wrong format!", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: HIDE
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let progress_dialog_hide_btn_title = Rswift.StringResource(key: "progress_dialog_hide_btn_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let progress_dialog_hide_btn_title = Rswift.StringResource(key: "progress_dialog_hide_btn_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: ID
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let iD = Rswift.StringResource(key: "ID", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let iD = Rswift.StringResource(key: "ID", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: ID
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let userName = Rswift.StringResource(key: "User Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let userName = Rswift.StringResource(key: "User Name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: ID Duplication!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_manage_edit_status_duplication_name = Rswift.StringResource(key: "users_manage_edit_status_duplication_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_manage_edit_status_duplication_name = Rswift.StringResource(key: "users_manage_edit_status_duplication_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: ID: Up to 16 characters
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseProvideUpTo16Characters = Rswift.StringResource(key: "Please Provide Up to 16 characters", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleaseProvideUpTo16Characters = Rswift.StringResource(key: "Please Provide Up to 16 characters", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: If you forgot your ID or passcode, please contact your administrator.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let ifYouForgotYourIDOrPasswordPleaseContactYourAdministrator = Rswift.StringResource(key: "If you forgot your ID or password, please contact your administrator.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let ifYouForgotYourIDOrPasswordPleaseContactYourAdministrator = Rswift.StringResource(key: "If you forgot your ID or password, please contact your administrator.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Incorrect passcode. Please try again
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let incorrectPasswordPleaseTryAgain = Rswift.StringResource(key: "Incorrect password. Please try again", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let incorrectPasswordPleaseTryAgain = Rswift.StringResource(key: "Incorrect password. Please try again", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Invalid Card/Fob!!
       /// 
-      /// Locales: Base
-      static let users_manage_edit_status_Admin_card = Rswift.StringResource(key: "users_manage_edit_status_Admin_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Locales: Base, it, fr, es, ja, ar
+      static let users_manage_edit_status_Admin_card = Rswift.StringResource(key: "users_manage_edit_status_Admin_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Invalid ID !!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_manage_edit_status_Admin_name = Rswift.StringResource(key: "users_manage_edit_status_Admin_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_manage_edit_status_Admin_name = Rswift.StringResource(key: "users_manage_edit_status_Admin_name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Invalid Passcode!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_manage_edit_status_Admin_pwd = Rswift.StringResource(key: "users_manage_edit_status_Admin_pwd", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_manage_edit_status_Admin_pwd = Rswift.StringResource(key: "users_manage_edit_status_Admin_pwd", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Keypad
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let openType_Keypad = Rswift.StringResource(key: "openType_Keypad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let openType_Keypad = Rswift.StringResource(key: "openType_Keypad", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Keypad Access
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let keypadAccess = Rswift.StringResource(key: "Keypad Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let keypadAccess = Rswift.StringResource(key: "Keypad Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: LOCKED
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let dOORCLOSED = Rswift.StringResource(key: "DOOR CLOSED", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Level 1
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let dOORCLOSED = Rswift.StringResource(key: "DOOR CLOSED", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Level 1 (High Sensitivity)
       /// 
-      /// Locales: zh-Hant, Base
-      static let level1 = Rswift.StringResource(key: "Level 1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Level 2
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let level1 = Rswift.StringResource(key: "Level 1", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Level 2 (Mid Sensitivity)
       /// 
-      /// Locales: zh-Hant, Base
-      static let level2 = Rswift.StringResource(key: "Level 2", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Level 3
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let level2 = Rswift.StringResource(key: "Level 2", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Level 3 (Low Sensitivity)
       /// 
-      /// Locales: zh-Hant, Base
-      static let level3 = Rswift.StringResource(key: "Level 3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let level3 = Rswift.StringResource(key: "Level 3", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Loading...
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let download_dialog_message = Rswift.StringResource(key: "download_dialog_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let download_dialog_message = Rswift.StringResource(key: "download_dialog_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Lock Action
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let doorLockAction = Rswift.StringResource(key: "Door Lock Action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let doorLockAction = Rswift.StringResource(key: "Door Lock Action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Login
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let enroll = Rswift.StringResource(key: "Enroll", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let enroll = Rswift.StringResource(key: "Enroll", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Login Failed. Please Verify Your Login Information Or Contact Your Administrator.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let eroll_fail = Rswift.StringResource(key: "eroll_fail", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let eroll_fail = Rswift.StringResource(key: "eroll_fail", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Login:
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let enroll_dialog_title = Rswift.StringResource(key: "enroll_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let enroll_dialog_title = Rswift.StringResource(key: "enroll_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Next
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let next = Rswift.StringResource(key: "Next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let next = Rswift.StringResource(key: "Next", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Number of Times
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let accessTimes = Rswift.StringResource(key: "Access Times", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let accessTimes = Rswift.StringResource(key: "Access Times", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: OPEN
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let oPEN = Rswift.StringResource(key: "OPEN", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let oPEN = Rswift.StringResource(key: "OPEN", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Open
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let `open` = Rswift.StringResource(key: "Open", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
-      /// Base translation: Over range
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let `open` = Rswift.StringResource(key: "Open", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Out of range!! Please enter a number within 0-255.
       /// 
-      /// Locales: zh-Hant, Base
-      static let over_range_alarm = Rswift.StringResource(key: "over_range_alarm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let over_range_alarm = Rswift.StringResource(key: "over_range_alarm", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let password = Rswift.StringResource(key: "Password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let password = Rswift.StringResource(key: "Password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let passwordPINCode = Rswift.StringResource(key: "Password/PIN Code", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let passwordPINCode = Rswift.StringResource(key: "Password/PIN Code", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Passcode (4~8 Digits)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let passwordPINCode48Digits = Rswift.StringResource(key: "Password/PIN Code (4~8 Digits)", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let passwordPINCode48Digits = Rswift.StringResource(key: "Password/PIN Code (4~8 Digits)", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Passcode Duplication!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_manage_edit_status_duplication_password = Rswift.StringResource(key: "users_manage_edit_status_duplication_password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_manage_edit_status_duplication_password = Rswift.StringResource(key: "users_manage_edit_status_duplication_password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Passcode: 4~8 digits
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let digits = Rswift.StringResource(key: "4~8 digits", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let digits = Rswift.StringResource(key: "4~8 digits", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Permanent
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let permanent = Rswift.StringResource(key: "Permanent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let permanent = Rswift.StringResource(key: "Permanent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Phone Access
       /// 
-      /// Locales: zh-Hant, Base
-      static let phoneAccess = Rswift.StringResource(key: "Phone Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Please Input User ID
-      /// 
-      /// Locales: zh-Hant, Base
-      static let history_search_placeHolder = Rswift.StringResource(key: "History_search_placeHolder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
-      /// Base translation: Please Input User ID
-      /// 
-      /// Locales: zh-Hant, Base
-      static let userList_search_placeHolder = Rswift.StringResource(key: "UserList_search_placeHolder", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let phoneAccess = Rswift.StringResource(key: "Phone Access", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Please disable 'AUTO' first!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let aUTO_ENABLE_CONFLICT = Rswift.StringResource(key: "AUTO_ENABLE_CONFLICT", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let aUTO_ENABLE_CONFLICT = Rswift.StringResource(key: "AUTO_ENABLE_CONFLICT", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Please enter ID
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseEnterID = Rswift.StringResource(key: "Please enter ID", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleaseEnterID = Rswift.StringResource(key: "Please enter ID", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Please enter Number of Times (0~255)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseEnterAccessTimes = Rswift.StringResource(key: "Please enter access times", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleaseEnterAccessTimes = Rswift.StringResource(key: "Please enter access times", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Please enter passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseEnterPassword = Rswift.StringResource(key: "Please enter password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleaseEnterPassword = Rswift.StringResource(key: "Please enter password", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Please enter the number of seconds
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseEnterTheNumberOfSeconds = Rswift.StringResource(key: "Please enter the number of seconds", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleaseEnterTheNumberOfSeconds = Rswift.StringResource(key: "Please enter the number of seconds", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Please press "Next" to continue
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleasePressNextToContinue = Rswift.StringResource(key: "Please press Next to continue", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleasePressNextToContinue = Rswift.StringResource(key: "Please press Next to continue", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Please wait a moment…
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseWaitAMoment = Rswift.StringResource(key: "Please wait a moment…", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleaseWaitAMoment = Rswift.StringResource(key: "Please wait a moment…", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Proximity Read Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleaseSettingProximityReadRange = Rswift.StringResource(key: "Please Setting Proximity Read Range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Proximity Read Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let proximityReadRange = Rswift.StringResource(key: "Proximity Read Range", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Proximity Read Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let proximityReadRangeSettings = Rswift.StringResource(key: "Proximity Read Range Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Repeat
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let `repeat` = Rswift.StringResource(key: "Repeat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let `repeat` = Rswift.StringResource(key: "Repeat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Repeat
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let repeatSelect = Rswift.StringResource(key: "Repeat Select", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let repeatSelect = Rswift.StringResource(key: "Repeat Select", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Restore Backup
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restore = Rswift.StringResource(key: "Restore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restore = Rswift.StringResource(key: "Restore", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Restore Completed!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restore_completed = Rswift.StringResource(key: "restore_completed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restore_completed = Rswift.StringResource(key: "restore_completed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Restore Device Data
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restore_dialog_title = Rswift.StringResource(key: "restore_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restore_dialog_title = Rswift.StringResource(key: "restore_dialog_title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Restore Done
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restoreDone = Rswift.StringResource(key: "Restore Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restoreDone = Rswift.StringResource(key: "Restore Done", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Restore Status
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restore_status = Rswift.StringResource(key: "restore_status", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restore_status = Rswift.StringResource(key: "restore_status", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Restore all data now?
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restoreAllDataNow = Rswift.StringResource(key: "Restore all data now?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restoreAllDataNow = Rswift.StringResource(key: "Restore all data now?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Restoring...
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restore_dialog_message = Rswift.StringResource(key: "restore_dialog_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restore_dialog_message = Rswift.StringResource(key: "restore_dialog_message", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Restoring…
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let restoring = Rswift.StringResource(key: "Restoring…", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let restoring = Rswift.StringResource(key: "Restoring…", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Scheduled
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let recurrent = Rswift.StringResource(key: "Recurrent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let recurrent = Rswift.StringResource(key: "Recurrent", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Search
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let search = Rswift.StringResource(key: "Search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let search = Rswift.StringResource(key: "Search", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Search result
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let searchResult = Rswift.StringResource(key: "Search result", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let searchResult = Rswift.StringResource(key: "Search result", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Sec.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let sec = Rswift.StringResource(key: "Sec.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let sec = Rswift.StringResource(key: "Sec.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Settings
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let settings = Rswift.StringResource(key: "Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let settings = Rswift.StringResource(key: "Settings", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Skip
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let skip = Rswift.StringResource(key: "Skip", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let skip = Rswift.StringResource(key: "Skip", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Start Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let start = Rswift.StringResource(key: "Start", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let start = Rswift.StringResource(key: "Start", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Success
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let program_success = Rswift.StringResource(key: "program_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let program_success = Rswift.StringResource(key: "program_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: System busy!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users_manage_edit_status_busy = Rswift.StringResource(key: "users_manage_edit_status_busy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users_manage_edit_status_busy = Rswift.StringResource(key: "users_manage_edit_status_busy", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Tamper Alarm
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let tamperSensor = Rswift.StringResource(key: "Tamper Sensor", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let tamperSensor = Rswift.StringResource(key: "Tamper Sensor", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Tamper Sensor Level
       /// 
-      /// Locales: zh-Hant, Base
-      static let tamperSensorLevel = Rswift.StringResource(key: "Tamper Sensor Level", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let tamperSensorLevel = Rswift.StringResource(key: "Tamper Sensor Level", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Temporary
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let schedule = Rswift.StringResource(key: "Schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let schedule = Rswift.StringResource(key: "Schedule", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: There's no user. Tap "Add" to add new users.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let no_user_note = Rswift.StringResource(key: "no_user_note", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let no_user_note = Rswift.StringResource(key: "no_user_note", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: There's no user. Tap "Add" to add new users.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let thereSNoUsersAddNow = Rswift.StringResource(key: "There's no users, add now?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let thereSNoUsersAddNow = Rswift.StringResource(key: "There's no users, add now?", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let timeIn = Rswift.StringResource(key: "Time in", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let timeIn = Rswift.StringResource(key: "Time in", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: UNLOCKED
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let dOOROPENED = Rswift.StringResource(key: "DOOR OPENED", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let dOOROPENED = Rswift.StringResource(key: "DOOR OPENED", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Unlocked By
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let lockAction = Rswift.StringResource(key: "Lock Action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let lockAction = Rswift.StringResource(key: "Lock Action", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Up to 16 characters
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let upTo16Characters = Rswift.StringResource(key: "Up to 16 characters", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let upTo16Characters = Rswift.StringResource(key: "Up to 16 characters", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: User Info
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let userInfo = Rswift.StringResource(key: "User Info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let userInfo = Rswift.StringResource(key: "User Info", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Users
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let users = Rswift.StringResource(key: "Users", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let users = Rswift.StringResource(key: "Users", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Welcome
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let welcome = Rswift.StringResource(key: "Welcome", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let welcome = Rswift.StringResource(key: "Welcome", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: You Have Successfully Logged In. You May Now Unlock A Door.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let eroll_success = Rswift.StringResource(key: "eroll_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let eroll_success = Rswift.StringResource(key: "eroll_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: You can find default passcode from the manual. Please change your Admin passcode for security control.
       /// 
-      /// Locales: Base
-      static let youCanFindDefaultPasscodeFromTheManualPleaseChangeYourAdminPasscodeForSecurityControl = Rswift.StringResource(key: "You can find default passcode from the manual. Please change your Admin passcode for security control.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Locales: Base, ar
+      static let youCanFindDefaultPasscodeFromTheManualPleaseChangeYourAdminPasscodeForSecurityControl = Rswift.StringResource(key: "You can find default passcode from the manual. Please change your Admin passcode for security control.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base", "ar"], comment: nil)
       /// Base translation: You must connect to a Bluetooth device to set up
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let youMustConnectToABluetoothDeviceToSetUp = Rswift.StringResource(key: "You must connect to a Bluetooth device to set up", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let youMustConnectToABluetoothDeviceToSetUp = Rswift.StringResource(key: "You must connect to a Bluetooth device to set up", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Your ID
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let yourID = Rswift.StringResource(key: "Your ID", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let yourID = Rswift.StringResource(key: "Your ID", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: [FRI]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let weekly_Fri = Rswift.StringResource(key: "weekly_Fri", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let weekly_Fri = Rswift.StringResource(key: "weekly_Fri", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: [MON]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let weekly_Mon = Rswift.StringResource(key: "weekly_Mon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let weekly_Mon = Rswift.StringResource(key: "weekly_Mon", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: [SAT]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let weekly_Sat = Rswift.StringResource(key: "weekly_Sat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let weekly_Sat = Rswift.StringResource(key: "weekly_Sat", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: [SUN]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let weekly_Sun = Rswift.StringResource(key: "weekly_Sun", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let weekly_Sun = Rswift.StringResource(key: "weekly_Sun", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: [THU]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let weekly_Thu = Rswift.StringResource(key: "weekly_Thu", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let weekly_Thu = Rswift.StringResource(key: "weekly_Thu", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: [TUE]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let weekly_Tue = Rswift.StringResource(key: "weekly_Tue", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let weekly_Tue = Rswift.StringResource(key: "weekly_Tue", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: [WED]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let weekly_Wed = Rswift.StringResource(key: "weekly_Wed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let weekly_Wed = Rswift.StringResource(key: "weekly_Wed", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: please try later
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static let pleaseTryLater = Rswift.StringResource(key: "please try later", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja"], comment: nil)
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let pleaseTryLater = Rswift.StringResource(key: "please try later", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       
       /// Base translation:  Event List
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func settings_history_list(_: Void = ()) -> String {
         return NSLocalizedString("settings_history_list", bundle: R.hostingBundle, value: " Event List", comment: "")
       }
       
       /// Base translation:  Users List
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func settings_users_manage_list(_: Void = ()) -> String {
         return NSLocalizedString("settings_users_manage_list", bundle: R.hostingBundle, value: " Users List", comment: "")
       }
       
       /// Base translation: APP version:
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func aPPVersion(_: Void = ()) -> String {
         return NSLocalizedString("APP version", bundle: R.hostingBundle, value: "APP version:", comment: "")
       }
       
       /// Base translation: About Us
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func aboutUs(_: Void = ()) -> String {
         return NSLocalizedString("About Us", bundle: R.hostingBundle, value: "About Us", comment: "")
       }
       
       /// Base translation: Access Denied. Please Contact Your Administrator.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func open_fail_permission_denied(_: Void = ()) -> String {
         return NSLocalizedString("open_fail_permission_denied", bundle: R.hostingBundle, value: "Access Denied. Please Contact Your Administrator.", comment: "")
       }
       
       /// Base translation: Access Denied. Please Contact Your Administrator.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func open_fail_unknown(_: Void = ()) -> String {
         return NSLocalizedString("open_fail_unknown", bundle: R.hostingBundle, value: "Access Denied. Please Contact Your Administrator.", comment: "")
       }
       
       /// Base translation: Access Denied. Please Login First to Get Access.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func open_fail_no_eroll(_: Void = ()) -> String {
         return NSLocalizedString("open_fail_no_eroll", bundle: R.hostingBundle, value: "Access Denied. Please Login First to Get Access.", comment: "")
       }
       
       /// Base translation: Access Types
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func accessTypesSchedule(_: Void = ()) -> String {
         return NSLocalizedString("Access Types/Schedule", bundle: R.hostingBundle, value: "Access Types", comment: "")
       }
       
       /// Base translation: Access Types
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func tYPES(_: Void = ()) -> String {
         return NSLocalizedString("TYPES", bundle: R.hostingBundle, value: "Access Types", comment: "")
       }
       
       /// Base translation: Add
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func add(_: Void = ()) -> String {
         return NSLocalizedString("Add", bundle: R.hostingBundle, value: "Add", comment: "")
       }
       
       /// Base translation: Add Users
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func addUsers(_: Void = ()) -> String {
         return NSLocalizedString("Add Users", bundle: R.hostingBundle, value: "Add Users", comment: "")
       }
       
       /// Base translation: Add more
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func addMore(_: Void = ()) -> String {
         return NSLocalizedString("Add more", bundle: R.hostingBundle, value: "Add more", comment: "")
       }
       
       /// Base translation: Admin Card/Fob
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func settings_Admin_card(_: Void = ()) -> String {
         return NSLocalizedString("settings_Admin_card", bundle: R.hostingBundle, value: "Admin Card/Fob", comment: "")
       }
       
       /// Base translation: Admin Passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func settings_Admin_pwd(_: Void = ()) -> String {
         return NSLocalizedString("settings_Admin_pwd", bundle: R.hostingBundle, value: "Admin Passcode", comment: "")
       }
       
       /// Base translation: Alarm
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func openType_Alarm(_: Void = ()) -> String {
         return NSLocalizedString("openType_Alarm", bundle: R.hostingBundle, value: "Alarm", comment: "")
       }
       
       /// Base translation: Are you sure you want to restore this device?
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restore_check_dialog_title(_: Void = ()) -> String {
         return NSLocalizedString("restore_check_dialog_title", bundle: R.hostingBundle, value: "Are you sure you want to restore this device?", comment: "")
       }
       
       /// Base translation: Audit Trail
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func activityHistory(_: Void = ()) -> String {
         return NSLocalizedString("Activity History", bundle: R.hostingBundle, value: "Audit Trail", comment: "")
       }
       
       /// Base translation: Auto
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func auto(_: Void = ()) -> String {
         return NSLocalizedString("Auto", bundle: R.hostingBundle, value: "Auto", comment: "")
       }
       
-      /// Base translation: Auto Proximity Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func pleaseSettingProximityReadRange(_: Void = ()) -> String {
-        return NSLocalizedString("Please Setting Proximity Read Range", bundle: R.hostingBundle, value: "Auto Proximity Range", comment: "")
-      }
-      
-      /// Base translation: Auto Proximity Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func proximityReadRange(_: Void = ()) -> String {
-        return NSLocalizedString("Proximity Read Range", bundle: R.hostingBundle, value: "Auto Proximity Range", comment: "")
-      }
-      
-      /// Base translation: Auto Proximity Range
-      /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
-      static func proximityReadRangeSettings(_: Void = ()) -> String {
-        return NSLocalizedString("Proximity Read Range Settings", bundle: R.hostingBundle, value: "Auto Proximity Range", comment: "")
-      }
-      
       /// Base translation: Automatic Setting
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func automaticSetting(_: Void = ()) -> String {
         return NSLocalizedString("Automatic Setting", bundle: R.hostingBundle, value: "Automatic Setting", comment: "")
       }
       
       /// Base translation: Backup Completed!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func backup_completed(_: Void = ()) -> String {
         return NSLocalizedString("backup_completed", bundle: R.hostingBundle, value: "Backup Completed!!", comment: "")
       }
       
       /// Base translation: Backup Device Data
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func backup_dialog_title(_: Void = ()) -> String {
         return NSLocalizedString("backup_dialog_title", bundle: R.hostingBundle, value: "Backup Device Data", comment: "")
       }
       
       /// Base translation: Backup Done
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func backupDone(_: Void = ()) -> String {
         return NSLocalizedString("Backup Done", bundle: R.hostingBundle, value: "Backup Done", comment: "")
       }
       
       /// Base translation: Backup File Not Found!! Please Do Backup First!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restore_status_file_not_found(_: Void = ()) -> String {
         return NSLocalizedString("restore_status_file_not_found", bundle: R.hostingBundle, value: "Backup File Not Found!! Please Do Backup First!!", comment: "")
       }
       
       /// Base translation: Backup Status
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func backup_status(_: Void = ()) -> String {
         return NSLocalizedString("backup_status", bundle: R.hostingBundle, value: "Backup Status", comment: "")
       }
       
       /// Base translation: Backup all data now?
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func backupAllDataNow(_: Void = ()) -> String {
         return NSLocalizedString("Backup all data now?", bundle: R.hostingBundle, value: "Backup all data now?", comment: "")
       }
       
       /// Base translation: Backup...
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func backup_dialog_message(_: Void = ()) -> String {
         return NSLocalizedString("backup_dialog_message", bundle: R.hostingBundle, value: "Backup...", comment: "")
       }
       
       /// Base translation: Button
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func openType_Button(_: Void = ()) -> String {
         return NSLocalizedString("openType_Button", bundle: R.hostingBundle, value: "Button", comment: "")
       }
       
       /// Base translation: CANCEL
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func progress_dialog_cancel_btn_title(_: Void = ()) -> String {
         return NSLocalizedString("progress_dialog_cancel_btn_title", bundle: R.hostingBundle, value: "CANCEL", comment: "")
       }
       
       /// Base translation: Can't find device
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func canTFindDevice(_: Void = ()) -> String {
         return NSLocalizedString("Can't find device", bundle: R.hostingBundle, value: "Can't find device", comment: "")
       }
       
       /// Base translation: Cancel
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func cancel(_: Void = ()) -> String {
         return NSLocalizedString("Cancel", bundle: R.hostingBundle, value: "Cancel", comment: "")
       }
       
       /// Base translation: Card/Fob
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func card(_: Void = ()) -> String {
         return NSLocalizedString("Card", bundle: R.hostingBundle, value: "Card/Fob", comment: "")
       }
       
       /// Base translation: Card/Fob Access
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func cardAccess(_: Void = ()) -> String {
         return NSLocalizedString("Card Access", bundle: R.hostingBundle, value: "Card/Fob Access", comment: "")
       }
       
       /// Base translation: Card/Fob Duplication!!
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_manage_edit_status_duplication_card(_: Void = ()) -> String {
         return NSLocalizedString("users_manage_edit_status_duplication_card", bundle: R.hostingBundle, value: "Card/Fob Duplication!!", comment: "")
       }
       
       /// Base translation: Confirm
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func confirm(_: Void = ()) -> String {
         return NSLocalizedString("Confirm", bundle: R.hostingBundle, value: "Confirm", comment: "")
       }
       
       /// Base translation: Current number of times:
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_edit_access_control_dialog_type_times_mark(_: Void = ()) -> String {
         return NSLocalizedString("users_edit_access_control_dialog_type_times_mark", bundle: R.hostingBundle, value: "Current number of times:", comment: "")
       }
       
       /// Base translation: Date
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func date(_: Void = ()) -> String {
         return NSLocalizedString("Date", bundle: R.hostingBundle, value: "Date", comment: "")
       }
       
       /// Base translation: Delete
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func delete(_: Void = ()) -> String {
         return NSLocalizedString("Delete", bundle: R.hostingBundle, value: "Delete", comment: "")
       }
       
       /// Base translation: Delete User?
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func deleteUser(_: Void = ()) -> String {
         return NSLocalizedString("Delete User?", bundle: R.hostingBundle, value: "Delete User?", comment: "")
       }
       
       /// Base translation: Device Distance
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func deviceDistance(_: Void = ()) -> String {
         return NSLocalizedString("Device Distance", bundle: R.hostingBundle, value: "Device Distance", comment: "")
       }
       
-      /// Base translation: Device Model:
+      /// Base translation: Device Models:
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func deviceModel(_: Void = ()) -> String {
-        return NSLocalizedString("Device Model", bundle: R.hostingBundle, value: "Device Model:", comment: "")
+        return NSLocalizedString("Device Model", bundle: R.hostingBundle, value: "Device Models:", comment: "")
       }
       
       /// Base translation: Device Name
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func deviceName(_: Void = ()) -> String {
         return NSLocalizedString("Device Name", bundle: R.hostingBundle, value: "Device Name", comment: "")
       }
       
       /// Base translation: Device Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func deviceTime(_: Void = ()) -> String {
         return NSLocalizedString("Device Time", bundle: R.hostingBundle, value: "Device Time", comment: "")
       }
       
       /// Base translation: Done
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func finishDone(_: Void = ()) -> String {
         return NSLocalizedString("Finish Done", bundle: R.hostingBundle, value: "Done", comment: "")
       }
       
       /// Base translation: Door Always Locked
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func doorAlwaysLocked(_: Void = ()) -> String {
         return NSLocalizedString("Door Always Locked", bundle: R.hostingBundle, value: "Door Always Locked", comment: "")
       }
       
       /// Base translation: Door Always Unlocked
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func doorAlwaysUnlocked(_: Void = ()) -> String {
         return NSLocalizedString("Door Always Unlocked", bundle: R.hostingBundle, value: "Door Always Unlocked", comment: "")
       }
       
       /// Base translation: Door Re-lock Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func doorReLockTime(_: Void = ()) -> String {
         return NSLocalizedString("Door Re-lock Time", bundle: R.hostingBundle, value: "Door Re-lock Time", comment: "")
       }
       
       /// Base translation: Door Re-lock Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func useReLockTime(_: Void = ()) -> String {
         return NSLocalizedString("Use Re-lock Time", bundle: R.hostingBundle, value: "Door Re-lock Time", comment: "")
       }
       
       /// Base translation: Door Sensor
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func doorSensor(_: Void = ()) -> String {
         return NSLocalizedString("Door Sensor", bundle: R.hostingBundle, value: "Door Sensor", comment: "")
       }
       
       /// Base translation: Download
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func download_dialog_title(_: Void = ()) -> String {
         return NSLocalizedString("download_dialog_title", bundle: R.hostingBundle, value: "Download", comment: "")
       }
       
       /// Base translation: Edit Admin Card/Fob
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func settings_Admin_card_Edit(_: Void = ()) -> String {
         return NSLocalizedString("settings_Admin_card_Edit", bundle: R.hostingBundle, value: "Edit Admin Card/Fob", comment: "")
       }
       
       /// Base translation: Edit Admin Passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func settings_Admin_pwd_Edit(_: Void = ()) -> String {
         return NSLocalizedString("settings_Admin_pwd_Edit", bundle: R.hostingBundle, value: "Edit Admin Passcode", comment: "")
       }
       
       /// Base translation: Edit Card/Fob: (10 digits)
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_card_edit_dialog_title(_: Void = ()) -> String {
         return NSLocalizedString("users_card_edit_dialog_title", bundle: R.hostingBundle, value: "Edit Card/Fob: (10 digits)", comment: "")
       }
       
       /// Base translation: Edit Device Name
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func editDeviceName(_: Void = ()) -> String {
         return NSLocalizedString("Edit Device Name", bundle: R.hostingBundle, value: "Edit Device Name", comment: "")
       }
       
       /// Base translation: Edit Door Re-lock Time (1~1800 seconds)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func editDoorReLockTime11800Seconds(_: Void = ()) -> String {
         return NSLocalizedString("Edit Door Re-lock Time (1~1800 seconds)", bundle: R.hostingBundle, value: "Edit Door Re-lock Time (1~1800 seconds)", comment: "")
       }
       
       /// Base translation: Edit ID: (16 characters)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_id_edit_dialog_title(_: Void = ()) -> String {
         return NSLocalizedString("users_id_edit_dialog_title", bundle: R.hostingBundle, value: "Edit ID: (16 characters)", comment: "")
       }
       
       /// Base translation: Edit Passcode: (4~8 digits)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_pwd_edit_dialog_title(_: Void = ()) -> String {
         return NSLocalizedString("users_pwd_edit_dialog_title", bundle: R.hostingBundle, value: "Edit Passcode: (4~8 digits)", comment: "")
       }
       
       /// Base translation: Enable Keypad PIN Code to Access
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func enableKeypadPINCodeToAccess(_: Void = ()) -> String {
         return NSLocalizedString("Enable Keypad PIN Code to Access", bundle: R.hostingBundle, value: "Enable Keypad PIN Code to Access", comment: "")
       }
       
       /// Base translation: End Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func end(_: Void = ()) -> String {
         return NSLocalizedString("End", bundle: R.hostingBundle, value: "End Time", comment: "")
       }
       
+      /// Base translation: Enter an user ID to search user.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static func history_search_placeHolder(_: Void = ()) -> String {
+        return NSLocalizedString("History_search_placeHolder", bundle: R.hostingBundle, value: "Enter an user ID to search user.", comment: "")
+      }
+      
+      /// Base translation: Enter an user ID to search user.
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static func userList_search_placeHolder(_: Void = ()) -> String {
+        return NSLocalizedString("UserList_search_placeHolder", bundle: R.hostingBundle, value: "Enter an user ID to search user.", comment: "")
+      }
+      
       /// Base translation: Every Friday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func friday(_: Void = ()) -> String {
         return NSLocalizedString("Friday", bundle: R.hostingBundle, value: "Every Friday", comment: "")
       }
       
       /// Base translation: Every Monday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func monday(_: Void = ()) -> String {
         return NSLocalizedString("Monday", bundle: R.hostingBundle, value: "Every Monday", comment: "")
       }
       
       /// Base translation: Every Saturday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func saturday(_: Void = ()) -> String {
         return NSLocalizedString("Saturday", bundle: R.hostingBundle, value: "Every Saturday", comment: "")
       }
       
       /// Base translation: Every Sunday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func sunday(_: Void = ()) -> String {
         return NSLocalizedString("Sunday", bundle: R.hostingBundle, value: "Every Sunday", comment: "")
       }
       
       /// Base translation: Every Thursday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func thursday(_: Void = ()) -> String {
         return NSLocalizedString("Thursday", bundle: R.hostingBundle, value: "Every Thursday", comment: "")
       }
       
       /// Base translation: Every Tuesday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func tuesday(_: Void = ()) -> String {
         return NSLocalizedString("Tuesday", bundle: R.hostingBundle, value: "Every Tuesday", comment: "")
       }
       
       /// Base translation: Every Wednesday
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func wednesday(_: Void = ()) -> String {
         return NSLocalizedString("Wednesday", bundle: R.hostingBundle, value: "Every Wednesday", comment: "")
       }
       
       /// Base translation: Every Week
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func everyWeek(_: Void = ()) -> String {
         return NSLocalizedString("Every Week", bundle: R.hostingBundle, value: "Every Week", comment: "")
       }
       
       /// Base translation: Fail
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func program_fail(_: Void = ()) -> String {
         return NSLocalizedString("program_fail", bundle: R.hostingBundle, value: "Fail", comment: "")
       }
       
       /// Base translation: Firmware version
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func settings_device_vr(_: Void = ()) -> String {
         return NSLocalizedString("settings_device_vr", bundle: R.hostingBundle, value: "Firmware version", comment: "")
       }
       
       /// Base translation: Format error!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func wrongFormat(_: Void = ()) -> String {
         return NSLocalizedString("wrong format!", bundle: R.hostingBundle, value: "Format error!", comment: "")
       }
       
       /// Base translation: HIDE
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func progress_dialog_hide_btn_title(_: Void = ()) -> String {
         return NSLocalizedString("progress_dialog_hide_btn_title", bundle: R.hostingBundle, value: "HIDE", comment: "")
       }
       
       /// Base translation: ID
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func iD(_: Void = ()) -> String {
         return NSLocalizedString("ID", bundle: R.hostingBundle, value: "ID", comment: "")
       }
       
       /// Base translation: ID
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func userName(_: Void = ()) -> String {
         return NSLocalizedString("User Name", bundle: R.hostingBundle, value: "ID", comment: "")
       }
       
       /// Base translation: ID Duplication!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_manage_edit_status_duplication_name(_: Void = ()) -> String {
         return NSLocalizedString("users_manage_edit_status_duplication_name", bundle: R.hostingBundle, value: "ID Duplication!!", comment: "")
       }
       
       /// Base translation: ID: Up to 16 characters
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func pleaseProvideUpTo16Characters(_: Void = ()) -> String {
         return NSLocalizedString("Please Provide Up to 16 characters", bundle: R.hostingBundle, value: "ID: Up to 16 characters", comment: "")
       }
       
       /// Base translation: If you forgot your ID or passcode, please contact your administrator.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func ifYouForgotYourIDOrPasswordPleaseContactYourAdministrator(_: Void = ()) -> String {
         return NSLocalizedString("If you forgot your ID or password, please contact your administrator.", bundle: R.hostingBundle, value: "If you forgot your ID or passcode, please contact your administrator.", comment: "")
       }
       
       /// Base translation: Incorrect passcode. Please try again
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func incorrectPasswordPleaseTryAgain(_: Void = ()) -> String {
         return NSLocalizedString("Incorrect password. Please try again", bundle: R.hostingBundle, value: "Incorrect passcode. Please try again", comment: "")
       }
       
       /// Base translation: Invalid Card/Fob!!
       /// 
-      /// Locales: Base
+      /// Locales: Base, it, fr, es, ja, ar
       static func users_manage_edit_status_Admin_card(_: Void = ()) -> String {
         return NSLocalizedString("users_manage_edit_status_Admin_card", bundle: R.hostingBundle, value: "Invalid Card/Fob!!", comment: "")
       }
       
       /// Base translation: Invalid ID !!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_manage_edit_status_Admin_name(_: Void = ()) -> String {
         return NSLocalizedString("users_manage_edit_status_Admin_name", bundle: R.hostingBundle, value: "Invalid ID !!", comment: "")
       }
       
       /// Base translation: Invalid Passcode!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_manage_edit_status_Admin_pwd(_: Void = ()) -> String {
         return NSLocalizedString("users_manage_edit_status_Admin_pwd", bundle: R.hostingBundle, value: "Invalid Passcode!!", comment: "")
       }
       
       /// Base translation: Keypad
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func openType_Keypad(_: Void = ()) -> String {
         return NSLocalizedString("openType_Keypad", bundle: R.hostingBundle, value: "Keypad", comment: "")
       }
       
       /// Base translation: Keypad Access
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func keypadAccess(_: Void = ()) -> String {
         return NSLocalizedString("Keypad Access", bundle: R.hostingBundle, value: "Keypad Access", comment: "")
       }
       
       /// Base translation: LOCKED
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func dOORCLOSED(_: Void = ()) -> String {
         return NSLocalizedString("DOOR CLOSED", bundle: R.hostingBundle, value: "LOCKED", comment: "")
       }
       
-      /// Base translation: Level 1
+      /// Base translation: Level 1 (High Sensitivity)
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func level1(_: Void = ()) -> String {
-        return NSLocalizedString("Level 1", bundle: R.hostingBundle, value: "Level 1", comment: "")
+        return NSLocalizedString("Level 1", bundle: R.hostingBundle, value: "Level 1 (High Sensitivity)", comment: "")
       }
       
-      /// Base translation: Level 2
+      /// Base translation: Level 2 (Mid Sensitivity)
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func level2(_: Void = ()) -> String {
-        return NSLocalizedString("Level 2", bundle: R.hostingBundle, value: "Level 2", comment: "")
+        return NSLocalizedString("Level 2", bundle: R.hostingBundle, value: "Level 2 (Mid Sensitivity)", comment: "")
       }
       
-      /// Base translation: Level 3
+      /// Base translation: Level 3 (Low Sensitivity)
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func level3(_: Void = ()) -> String {
-        return NSLocalizedString("Level 3", bundle: R.hostingBundle, value: "Level 3", comment: "")
+        return NSLocalizedString("Level 3", bundle: R.hostingBundle, value: "Level 3 (Low Sensitivity)", comment: "")
       }
       
       /// Base translation: Loading...
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func download_dialog_message(_: Void = ()) -> String {
         return NSLocalizedString("download_dialog_message", bundle: R.hostingBundle, value: "Loading...", comment: "")
       }
       
       /// Base translation: Lock Action
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func doorLockAction(_: Void = ()) -> String {
         return NSLocalizedString("Door Lock Action", bundle: R.hostingBundle, value: "Lock Action", comment: "")
       }
       
       /// Base translation: Login
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func enroll(_: Void = ()) -> String {
         return NSLocalizedString("Enroll", bundle: R.hostingBundle, value: "Login", comment: "")
       }
       
       /// Base translation: Login Failed. Please Verify Your Login Information Or Contact Your Administrator.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func eroll_fail(_: Void = ()) -> String {
         return NSLocalizedString("eroll_fail", bundle: R.hostingBundle, value: "Login Failed. Please Verify Your Login Information Or Contact Your Administrator.", comment: "")
       }
       
       /// Base translation: Login:
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func enroll_dialog_title(_: Void = ()) -> String {
         return NSLocalizedString("enroll_dialog_title", bundle: R.hostingBundle, value: "Login:", comment: "")
       }
       
       /// Base translation: Next
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func next(_: Void = ()) -> String {
         return NSLocalizedString("Next", bundle: R.hostingBundle, value: "Next", comment: "")
       }
       
       /// Base translation: Number of Times
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func accessTimes(_: Void = ()) -> String {
         return NSLocalizedString("Access Times", bundle: R.hostingBundle, value: "Number of Times", comment: "")
       }
       
       /// Base translation: OPEN
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func oPEN(_: Void = ()) -> String {
         return NSLocalizedString("OPEN", bundle: R.hostingBundle, value: "OPEN", comment: "")
       }
       
       /// Base translation: Open
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func `open`(_: Void = ()) -> String {
         return NSLocalizedString("Open", bundle: R.hostingBundle, value: "Open", comment: "")
       }
       
-      /// Base translation: Over range
+      /// Base translation: Out of range!! Please enter a number within 0-255.
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func over_range_alarm(_: Void = ()) -> String {
-        return NSLocalizedString("over_range_alarm", bundle: R.hostingBundle, value: "Over range", comment: "")
+        return NSLocalizedString("over_range_alarm", bundle: R.hostingBundle, value: "Out of range!! Please enter a number within 0-255.", comment: "")
       }
       
       /// Base translation: Passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func password(_: Void = ()) -> String {
         return NSLocalizedString("Password", bundle: R.hostingBundle, value: "Passcode", comment: "")
       }
       
       /// Base translation: Passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func passwordPINCode(_: Void = ()) -> String {
         return NSLocalizedString("Password/PIN Code", bundle: R.hostingBundle, value: "Passcode", comment: "")
       }
       
       /// Base translation: Passcode (4~8 Digits)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func passwordPINCode48Digits(_: Void = ()) -> String {
         return NSLocalizedString("Password/PIN Code (4~8 Digits)", bundle: R.hostingBundle, value: "Passcode (4~8 Digits)", comment: "")
       }
       
       /// Base translation: Passcode Duplication!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_manage_edit_status_duplication_password(_: Void = ()) -> String {
         return NSLocalizedString("users_manage_edit_status_duplication_password", bundle: R.hostingBundle, value: "Passcode Duplication!!", comment: "")
       }
       
       /// Base translation: Passcode: 4~8 digits
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func digits(_: Void = ()) -> String {
         return NSLocalizedString("4~8 digits", bundle: R.hostingBundle, value: "Passcode: 4~8 digits", comment: "")
       }
       
       /// Base translation: Permanent
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func permanent(_: Void = ()) -> String {
         return NSLocalizedString("Permanent", bundle: R.hostingBundle, value: "Permanent", comment: "")
       }
       
       /// Base translation: Phone Access
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func phoneAccess(_: Void = ()) -> String {
         return NSLocalizedString("Phone Access", bundle: R.hostingBundle, value: "Phone Access", comment: "")
       }
       
-      /// Base translation: Please Input User ID
-      /// 
-      /// Locales: zh-Hant, Base
-      static func history_search_placeHolder(_: Void = ()) -> String {
-        return NSLocalizedString("History_search_placeHolder", bundle: R.hostingBundle, value: "Please Input User ID", comment: "")
-      }
-      
-      /// Base translation: Please Input User ID
-      /// 
-      /// Locales: zh-Hant, Base
-      static func userList_search_placeHolder(_: Void = ()) -> String {
-        return NSLocalizedString("UserList_search_placeHolder", bundle: R.hostingBundle, value: "Please Input User ID", comment: "")
-      }
-      
       /// Base translation: Please disable 'AUTO' first!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func aUTO_ENABLE_CONFLICT(_: Void = ()) -> String {
         return NSLocalizedString("AUTO_ENABLE_CONFLICT", bundle: R.hostingBundle, value: "Please disable 'AUTO' first!!", comment: "")
       }
       
       /// Base translation: Please enter ID
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func pleaseEnterID(_: Void = ()) -> String {
         return NSLocalizedString("Please enter ID", bundle: R.hostingBundle, value: "Please enter ID", comment: "")
       }
       
       /// Base translation: Please enter Number of Times (0~255)
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func pleaseEnterAccessTimes(_: Void = ()) -> String {
         return NSLocalizedString("Please enter access times", bundle: R.hostingBundle, value: "Please enter Number of Times (0~255)", comment: "")
       }
       
       /// Base translation: Please enter passcode
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func pleaseEnterPassword(_: Void = ()) -> String {
         return NSLocalizedString("Please enter password", bundle: R.hostingBundle, value: "Please enter passcode", comment: "")
       }
       
       /// Base translation: Please enter the number of seconds
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func pleaseEnterTheNumberOfSeconds(_: Void = ()) -> String {
         return NSLocalizedString("Please enter the number of seconds", bundle: R.hostingBundle, value: "Please enter the number of seconds", comment: "")
       }
       
       /// Base translation: Please press "Next" to continue
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func pleasePressNextToContinue(_: Void = ()) -> String {
         return NSLocalizedString("Please press Next to continue", bundle: R.hostingBundle, value: "Please press \"Next\" to continue", comment: "")
       }
       
       /// Base translation: Please wait a moment…
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func pleaseWaitAMoment(_: Void = ()) -> String {
         return NSLocalizedString("Please wait a moment…", bundle: R.hostingBundle, value: "Please wait a moment…", comment: "")
       }
       
+      /// Base translation: Proximity Read Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static func pleaseSettingProximityReadRange(_: Void = ()) -> String {
+        return NSLocalizedString("Please Setting Proximity Read Range", bundle: R.hostingBundle, value: "Proximity Read Range", comment: "")
+      }
+      
+      /// Base translation: Proximity Read Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static func proximityReadRange(_: Void = ()) -> String {
+        return NSLocalizedString("Proximity Read Range", bundle: R.hostingBundle, value: "Proximity Read Range", comment: "")
+      }
+      
+      /// Base translation: Proximity Read Range
+      /// 
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static func proximityReadRangeSettings(_: Void = ()) -> String {
+        return NSLocalizedString("Proximity Read Range Settings", bundle: R.hostingBundle, value: "Proximity Read Range", comment: "")
+      }
+      
       /// Base translation: Repeat
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func `repeat`(_: Void = ()) -> String {
         return NSLocalizedString("Repeat", bundle: R.hostingBundle, value: "Repeat", comment: "")
       }
       
       /// Base translation: Repeat
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func repeatSelect(_: Void = ()) -> String {
         return NSLocalizedString("Repeat Select", bundle: R.hostingBundle, value: "Repeat", comment: "")
       }
       
       /// Base translation: Restore Backup
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restore(_: Void = ()) -> String {
         return NSLocalizedString("Restore", bundle: R.hostingBundle, value: "Restore Backup", comment: "")
       }
       
       /// Base translation: Restore Completed!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restore_completed(_: Void = ()) -> String {
         return NSLocalizedString("restore_completed", bundle: R.hostingBundle, value: "Restore Completed!", comment: "")
       }
       
       /// Base translation: Restore Device Data
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restore_dialog_title(_: Void = ()) -> String {
         return NSLocalizedString("restore_dialog_title", bundle: R.hostingBundle, value: "Restore Device Data", comment: "")
       }
       
       /// Base translation: Restore Done
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restoreDone(_: Void = ()) -> String {
         return NSLocalizedString("Restore Done", bundle: R.hostingBundle, value: "Restore Done", comment: "")
       }
       
       /// Base translation: Restore Status
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restore_status(_: Void = ()) -> String {
         return NSLocalizedString("restore_status", bundle: R.hostingBundle, value: "Restore Status", comment: "")
       }
       
       /// Base translation: Restore all data now?
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restoreAllDataNow(_: Void = ()) -> String {
         return NSLocalizedString("Restore all data now?", bundle: R.hostingBundle, value: "Restore all data now?", comment: "")
       }
       
       /// Base translation: Restoring...
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restore_dialog_message(_: Void = ()) -> String {
         return NSLocalizedString("restore_dialog_message", bundle: R.hostingBundle, value: "Restoring...", comment: "")
       }
       
       /// Base translation: Restoring…
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func restoring(_: Void = ()) -> String {
         return NSLocalizedString("Restoring…", bundle: R.hostingBundle, value: "Restoring…", comment: "")
       }
       
       /// Base translation: Scheduled
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func recurrent(_: Void = ()) -> String {
         return NSLocalizedString("Recurrent", bundle: R.hostingBundle, value: "Scheduled", comment: "")
       }
       
       /// Base translation: Search
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func search(_: Void = ()) -> String {
         return NSLocalizedString("Search", bundle: R.hostingBundle, value: "Search", comment: "")
       }
       
       /// Base translation: Search result
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func searchResult(_: Void = ()) -> String {
         return NSLocalizedString("Search result", bundle: R.hostingBundle, value: "Search result", comment: "")
       }
       
       /// Base translation: Sec.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func sec(_: Void = ()) -> String {
         return NSLocalizedString("Sec.", bundle: R.hostingBundle, value: "Sec.", comment: "")
       }
       
       /// Base translation: Settings
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func settings(_: Void = ()) -> String {
         return NSLocalizedString("Settings", bundle: R.hostingBundle, value: "Settings", comment: "")
       }
       
       /// Base translation: Skip
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func skip(_: Void = ()) -> String {
         return NSLocalizedString("Skip", bundle: R.hostingBundle, value: "Skip", comment: "")
       }
       
       /// Base translation: Start Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func start(_: Void = ()) -> String {
         return NSLocalizedString("Start", bundle: R.hostingBundle, value: "Start Time", comment: "")
       }
       
       /// Base translation: Success
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func program_success(_: Void = ()) -> String {
         return NSLocalizedString("program_success", bundle: R.hostingBundle, value: "Success", comment: "")
       }
       
       /// Base translation: System busy!!
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users_manage_edit_status_busy(_: Void = ()) -> String {
         return NSLocalizedString("users_manage_edit_status_busy", bundle: R.hostingBundle, value: "System busy!!", comment: "")
       }
       
       /// Base translation: Tamper Alarm
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func tamperSensor(_: Void = ()) -> String {
         return NSLocalizedString("Tamper Sensor", bundle: R.hostingBundle, value: "Tamper Alarm", comment: "")
       }
       
       /// Base translation: Tamper Sensor Level
       /// 
-      /// Locales: zh-Hant, Base
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func tamperSensorLevel(_: Void = ()) -> String {
         return NSLocalizedString("Tamper Sensor Level", bundle: R.hostingBundle, value: "Tamper Sensor Level", comment: "")
       }
       
       /// Base translation: Temporary
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func schedule(_: Void = ()) -> String {
         return NSLocalizedString("Schedule", bundle: R.hostingBundle, value: "Temporary", comment: "")
       }
       
       /// Base translation: There's no user. Tap "Add" to add new users.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func no_user_note(_: Void = ()) -> String {
         return NSLocalizedString("no_user_note", bundle: R.hostingBundle, value: "There's no user. Tap \"Add\" to add new users.", comment: "")
       }
       
       /// Base translation: There's no user. Tap "Add" to add new users.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func thereSNoUsersAddNow(_: Void = ()) -> String {
         return NSLocalizedString("There's no users, add now?", bundle: R.hostingBundle, value: "There's no user. Tap \"Add\" to add new users.", comment: "")
       }
       
       /// Base translation: Time
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func timeIn(_: Void = ()) -> String {
         return NSLocalizedString("Time in", bundle: R.hostingBundle, value: "Time", comment: "")
       }
       
       /// Base translation: UNLOCKED
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func dOOROPENED(_: Void = ()) -> String {
         return NSLocalizedString("DOOR OPENED", bundle: R.hostingBundle, value: "UNLOCKED", comment: "")
       }
       
       /// Base translation: Unlocked By
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func lockAction(_: Void = ()) -> String {
         return NSLocalizedString("Lock Action", bundle: R.hostingBundle, value: "Unlocked By", comment: "")
       }
       
       /// Base translation: Up to 16 characters
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func upTo16Characters(_: Void = ()) -> String {
         return NSLocalizedString("Up to 16 characters", bundle: R.hostingBundle, value: "Up to 16 characters", comment: "")
       }
       
       /// Base translation: User Info
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func userInfo(_: Void = ()) -> String {
         return NSLocalizedString("User Info", bundle: R.hostingBundle, value: "User Info", comment: "")
       }
       
       /// Base translation: Users
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func users(_: Void = ()) -> String {
         return NSLocalizedString("Users", bundle: R.hostingBundle, value: "Users", comment: "")
       }
       
       /// Base translation: Welcome
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func welcome(_: Void = ()) -> String {
         return NSLocalizedString("Welcome", bundle: R.hostingBundle, value: "Welcome", comment: "")
       }
       
       /// Base translation: You Have Successfully Logged In. You May Now Unlock A Door.
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func eroll_success(_: Void = ()) -> String {
         return NSLocalizedString("eroll_success", bundle: R.hostingBundle, value: "You Have Successfully Logged In. You May Now Unlock A Door.", comment: "")
       }
       
       /// Base translation: You can find default passcode from the manual. Please change your Admin passcode for security control.
       /// 
-      /// Locales: Base
+      /// Locales: Base, ar
       static func youCanFindDefaultPasscodeFromTheManualPleaseChangeYourAdminPasscodeForSecurityControl(_: Void = ()) -> String {
         return NSLocalizedString("You can find default passcode from the manual. Please change your Admin passcode for security control.", bundle: R.hostingBundle, value: "You can find default passcode from the manual. Please change your Admin passcode for security control.", comment: "")
       }
       
       /// Base translation: You must connect to a Bluetooth device to set up
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func youMustConnectToABluetoothDeviceToSetUp(_: Void = ()) -> String {
         return NSLocalizedString("You must connect to a Bluetooth device to set up", bundle: R.hostingBundle, value: "You must connect to a Bluetooth device to set up", comment: "")
       }
       
       /// Base translation: Your ID
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func yourID(_: Void = ()) -> String {
         return NSLocalizedString("Your ID", bundle: R.hostingBundle, value: "Your ID", comment: "")
       }
       
       /// Base translation: [FRI]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func weekly_Fri(_: Void = ()) -> String {
         return NSLocalizedString("weekly_Fri", bundle: R.hostingBundle, value: "[FRI]", comment: "")
       }
       
       /// Base translation: [MON]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func weekly_Mon(_: Void = ()) -> String {
         return NSLocalizedString("weekly_Mon", bundle: R.hostingBundle, value: "[MON]", comment: "")
       }
       
       /// Base translation: [SAT]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func weekly_Sat(_: Void = ()) -> String {
         return NSLocalizedString("weekly_Sat", bundle: R.hostingBundle, value: "[SAT]", comment: "")
       }
       
       /// Base translation: [SUN]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func weekly_Sun(_: Void = ()) -> String {
         return NSLocalizedString("weekly_Sun", bundle: R.hostingBundle, value: "[SUN]", comment: "")
       }
       
       /// Base translation: [THU]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func weekly_Thu(_: Void = ()) -> String {
         return NSLocalizedString("weekly_Thu", bundle: R.hostingBundle, value: "[THU]", comment: "")
       }
       
       /// Base translation: [TUE]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func weekly_Tue(_: Void = ()) -> String {
         return NSLocalizedString("weekly_Tue", bundle: R.hostingBundle, value: "[TUE]", comment: "")
       }
       
       /// Base translation: [WED]
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func weekly_Wed(_: Void = ()) -> String {
         return NSLocalizedString("weekly_Wed", bundle: R.hostingBundle, value: "[WED]", comment: "")
       }
       
       /// Base translation: please try later
       /// 
-      /// Locales: zh-Hant, Base, it, fr, es, ja
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static func pleaseTryLater(_: Void = ()) -> String {
         return NSLocalizedString("please try later", bundle: R.hostingBundle, value: "please try later", comment: "")
       }
@@ -2399,557 +2413,1140 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
     
-    /// This `R.string.main` struct is generated, and contains static references to 75 localization keys.
+    /// This `R.string.main` struct is generated, and contains static references to 128 localization keys.
     struct main {
+      /// ar translation:  
+      /// 
+      /// Locales: ar
+      static let i7OBBE66Text = Rswift.StringResource(key: "I7O-BB-E66.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let d0lHdJeVText = Rswift.StringResource(key: "D0l-hd-JeV.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let dfRWqSXpText = Rswift.StringResource(key: "dfR-wq-sXp.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let emDHoOkyText = Rswift.StringResource(key: "emD-ho-Oky.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let i8SHmIFdText = Rswift.StringResource(key: "i8S-Hm-iFd.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let jsjOpPezText = Rswift.StringResource(key: "jsj-Op-Pez.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let jucRnOmqText = Rswift.StringResource(key: "Juc-Rn-Omq.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let k2g3OE7nText = Rswift.StringResource(key: "K2g-3O-e7n.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let kRuZvJmXText = Rswift.StringResource(key: "kRu-zv-jmX.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let kyhSJH11Text = Rswift.StringResource(key: "kyh-SJ-H11.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let mUZ1Ix8Text = Rswift.StringResource(key: "8mU-z1-ix8.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let oWyU4KRoText = Rswift.StringResource(key: "oWy-u4-kRo.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let pQOFCIxmText = Rswift.StringResource(key: "pQO-fC-ixm.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let pZMWf9bSText = Rswift.StringResource(key: "pZM-wf-9bS.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let qT1mRS9Text = Rswift.StringResource(key: "7QT-1m-RS9.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let qcZLA3feText = Rswift.StringResource(key: "qcZ-LA-3fe.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let tZXEKDooText = Rswift.StringResource(key: "TZX-EK-doo.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let u7rL3Og0Text = Rswift.StringResource(key: "U7r-L3-Og0.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static let vCz5PY72Text = Rswift.StringResource(key: "vCz-5P-Y72.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let bh6Wk2dkText = Rswift.StringResource(key: "bh6-Wk-2dk.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let f6Q4OPqText = Rswift.StringResource(key: "2f6-q4-oPq.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let fvLFD7rKText = Rswift.StringResource(key: "fvL-fD-7rK.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let gyTHm2pxText = Rswift.StringResource(key: "GyT-hm-2px.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let iADQwQKHText = Rswift.StringResource(key: "IAD-Qw-QKH.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let jXhKEJCwText = Rswift.StringResource(key: "JXh-kE-jCw.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let jleQDJK7Text = Rswift.StringResource(key: "Jle-QD-JK7.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let k39OcIWfText = Rswift.StringResource(key: "k39-oc-IWf.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let n21Zc1bpText = Rswift.StringResource(key: "n21-Zc-1bp.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let oCrFzP4HText = Rswift.StringResource(key: "OCr-fz-p4H.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let pZ8PNKText = Rswift.StringResource(key: "59p-z8-pNK.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let py415V7kText = Rswift.StringResource(key: "py4-15-V7k.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let qXwYFUQBText = Rswift.StringResource(key: "qXw-yF-uQB.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let rMrAaKmmText = Rswift.StringResource(key: "RMr-aa-Kmm.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let sYwGT3ecText = Rswift.StringResource(key: "SYw-gT-3ec.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let teS7GHf3Text = Rswift.StringResource(key: "teS-7G-Hf3.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let uwfAaB9wText = Rswift.StringResource(key: "uwf-aa-B9w.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let vLGWEAKText = Rswift.StringResource(key: "6VL-gW-EAK.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let w2AFdAGkText = Rswift.StringResource(key: "w2A-fd-aGk.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static let y7JCZR7EText = Rswift.StringResource(key: "y7J-cZ-r7E.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 0000000000000
+      /// 
+      /// Locales: ar
+      static let w1xWV2i4Text = Rswift.StringResource(key: "W1x-WV-2i4.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 1234567890
+      /// 
+      /// Locales: ar
+      static let vrdTkJ0eText = Rswift.StringResource(key: "vrd-tk-j0e.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: Cancel
+      /// 
+      /// Locales: ar
+      static let hGMPWpiNormalTitle = Rswift.StringResource(key: "0hG-MP-Wpi.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: Cancel
+      /// 
+      /// Locales: ar
+      static let yYZ3BanNormalTitle = Rswift.StringResource(key: "2YY-z3-Ban.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: Confirm
+      /// 
+      /// Locales: ar
+      static let lFcA5BPINormalTitle = Rswift.StringResource(key: "LFc-a5-bPI.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: Confirm
+      /// 
+      /// Locales: ar
+      static let z40VhSrJNormalTitle = Rswift.StringResource(key: "Z40-vh-SrJ.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: Edit Card
+      /// 
+      /// Locales: ar
+      static let e5X23JHText = Rswift.StringResource(key: "8e5-x2-3JH.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: Edit Card
+      /// 
+      /// Locales: ar
+      static let vfT3F4qgText = Rswift.StringResource(key: "VfT-3F-4qg.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: Level 1
+      /// 
+      /// Locales: ar
+      static let bJaQSVH6Text = Rswift.StringResource(key: "bJa-qS-vH6.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 卡片(10個字元)
+      /// 
+      /// Locales: ar
+      static let hDsZESsaHeaderTitle = Rswift.StringResource(key: "HDs-ZE-ssa.headerTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 啟用卡片開門
+      /// 
+      /// Locales: ar
+      static let nCtLKX6TText = Rswift.StringResource(key: "NCt-LK-X6T.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 啟用手機開門
+      /// 
+      /// Locales: ar
+      static let lMpAfD67Text = Rswift.StringResource(key: "lMp-Af-d67.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 管理者卡片
+      /// 
+      /// Locales: ar
+      static let fow2lIfHText = Rswift.StringResource(key: "fow-2l-ifH.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
+      /// ar translation: 防拆感應等級
+      /// 
+      /// Locales: ar
+      static let s50rNDfText = Rswift.StringResource(key: "7s5-0r-NDf.text", tableName: "Main", bundle: R.hostingBundle, locales: ["ar"], comment: nil)
       /// it translation:  
       /// 
-      /// Locales: it, fr, es, ja
-      static let xPoRAIsLTitle = Rswift.StringResource(key: "XPo-rA-IsL.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let xPoRAIsLTitle = Rswift.StringResource(key: "XPo-rA-IsL.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 0000
       /// 
-      /// Locales: it, fr, es, ja
-      static let sJcY7IdYText = Rswift.StringResource(key: "SJc-y7-idY.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let sJcY7IdYText = Rswift.StringResource(key: "SJc-y7-idY.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 10
       /// 
-      /// Locales: it, fr, es, ja
-      static let bMNBNEx7Text = Rswift.StringResource(key: "bMN-BN-Ex7.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let bMNBNEx7Text = Rswift.StringResource(key: "bMN-BN-Ex7.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 10
       /// 
-      /// Locales: it, fr, es, ja
-      static let ecq5wD1xText = Rswift.StringResource(key: "Ecq-5w-d1x.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let ecq5wD1xText = Rswift.StringResource(key: "Ecq-5w-d1x.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 100/100
       /// 
-      /// Locales: it, fr, es, ja
-      static let cy5U0KfAText = Rswift.StringResource(key: "Cy5-U0-kfA.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let cy5U0KfAText = Rswift.StringResource(key: "Cy5-U0-kfA.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 100/100
       /// 
-      /// Locales: it, fr, es, ja
-      static let rOyWcNqIText = Rswift.StringResource(key: "rOy-wc-NqI.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let rOyWcNqIText = Rswift.StringResource(key: "rOy-wc-NqI.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 100/100
       /// 
-      /// Locales: it, fr, es, ja
-      static let xglABUQ7Text = Rswift.StringResource(key: "xgl-aB-UQ7.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let xglABUQ7Text = Rswift.StringResource(key: "xgl-aB-UQ7.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 12345
       /// 
-      /// Locales: it, fr, es, ja
-      static let nreRfGVrText = Rswift.StringResource(key: "Nre-Rf-gVr.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let nreRfGVrText = Rswift.StringResource(key: "Nre-Rf-gVr.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 2 Jun 2017 09:41 AM
       /// 
-      /// Locales: it, fr, es, ja
-      static let cyXOMcFText = Rswift.StringResource(key: "4cy-xO-mcF.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let cyXOMcFText = Rswift.StringResource(key: "4cy-xO-mcF.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 2秒
       /// 
-      /// Locales: it, fr, es, ja
-      static let ysx57Y05Text = Rswift.StringResource(key: "Ysx-57-y05.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let ysx57Y05Text = Rswift.StringResource(key: "Ysx-57-y05.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: About Us
       /// 
-      /// Locales: it, fr, es, ja
-      static let ehLhStcText = Rswift.StringResource(key: "8Eh-Lh-Stc.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let ehLhStcText = Rswift.StringResource(key: "8Eh-Lh-Stc.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: About Us
       /// 
-      /// Locales: it, fr, es, ja
-      static let h6hSHGteText = Rswift.StringResource(key: "H6h-SH-Gte.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let h6hSHGteText = Rswift.StringResource(key: "H6h-SH-Gte.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: CANCEL
       /// 
-      /// Locales: it, fr, es, ja
-      static let qlwHjMvaNormalTitle = Rswift.StringResource(key: "Qlw-Hj-mva.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let qlwHjMvaNormalTitle = Rswift.StringResource(key: "Qlw-Hj-mva.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: CANCEL
       /// 
-      /// Locales: it, fr, es, ja
-      static let t7DNOCMNormalTitle = Rswift.StringResource(key: "0T7-DN-oCM.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let t7DNOCMNormalTitle = Rswift.StringResource(key: "0T7-DN-oCM.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: CANCEL
       /// 
-      /// Locales: it, fr, es, ja
-      static let yH3BflNormalTitle = Rswift.StringResource(key: "23y-H3-bfl.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let yH3BflNormalTitle = Rswift.StringResource(key: "23y-H3-bfl.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: DOOR CLOSED
       /// 
-      /// Locales: it, fr, es, ja
-      static let cgHRWNGzText = Rswift.StringResource(key: "CgH-RW-nGz.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let cgHRWNGzText = Rswift.StringResource(key: "CgH-RW-nGz.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Device Time
       /// 
-      /// Locales: it, fr, es, ja
-      static let qeRRFS6FText = Rswift.StringResource(key: "qeR-rF-S6F.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let qeRRFS6FText = Rswift.StringResource(key: "qeR-rF-S6F.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Download Users List
       /// 
-      /// Locales: it, fr, es, ja
-      static let dI0NOUPBText = Rswift.StringResource(key: "DI0-NO-UPB.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let dI0NOUPBText = Rswift.StringResource(key: "DI0-NO-UPB.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Download Users List
       /// 
-      /// Locales: it, fr, es, ja
-      static let gPjP95AHText = Rswift.StringResource(key: "gPj-P9-5AH.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let gPjP95AHText = Rswift.StringResource(key: "gPj-P9-5AH.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Download Users List
       /// 
-      /// Locales: it, fr, es, ja
-      static let roGEQZEbText = Rswift.StringResource(key: "RoG-eQ-zEb.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let roGEQZEbText = Rswift.StringResource(key: "RoG-eQ-zEb.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: E3AK001
       /// 
-      /// Locales: it, fr, es, ja
-      static let twPIKF0Text = Rswift.StringResource(key: "3tw-pI-kF0.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let twPIKF0Text = Rswift.StringResource(key: "3tw-pI-kF0.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: EA3K001
       /// 
-      /// Locales: it, fr, es, ja
-      static let sBBeOyuText = Rswift.StringResource(key: "9sB-Be-oyu.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let sBBeOyuText = Rswift.StringResource(key: "9sB-Be-oyu.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: EA3K001
       /// 
-      /// Locales: it, fr, es, ja
-      static let uYiF3EagText = Rswift.StringResource(key: "UYi-f3-Eag.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let uYiF3EagText = Rswift.StringResource(key: "UYi-f3-Eag.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: HIDE
       /// 
-      /// Locales: it, fr, es, ja
-      static let lPZYwNefNormalTitle = Rswift.StringResource(key: "lPZ-yw-nef.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let lPZYwNefNormalTitle = Rswift.StringResource(key: "lPZ-yw-nef.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: HIDE
       /// 
-      /// Locales: it, fr, es, ja
-      static let qyGJABG0NormalTitle = Rswift.StringResource(key: "QyG-JA-bG0.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let qyGJABG0NormalTitle = Rswift.StringResource(key: "QyG-JA-bG0.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
-      static let kkqAUBEyText = Rswift.StringResource(key: "kkq-AU-BEy.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let kkqAUBEyText = Rswift.StringResource(key: "kkq-AU-BEy.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
-      static let rqIBdMHmText = Rswift.StringResource(key: "RqI-bd-MHm.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let rqIBdMHmText = Rswift.StringResource(key: "RqI-bd-MHm.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
-      static let tBM9TMSrText = Rswift.StringResource(key: "tBM-9T-mSr.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let tBM9TMSrText = Rswift.StringResource(key: "tBM-9T-mSr.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
-      static let ypz1OMmPText = Rswift.StringResource(key: "Ypz-1O-MmP.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let ypz1OMmPText = Rswift.StringResource(key: "Ypz-1O-MmP.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
-      static let zGrR2GyyText = Rswift.StringResource(key: "zGr-r2-gyy.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let zGrR2GyyText = Rswift.StringResource(key: "zGr-r2-gyy.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: MESSAGE
       /// 
-      /// Locales: it, fr, es, ja
-      static let o8Yw8YJText = Rswift.StringResource(key: "0o8-yw-8YJ.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let o8Yw8YJText = Rswift.StringResource(key: "0o8-yw-8YJ.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: MESSAGE
       /// 
-      /// Locales: it, fr, es, ja
-      static let xHJZPFlText = Rswift.StringResource(key: "4xH-JZ-PFl.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let xHJZPFlText = Rswift.StringResource(key: "4xH-JZ-PFl.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: OK
       /// 
-      /// Locales: it, fr, es, ja
-      static let nKS3HZWNNormalTitle = Rswift.StringResource(key: "NKS-3H-ZWN.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let nKS3HZWNNormalTitle = Rswift.StringResource(key: "NKS-3H-ZWN.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: OK
       /// 
-      /// Locales: it, fr, es, ja
-      static let wW9KoYmqNormalTitle = Rswift.StringResource(key: "wW9-Ko-ymq.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let wW9KoYmqNormalTitle = Rswift.StringResource(key: "wW9-Ko-ymq.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: OPEN
       /// 
-      /// Locales: it, fr, es, ja
-      static let qR8785ZmNormalTitle = Rswift.StringResource(key: "QR8-78-5Zm.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let qR8785ZmNormalTitle = Rswift.StringResource(key: "QR8-78-5Zm.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: User ID
       /// 
-      /// Locales: it, fr, es, ja
-      static let bVB8VGy9Text = Rswift.StringResource(key: "bVB-8V-Gy9.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let bVB8VGy9Text = Rswift.StringResource(key: "bVB-8V-Gy9.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: chris
       /// 
       /// Locales: it, fr, es, ja
       static let imSAlZ1oText = Rswift.StringResource(key: "imS-Al-z1o.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
       /// it translation: chris
       /// 
-      /// Locales: it, fr, es, ja
-      static let tp1ZHNt4Text = Rswift.StringResource(key: "tp1-ZH-Nt4.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let tp1ZHNt4Text = Rswift.StringResource(key: "tp1-ZH-Nt4.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: percent
       /// 
-      /// Locales: it, fr, es, ja
-      static let fixDMMsBText = Rswift.StringResource(key: "Fix-DM-msB.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let fixDMMsBText = Rswift.StringResource(key: "Fix-DM-msB.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: percent
       /// 
-      /// Locales: it, fr, es, ja
-      static let indR9GbyText = Rswift.StringResource(key: "ind-R9-Gby.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let indR9GbyText = Rswift.StringResource(key: "ind-R9-Gby.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: percent
       /// 
-      /// Locales: it, fr, es, ja
-      static let zwW4K4aTText = Rswift.StringResource(key: "zwW-4K-4aT.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let zwW4K4aTText = Rswift.StringResource(key: "zwW-4K-4aT.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 使用者
       /// 
-      /// Locales: it, fr, es, ja
-      static let egBiNNormalTitle = Rswift.StringResource(key: "804-eg-BiN.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let egBiNNormalTitle = Rswift.StringResource(key: "804-eg-BiN.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 使用者
       /// 
-      /// Locales: it, fr, es, ja
-      static let q2U10NWTitle = Rswift.StringResource(key: "6Q2-U1-0NW.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let q2U10NWTitle = Rswift.StringResource(key: "6Q2-U1-0NW.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 使用者資訊
       /// 
-      /// Locales: it, fr, es, ja
-      static let xYGMVDiFTitle = Rswift.StringResource(key: "xYG-mV-diF.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let xYGMVDiFTitle = Rswift.StringResource(key: "xYG-mV-diF.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 依據延遲上鎖時間
       /// 
-      /// Locales: it, fr, es, ja
-      static let oNLR7X0PText = Rswift.StringResource(key: "oNL-R7-X0P.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let oNLR7X0PText = Rswift.StringResource(key: "oNL-R7-X0P.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 刪除
       /// 
-      /// Locales: it, fr, es, ja
-      static let kPgQlJkmNormalTitle = Rswift.StringResource(key: "kPg-Ql-jkm.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let kPgQlJkmNormalTitle = Rswift.StringResource(key: "kPg-Ql-jkm.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 啟用按鍵密碼開門
       /// 
-      /// Locales: it, fr, es, ja
-      static let uK2Fs2BAText = Rswift.StringResource(key: "uK2-Fs-2BA.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let uK2Fs2BAText = Rswift.StringResource(key: "uK2-Fs-2BA.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 型號ABC123
       /// 
-      /// Locales: it, fr, es, ja
-      static let qNB2WLWText = Rswift.StringResource(key: "9QN-b2-WLW.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let qNB2WLWText = Rswift.StringResource(key: "9QN-b2-WLW.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 密碼(4~8個字元)
       /// 
-      /// Locales: it, fr, es, ja
-      static let l0B1bVakHeaderTitle = Rswift.StringResource(key: "L0B-1b-Vak.headerTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let l0B1bVakHeaderTitle = Rswift.StringResource(key: "L0B-1b-Vak.headerTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 帳號(最多16字元)
       /// 
-      /// Locales: it, fr, es, ja
-      static let ehpUuPVEHeaderTitle = Rswift.StringResource(key: "Ehp-uu-pVE.headerTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let ehpUuPVEHeaderTitle = Rswift.StringResource(key: "Ehp-uu-pVE.headerTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 延遲上鎖時間
       /// 
-      /// Locales: it, fr, es, ja
-      static let rxDCGWCjText = Rswift.StringResource(key: "RxD-CG-wCj.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let rxDCGWCjText = Rswift.StringResource(key: "RxD-CG-wCj.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 感應距離
       /// 
-      /// Locales: it, fr, es, ja
-      static let cP7JhText = Rswift.StringResource(key: "039-CP-7Jh.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let cP7JhText = Rswift.StringResource(key: "039-CP-7Jh.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 感應距離
       /// 
-      /// Locales: it, fr, es, ja
-      static let hd6UEREText = Rswift.StringResource(key: "3Hd-6U-eRE.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let hd6UEREText = Rswift.StringResource(key: "3Hd-6U-eRE.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 搜尋
       /// 
       /// Locales: it, fr, es, ja
       static let q4o4H4NEPlaceholder = Rswift.StringResource(key: "Q4o-4H-4NE.placeholder", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
       /// it translation: 搜尋
       /// 
-      /// Locales: it, fr, es, ja
-      static let ygNW3B3bPlaceholder = Rswift.StringResource(key: "YgN-w3-B3b.placeholder", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let ygNW3B3bPlaceholder = Rswift.StringResource(key: "YgN-w3-B3b.placeholder", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 新增
       /// 
-      /// Locales: it, fr, es, ja
-      static let laYRDFPTitle = Rswift.StringResource(key: "2La-YR-DFP.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let laYRDFPTitle = Rswift.StringResource(key: "2La-YR-DFP.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 日期
       /// 
-      /// Locales: it, fr, es, ja
-      static let sIQJ8R8jText = Rswift.StringResource(key: "SIQ-J8-r8j.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let sIQJ8R8jText = Rswift.StringResource(key: "SIQ-J8-r8j.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 星期二、四、五、六，時間為04:00 ~ 16:00
       /// 
-      /// Locales: it, fr, es, ja
-      static let hLcL3A0rFooterTitle = Rswift.StringResource(key: "HLc-L3-A0r.footerTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let hLcL3A0rFooterTitle = Rswift.StringResource(key: "HLc-L3-A0r.footerTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 歷史進出記錄
       /// 
-      /// Locales: it, fr, es, ja
-      static let aN8VoGaNNormalTitle = Rswift.StringResource(key: "aN8-Vo-GaN.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let aN8VoGaNNormalTitle = Rswift.StringResource(key: "aN8-Vo-GaN.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 管理者密碼
       /// 
-      /// Locales: it, fr, es, ja
-      static let vK1YEZpbText = Rswift.StringResource(key: "vK1-yE-Zpb.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let vK1YEZpbText = Rswift.StringResource(key: "vK1-yE-Zpb.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 自動感應開門
       /// 
-      /// Locales: it, fr, es, ja
-      static let gPZHqpNormalTitle = Rswift.StringResource(key: "43g-pZ-Hqp.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let gPZHqpNormalTitle = Rswift.StringResource(key: "43g-pZ-Hqp.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 裝置名稱
       /// 
-      /// Locales: it, fr, es, ja
-      static let agBD8X8MText = Rswift.StringResource(key: "agB-d8-X8M.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let agBD8X8MText = Rswift.StringResource(key: "agB-d8-X8M.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 裝置名稱
       /// 
-      /// Locales: it, fr, es, ja
-      static let hHSEAAfIText = Rswift.StringResource(key: "HHS-EA-AfI.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let hHSEAAfIText = Rswift.StringResource(key: "HHS-EA-AfI.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 設定
       /// 
-      /// Locales: it, fr, es, ja
-      static let baiJW8T4Title = Rswift.StringResource(key: "bai-JW-8T4.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let baiJW8T4Title = Rswift.StringResource(key: "bai-JW-8T4.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 設定
       /// 
-      /// Locales: it, fr, es, ja
-      static let cLdK094STitle = Rswift.StringResource(key: "cLd-k0-94S.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let cLdK094STitle = Rswift.StringResource(key: "cLd-k0-94S.title", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 設定
       /// 
-      /// Locales: it, fr, es, ja
-      static let jzdADXRANormalTitle = Rswift.StringResource(key: "Jzd-AD-XRA.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let jzdADXRANormalTitle = Rswift.StringResource(key: "Jzd-AD-XRA.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 註冊
       /// 
-      /// Locales: it, fr, es, ja
-      static let eKT1AK5NormalTitle = Rswift.StringResource(key: "4eK-T1-AK5.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let eKT1AK5NormalTitle = Rswift.StringResource(key: "4eK-T1-AK5.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 資料備份
       /// 
-      /// Locales: it, fr, es, ja
-      static let fCvG9U2bNormalTitle = Rswift.StringResource(key: "FCv-g9-U2b.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let fCvG9U2bNormalTitle = Rswift.StringResource(key: "FCv-g9-U2b.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 資料還原
       /// 
-      /// Locales: it, fr, es, ja
-      static let i9bHLYwZNormalTitle = Rswift.StringResource(key: "I9b-HL-YwZ.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let i9bHLYwZNormalTitle = Rswift.StringResource(key: "I9b-HL-YwZ.normalTitle", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 週期排程
       /// 
-      /// Locales: it, fr, es, ja
-      static let upQXl13xText = Rswift.StringResource(key: "upQ-xl-13x.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let upQXl13xText = Rswift.StringResource(key: "upQ-xl-13x.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 進出管制模式
       /// 
-      /// Locales: it, fr, es, ja
-      static let j5wRHJE5Text = Rswift.StringResource(key: "J5w-RH-JE5.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let j5wRHJE5Text = Rswift.StringResource(key: "J5w-RH-JE5.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 門位偵測
       /// 
-      /// Locales: it, fr, es, ja
-      static let hS7E7OcLText = Rswift.StringResource(key: "hS7-E7-OcL.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let hS7E7OcLText = Rswift.StringResource(key: "hS7-E7-OcL.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 門鎖動作
       /// 
-      /// Locales: it, fr, es, ja
-      static let oIc7UOM4Text = Rswift.StringResource(key: "OIc-7U-oM4.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let oIc7UOM4Text = Rswift.StringResource(key: "OIc-7U-oM4.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 開鎖方式
       /// 
-      /// Locales: it, fr, es, ja
-      static let hn54C63sText = Rswift.StringResource(key: "Hn5-4C-63s.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let hn54C63sText = Rswift.StringResource(key: "Hn5-4C-63s.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
       /// it translation: 防拆感應
       /// 
-      /// Locales: it, fr, es, ja
-      static let mlxDb6RPText = Rswift.StringResource(key: "Mlx-db-6RP.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja"], comment: nil)
+      /// Locales: it, fr, es, ja, ar
+      static let mlxDb6RPText = Rswift.StringResource(key: "Mlx-db-6RP.text", tableName: "Main", bundle: R.hostingBundle, locales: ["it", "fr", "es", "ja", "ar"], comment: nil)
+      
+      /// ar translation:  
+      /// 
+      /// Locales: ar
+      static func i7OBBE66Text(_: Void = ()) -> String {
+        return NSLocalizedString("I7O-BB-E66.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func d0lHdJeVText(_: Void = ()) -> String {
+        return NSLocalizedString("D0l-hd-JeV.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func dfRWqSXpText(_: Void = ()) -> String {
+        return NSLocalizedString("dfR-wq-sXp.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func emDHoOkyText(_: Void = ()) -> String {
+        return NSLocalizedString("emD-ho-Oky.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func i8SHmIFdText(_: Void = ()) -> String {
+        return NSLocalizedString("i8S-Hm-iFd.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func jsjOpPezText(_: Void = ()) -> String {
+        return NSLocalizedString("jsj-Op-Pez.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func jucRnOmqText(_: Void = ()) -> String {
+        return NSLocalizedString("Juc-Rn-Omq.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func k2g3OE7nText(_: Void = ()) -> String {
+        return NSLocalizedString("K2g-3O-e7n.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func kRuZvJmXText(_: Void = ()) -> String {
+        return NSLocalizedString("kRu-zv-jmX.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func kyhSJH11Text(_: Void = ()) -> String {
+        return NSLocalizedString("kyh-SJ-H11.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func mUZ1Ix8Text(_: Void = ()) -> String {
+        return NSLocalizedString("8mU-z1-ix8.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func oWyU4KRoText(_: Void = ()) -> String {
+        return NSLocalizedString("oWy-u4-kRo.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func pQOFCIxmText(_: Void = ()) -> String {
+        return NSLocalizedString("pQO-fC-ixm.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func pZMWf9bSText(_: Void = ()) -> String {
+        return NSLocalizedString("pZM-wf-9bS.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func qT1mRS9Text(_: Void = ()) -> String {
+        return NSLocalizedString("7QT-1m-RS9.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func qcZLA3feText(_: Void = ()) -> String {
+        return NSLocalizedString("qcZ-LA-3fe.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func tZXEKDooText(_: Void = ()) -> String {
+        return NSLocalizedString("TZX-EK-doo.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func u7rL3Og0Text(_: Void = ()) -> String {
+        return NSLocalizedString("U7r-L3-Og0.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: -
+      /// 
+      /// Locales: ar
+      static func vCz5PY72Text(_: Void = ()) -> String {
+        return NSLocalizedString("vCz-5P-Y72.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func bh6Wk2dkText(_: Void = ()) -> String {
+        return NSLocalizedString("bh6-Wk-2dk.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func f6Q4OPqText(_: Void = ()) -> String {
+        return NSLocalizedString("2f6-q4-oPq.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func fvLFD7rKText(_: Void = ()) -> String {
+        return NSLocalizedString("fvL-fD-7rK.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func gyTHm2pxText(_: Void = ()) -> String {
+        return NSLocalizedString("GyT-hm-2px.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func iADQwQKHText(_: Void = ()) -> String {
+        return NSLocalizedString("IAD-Qw-QKH.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func jXhKEJCwText(_: Void = ()) -> String {
+        return NSLocalizedString("JXh-kE-jCw.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func jleQDJK7Text(_: Void = ()) -> String {
+        return NSLocalizedString("Jle-QD-JK7.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func k39OcIWfText(_: Void = ()) -> String {
+        return NSLocalizedString("k39-oc-IWf.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func n21Zc1bpText(_: Void = ()) -> String {
+        return NSLocalizedString("n21-Zc-1bp.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func oCrFzP4HText(_: Void = ()) -> String {
+        return NSLocalizedString("OCr-fz-p4H.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func pZ8PNKText(_: Void = ()) -> String {
+        return NSLocalizedString("59p-z8-pNK.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func py415V7kText(_: Void = ()) -> String {
+        return NSLocalizedString("py4-15-V7k.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func qXwYFUQBText(_: Void = ()) -> String {
+        return NSLocalizedString("qXw-yF-uQB.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func rMrAaKmmText(_: Void = ()) -> String {
+        return NSLocalizedString("RMr-aa-Kmm.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func sYwGT3ecText(_: Void = ()) -> String {
+        return NSLocalizedString("SYw-gT-3ec.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func teS7GHf3Text(_: Void = ()) -> String {
+        return NSLocalizedString("teS-7G-Hf3.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func uwfAaB9wText(_: Void = ()) -> String {
+        return NSLocalizedString("uwf-aa-B9w.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func vLGWEAKText(_: Void = ()) -> String {
+        return NSLocalizedString("6VL-gW-EAK.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func w2AFdAGkText(_: Void = ()) -> String {
+        return NSLocalizedString("w2A-fd-aGk.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0
+      /// 
+      /// Locales: ar
+      static func y7JCZR7EText(_: Void = ()) -> String {
+        return NSLocalizedString("y7J-cZ-r7E.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 0000000000000
+      /// 
+      /// Locales: ar
+      static func w1xWV2i4Text(_: Void = ()) -> String {
+        return NSLocalizedString("W1x-WV-2i4.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 1234567890
+      /// 
+      /// Locales: ar
+      static func vrdTkJ0eText(_: Void = ()) -> String {
+        return NSLocalizedString("vrd-tk-j0e.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: Cancel
+      /// 
+      /// Locales: ar
+      static func hGMPWpiNormalTitle(_: Void = ()) -> String {
+        return NSLocalizedString("0hG-MP-Wpi.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: Cancel
+      /// 
+      /// Locales: ar
+      static func yYZ3BanNormalTitle(_: Void = ()) -> String {
+        return NSLocalizedString("2YY-z3-Ban.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: Confirm
+      /// 
+      /// Locales: ar
+      static func lFcA5BPINormalTitle(_: Void = ()) -> String {
+        return NSLocalizedString("LFc-a5-bPI.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: Confirm
+      /// 
+      /// Locales: ar
+      static func z40VhSrJNormalTitle(_: Void = ()) -> String {
+        return NSLocalizedString("Z40-vh-SrJ.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: Edit Card
+      /// 
+      /// Locales: ar
+      static func e5X23JHText(_: Void = ()) -> String {
+        return NSLocalizedString("8e5-x2-3JH.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: Edit Card
+      /// 
+      /// Locales: ar
+      static func vfT3F4qgText(_: Void = ()) -> String {
+        return NSLocalizedString("VfT-3F-4qg.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: Level 1
+      /// 
+      /// Locales: ar
+      static func bJaQSVH6Text(_: Void = ()) -> String {
+        return NSLocalizedString("bJa-qS-vH6.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 卡片(10個字元)
+      /// 
+      /// Locales: ar
+      static func hDsZESsaHeaderTitle(_: Void = ()) -> String {
+        return NSLocalizedString("HDs-ZE-ssa.headerTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 啟用卡片開門
+      /// 
+      /// Locales: ar
+      static func nCtLKX6TText(_: Void = ()) -> String {
+        return NSLocalizedString("NCt-LK-X6T.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 啟用手機開門
+      /// 
+      /// Locales: ar
+      static func lMpAfD67Text(_: Void = ()) -> String {
+        return NSLocalizedString("lMp-Af-d67.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 管理者卡片
+      /// 
+      /// Locales: ar
+      static func fow2lIfHText(_: Void = ()) -> String {
+        return NSLocalizedString("fow-2l-ifH.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
+      
+      /// ar translation: 防拆感應等級
+      /// 
+      /// Locales: ar
+      static func s50rNDfText(_: Void = ()) -> String {
+        return NSLocalizedString("7s5-0r-NDf.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
+      }
       
       /// it translation:  
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func xPoRAIsLTitle(_: Void = ()) -> String {
         return NSLocalizedString("XPo-rA-IsL.title", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 0000
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func sJcY7IdYText(_: Void = ()) -> String {
         return NSLocalizedString("SJc-y7-idY.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 10
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func bMNBNEx7Text(_: Void = ()) -> String {
         return NSLocalizedString("bMN-BN-Ex7.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 10
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func ecq5wD1xText(_: Void = ()) -> String {
         return NSLocalizedString("Ecq-5w-d1x.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 100/100
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func cy5U0KfAText(_: Void = ()) -> String {
         return NSLocalizedString("Cy5-U0-kfA.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 100/100
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func rOyWcNqIText(_: Void = ()) -> String {
         return NSLocalizedString("rOy-wc-NqI.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 100/100
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func xglABUQ7Text(_: Void = ()) -> String {
         return NSLocalizedString("xgl-aB-UQ7.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 12345
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func nreRfGVrText(_: Void = ()) -> String {
         return NSLocalizedString("Nre-Rf-gVr.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 2 Jun 2017 09:41 AM
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func cyXOMcFText(_: Void = ()) -> String {
         return NSLocalizedString("4cy-xO-mcF.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 2秒
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func ysx57Y05Text(_: Void = ()) -> String {
         return NSLocalizedString("Ysx-57-y05.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: About Us
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func ehLhStcText(_: Void = ()) -> String {
         return NSLocalizedString("8Eh-Lh-Stc.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: About Us
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func h6hSHGteText(_: Void = ()) -> String {
         return NSLocalizedString("H6h-SH-Gte.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: CANCEL
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func qlwHjMvaNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("Qlw-Hj-mva.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: CANCEL
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func t7DNOCMNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("0T7-DN-oCM.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: CANCEL
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func yH3BflNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("23y-H3-bfl.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: DOOR CLOSED
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func cgHRWNGzText(_: Void = ()) -> String {
         return NSLocalizedString("CgH-RW-nGz.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Device Time
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func qeRRFS6FText(_: Void = ()) -> String {
         return NSLocalizedString("qeR-rF-S6F.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Download Users List
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func dI0NOUPBText(_: Void = ()) -> String {
         return NSLocalizedString("DI0-NO-UPB.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Download Users List
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func gPjP95AHText(_: Void = ()) -> String {
         return NSLocalizedString("gPj-P9-5AH.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Download Users List
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func roGEQZEbText(_: Void = ()) -> String {
         return NSLocalizedString("RoG-eQ-zEb.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: E3AK001
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func twPIKF0Text(_: Void = ()) -> String {
         return NSLocalizedString("3tw-pI-kF0.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: EA3K001
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func sBBeOyuText(_: Void = ()) -> String {
         return NSLocalizedString("9sB-Be-oyu.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: EA3K001
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func uYiF3EagText(_: Void = ()) -> String {
         return NSLocalizedString("UYi-f3-Eag.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: HIDE
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func lPZYwNefNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("lPZ-yw-nef.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: HIDE
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func qyGJABG0NormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("QyG-JA-bG0.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func kkqAUBEyText(_: Void = ()) -> String {
         return NSLocalizedString("kkq-AU-BEy.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func rqIBdMHmText(_: Void = ()) -> String {
         return NSLocalizedString("RqI-bd-MHm.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func tBM9TMSrText(_: Void = ()) -> String {
         return NSLocalizedString("tBM-9T-mSr.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func ypz1OMmPText(_: Void = ()) -> String {
         return NSLocalizedString("Ypz-1O-MmP.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: Loading...
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func zGrR2GyyText(_: Void = ()) -> String {
         return NSLocalizedString("zGr-r2-gyy.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: MESSAGE
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func o8Yw8YJText(_: Void = ()) -> String {
         return NSLocalizedString("0o8-yw-8YJ.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: MESSAGE
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func xHJZPFlText(_: Void = ()) -> String {
         return NSLocalizedString("4xH-JZ-PFl.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: OK
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func nKS3HZWNNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("NKS-3H-ZWN.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: OK
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func wW9KoYmqNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("wW9-Ko-ymq.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: OPEN
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func qR8785ZmNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("QR8-78-5Zm.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: User ID
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func bVB8VGy9Text(_: Void = ()) -> String {
         return NSLocalizedString("bVB-8V-Gy9.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
@@ -2963,112 +3560,112 @@ struct R: Rswift.Validatable {
       
       /// it translation: chris
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func tp1ZHNt4Text(_: Void = ()) -> String {
         return NSLocalizedString("tp1-ZH-Nt4.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: percent
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func fixDMMsBText(_: Void = ()) -> String {
         return NSLocalizedString("Fix-DM-msB.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: percent
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func indR9GbyText(_: Void = ()) -> String {
         return NSLocalizedString("ind-R9-Gby.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: percent
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func zwW4K4aTText(_: Void = ()) -> String {
         return NSLocalizedString("zwW-4K-4aT.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 使用者
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func egBiNNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("804-eg-BiN.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 使用者
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func q2U10NWTitle(_: Void = ()) -> String {
         return NSLocalizedString("6Q2-U1-0NW.title", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 使用者資訊
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func xYGMVDiFTitle(_: Void = ()) -> String {
         return NSLocalizedString("xYG-mV-diF.title", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 依據延遲上鎖時間
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func oNLR7X0PText(_: Void = ()) -> String {
         return NSLocalizedString("oNL-R7-X0P.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 刪除
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func kPgQlJkmNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("kPg-Ql-jkm.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 啟用按鍵密碼開門
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func uK2Fs2BAText(_: Void = ()) -> String {
         return NSLocalizedString("uK2-Fs-2BA.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 型號ABC123
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func qNB2WLWText(_: Void = ()) -> String {
         return NSLocalizedString("9QN-b2-WLW.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 密碼(4~8個字元)
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func l0B1bVakHeaderTitle(_: Void = ()) -> String {
         return NSLocalizedString("L0B-1b-Vak.headerTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 帳號(最多16字元)
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func ehpUuPVEHeaderTitle(_: Void = ()) -> String {
         return NSLocalizedString("Ehp-uu-pVE.headerTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 延遲上鎖時間
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func rxDCGWCjText(_: Void = ()) -> String {
         return NSLocalizedString("RxD-CG-wCj.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 感應距離
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func cP7JhText(_: Void = ()) -> String {
         return NSLocalizedString("039-CP-7Jh.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 感應距離
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func hd6UEREText(_: Void = ()) -> String {
         return NSLocalizedString("3Hd-6U-eRE.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
@@ -3082,147 +3679,147 @@ struct R: Rswift.Validatable {
       
       /// it translation: 搜尋
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func ygNW3B3bPlaceholder(_: Void = ()) -> String {
         return NSLocalizedString("YgN-w3-B3b.placeholder", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 新增
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func laYRDFPTitle(_: Void = ()) -> String {
         return NSLocalizedString("2La-YR-DFP.title", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 日期
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func sIQJ8R8jText(_: Void = ()) -> String {
         return NSLocalizedString("SIQ-J8-r8j.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 星期二、四、五、六，時間為04:00 ~ 16:00
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func hLcL3A0rFooterTitle(_: Void = ()) -> String {
         return NSLocalizedString("HLc-L3-A0r.footerTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 歷史進出記錄
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func aN8VoGaNNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("aN8-Vo-GaN.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 管理者密碼
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func vK1YEZpbText(_: Void = ()) -> String {
         return NSLocalizedString("vK1-yE-Zpb.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 自動感應開門
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func gPZHqpNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("43g-pZ-Hqp.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 裝置名稱
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func agBD8X8MText(_: Void = ()) -> String {
         return NSLocalizedString("agB-d8-X8M.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 裝置名稱
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func hHSEAAfIText(_: Void = ()) -> String {
         return NSLocalizedString("HHS-EA-AfI.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 設定
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func baiJW8T4Title(_: Void = ()) -> String {
         return NSLocalizedString("bai-JW-8T4.title", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 設定
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func cLdK094STitle(_: Void = ()) -> String {
         return NSLocalizedString("cLd-k0-94S.title", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 設定
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func jzdADXRANormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("Jzd-AD-XRA.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 註冊
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func eKT1AK5NormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("4eK-T1-AK5.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 資料備份
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func fCvG9U2bNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("FCv-g9-U2b.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 資料還原
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func i9bHLYwZNormalTitle(_: Void = ()) -> String {
         return NSLocalizedString("I9b-HL-YwZ.normalTitle", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 週期排程
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func upQXl13xText(_: Void = ()) -> String {
         return NSLocalizedString("upQ-xl-13x.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 進出管制模式
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func j5wRHJE5Text(_: Void = ()) -> String {
         return NSLocalizedString("J5w-RH-JE5.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 門位偵測
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func hS7E7OcLText(_: Void = ()) -> String {
         return NSLocalizedString("hS7-E7-OcL.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 門鎖動作
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func oIc7UOM4Text(_: Void = ()) -> String {
         return NSLocalizedString("OIc-7U-oM4.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 開鎖方式
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func hn54C63sText(_: Void = ()) -> String {
         return NSLocalizedString("Hn5-4C-63s.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
       
       /// it translation: 防拆感應
       /// 
-      /// Locales: it, fr, es, ja
+      /// Locales: it, fr, es, ja, ar
       static func mlxDb6RPText(_: Void = ()) -> String {
         return NSLocalizedString("Mlx-db-6RP.text", tableName: "Main", bundle: R.hostingBundle, comment: "")
       }
@@ -3269,10 +3866,10 @@ struct _R: Rswift.Validatable {
       }
       
       static func validate() throws {
-        if UIKit.UIImage(named: "anxell_logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'anxell_logo' is used in nib 'AboutUsViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon_email", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_email' is used in nib 'AboutUsViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon_version", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_version' is used in nib 'AboutUsViewController', but couldn't be loaded.") }
         if UIKit.UIImage(named: "icon_website", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'icon_website' is used in nib 'AboutUsViewController', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "gem-logo", in: R.hostingBundle, compatibleWith: nil) == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'gem-logo' is used in nib 'AboutUsViewController', but couldn't be loaded.") }
       }
       
       fileprivate init() {}
@@ -3680,6 +4277,7 @@ struct _R: Rswift.Validatable {
         if UIKit.UIImage(named: "loading-white") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'loading-white' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "history") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'history' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "back-btn-left") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'back-btn-left' is used in storyboard 'Main', but couldn't be loaded.") }
+        if UIKit.UIImage(named: "signal_icon") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'signal_icon' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "triangle") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'triangle' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "checkbox-none") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'checkbox-none' is used in storyboard 'Main', but couldn't be loaded.") }
         if UIKit.UIImage(named: "Back Chevron") == nil { throw Rswift.ValidationError(description: "[R.swift] Image named 'Back Chevron' is used in storyboard 'Main', but couldn't be loaded.") }

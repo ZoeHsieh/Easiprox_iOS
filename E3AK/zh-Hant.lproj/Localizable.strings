@@ -179,9 +179,9 @@ Date = "日期";
 "eroll_fail" = "Login Failed. Please Verify Your Login Information Or Contact Your Administrator.";
 "eroll_success" = "You Have Successfully Logged In. You May Now Unlock A Door.";
 
-"Level 1" = "等級1";
-"Level 2" = "等級2";
-"Level 3" = "等級3";
+"Level 1" = "等級1(靈敏)";
+"Level 2" = "等級2(普通)";
+"Level 3" = "等級3(較不靈敏)";
 "over_range_alarm" = "超過範圍";
 "History_search_placeHolder" = "請輸入User ID";
 "UserList_search_placeHolder" = "請輸入User ID";

@@ -19,7 +19,20 @@ import UIKit
 
 import CoreBluetooth
 
-class UserProximityReadRangeViewController: UIViewController {
+class UserProximityReadRangeViewController: UIViewController,CBCentralManagerDelegate,CBPeripheralDelegate {
+    
+    
+    //20180309  CBCentralManagerDelegate,CBPeripheralDelegate
+    func centralManagerDidUpdateState(_ central: CBCentralManager) {
+        if central.state == .poweredOn{
+            myCentralManager.scanForPeripherals(withServices: [CBUUID(string:"0000E0FF-3C17-D293-8E48-14FE2E4DA212")], options: [CBCentralManagerScanOptionAllowDuplicatesKey : true])
+            
+            
+        }
+    }
+    //20180309
+    
+    
     
     @IBOutlet weak var deviceNameView: UIView!
     @IBOutlet weak var deviceDistanceView: UIView!
@@ -41,13 +54,19 @@ class UserProximityReadRangeViewController: UIViewController {
     @IBOutlet weak var label_DeviceName: UILabel!
     
     @IBOutlet weak var levelSlider: UISlider!
-    
+    //20180309
+    var myCentralManager:CBCentralManager!
     
      var selectedDevice:CBPeripheral!
     var current_level_RSSI:Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //20180309====
+        myCentralManager = CBCentralManager()
+        myCentralManager.delegate = self
+        //20180309====
         
         title = GetSimpleLocalizedString("Proximity Read Range")
         deviceDistanceTitle.text = GetSimpleLocalizedString("Device Distance")
@@ -95,5 +114,15 @@ class UserProximityReadRangeViewController: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+    
+    //20180309
+    func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral, advertisementData: [String : Any], rssi RSSI: NSNumber) {
+        if peripheral.identifier.uuidString == selectedDevice.identifier.uuidString
+        {
+            Label_CurrentRSSILevel.text = "\(Convert_RSSI_to_LEVEL(Int(RSSI)))"
+        }
+    }
+    
+    
     
 }

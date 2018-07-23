@@ -19,7 +19,7 @@ struct DeviceInfo {
     var name: String;
     var peripheral: CBPeripheral;
     var model:String;
-    var color:String;
+//    var color:String;
     var customID:String;
     var Category:String;
     var reserved:UInt8;

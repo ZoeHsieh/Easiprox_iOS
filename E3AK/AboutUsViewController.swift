@@ -13,6 +13,7 @@ class AboutUsViewController: BLE_ViewController {
     @IBOutlet weak var appversionButton: UIButton!
     
     @IBOutlet weak var DeviceModelTitle: UILabel!
+    @IBOutlet weak var deviceModelName: UILabel!
     
     //@IBOutlet weak var DeviceModelValue: UILabel!
     
@@ -20,9 +21,12 @@ class AboutUsViewController: BLE_ViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
 
         title = GetSimpleLocalizedString("About Us")
-        DeviceModelTitle.text = GetSimpleLocalizedString("Device Model") + deviceModel
+        DeviceModelTitle.text = GetSimpleLocalizedString("Device Model")
+        deviceModelName.text = "Easiprox⁺\nEasiprox⁺ Slim\nDG-800⁺\nDG-160⁺"
+        //DeviceModelTitle.text = deviceModelName
         let version : String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
         //DeviceModelValue.text = "E3AK"//deviceModel
         appversionButton.setTitle(GetSimpleLocalizedString("APP version") + version, for: .normal)

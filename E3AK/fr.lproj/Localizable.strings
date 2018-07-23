@@ -171,3 +171,20 @@ Date = "Date";
 "open_fail_unknown" = "accès refusé";
 "eroll_fail" = "enregistrement échoué";
 "eroll_success" = "ok, vous êtes enregistrés";
+
+//0316
+"Card" = "Carte/Porte clé";
+"Phone Access" = "Phone Access";
+"Card Access" = "Carte/Accès par porte clé";
+"settings_Admin_card_Edit" = "Modification Administrateur Carte/Porte clé ";
+"users_manage_edit_status_Admin_card" = "Carte/Porte clé pas valable";
+"users_manage_edit_status_duplication_card" = "Copie Carte/Porte clé";
+"settings_Admin_card" = "Administrateur Carte/Porte Clé";
+"users_card_edit_dialog_title" = "Modification Carte/Porte clé: (10 chiffres)";
+"Tamper Sensor Level" = "Niveau Capteur Tamper";
+"Level 1" = "Niveau 1 (Haute Sensibilité)";
+"Level 2" = "Niveau 2 (Sensibilité Moyenne)";
+"Level 3" = "Niveau 3 (Basse Sensibilité)";
+"over_range_alarm" = "Hors paramètre!! Insérer chiffre compris entre 0 et 255";
+"History_search_placeHolder" = "Taper un ID utilisateur pour chercher un utilisateur";
+"UserList_search_placeHolder" = "Taper un ID utilisateur pour chercher un utilisateur";

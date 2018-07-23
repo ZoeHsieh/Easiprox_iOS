@@ -33,6 +33,10 @@ class HomeViewController: BLE_ViewController{
     @IBOutlet weak var loadingImageView: UIImageView!
     
     @IBOutlet weak var enrollButon: UIButton!
+    
+    @IBOutlet weak var infoOperation: UIImageView!    //綠色圈圈0316
+    @IBOutlet weak var auto_range_setting: UILabel!   //新增的文字0316
+    
     var doorIsOpen = false
     var isAutoMode = false
     var deviceFoundStatus: DeviceSearchingStatus = .DeviceFound
@@ -67,7 +71,7 @@ class HomeViewController: BLE_ViewController{
     
     @IBAction func didEnroll(_ sender: Any) {
         if !isAutoMode {
-         StopScanningTimer()
+         //StopScanningTimer()
         if deviceInfoList.count > 0 {
             let target = GetTargetDevice()
         self.loginAlert(title:self.GetSimpleLocalizedString("enroll_dialog_title") , subTitle: "", placeHolder1: self.GetSimpleLocalizedString("Please Provide Up to 16 characters"), placeHolder2: self.GetSimpleLocalizedString("4~8 digits"), keyboard1: .default, keyboard2: .numberPad, handler: { (input1, input2) in
@@ -92,7 +96,7 @@ class HomeViewController: BLE_ViewController{
                     self.userEnrollData = Config.bpProtocol.setUserEnroll(UserID: userID, Password: userPWD)
                     //print("user enroll");
                 }
-               
+               self.start_anima()  //0316
                 Config.bleManager.connect(bleDevice: target.peripheral)
                 self.StartConnectTimer()
             }
@@ -113,7 +117,7 @@ class HomeViewController: BLE_ViewController{
         super.viewDidLoad()
         
        settingsButton.setTitle(GetSimpleLocalizedString("Settings"),for: .normal)
-        doorCheckButton.setTitle(GetSimpleLocalizedString("Auto"),for: .normal)
+        doorCheckButton.setTitle("  " + GetSimpleLocalizedString("Auto"),for: .normal)
         enrollButon.setTitle(GetSimpleLocalizedString("Enroll"), for: .normal)
         
         gradientView.gradientBackground(percent: 250/667)
@@ -188,7 +192,7 @@ class HomeViewController: BLE_ViewController{
         
         if isAutoMode{
         doorCheckButton.setImage(R.image.checkboxTick(), for: .normal)
-        StopScanningTimer()
+        //StopScanningTimer()
         StartBgAutoTimer()
         }
     }
@@ -198,6 +202,11 @@ class HomeViewController: BLE_ViewController{
         navigationController?.isNavigationBarHidden = true
         Config.bleManager.setCentralManagerDelegate(vc_delegate: self)
         StartScanningTimer()
+        if isAutoMode{
+            doorCheckButton.setImage(R.image.checkboxTick(), for: .normal)
+            //StopScanningTimer()
+            StartBgAutoTimer()
+        }
        
     }
     
@@ -243,34 +252,37 @@ class HomeViewController: BLE_ViewController{
             
         }
         //To check legal device by custom ID.
-        let customID:UInt16 = (UInt16(rawData[0]) << 8) | UInt16(rawData[1] & 0x00FF)
         let deviceModel:UInt16 = (UInt16(rawData[2]) << 8) | UInt16(rawData[3] & 0x00FF)
         let deviceCategory:UInt8 = rawData[4]
-        let deviceColor:UInt16 = (UInt16(rawData[5]) << 8) | UInt16(rawData[6] & 0x00FF)
+        let customID:UInt16 = (UInt16(rawData[5]) << 8) | UInt16(rawData[6] & 0x00FF)
         let devicerReserved:UInt8 = rawData[7]
         
         //print("customID =\(AdvertisingData.CUSTOM_IDs[customID]!)\r\n")
         //print("customID APP=\(Config.CustomID)\r\n")
-        guard let customStr = AdvertisingData.CUSTOM_IDs[customID] as? String
+        guard let customStr = AdvertisingData.CUSTOM_IDs[customID]
             else{
                 return
         }
         
-        guard let deviceModelStr = AdvertisingData.dev_Model[deviceModel] as? String
+        guard let deviceModelStr = AdvertisingData.dev_Model[deviceModel]
             else{
                 return
         }
-        if !deviceModelStr.contains(Config.deviceSeries){
+//        if !deviceModelStr.contains(Config.deviceSeries){
+//            return
+//
+//        }
+        if !Config.deviceSeries.contains(deviceModelStr){
             return
             
         }
         
-        guard let deviceColorStr = AdvertisingData.dev_Color[deviceColor] as? String
-            else{
-                return
-        }
+//        guard let deviceColorStr = AdvertisingData.dev_Color[deviceColor] as? String
+//            else{
+//                return
+//        }
         
-        guard let deviceCategoryStr = AdvertisingData.dev_Category[deviceCategory] as? String
+        guard let deviceCategoryStr = AdvertisingData.dev_Category[deviceCategory]
             else{
                 return
         }
@@ -297,7 +309,7 @@ class HomeViewController: BLE_ViewController{
         
         if((RSSI.intValue <= 0) && (RSSI.intValue >= Config.BLE_RSSI_MIN)) {
             
-            var tmp: DeviceInfo = DeviceInfo(UUID: uuid, name: name, peripheral: peripheral, model: deviceModelStr, color: deviceColorStr, customID: customStr, Category: deviceCategoryStr, reserved: devicerReserved, rssi: RSSI.intValue, current_level: Convert_RSSI_to_LEVEL(RSSI.intValue), expect_level: 0, alive: 18)
+            var tmp: DeviceInfo = DeviceInfo(UUID: uuid, name: name, peripheral: peripheral, model: deviceModelStr, customID: customStr, Category: deviceCategoryStr, reserved: devicerReserved, rssi: RSSI.intValue, current_level: Convert_RSSI_to_LEVEL(RSSI.intValue), expect_level: expect_level, alive: 18)
             
             if selectSetDevice == nil && forceDevice == nil{
                selectSetDevice = tmp
@@ -321,6 +333,8 @@ class HomeViewController: BLE_ViewController{
             else {
                 deviceInfoList.append(tmp)
                 deviceNameLabel.text = deviceInfoList[0].name
+                deviceTypeLabel.text = self.GetSimpleLocalizedString("Device Distance") + ":" + "\(deviceInfoList[0].current_level)"
+                auto_range_setting.text = self.GetSimpleLocalizedString("Proximity Read Range Settings") + " : " + "\(deviceInfoList[0].expect_level)"  //0316
                 
                 //Save to DB
                 saveExpectLevelToDbByUUID(uuid.uuidString, expect_level)
@@ -334,16 +348,46 @@ class HomeViewController: BLE_ViewController{
         if !isForce{
             if deviceInfoList.count > 0{
                 deviceNameLabel.text = deviceInfoList[0].name
+                //增加目前與裝置的距離 20180308
+                deviceTypeLabel.text = self.GetSimpleLocalizedString("Device Distance") + ":" + "\(deviceInfoList[0].current_level)"
+                auto_range_setting.text = self.GetSimpleLocalizedString("Proximity Read Range Settings") + " : " + "\(deviceInfoList[0].expect_level)"    //0316
             }
         }else{
             if forceDevice.peripheral.identifier.uuidString == uuid.uuidString {
-                if deviceNameLabel.text != name{
+                
+                //增加目前與裝置的距離 20180308
+                if (deviceInfoList.contains(forceDevice)){
+                    let du_idx:Int = deviceInfoList.index(of: forceDevice)!
+                    let avg_rssi: Int = (RSSI.intValue + deviceInfoList[du_idx].rssi) / 2;
+                    forceDevice.rssi = avg_rssi;
+                    forceDevice.current_level = Convert_RSSI_to_LEVEL(avg_rssi)
+                    
+                    forceDevice.expect_level = expect_level   //0316
+                    
+                    deviceInfoList[du_idx] = forceDevice;
+                    deviceTypeLabel.text = self.GetSimpleLocalizedString("Device Distance") + ":" + "\(deviceInfoList[du_idx].current_level)"
+                    
+                    auto_range_setting.text = self.GetSimpleLocalizedString("Proximity Read Range Settings") + " : " + "\(deviceInfoList[du_idx].expect_level)"    //0316
+                    
+                    
                     deviceNameLabel.text = name
                     forceDevice.peripheral = peripheral
                     forceDevice.name = name
-                    print("forceDevice = \(forceDevice)")
+                    
+                    
                     
                 }
+                
+                
+                
+                
+//                if deviceNameLabel.text != name{
+//                    deviceNameLabel.text = name
+//                    forceDevice.peripheral = peripheral
+//                    forceDevice.name = name
+//                    print("forceDevice = \(forceDevice)")
+//
+//                }
             }
             
         }
@@ -355,13 +399,22 @@ class HomeViewController: BLE_ViewController{
 
   
     func didEnterBG(){
+        StopScanningTimer()
+        for var stopDevice in deviceInfoList{
+            let du_idx:Int = deviceInfoList.index(of: stopDevice)!
+            stopDevice.current_level = 999
+            deviceInfoList[du_idx] = stopDevice;
+            
+        }
+        
+        
         
         print("didEnterBG")
         
         isBackground = true
         
         //Stop Timer
-        StopScanningTimer()
+        //StopScanningTimer()
         
         if(isAutoMode) {
             
@@ -435,7 +488,7 @@ class HomeViewController: BLE_ViewController{
     }
     
     func didTapChooseDevice() {
-        StopScanningTimer()
+        //StopScanningTimer()
         var deviceList:[String] = []
         var deviceOBJ:[CBPeripheral] = []
         
@@ -456,7 +509,7 @@ class HomeViewController: BLE_ViewController{
                         if action.title == self.forceDevice.name {
                         self.selectDeviceIndex = 0
                         self.deviceNameLabel.text = self.deviceInfoList[0].name
-                        self.deviceNameLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+                        self.deviceNameLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
                             self.isForce = false
                         }else{
                             for index in 0 ... deviceList.count - 1
@@ -535,7 +588,7 @@ class HomeViewController: BLE_ViewController{
   
         if !isAutoMode {
       if !isOpenDoor{
-        StopScanningTimer()
+        //StopScanningTimer()
         
         if deviceInfoList.count > 0 && !isOpenDoor{
         isOpenDoor = true
@@ -545,6 +598,8 @@ class HomeViewController: BLE_ViewController{
         //let isAdmin = Config.saveParam.bool(forKey: (target.identifier.uuidString))
         //if isAdmin || checkConTimeLimit(target: target)
        // {
+            
+            start_anima() //0316
             Config.bleManager.connect(bleDevice: target.peripheral)
             StartConnectTimer()
         //}
@@ -557,13 +612,14 @@ class HomeViewController: BLE_ViewController{
         
         case .DeviceFound:
             
-            openDoorButton.setTitle("", for: .normal)
-            openDoorButton.setImage(R.image.tickWhite(), for: .normal)
-            doorButton.setBackgroundImage(R.image.doorOpen(), for: .normal)
-            doorStatusLabel.text = self.GetSimpleLocalizedString("DOOR OPENED")
-            doorStatusLabel.textColor = HexColor("00b900")
-            openDoorButton.setBackgroundImage(R.image.btnGreen(), for: .normal)
-            openDoorButton.setShadowWithColor(color: HexColor("00b900"), opacity: 0.3, offset: CGSize(width: 0, height: 6), radius: 5, viewCornerRadius: 0)
+//            openDoorButton.setTitle("", for: .normal)
+//            openDoorButton.setImage(R.image.tickWhite(), for: .normal)
+//            doorButton.setBackgroundImage(R.image.doorOpen(), for: .normal)
+//            doorStatusLabel.text = self.GetSimpleLocalizedString("DOOR OPENED")
+//            doorStatusLabel.textColor = HexColor("00b900")
+//            openDoorButton.setBackgroundImage(R.image.btnGreen(), for: .normal)
+//            openDoorButton.setShadowWithColor(color: HexColor("00b900"), opacity: 0.3, offset: CGSize(width: 0, height: 6), radius: 5, viewCornerRadius: 0)
+            break
             
         default:
             break
@@ -586,7 +642,7 @@ class HomeViewController: BLE_ViewController{
         if isAutoMode{
            
             doorCheckButton.setImage(R.image.checkboxTick(), for: .normal)
-            StopScanningTimer()
+            //StopScanningTimer()
             StartBgAutoTimer()
             
         }else{
@@ -601,17 +657,17 @@ class HomeViewController: BLE_ViewController{
     
     
     func changeViewContentSettings() {
-         deviceTypeLabel.isHidden = true
+         //deviceTypeLabel.isHidden = true
         switch deviceFoundStatus
         {
         
         case .DeviceSearching:
-        
+            stop_anime()  //0316 stop
             deviceNameLabel.text = GetSimpleLocalizedString("Searching…")
             deviceNameLabel.isUserInteractionEnabled = false
-             deviceNameLabel.textColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
+            deviceNameLabel.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
             deviceTypeLabel.text = GetSimpleLocalizedString("Please wait a moment…")
-            deviceTypeLabel.isHidden = true
+            //deviceTypeLabel.isHidden = true
             dotImageView.isHidden = true
             openDoorButton.setTitle("", for: .normal)
             openDoorButton.setImage(nil, for: .normal)
@@ -657,7 +713,7 @@ class HomeViewController: BLE_ViewController{
             doorButton.setBackgroundImage(R.image.doorClose(), for: .normal)
             doorButton.isUserInteractionEnabled = true
             doorStatusLabel.text = self.GetSimpleLocalizedString("DOOR CLOSED")
-            doorStatusLabel.textColor = HexColor("a4aab3")
+            doorStatusLabel.textColor = HexColor("000000") //a4aab3
             loadingImageView.isHidden = true
             loadingImageView.stopRotate()
             if isForce {
@@ -670,7 +726,7 @@ class HomeViewController: BLE_ViewController{
     
     @IBAction func LongPress(_ sender: Any) {
         if !isAutoMode{
-        StopScanningTimer()
+        //StopScanningTimer()
         if deviceInfoList.count > 0 {
            
             let target = GetTargetDevice()
@@ -720,7 +776,7 @@ class HomeViewController: BLE_ViewController{
         
        
       
-        StopScanningTimer()
+        //StopScanningTimer()
         if(isAutoMode){
             print("Need Disable 'AUTO-MODE' First!!")
             showToastDialog(title:"",message:GetSimpleLocalizedString("AUTO_ENABLE_CONFLICT" ));
@@ -879,6 +935,22 @@ class HomeViewController: BLE_ViewController{
                         
                     default:
                         print("")
+                        StopScanningTimer()
+                        openDoorButton.setTitle("", for: .normal)
+                        openDoorButton.setImage(R.image.tickWhite(), for: .normal)
+                        doorButton.setBackgroundImage(R.image.doorOpen(), for: .normal)
+                        doorStatusLabel.text = self.GetSimpleLocalizedString("DOOR OPENED")
+                        doorStatusLabel.textColor = HexColor("00b900")
+                        openDoorButton.setBackgroundImage(R.image.btnGreen(), for: .normal)
+                        openDoorButton.setShadowWithColor(color: HexColor("00b900"), opacity: 0.3, offset: CGSize(width: 0, height: 6), radius: 5, viewCornerRadius: 0)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+                            {
+                                self.deviceFoundStatus = .DeviceFound
+                                self.changeViewContentSettings()
+                                self.StartScanningTimer()
+                        })
+                        
                     }
                     
                 }
@@ -900,6 +972,22 @@ class HomeViewController: BLE_ViewController{
                         
                     default:
                         print("")
+                        StopScanningTimer()
+                        openDoorButton.setTitle("", for: .normal)
+                        openDoorButton.setImage(R.image.tickWhite(), for: .normal)
+                        doorButton.setBackgroundImage(R.image.doorOpen(), for: .normal)
+                        doorStatusLabel.text = self.GetSimpleLocalizedString("DOOR OPENED")
+                        doorStatusLabel.textColor = HexColor("00b900")
+                        openDoorButton.setBackgroundImage(R.image.btnGreen(), for: .normal)
+                        openDoorButton.setShadowWithColor(color: HexColor("00b900"), opacity: 0.3, offset: CGSize(width: 0, height: 6), radius: 5, viewCornerRadius: 0)
+                        
+                        DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+                            {
+                                self.deviceFoundStatus = .DeviceFound
+                                self.changeViewContentSettings()
+                                self.StartScanningTimer()
+                        })
+                        
                     }
                 }
                 break
@@ -969,7 +1057,7 @@ class HomeViewController: BLE_ViewController{
                     }else{
                         print("start scanning timer")
                         
-                     StartScanningTimer()
+//                     StartScanningTimer()
                     }
                     //isMotion = false
                     //self.backToMainPage()
@@ -982,6 +1070,7 @@ class HomeViewController: BLE_ViewController{
             }
 
         }
+        stop_anime() //0316 stop
         
     }
     
@@ -997,6 +1086,7 @@ class HomeViewController: BLE_ViewController{
     }
 
     func disconnectTask(){
+        stop_anime() //0316 stop
          isKeepOpen = false
         print("disconnect time out");
        
@@ -1072,7 +1162,7 @@ class HomeViewController: BLE_ViewController{
               //rtrerrrr  print("updateBgAutoTimer()")
         var isTriggerOpendoor = false
         if deviceInfoList.count > 0 && !isOpenDoor{
-            Config.bleManager.ScanBLEStop()
+//            Config.bleManager.ScanBLEStop()
         selectTarget = GetTargetDevice()
            isTriggerOpendoor = checkConTimeLimit(target: selectTarget.peripheral)
         }
@@ -1088,6 +1178,9 @@ class HomeViewController: BLE_ViewController{
               print("expectLEVEL=: \(expectLEVEL )")
              print("currentLEVEL=: \(currentLEVEL )")
                 if expectLEVEL >= currentLEVEL{
+                    
+                    start_anima() //0316
+                    
                     Config.bleManager.connect(bleDevice: selectTarget.peripheral)
                     StartConnectTimer()
                     isOpenDoor = true
@@ -1121,6 +1214,10 @@ class HomeViewController: BLE_ViewController{
     }
     
     func StartScanningTimer() {
+        
+        //防止timer重複疊加 在開始前先停止 20180309
+        StopScanningTimer()
+        
         //Create Timer
         Config.bleManager.ScanBLE()
         ScanningTimerflag = true
@@ -1231,5 +1328,28 @@ class HomeViewController: BLE_ViewController{
         }
 
     }
+    
+    
+    
+    func start_anima()  {
+        self.infoOperation.isHidden = false
+        var rotationAnimation: CABasicAnimation?
+        rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
+        rotationAnimation?.toValue = .pi * 2.0
+        rotationAnimation?.duration = 0.5
+        rotationAnimation?.repeatCount = Float.greatestFiniteMagnitude
+        if let aAnimation = rotationAnimation{
+            self.infoOperation.layer.add(aAnimation, forKey: "rotationAnimation")
+        }
+        
+    }
+    
+    func stop_anime() {
+        self.infoOperation.layer.removeAllAnimations()
+        self.infoOperation.isHidden = true
+    }
+    
+    
+    
     
 }

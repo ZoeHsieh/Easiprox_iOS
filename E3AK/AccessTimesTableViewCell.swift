@@ -50,6 +50,29 @@ class AccessTimesTableViewCell: UITableViewCell {
     }
     
     func didEdit(){
+        
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٠", with: "0", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "١", with: "1", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٢", with: "2", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٣", with: "3", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٤", with: "4", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٥", with: "5", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٦", with: "6", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٧", with: "7", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٨", with: "8", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٩", with: "9", options: .literal, range: nil)
+        
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۰", with: "0", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۱", with: "1", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۲", with: "2", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۳", with: "3", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۴", with: "4", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۵", with: "5", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۶", with: "6", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۷", with: "7", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۸", with: "8", options: .literal, range: nil)
+        accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "۹", with: "9", options: .literal, range: nil)
+        
         if ( ( accessTimesTextField.text?.utf8.count)! > 3) {
             accessTimesTextField.deleteBackward();
         }

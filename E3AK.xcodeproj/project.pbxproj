@@ -197,6 +197,9 @@
 		A64225D914BD7EDE8E8A1993 /* Pods-E3AK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E3AK.release.xcconfig"; path = "Pods/Target Support Files/Pods-E3AK/Pods-E3AK.release.xcconfig"; sourceTree = "<group>"; };
 		ACE183542BC52DFF62D58F7F /* Pods-E3AK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E3AK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-E3AK/Pods-E3AK.debug.xcconfig"; sourceTree = "<group>"; };
 		B171D6CA715EACE4668F19A3 /* Pods_E3AK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E3AK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8B46821206B64FC003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		C8B46822206B64FD003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C8B46823206B64FE003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = E3AK/ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -423,7 +426,7 @@
 				TargetAttributes = {
 					A09BC3591EE798CC00F38AB8 = {
 						CreatedOnToolsVersion = 8.3.2;
-						DevelopmentTeam = G47L65GL49;
+						DevelopmentTeam = 29BSP4UNAK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -440,6 +443,7 @@
 				fr,
 				es,
 				ja,
+				ar,
 			);
 			mainGroup = A09BC3511EE798CC00F38AB8;
 			productRefGroup = A09BC35B1EE798CC00F38AB8 /* Products */;
@@ -497,9 +501,22 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-E3AK/Pods-E3AK-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/IQDropDownTextField/IQDropDownTextField.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/UIAlertController+Blocks/UIAlertController_Blocks.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQDropDownTextField.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIAlertController_Blocks.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -525,13 +542,16 @@
 			files = (
 			);
 			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-E3AK-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		BE9407A20FD39E49CA72651E /* [CP] Copy Pods Resources */ = {
@@ -625,6 +645,7 @@
 				462EB1BA1F53CBCE0087493C /* fr */,
 				462EB1BD1F53CC6C0087493C /* es */,
 				464A1A761F675FCA00462E16 /* ja */,
+				C8B46823206B64FE003F4981 /* ar */,
 			);
 			name = Localizable.strings;
 			path = ..;
@@ -638,6 +659,7 @@
 				462EB1B81F53CBCD0087493C /* fr */,
 				462EB1BB1F53CC6C0087493C /* es */,
 				464A1A741F675FCA00462E16 /* ja */,
+				C8B46821206B64FC003F4981 /* ar */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -650,6 +672,7 @@
 				462EB1B91F53CBCD0087493C /* fr */,
 				462EB1BC1F53CC6C0087493C /* es */,
 				464A1A751F675FCA00462E16 /* ja */,
+				C8B46822206B64FD003F4981 /* ar */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -760,11 +783,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G47L65GL49;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29BSP4UNAK;
 				INFOPLIST_FILE = E3AK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anxell.e5akr;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.gianni.easiprox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -780,11 +804,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G47L65GL49;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29BSP4UNAK;
 				INFOPLIST_FILE = E3AK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.anxell.e5akr;
+				PRODUCT_BUNDLE_IDENTIFIER = tw.gianni.easiprox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
