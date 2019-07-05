@@ -384,6 +384,13 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate {
         
         searchBar.resignFirstResponder()
     }
+    override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        self.downloadFrame.removeFromSuperview()
+        
+        
+        backToMainPage()
+        
+    }
     
 }
 
@@ -484,7 +491,7 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
 
-        let moreRowAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: GetSimpleLocalizedString("Delete"), handler:{action, indexpath in
+        let moreRowAction = UITableViewRowAction(style: UITableViewRowAction.Style.default, title: GetSimpleLocalizedString("Delete"), handler:{action, indexpath in
             print("delete");
             if let userIndex = self.localUserArr[indexPath.row]["index"] as? Int16{
                 print("del0")
@@ -518,12 +525,6 @@ extension UsersViewController: UITableViewDataSource, UITableViewDelegate {
         
         
     }
-    override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        self.downloadFrame.removeFromSuperview()
     
-   
-        backToMainPage()
-        
-    }
     
   }

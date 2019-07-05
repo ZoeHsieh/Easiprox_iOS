@@ -68,10 +68,10 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         cardTitle.text = GetSimpleLocalizedString("Card")
         Config.bleManager.setPeripheralDelegate(vc_delegate: self)
         accountTextField.tag = 0
-        accountTextField.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
+        accountTextField.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControl.Event.editingChanged)
         
         passwordTextField.tag = 1
-        passwordTextField.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
+        passwordTextField.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControl.Event.editingChanged)
         passwordTextField.keyboardType = .numberPad
         EditCardBG.isUserInteractionEnabled  = false
         self.navigationItem.rightBarButtonItem?.isEnabled = false
@@ -95,7 +95,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             CardInputs[i]?.keyboardType = .numberPad
             CardInputs[i]?.delegate = self
             CardInputs[i]?.tag = 200
-            CardInputs[i]?.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControlEvents.editingChanged)
+            CardInputs[i]?.addTarget(self, action: #selector(self.userAddTextFieldDidChange(field:)), for: UIControl.Event.editingChanged)
             
         }
         //        CardInputs[0]?.becomeFirstResponder()
@@ -163,7 +163,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         }
         
     }
-    func userAddTextFieldDidChange(field: UITextField){
+    @objc func userAddTextFieldDidChange(field: UITextField){
         var cardNum = 0
         let CardInputs = [ CardInput1,CardInput2,
                            CardInput3, CardInput4,
@@ -221,12 +221,14 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         }else if field.tag == 200{ // for user card id
             
             
-            if ( (field.text?.characters.count)! > 1 ) {
+            if ( (field.text?.count)! > 1 ) {
                 
                 let start = field.text?.index(after:(field.text?.startIndex)! )
                 let end = field.text?.endIndex
-                let range = start..<end
-                field.text = field.text?.substring(with: range)
+                //let range = start..<end
+                //field.text = field.text?.substring(with: range)
+                field.text =  String((field.text?[start!..<end!])!)
+                
                 
                 field.text = field.text?.replacingOccurrences(of: "٠", with: "0", options: .literal, range: nil)
                 field.text = field.text?.replacingOccurrences(of: "١", with: "1", options: .literal, range: nil)
@@ -307,7 +309,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
                     
                     
                     
-                    cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                    cardNum +=   (CardInputs[i]?.text?.count)!
                     
                     if (CardInputs[i]?.text?.contains(" "))!{
                         cardNum -= 1
@@ -317,7 +319,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             }
             
             for i in 0 ... CardInputs.count - 1{
-                if (CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! ){
+                if (CardInputs[i]?.text?.count==1 && (CardInputs[i]?.isEditing)! ){
                     
                     if(i < (CardInputs.count - 1)){
                         CardInputs[i+1]?.becomeFirstResponder()
@@ -348,14 +350,14 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         
     }
     
-    func didTapLeftBarButtonItem() {
+    @objc func didTapLeftBarButtonItem() {
         print("cancel")
         dismiss(animated: true, completion: nil)
     }
     
     override func didTapItem() {
         if !(accountTextField?.text?.isEmpty)! && !(passwordTextField?.text?.isEmpty)!{
-            guard (passwordTextField?.text?.characters.count)! > 3 && (passwordTextField?.text?.characters.count)! < BPprotocol.userPD_maxLen+1 else{
+            guard (passwordTextField?.text?.count)! > 3 && (passwordTextField?.text?.count)! < BPprotocol.userPD_maxLen+1 else{
                 
                 
                 self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_pwd"))
@@ -402,7 +404,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
                 if CardInputs[i]?.text != " "{
                     newCard += (CardInputs[i]?.text)!
                     
-                    cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                    cardNum +=   (CardInputs[i]?.text?.count)!
                     
                 }
             }
@@ -517,7 +519,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             for i in 0 ... CardInputs.count - 1{
                 
                 
-                if(CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! && (i != 0)){
+                if(CardInputs[i]?.text?.count==1 && (CardInputs[i]?.isEditing)! && (i != 0)){
                     CardInputs[i]?.text = " "
                     CardInputs[i-1]?.becomeFirstResponder()
                     
@@ -530,7 +532,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             
             for i in 0 ... CardInputs.count - 1{
                 if CardInputs[i]?.text != " "{
-                    cardNum += (CardInputs[i]?.text?.characters.count)!
+                    cardNum += (CardInputs[i]?.text?.count)!
                 }
                 
             }

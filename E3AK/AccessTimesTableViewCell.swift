@@ -49,7 +49,7 @@ class AccessTimesTableViewCell: UITableViewCell {
         
     }
     
-    func didEdit(){
+    @objc func didEdit(){
         
         accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "٠", with: "0", options: .literal, range: nil)
         accessTimesTextField.text = accessTimesTextField.text?.replacingOccurrences(of: "١", with: "1", options: .literal, range: nil)

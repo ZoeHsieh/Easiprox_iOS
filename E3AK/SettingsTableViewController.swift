@@ -180,7 +180,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             if CardInputs[i]?.text != " "{
                 newCard += (CardInputs[i]?.text)!
                 
-                cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                cardNum +=   (CardInputs[i]?.text?.count)!
                 
             }
         }
@@ -224,7 +224,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             
             self.tmpAdminCard = newCard
             
-            let cardUint8 = Util.StringDecToUINT8(data: self.tmpAdminCard!, len: (self.tmpAdminCard?.characters.count)!)
+            let cardUint8 = Util.StringDecToUINT8(data: self.tmpAdminCard!, len: (self.tmpAdminCard?.count)!)
             
             
             
@@ -553,7 +553,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 if newName.utf8.count > 16{
                     
                     repeat{
-                        var chars = newName.characters
+                        var chars = newName
                         chars.removeLast()
                         newName = String(chars)
                     }while newName.utf8.count > 16
@@ -593,7 +593,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                         return
                     }
                     if !((inputText?.isEmpty)!){
-                        guard (inputText?.characters.count)! > 3 && (inputText?.characters.count)! < BPprotocol.userPD_maxLen+1 else{
+                        guard (inputText?.count)! > 3 && (inputText?.count)! < BPprotocol.userPD_maxLen+1 else{
                             
                             self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_pwd"))
                             return
@@ -1047,8 +1047,8 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 updateBackupDialog()
                 if backupMax > cmdList.count {
                     
-                    print(String(format:"backup=%d\r\n",Int16(backupCount - cmdList.count)))
-                    let cmd = Config.bpProtocol.getUserData(UserCount: Int16(backupCount - cmdList.count+1))
+                    print(String(format:"backup=%d\r\n",Int16(Int(backupCount) - Int(cmdList.count))))
+                    let cmd = Config.bpProtocol.getUserData(UserCount: Int16(Int(backupCount) - Int(cmdList.count)+1))
                     Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
                 }
                 else{
@@ -1151,7 +1151,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                     }else{
                         
                         
-                        let cmd = Config.bpProtocol.getUserData(UserCount: Int16(backupCount - cmdList.count+1))
+                        let cmd = Config.bpProtocol.getUserData(UserCount: Int16(Int(backupCount) - Int(cmdList.count)+1))
                         Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
                         
                     }
@@ -1337,13 +1337,13 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         self.restoreMax = userMax + Config.restoreItemCnt
         
         self.showProgressDialog(Title:self.GetSimpleLocalizedString("restore_dialog_title"), Message:self.GetSimpleLocalizedString("restore_dialog_message"), countMax: self.restoreMax)
-        var dataDict = UserDefaults.standard.object(forKey: Config.ConfigTag_backup) as? [String:Any]!
+        var dataDict = UserDefaults.standard.object(forKey: Config.ConfigTag_backup) as? [String:Any]?
         
         //DeviceConfig
-        Config.doorSensor = dataDict?[Config.ConfigDoorSensorTag] as? UInt8
-        Config.doorLockType = dataDict?[Config.ConfigDoorLockTypeTag]  as? UInt8
-        Config.doorOpenTime = dataDict?[Config.ConfigDoorOpenTimeTag] as? UInt16
-        Config.TamperSensor = dataDict?[Config.ConfigGSensorTag] as? UInt8
+        Config.doorSensor = dataDict??[Config.ConfigDoorSensorTag] as? UInt8
+        Config.doorLockType = dataDict??[Config.ConfigDoorLockTypeTag]  as? UInt8
+        Config.doorOpenTime = dataDict??[Config.ConfigDoorOpenTimeTag] as? UInt16
+        Config.TamperSensor = dataDict?![Config.ConfigGSensorTag] as? UInt8
         Config.ADMINPWD = (UserDefaults.standard.object(forKey: Config.ADMIN_PWDTag_backup) as? String)!
         
         if UserDefaults.standard.object(forKey: Config.TamperSensorTag_backup) != nil
@@ -1436,7 +1436,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 
                 
             }else{
-                let user_addr = (restoreCount - Config.restoreItemCnt) * BPprotocol.userDataSize
+                let user_addr = (Int(restoreCount) - Int(Config.restoreItemCnt)) * Int(BPprotocol.userDataSize)
                 print(String(format:"restoreCount=%d\r\n", restoreCount))
                 print(String(format:"addr=%d\r\n", user_addr))
                 print(String(format:"array cnt=%d\r\n", Config.userDataArr.count))
@@ -1481,7 +1481,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             updateRestoreDialog()
             
             if restoreMax > Config.restoreItemCnt  {
-                let user_addr = (restoreCount - Config.restoreItemCnt) * BPprotocol.userDataSize
+                let user_addr = (Int(restoreCount) - Int(Config.restoreItemCnt)) * Int(BPprotocol.userDataSize)
                 
                 
                 let userIndex = Int16((UInt16(Config.userDataArr[user_addr]) << 8 ) | (UInt16(Config.userDataArr[user_addr+1]) & 0x00FF))
@@ -1607,7 +1607,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             CardInputs[i]?.keyboardType = .numberPad
             CardInputs[i]?.delegate = self
             CardInputs[i]?.tag = 200
-            CardInputs[i]?.addTarget(self, action: #selector(self.CardEditChange(field:)), for: UIControlEvents.editingChanged)
+            CardInputs[i]?.addTarget(self, action: #selector(self.CardEditChange(field:)), for: UIControl.Event.editingChanged)
             
             
             
@@ -1619,7 +1619,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         
     }
     
-    func CardEditChange(field: UITextField){
+    @objc func CardEditChange(field: UITextField){
         
         var cardNum = 0
         let CardInputs = [ CardInput1,CardInput2,
@@ -1629,12 +1629,15 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                            CardInput9, CardInput10]
         
         
-        if ( (field.text?.characters.count)! > 1 ) {
+        if ( (field.text?.count)! > 1 ) {
             
             let start = field.text?.index(after:(field.text?.startIndex)! )
             let end = field.text?.endIndex
-            let range = start..<end
-            field.text = field.text?.substring(with: range)
+            //let range = start..<end
+            //field.text = field.text?.substring(with: range)
+            
+            field.text =  String((field.text?[start!..<end!])!)
+            
             
             field.text = field.text?.replacingOccurrences(of: "٠", with: "0", options: .literal, range: nil)
             field.text = field.text?.replacingOccurrences(of: "١", with: "1", options: .literal, range: nil)
@@ -1660,13 +1663,13 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         }
         for i in 0 ... CardInputs.count - 1{
             if CardInputs[i]?.text != " "{
-                cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                cardNum +=   (CardInputs[i]?.text?.count)!
                 
             }
         }
         
         for i in 0 ... CardInputs.count - 1{
-            if (CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! ){
+            if (CardInputs[i]?.text?.count==1 && (CardInputs[i]?.isEditing)! ){
                 
                 if(i < (CardInputs.count - 1)){
                     CardInputs[i+1]?.becomeFirstResponder()
@@ -1753,7 +1756,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         
     }
     
-    func connectTimeOutTask(){
+    @objc func connectTimeOutTask(){
         print("connect time out");
         Config.bleManager.disconnect()
         connectTimer = nil
@@ -1811,7 +1814,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             for i in 0 ... CardInputs.count - 1{
                 
                 
-                if(CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! && (i != 0)){
+                if(CardInputs[i]?.text?.count==1 && (CardInputs[i]?.isEditing)! && (i != 0)){
                     CardInputs[i]?.text = " "
                     CardInputs[i-1]?.becomeFirstResponder()
                     
@@ -1824,7 +1827,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             
             for i in 0 ... CardInputs.count - 1{
                 if CardInputs[i]?.text != " "{
-                    cardNum += (CardInputs[i]?.text?.characters.count)!
+                    cardNum += (CardInputs[i]?.text?.count)!
                 }
                 
             }

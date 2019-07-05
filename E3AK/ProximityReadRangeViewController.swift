@@ -92,7 +92,7 @@ class ProximityReadRangeViewController: BLE_ViewController {
     */
     
     //20180309 讀取裝置距離
-    func my_readRssi() {
+    @objc func my_readRssi() {
         selectedDevice.readRSSI()
     }
 

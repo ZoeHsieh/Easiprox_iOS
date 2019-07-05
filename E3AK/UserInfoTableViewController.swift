@@ -91,7 +91,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             if CardInputs[i]?.text != " "{
                 newCard += (CardInputs[i]?.text)!
                 
-                cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                cardNum +=   (CardInputs[i]?.text?.count)!
                 
             }
         }
@@ -140,7 +140,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             
             
             
-            let cardUint8 = Util.StringDecToUINT8(data: newCard, len: (newCard.characters.count))
+            let cardUint8 = Util.StringDecToUINT8(data: newCard, len: (newCard.count))
             
             
             
@@ -433,7 +433,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             if newName.utf8.count > 16{
                 
                 repeat{
-                    var chars = newName.characters
+                    var chars = newName
                     chars.removeLast()
                     newName = String(chars)
                 }while newName.utf8.count > 16
@@ -474,7 +474,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                 return
             }
             if !((inputText?.isEmpty)!){
-                guard (inputText?.characters.count)! > 3 && (inputText?.characters.count)! < BPprotocol.userPD_maxLen+1 else{
+                guard (inputText?.count)! > 3 && (inputText?.count)! < BPprotocol.userPD_maxLen+1 else{
                     
                     self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_pwd"))
                     return
@@ -894,7 +894,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             CardInputs[i]?.keyboardType = .numberPad
             CardInputs[i]?.delegate = self
             CardInputs[i]?.tag = 200
-            CardInputs[i]?.addTarget(self, action: #selector(self.CardEditChange(field:)), for: UIControlEvents.editingChanged)
+            CardInputs[i]?.addTarget(self, action: #selector(self.CardEditChange(field:)), for: UIControl.Event.editingChanged)
             
         }
         CardInputs[0]?.becomeFirstResponder()
@@ -903,7 +903,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         
     }
     
-    func CardEditChange(field: UITextField){
+    @objc func CardEditChange(field: UITextField){
         var cardNum = 0
         let CardInputs = [ CardInput1,CardInput2,
                            CardInput3, CardInput4,
@@ -912,12 +912,13 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                            CardInput9, CardInput10]
         
         
-        if ( (field.text?.characters.count)! > 1 ) {
+        if ( (field.text?.count)! > 1 ) {
             
             let start = field.text?.index(after:(field.text?.startIndex)! )
             let end = field.text?.endIndex
-            let range = start..<end
-            field.text = field.text?.substring(with: range)
+            //let range = start..<end
+            //field.text = field.text?.substring(with: range)
+            field.text = String((field.text?[start!..<end!])!)
             
             field.text = field.text?.replacingOccurrences(of: "٠", with: "0", options: .literal, range: nil)
             field.text = field.text?.replacingOccurrences(of: "١", with: "1", options: .literal, range: nil)
@@ -943,13 +944,13 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         }
         for i in 0 ... CardInputs.count - 1{
             if CardInputs[i]?.text != " "{
-                cardNum +=   (CardInputs[i]?.text?.characters.count)!
+                cardNum +=   (CardInputs[i]?.text?.count)!
                 
             }
         }
         
         for i in 0 ... CardInputs.count - 1{
-            if (CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! ){
+            if (CardInputs[i]?.text?.count==1 && (CardInputs[i]?.isEditing)! ){
                 
                 if(i < (CardInputs.count - 1)){
                     CardInputs[i+1]?.becomeFirstResponder()
@@ -993,7 +994,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             for i in 0 ... CardInputs.count - 1{
                 
                 
-                if(CardInputs[i]?.text?.characters.count==1 && (CardInputs[i]?.isEditing)! && (i != 0)){
+                if(CardInputs[i]?.text?.count==1 && (CardInputs[i]?.isEditing)! && (i != 0)){
                     CardInputs[i]?.text = " "
                     CardInputs[i-1]?.becomeFirstResponder()
                     
@@ -1006,7 +1007,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             
             for i in 0 ... CardInputs.count - 1{
                 if CardInputs[i]?.text != " "{
-                    cardNum += (CardInputs[i]?.text?.characters.count)!
+                    cardNum += (CardInputs[i]?.text?.count)!
                 }
                 
             }

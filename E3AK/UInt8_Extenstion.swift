@@ -13,7 +13,7 @@ extension UInt8{
     func toTimeString() -> String{
         
         var text = "\(self)"
-        if text.characters.count < 2{
+        if text.count < 2{
             text = "0" + text
         }
         return text
@@ -33,7 +33,7 @@ extension Array{
         var result = ["\(self[3])", "\(self[4])", "\(self[5])"]
         for (i, text) in result.enumerated(){
             
-            if text.characters.count < 2{
+            if text.count < 2{
                 result[i] = "0" + result[i]
             }
         }

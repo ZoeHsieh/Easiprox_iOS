@@ -184,9 +184,9 @@ class HomeViewController: BLE_ViewController{
             })
         }*/
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBG), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterBG), name: Notification.Name.NSExtensionHostWillResignActive, object: nil)
         
-        NotificationCenter.default.addObserver(self, selector: #selector(didEnterFG), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(didEnterFG), name: Notification.Name.NSExtensionHostDidBecomeActive, object: nil)
         
         isAutoMode = Config.saveParam.bool(forKey: Config.isAutoTag)
         
@@ -398,7 +398,7 @@ class HomeViewController: BLE_ViewController{
     }
 
   
-    func didEnterBG(){
+    @objc func didEnterBG(){
         StopScanningTimer()
         for var stopDevice in deviceInfoList{
             let du_idx:Int = deviceInfoList.index(of: stopDevice)!
@@ -468,7 +468,7 @@ class HomeViewController: BLE_ViewController{
         
     }
     
-    func didEnterFG(){
+    @objc func didEnterFG(){
         
         print("didEnterFG")
         
@@ -487,7 +487,7 @@ class HomeViewController: BLE_ViewController{
        
     }
     
-    func didTapChooseDevice() {
+    @objc func didTapChooseDevice() {
         //StopScanningTimer()
         var deviceList:[String] = []
         var deviceOBJ:[CBPeripheral] = []
@@ -1085,7 +1085,7 @@ class HomeViewController: BLE_ViewController{
        
     }
 
-    func disconnectTask(){
+    @objc func disconnectTask(){
         stop_anime() //0316 stop
          isKeepOpen = false
         print("disconnect time out");
@@ -1093,7 +1093,7 @@ class HomeViewController: BLE_ViewController{
         disconnect()
         disTimer = nil
     }
-    func connectTimeOutTask(){
+    @objc func connectTimeOutTask(){
         isKeepOpen = false
         isOpenDoor = false
         isEnroll = false
@@ -1154,7 +1154,7 @@ class HomeViewController: BLE_ViewController{
         bgAutoTimer.invalidate()
     }
     
-    func updateBgAutoTimer() {
+    @objc func updateBgAutoTimer() {
     
         
     var selectTarget:DeviceInfo!
@@ -1288,7 +1288,7 @@ class HomeViewController: BLE_ViewController{
     
     }
     
-    func updateScanningTimer() {
+    @objc func updateScanningTimer() {
         if ScanningTimerflag{
             //Config.bleManager.ScanBLE()
             checkDeviceAlive()

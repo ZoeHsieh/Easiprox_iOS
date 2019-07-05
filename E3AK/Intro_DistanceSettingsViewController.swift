@@ -48,7 +48,7 @@ class Intro_DistanceSettingsViewController: BLE_ViewController {
        
         let setupRSSILevel = readExpectLevelFromDbByUUID(selectedDevice.identifier.uuidString)
         
-
+        
         deviceSettingSliderValueLabel.text = String(format:"%d",setupRSSILevel)
         
         let defSliderValue = Float(setupRSSILevel) / 100 / 0.2

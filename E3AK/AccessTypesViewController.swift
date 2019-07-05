@@ -84,7 +84,7 @@ class AccessTypesViewController: BLE_ViewController{
          UserInfoTableViewController.tmpCMD = Config.bpProtocol.setUserProperty(UserIndex: userIndex, Keypadunlock: isEnableStatus, LimitType: limitType, startTime: Util.toUInt8date(AccessTypesViewController.startTimeArr), endTime:  Util.toUInt8date(AccessTypesViewController.endTimeArr), Times: UInt8(AccessTypesViewController.openTimes), weekly: AccessTypesViewController.weekly)
     }
 
-    func localeChanged(_ notif: Notification) {
+    @objc func localeChanged(_ notif: Notification) {
         // the user changed the locale (region format) in Settings, so we are notified here to
         // update the date format in the table view cells
         //

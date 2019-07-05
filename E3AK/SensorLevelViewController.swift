@@ -20,7 +20,7 @@ class SensorLevelViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         print(String(format:"%02x",SettingsTableViewController.tmpSensorLevel))
-        selectedIndex = SettingsTableViewController.tmpSensorLevel - 1
+        selectedIndex = Int(SettingsTableViewController.tmpSensorLevel - 1)
         
         title = GetSimpleLocalizedString("Tamper Sensor Level")
         SettingsTableViewController.settingStatus = settingStatesCase.sensor_level.rawValue

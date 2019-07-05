@@ -60,7 +60,7 @@ class DeviceTimeViewController: BLE_ViewController {
         
     }
 
-    func localeChanged(_ notif: Notification) {
+    @objc func localeChanged(_ notif: Notification) {
         // the user changed the locale (region format) in Settings, so we are notified here to
         // update the date format in the table view cells
         //

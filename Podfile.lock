@@ -2,12 +2,12 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
-  - IQDropDownTextField (1.1.0)
-  - IQKeyboardManagerSwift (4.0.10)
-  - R.swift (3.3.0):
-    - R.swift.Library (~> 3.0.2)
-  - R.swift.Library (3.0.2)
-  - SVProgressHUD (2.1.2)
+  - IQDropDownTextField (1.1.1)
+  - IQKeyboardManagerSwift (6.4.0)
+  - R.swift (5.0.3):
+    - R.swift.Library (~> 5.0.0)
+  - R.swift.Library (5.0.1)
+  - SVProgressHUD (2.2.5)
   - UIAlertController+Blocks (0.9.2)
 
 DEPENDENCIES:
@@ -29,11 +29,11 @@ CHECKOUT OPTIONS:
 
 SPEC CHECKSUMS:
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
-  IQDropDownTextField: 614f79ca905529c992045eaa112d0fc9ebb875d1
-  IQKeyboardManagerSwift: 75ba21a23794a1e6b6fe6d9a267ea17f80e06771
-  R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
-  R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
-  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+  IQDropDownTextField: 3d2e5728a2b83ff5dbb14cb9b497a80005124cbe
+  IQKeyboardManagerSwift: ed9b04ee0e3067ffba543283462d619f944b05e5
+  R.swift: f5a87643b91ea569d23d6afb3eee9c743edde239
+  R.swift.Library: cfe85d569d9bae6cb262922db130e7c3a7a5fad1
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
   UIAlertController+Blocks: 80e28b92523fb58aba4d1bccec013d5a0b0bddb2
 
 PODFILE CHECKSUM: 9213ec827375bd3232e994d8beba54b89b11331b

@@ -102,7 +102,7 @@ class ActivityHistoryViewController: BLE_ViewController,UISearchBarDelegate{
        
     }
 
-    func didTapReloadItem() {
+    @objc func didTapReloadItem() {
         
         print("didTapReloadItem")
         if Config.isHistoryDataOK {
@@ -162,7 +162,7 @@ class ActivityHistoryViewController: BLE_ViewController,UISearchBarDelegate{
     }
 
     
-    func didTapshareItem() {
+    @objc func didTapshareItem() {
         
         print("didTapshareItem")
         if Config.isHistoryDataOK {
@@ -403,10 +403,21 @@ class ActivityHistoryViewController: BLE_ViewController,UISearchBarDelegate{
         
         searchBar.resignFirstResponder()
     }
+    
+    ////
+    override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
+        self.downloadFrame.removeFromSuperview()
+        
+        
+        backToMainPage()
+        
+    }
+    
 
 }
 
-extension ActivityHistoryViewController: UITableViewDataSource, UITableViewDelegate {
+
+extension ActivityHistoryViewController: UITableViewDataSource, UITableViewDelegate{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -494,13 +505,6 @@ extension ActivityHistoryViewController: UITableViewDataSource, UITableViewDeleg
     
     
    
-    override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
-        self.downloadFrame.removeFromSuperview()
-        
-        
-        backToMainPage()
-        
-    }
-   
+    
 }
 

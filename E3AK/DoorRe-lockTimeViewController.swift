@@ -18,7 +18,7 @@ class DoorRe_lockTimeViewController: BLE_ViewController {
         super.viewDidLoad()
         SettingsTableViewController.settingStatus = settingStatesCase.config_device.rawValue
         title = "延遲上鎖時間"
-        IQKeyboardManager.sharedManager().enableAutoToolbar = false
+        IQKeyboardManager.shared.enableAutoToolbar = false
         secondsTextField.layer.borderColor = HexColor("c8c7cc")?.cgColor
         secondsTextField.layer.borderWidth = 1.0
         secondsTextField.becomeFirstResponder()
@@ -26,7 +26,7 @@ class DoorRe_lockTimeViewController: BLE_ViewController {
             }
 
     override func viewDidDisappear(_ animated: Bool) {
-        IQKeyboardManager.sharedManager().enableAutoToolbar = true
+        IQKeyboardManager.shared.enableAutoToolbar = true
     }
     
     override func didReceiveMemoryWarning() {
