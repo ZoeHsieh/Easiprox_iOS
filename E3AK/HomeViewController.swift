@@ -183,6 +183,7 @@ class HomeViewController: BLE_ViewController{
                 }
             })
         }*/
+        ////////
         
         NotificationCenter.default.addObserver(self, selector: #selector(didEnterBG), name: Notification.Name.NSExtensionHostWillResignActive, object: nil)
         
