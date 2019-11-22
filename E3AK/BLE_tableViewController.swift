@@ -49,6 +49,9 @@ class BLE_tableViewController: UITableViewController, CBCentralManagerDelegate, 
         
     }
     
+    
+    
+    
     // MARK: - CBPeripheralDelegate
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         

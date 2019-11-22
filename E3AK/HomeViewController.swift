@@ -113,6 +113,7 @@ class HomeViewController: BLE_ViewController{
         }
         
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -318,7 +319,7 @@ class HomeViewController: BLE_ViewController{
             }
             if( deviceInfoList.contains(tmp)) {
                 
-                let du_idx:Int = deviceInfoList.index(of: tmp)!
+                let du_idx:Int = deviceInfoList.firstIndex(of: tmp)!
                 
                 //print("UUID Dulicate!! Index = \(du_idx)")
                 
@@ -358,7 +359,7 @@ class HomeViewController: BLE_ViewController{
                 
                 //增加目前與裝置的距離 20180308
                 if (deviceInfoList.contains(forceDevice)){
-                    let du_idx:Int = deviceInfoList.index(of: forceDevice)!
+                    let du_idx:Int = deviceInfoList.firstIndex(of: forceDevice)!
                     let avg_rssi: Int = (RSSI.intValue + deviceInfoList[du_idx].rssi) / 2;
                     forceDevice.rssi = avg_rssi;
                     forceDevice.current_level = Convert_RSSI_to_LEVEL(avg_rssi)
@@ -402,7 +403,7 @@ class HomeViewController: BLE_ViewController{
     @objc func didEnterBG(){
         StopScanningTimer()
         for var stopDevice in deviceInfoList{
-            let du_idx:Int = deviceInfoList.index(of: stopDevice)!
+            let du_idx:Int = deviceInfoList.firstIndex(of: stopDevice)!
             stopDevice.current_level = 999
             deviceInfoList[du_idx] = stopDevice;
             
@@ -500,12 +501,12 @@ class HomeViewController: BLE_ViewController{
         let alertController = UIAlertController(title: self.GetSimpleLocalizedString("Please Choose"), message: nil, preferredStyle: .actionSheet)
         for i in 0 ... deviceList.count - 1{
             
-            var button = UIAlertAction(title: deviceList[i], style: .default, handler: { (action: UIAlertAction!) in
+            let button = UIAlertAction(title: deviceList[i], style: .default, handler: { (action: UIAlertAction!) in
                 
                 if self.deviceInfoList.count > 0{
-                    print("action.title=\(action.title)")
+                    print("action.title=\(String(describing: action.title))")
                     if  self.isForce{
-                        print("action.title=\(action.title)")
+                        print("action.title=\(String(describing: action.title))")
                         print("forceDevice.name=\(self.forceDevice.name)")
                         if action.title == self.forceDevice.name {
                         self.selectDeviceIndex = 0
@@ -1126,7 +1127,7 @@ class HomeViewController: BLE_ViewController{
                targetDevice = deviceInfoList[selectDeviceIndex].peripheral
             }*/
             targetDevice = forceDevice
-            print("get device name=\(targetDevice?.name)")
+            print("get device name=\(String(describing: targetDevice?.name))")
         }else{
             
             var current_level = deviceInfoList[0].current_level

@@ -58,6 +58,7 @@ class Util{
         }
         return tmpData
     }
+    
     public static func UINT8toStringDecForCard(data:[UInt8], len:Int)-> String{
         
         var dataInt:UInt32 = 0

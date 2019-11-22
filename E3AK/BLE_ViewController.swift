@@ -51,6 +51,11 @@ class BLE_ViewController: UIViewController,CBCentralManagerDelegate, CBPeriphera
         
     }
     
+    
+    
+    
+    
+    
     // MARK: - CBPeripheralDelegate
     public func peripheral(_ peripheral: CBPeripheral, didDiscoverServices error: Error?) {
         

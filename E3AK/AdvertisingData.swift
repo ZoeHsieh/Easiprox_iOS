@@ -36,6 +36,16 @@ class AdvertisingData{
         ,0x000E:"DG-800⁺"   //e5ak
         ,0x000F:"Easiprox⁺ Slim"   //e5ar2
         ,0x0010:"DG-160⁺"   //e5ar2
+        ,0x0011:"E3AK7"   //e5ar2
+        ,0x0012:"E3AK8"   //e5ar2
+        ,0x0013:"PBT-1000BT"   //開關E3
+        ,0x0014:"BTS-500BT"   //開關E3
+        ,0x0015:"BTS-586BT"   //開關E3
+        ,0x0016:"DG-700"   //分離式
+        ,0x0017:"DG-750"   //分離式
+        ,0x0018:"DG-760"   //分離式
+        ,0x0019:"DG-360⁺"   //e5ar2
+        ,0x001A:"DG-365⁺"
         ,0xFFFF:"xxxxxxxx"
     ]
     

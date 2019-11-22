@@ -61,7 +61,7 @@ class Intro_UserViewController: BLE_ViewController {
     func showAddUserViewController() {
         let vc = AddUserViewController(nib: R.nib.addUserViewController)
         let navVC: UINavigationController = UINavigationController(rootViewController: vc)
-        vc.delegate = self
+        vc.delegate = self as! AddUserViewControllerDelegate
         
         vc.bpChar = self.bpChar
         present(navVC, animated: true, completion: nil)
@@ -120,24 +120,24 @@ class Intro_UserViewController: BLE_ViewController {
 
 }
 
-extension Intro_UserViewController: AddUserViewControllerDelegate{
-    
-    func didTapAdd() {
-    
-        if isNOUser && UsersViewController.result_userAction == 0
-        {
-            
-            nextButton.setTitle(GetSimpleLocalizedString("Next"), for: .normal)
-            remove(asChildViewController: Intro_NOUsersViewController(nib: R.nib.intro_NOUsersViewController))
-            add(asChildViewController: Intro_AddMoreUserViewController(nib: R.nib.intro_AddMoreUserViewController))
-            let vc = Intro_AddMoreUserViewController(nib: R.nib.intro_AddMoreUserViewController)
-            vc.selectedDevice = self.selectedDevice
-            vc.bpChar = self.bpChar
-            isNOUser = false
-            Config.bleManager.setPeripheralDelegate(vc_delegate: self)
-        }
-    }
+//extension Intro_UserViewController: AddUserViewControllerDelegate{
+//
+//    func didTapAdd() {
+//
+//        if isNOUser && UsersViewController.result_userAction == 0
+//        {
+//
+//            nextButton.setTitle(GetSimpleLocalizedString("Next"), for: .normal)
+//            remove(asChildViewController: Intro_NOUsersViewController(nib: R.nib.intro_NOUsersViewController))
+//            add(asChildViewController: Intro_AddMoreUserViewController(nib: R.nib.intro_AddMoreUserViewController))
+//            let vc = Intro_AddMoreUserViewController(nib: R.nib.intro_AddMoreUserViewController)
+//            vc.selectedDevice = self.selectedDevice
+//            vc.bpChar = self.bpChar
+//            isNOUser = false
+//            Config.bleManager.setPeripheralDelegate(vc_delegate: self)
+//        }
+//    }
 
     
     
-}
+//}

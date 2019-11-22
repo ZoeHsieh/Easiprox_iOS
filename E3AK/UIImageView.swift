@@ -23,4 +23,5 @@ extension UIImageView {
     func stopRotate() {
         layer.removeAllAnimations()
     }
+    
 }

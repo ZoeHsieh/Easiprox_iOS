@@ -14,6 +14,7 @@ class RepeatDateViewController: BLE_ViewController{
    
     var selectedDateArray = [Bool](repeating: false, count: 7)
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

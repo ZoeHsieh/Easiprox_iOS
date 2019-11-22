@@ -478,8 +478,8 @@ extension ActivityHistoryViewController: UITableViewDataSource, UITableViewDeleg
                     cell.deviceLabel.textColor = UIColor.blue
                 }else{
                 
-                    cell.nameLabel.textColor = UIColor.flatGreenDark
-                    cell.dateLabel.textColor = UIColor.flatGray
+                    cell.nameLabel.textColor = UIColor.flatGreenDark()
+                    cell.dateLabel.textColor = UIColor.flatGray()
                     cell.deviceLabel.textColor = UIColor.black
                 }
                 cell.nameLabel.text = name
@@ -492,6 +492,7 @@ extension ActivityHistoryViewController: UITableViewDataSource, UITableViewDeleg
         }
 
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

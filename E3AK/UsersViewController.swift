@@ -15,7 +15,9 @@ enum userViewStatesCase:Int {
     case userAction = 1
     
 }
-class UsersViewController: BLE_ViewController,UISearchBarDelegate {
+class UsersViewController: BLE_ViewController,UISearchBarDelegate,AddUserViewControllerDelegate {
+    
+    
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var downloadFrame: UIView!
@@ -154,13 +156,28 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate {
         tableView.reloadData()
         UsersViewController.status = userViewStatesCase.userNone.rawValue
         
+        
     }
+    
+    func didTapAdd(result:Bool) {
+         
+          Config.bleManager.setCentralManagerDelegate(vc_delegate: self)
+          Config.bleManager.setPeripheralDelegate(vc_delegate: self)
+           localUserArr = Config.userListArr
+           tableView.reloadData()
+           
+//           let cmdData = Config.bpProtocol.getUserCount()
+//                Config.bleManager.writeData(cmd: cmdData, characteristic: bpChar)
+        
+       
+    }
+    
     @IBAction func didTapAdd(_ sender: Any) {
         
         if Config.isUserListOK{
         let vc = AddUserViewController(nib: R.nib.addUserViewController)
             vc.bpChar =  self.bpChar
-            
+            vc.delegate = self
         let navVC: UINavigationController = UINavigationController(rootViewController: vc)
             present(navVC, animated: true, completion: nil)
         }else{
@@ -240,6 +257,11 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate {
                     }
                 }
                 break
+                
+//            case BPprotocol.cmd_user_add:
+//                self.localUserArr = Config.userListArr
+//                tableView.reloadData()
+//                break
                 
                 
                 
@@ -384,6 +406,7 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate {
         
         searchBar.resignFirstResponder()
     }
+    
     override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         self.downloadFrame.removeFromSuperview()
         

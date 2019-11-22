@@ -235,11 +235,11 @@ extension DeviceTimeViewController: UITableViewDataSource, UITableViewDelegate {
     /*! Updates the UIDatePicker's value to match with the date of the cell above it.
      */
     func updateDatePicker() {
-       print("indexPath= \(datePickerIndexPath?.row)")
+        print("indexPath= \(String(describing: datePickerIndexPath?.row))")
         if let indexPath = datePickerIndexPath {
             
             let associatedDatePickerCell = tableView.cellForRow(at: indexPath)
-             if let targetedDatePicker = associatedDatePickerCell?.viewWithTag(kDatePickerTag) as! UIDatePicker?
+            if (associatedDatePickerCell?.viewWithTag(kDatePickerTag) as! UIDatePicker?) != nil
             {
             
                

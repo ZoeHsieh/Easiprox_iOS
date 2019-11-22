@@ -11,12 +11,13 @@ import ChameleonFramework
 import CoreBluetooth
 
 protocol AddUserViewControllerDelegate {
-    func didTapAdd()
+    func didTapAdd(result:Bool)
 }
 
 class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
     
-    var delegate: AddUserViewControllerDelegate?
+    
+    public var delegate: AddUserViewControllerDelegate?
     
     @IBOutlet weak var accountTitle: UILabel!
     @IBOutlet weak var accountTextField: UITextField!
@@ -111,7 +112,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         setNavigationBarRightItemWithTitle(title: self.GetSimpleLocalizedString("Add"))
         let leftBtn = UIButton(type: .custom)
         leftBtn.setTitle(self.GetSimpleLocalizedString("Cancel"), for: .normal)
-        leftBtn.setTitleColor(UIColor.flatGreen, for: .normal)
+        leftBtn.setTitleColor(UIColor.flatGreen(), for: .normal)
         leftBtn.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
         leftBtn.addTarget(self, action: #selector(didTapLeftBarButtonItem), for: .touchUpInside)
         let leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
@@ -127,6 +128,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
     }
     
     override func cmdAnalysis(cmd:[UInt8]){
+        
         let datalen = Int16( UInt16(cmd[2]) << 8 | UInt16(cmd[3] & 0x00FF))
         for i in 0 ... cmd.count - 1{
             print(String(format:"r-cmd[%d]=%02x\r\n",i,cmd[i]))
@@ -144,11 +146,12 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
                     
                     Config.userListArr.append(["pw": tmpPassword, "name":tmpID,"card":tmpCard,"index":userIndex])
                     
-                    delegate?.didTapAdd()
+                    delegate?.didTapAdd(result: true)
                     
                 }
                 else{
                     UsersViewController.result_userAction = 1
+                    
                     
                 }
                 UsersViewController.status = userViewStatesCase.userAction.rawValue
