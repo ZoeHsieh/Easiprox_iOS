@@ -165,6 +165,8 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate,AddUserViewCon
           Config.bleManager.setPeripheralDelegate(vc_delegate: self)
            localUserArr = Config.userListArr
            tableView.reloadData()
+        //增加使用者體驗，新增後滑到最下
+        tableView.scrollToRow(at: IndexPath(row: localUserArr.count-1,section: 0), at: .bottom, animated: true)
            
 //           let cmdData = Config.bpProtocol.getUserCount()
 //                Config.bleManager.writeData(cmd: cmdData, characteristic: bpChar)

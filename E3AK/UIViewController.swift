@@ -15,7 +15,7 @@ extension UIViewController: StoryboardIdentifiable, UIActionSheetDelegate{
     
     
     public func openBlueTooth_Setting()->UIAlertController {
-        let url = URL(string: "APP-Prefs:root=Bluetooth") //for Bluetooth Setting
+        let url = URL(string: UIApplication.openSettingsURLString) //for Bluetooth Setting
         let app = UIApplication.shared
         
         let alertController = UIAlertController(title: "Enable the BlueTooth?", message: "Do You Enable the BlueTooth ?", preferredStyle: .alert)
