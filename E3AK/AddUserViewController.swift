@@ -1,6 +1,6 @@
 //
 //  AddUserViewController.swift
-//  E3AK
+//  E5AKR
 //
 //  Created by BluePacket on 2017/6/14.
 //  Copyright © 2017年 BluePacket. All rights reserved.
@@ -15,10 +15,8 @@ protocol AddUserViewControllerDelegate {
 }
 
 class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
-    
-    
+
     public var delegate: AddUserViewControllerDelegate?
-    
     @IBOutlet weak var accountTitle: UILabel!
     @IBOutlet weak var accountTextField: UITextField!
     
@@ -26,40 +24,24 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
     @IBOutlet weak var passwordTextField: UITextField!
     
     @IBOutlet weak var cardTitle: UILabel!
-    
-    
     @IBOutlet weak var CardInput1: UITextField!
-    
     @IBOutlet weak var CardInput2: UITextField!
-    
-    
     @IBOutlet weak var CardInput3: UITextField!
-    
     @IBOutlet weak var CardInput4: UITextField!
-    
-    
     @IBOutlet weak var CardInput5: UITextField!
-    
     @IBOutlet weak var CardInput6: UITextField!
-    
     @IBOutlet weak var CardInput7: UITextField!
-    
     @IBOutlet weak var CardInput8: UITextField!
-    
     @IBOutlet weak var CardInput9: UITextField!
-    
-    
     @IBOutlet weak var CardInput10: UITextField!
-    
     @IBOutlet weak var EditCardUI: UIStackView!
-    
     @IBOutlet weak var EditCardBG: UITextField!
     var tmpID:String = ""
     var tmpPassword:String = ""
     var tmpCard:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = GetSimpleLocalizedString("Add Users")
         configUI()
         accountTitle.text = GetSimpleLocalizedString("ID")
@@ -103,10 +85,25 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         
         
         
-        
-        
-    }
     
+    
+    }
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     func configUI() {
         
         setNavigationBarRightItemWithTitle(title: self.GetSimpleLocalizedString("Add"))
@@ -157,7 +154,47 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
                 UsersViewController.status = userViewStatesCase.userAction.rawValue
                 dismiss(animated: true, completion: nil)
                 break
-                
+            case BPprotocol.cmd_read_card:
+                                        
+                               var data = [UInt8]()
+                                           
+                               for i in 4 ... cmd.count - 1{
+                                   data.append(cmd[i])
+                               }
+                                        
+                               if(data.count == 4){
+                                  var readCardValue = Util.UINT8toStringDecForCard(data: data, len: 4)
+                                   if readCardValue.count != 10{ return }
+                                           
+                                           let CardInputs = [ CardInput1,CardInput2,
+                                                                     CardInput3, CardInput4,
+                                                                     CardInput5,CardInput6,
+                                                                     CardInput7,CardInput8,
+                                                                     CardInput9, CardInput10]
+                                           let CardValue = readCardValue
+                                           
+                                           for i in 0 ... CardInputs.count - 1{
+                                                
+                                                    
+                                                    if CardValue != BPprotocol.spaceCardStr{
+                                                        let start = CardValue.index(CardValue.startIndex, offsetBy: i)
+                                                        let end = CardValue.index(CardValue.startIndex, offsetBy: i+1)
+                                                        let range = start..<end
+                                                        CardInputs[i]?.text = CardValue.substring(with: range)
+                                                        
+                                                      }else{
+                                                        CardInputs[i]?.text = " "
+                                                   
+                                                    }
+                                                    
+                                                  
+                                               CardInputs[i]?.endEditing(true)
+                                           }
+                                           
+                                           readCardValue = ""
+                               }
+
+                               break
                 
             default:
                 break
@@ -174,7 +211,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
                            CardInput7,CardInput8,
                            CardInput9, CardInput10]
         
-        
+    
         
         
         if field.tag == 0{// for user id
@@ -182,8 +219,8 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             if ( (field.text?.utf8.count)! > BPprotocol.userID_maxLen ){
                 field.deleteBackward();
             }
-            
-            
+       
+     
             
         }else if field.tag == 1{ // for user pwd
             
@@ -211,8 +248,6 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             
             
             
-            
-            
             if ( (field.text?.utf8.count)! > BPprotocol.userPD_maxLen ) {
                 field.deleteBackward();
             }
@@ -220,7 +255,7 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             
             
             
-            
+         
         }else if field.tag == 200{ // for user card id
             
             
@@ -495,12 +530,10 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
             
         }
         
+       
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
     /*check backspace*/
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange,
                    replacementString string: String) -> Bool
@@ -558,6 +591,6 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         return true
     }
     
-    
+
     
 }

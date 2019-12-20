@@ -1,6 +1,6 @@
 //
 //  UserInfoTableViewController.swift
-//  E3AK
+//  E5AKR
 //
 //  Created by BluePacket on 2017/6/15.
 //  Copyright © 2017年 BluePacket. All rights reserved.
@@ -11,16 +11,11 @@ import UIAlertController_Blocks
 import CoreBluetooth
 
 class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate{
-    
+
     @IBOutlet weak var accountTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    
-    
     @IBOutlet weak var cardTextField: UITextField!
-    
     @IBOutlet weak var label_accessLimit: UILabel!
-    
-    
     @IBOutlet weak var cardSwitch: UISwitch!
     @IBOutlet weak var cardSwitchTitle: UILabel!
     @IBOutlet weak var phoneSwitch: UISwitch!
@@ -30,39 +25,20 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
     @IBOutlet weak var accessTypeTitle: UILabel!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var EditCardDialogTitle: UILabel!
-    
     @IBOutlet weak var CardDialogCancelBtn: UIButton!
-    
-    
     @IBOutlet weak var CardDialogConfirmBtn: UIButton!
-    
     @IBOutlet var CardDialogFrame: UIView!
-    
     @IBOutlet weak var CardDialogView: UIView!
-    
     @IBOutlet weak var CardInput1: UITextField!
-    
     @IBOutlet weak var CardInput2: UITextField!
-    
-    
     @IBOutlet weak var CardInput3: UITextField!
-    
     @IBOutlet weak var CardInput4: UITextField!
-    
-    
     @IBOutlet weak var CardInput5: UITextField!
-    
     @IBOutlet weak var CardInput6: UITextField!
-    
     @IBOutlet weak var CardInput7: UITextField!
-    
     @IBOutlet weak var CardInput8: UITextField!
-    
     @IBOutlet weak var CardInput9: UITextField!
-    
-    
     @IBOutlet weak var CardInput10: UITextField!
-    
     
     var selectUser:Int = 0
     var userIndex :Int16 = 0
@@ -75,7 +51,9 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
     var endTimeArr: Array<Int>!
     var openTimes: Int!
     var weekly: UInt8!
+   
     var displayAlerDialog:UIAlertController? = nil
+    private var  readCardValue = ""
     // var newStartTimeArr = [Date().year, Date().month, Date().day, 0, 0, 0]
     // var newEndTimeArr = [Date().year + 1, Date().month, Date().day, 23, 50, 0]
     @IBAction func CardConfirmBtnListener(_ sender: Any) {
@@ -149,7 +127,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             let cmd = Config.bpProtocol.setUserCard(UserIndex: self.userIndex, Card: cardUint8)
             Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
             UserInfoTableViewController.tmpCMD = cmd
-            
+           
             
         }else{
             
@@ -166,8 +144,6 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         
         self.CardDialogFrame.removeFromSuperview();
     }
-    
-    
     
     @IBAction func CardCancelBtnListener(_ sender: Any) {
         
@@ -223,7 +199,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         let cmd = Config.bpProtocol.getUserProperty(UserIndex: Int16(userIndex))
         Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
         
-        
+
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -232,7 +208,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         if UserInfoTableViewController.isSettingAccess{
             let cmd = UserInfoTableViewController.tmpCMD
             print(String(format:"cmd1 cnt=%d", cmd.count))
-            
+                
             Config.bleManager.writeData(cmd: cmd, characteristic: bpChar)
             UserInfoTableViewController.isSettingAccess = false
         }
@@ -240,7 +216,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         tableView.reloadData()
         
     }
-    
+
     @IBAction func didTapDelete(_ sender: Any) {
         UIAlertController.showAlert(
             in: self,
@@ -264,14 +240,6 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                 }
         })
     }
-    
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Table view data source
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 4
@@ -438,32 +406,32 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                     newName = String(chars)
                 }while newName.utf8.count > 16
             }
-            
+           
             let nameArr = Config.userListArr.map{ $0["name"] as! String }
-            
+           
             print("name size = \(nameArr.count)")
             if nameArr.contains((newName)){
                 
                 self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_name"))
                 return
             }
-            print("user name =\(newName)")
+             print("user name =\(newName)")
             if newName.localizedUppercase == Config.AdminID || newName.localizedUppercase == "ADMIN"{
-                print("revise id fail")
+            print("revise id fail")
                 self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_name"))
                 return
             }
             print("123")
-            
+
             let nameUint8 = Util.StringtoUINT8ForID(data: newName, len: 16, fillData: BPprotocol.nullData)
             
-            
+                       
             let cmd = Config.bpProtocol.setUserID(UserIndex: Int16(self.userIndex), ID: nameUint8)
             
             Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
-            UserInfoTableViewController.tmpCMD = cmd
+             UserInfoTableViewController.tmpCMD = cmd
         })
-        
+
     }
     
     func didTapPWD() {
@@ -513,8 +481,8 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             }else{
                 self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("wrong format!"))
             } })
-        
-        
+       
+    
     }
     
     func didTapCard() {
@@ -523,13 +491,13 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         
         showEditCardDialog(Title: self.GetSimpleLocalizedString("users_card_edit_dialog_title"), CardValue: cardTextField.text!)
         
-        
+       
         
         
         
     }
-    
-    
+
+
     override func cmdAnalysis(cmd:[UInt8]){
         
         
@@ -539,6 +507,47 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             
             switch cmd[0] {
                 
+            case BPprotocol.cmd_read_card:
+                         
+                var data = [UInt8]()
+                            
+                for i in 4 ... cmd.count - 1{
+                    data.append(cmd[i])
+                }
+                         
+                if(data.count == 4){
+                    readCardValue = Util.UINT8toStringDecForCard(data: data, len: 4)
+                    if readCardValue.count != 10{ return }
+                            
+                            let CardInputs = [ CardInput1,CardInput2,
+                                                      CardInput3, CardInput4,
+                                                      CardInput5,CardInput6,
+                                                      CardInput7,CardInput8,
+                                                      CardInput9, CardInput10]
+                            let CardValue = readCardValue
+                            
+                            for i in 0 ... CardInputs.count - 1{
+                                 
+                                     
+                                     if CardValue != BPprotocol.spaceCardStr{
+                                         let start = CardValue.index(CardValue.startIndex, offsetBy: i)
+                                         let end = CardValue.index(CardValue.startIndex, offsetBy: i+1)
+                                         let range = start..<end
+                                         CardInputs[i]?.text = CardValue.substring(with: range)
+                                         
+                                       }else{
+                                         CardInputs[i]?.text = " "
+                                    
+                                     }
+                                     
+                                   
+                                CardInputs[i]?.endEditing(true)
+                            }
+                            
+                            readCardValue = ""
+                }
+
+                break
             case BPprotocol.cmd_set_user_id:
                 
                 if cmd[4] == BPprotocol.result_success{
@@ -594,7 +603,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                 }else{
                     UserInfoTableViewController.tmpCMD.removeAll()
                     
-                    // self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("program_fail"))
+                   // self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("program_fail"))
                 }
                 
                 break
@@ -611,25 +620,25 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                     
                     cardTextField.text = cardStr
                     
-                    
+                   
                     
                     
                     
                 }else{
                     UserInfoTableViewController.tmpCMD.removeAll()
                     
-                    
+                   
                 }
                 
                 break
             case BPprotocol.cmd_user_del:
                 if  cmd[4] == BPprotocol.result_success{
                     
-                    Config.userListArr.remove(at: self.selectUser)
-                    
+                Config.userListArr.remove(at: self.selectUser)
+                
                     _ = self.navigationController?.popViewController(animated: true)
                 } else{
-                    // self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("program_fail"))
+                // self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("program_fail"))
                 }
                 break
                 
@@ -641,7 +650,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                         data.append(cmd[i])
                     }
                     for i in 0 ... data.count - 1{
-                        
+                       
                         print(String(format:"R-data[%d]=%02x",(i), data[i]))
                     }
                     updateUserProperty(propertyData: data)
@@ -658,12 +667,12 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                         
                         updateUserProperty(propertyData: data)
                         
-                        //  self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("program_success"))
+                      //  self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("program_success"))
                         UserInfoTableViewController.tmpCMD.removeAll()
                     }else{
                         
                         
-                        //  self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("program_fail"))
+                      //  self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("program_fail"))
                         UserInfoTableViewController.tmpCMD.removeAll()
                     }
                 }
@@ -680,7 +689,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         if propertyData[0] & BPprotocol.enable_phone == BPprotocol.enable_phone{
             
             phoneSwitch.setOn(true, animated: true)
-            
+           
         }else{
             phoneSwitch.setOn(false, animated: true)
             
@@ -763,7 +772,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         
         endTimeArr = [Int(UInt16(endTime[0]) * 256 + UInt16(endTime[1])), Int(endTime[2]), Int(endTime[3]), Int(endTime[4]), Int(endTime[5]), Int(endTime[6])]
         if startTimeArr[0] < year{
-            startTimeArr[0] = year
+           startTimeArr[0] = year
         }
         
         if endTimeArr[0] < year{
@@ -772,44 +781,44 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         updateFooterAccessTypeText()
         
         /*
-         newStartTimeArr = startTimeArr
-         newEndTimeArr = endTimeArr
-         
-         
-         dayNtimeView.frame = UIScreen.main.bounds
-         weeklyView.frame = UIScreen.main.bounds
-         
-         datePicker.datePickerMode = .date
-         timePicker.datePickerMode = .time
-         datePicker.date = Date()
-         timePicker.minuteInterval = 1
-         
-         datePicker.minimumDate = Date()
-         formatter.dateFormat = "yyyy/MM/dd"
-         timeFormatter.dateFormat = "HH:mm"
-         datePicker.maximumDate = formatter.date(from: "2036/12/31")
-         
-         datePicker.addTarget(self, action: #selector(EditUserViewController.didSelectDate), for: .valueChanged)
-         timePicker.addTarget(self, action: #selector(EditUserViewController.didSelectTime), for: .valueChanged)
-         
-         weekStartTimeField.addTarget(self, action: #selector(EditUserViewController.beginEdit), for: .editingDidBegin)
-         weekEndTimeField.addTarget(self, action: #selector(EditUserViewController.beginEdit), for: .editingDidBegin)
-         
-         startDateField.inputView = datePicker
-         startTimeField.inputView = timePicker
-         endDateField.inputView = datePicker
-         endTimeField.inputView = timePicker
-         
-         startDateField.text = "\(startTimeArr[0])/\(String(format: "%02d",startTimeArr[1]) )/\(String(format: "%02d",startTimeArr[2]) )"
-         startTimeField.text =  String(format: "%02d",startTimeArr[3]) + ":" + String(format: "%02d",startTimeArr[4])
-         endDateField.text = "\(endTimeArr[0])/\(String(format: "%02d",endTimeArr[1]))/\(String(format: "%02d",endTimeArr[2]))"
-         endTimeField.text = String(format: "%02d",endTimeArr[3]) + ":" + String(format: "%02d",endTimeArr[4])
-         
-         weekStartTimeField.text = String(format: "%02d",startTimeArr[3]) + ":" +  String(format: "%02d",startTimeArr[4])
-         weekEndTimeField.text = String(format: "%02d",endTimeArr[3]) + ":" + String(format: "%02d",endTimeArr[4])
-         weekStartTimeField.inputView = timePicker
-         weekEndTimeField.inputView = timePicker
-         mainTable.reloadData()*/
+        newStartTimeArr = startTimeArr
+        newEndTimeArr = endTimeArr
+        
+        
+        dayNtimeView.frame = UIScreen.main.bounds
+        weeklyView.frame = UIScreen.main.bounds
+        
+        datePicker.datePickerMode = .date
+        timePicker.datePickerMode = .time
+        datePicker.date = Date()
+        timePicker.minuteInterval = 1
+        
+        datePicker.minimumDate = Date()
+        formatter.dateFormat = "yyyy/MM/dd"
+        timeFormatter.dateFormat = "HH:mm"
+        datePicker.maximumDate = formatter.date(from: "2036/12/31")
+        
+        datePicker.addTarget(self, action: #selector(EditUserViewController.didSelectDate), for: .valueChanged)
+        timePicker.addTarget(self, action: #selector(EditUserViewController.didSelectTime), for: .valueChanged)
+        
+        weekStartTimeField.addTarget(self, action: #selector(EditUserViewController.beginEdit), for: .editingDidBegin)
+        weekEndTimeField.addTarget(self, action: #selector(EditUserViewController.beginEdit), for: .editingDidBegin)
+        
+        startDateField.inputView = datePicker
+        startTimeField.inputView = timePicker
+        endDateField.inputView = datePicker
+        endTimeField.inputView = timePicker
+        
+        startDateField.text = "\(startTimeArr[0])/\(String(format: "%02d",startTimeArr[1]) )/\(String(format: "%02d",startTimeArr[2]) )"
+        startTimeField.text =  String(format: "%02d",startTimeArr[3]) + ":" + String(format: "%02d",startTimeArr[4])
+        endDateField.text = "\(endTimeArr[0])/\(String(format: "%02d",endTimeArr[1]))/\(String(format: "%02d",endTimeArr[2]))"
+        endTimeField.text = String(format: "%02d",endTimeArr[3]) + ":" + String(format: "%02d",endTimeArr[4])
+        
+        weekStartTimeField.text = String(format: "%02d",startTimeArr[3]) + ":" +  String(format: "%02d",startTimeArr[4])
+        weekEndTimeField.text = String(format: "%02d",endTimeArr[3]) + ":" + String(format: "%02d",endTimeArr[4])
+        weekStartTimeField.inputView = timePicker
+        weekEndTimeField.inputView = timePicker
+        mainTable.reloadData()*/
         
     }
     
@@ -886,7 +895,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                 let end = CardValue.index(CardValue.startIndex, offsetBy: i+1)
                 let range = start..<end
                 CardInputs[i]?.text = CardValue.substring(with: range)
-                
+                 CardInputs[i]?.becomeFirstResponder()
             }else{
                 CardInputs[i]?.text = " "
             }
@@ -897,8 +906,11 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             CardInputs[i]?.addTarget(self, action: #selector(self.CardEditChange(field:)), for: UIControl.Event.editingChanged)
             
         }
-        CardInputs[0]?.becomeFirstResponder()
-        
+       
+        if(CardValue == BPprotocol.spaceCardStr)
+        {
+            CardInputs[0]?.becomeFirstResponder()
+        }
         
         
     }
@@ -916,8 +928,8 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
             
             let start = field.text?.index(after:(field.text?.startIndex)! )
             let end = field.text?.endIndex
-            //let range = start..<end
-            //field.text = field.text?.substring(with: range)
+//            let range = start..<end
+//            field.text = field.text?.substring(with: range)
             field.text = String((field.text?[start!..<end!])!)
             
             field.text = field.text?.replacingOccurrences(of: "٠", with: "0", options: .literal, range: nil)
@@ -1027,7 +1039,7 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
     }
     override func centralManager(_ central: CBCentralManager, didDisconnectPeripheral peripheral: CBPeripheral, error: Error?) {
         self.CardDialogFrame.removeFromSuperview()
-        
+       
         
         
         if(displayAlerDialog != nil){

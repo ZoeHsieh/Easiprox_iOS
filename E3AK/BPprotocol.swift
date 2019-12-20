@@ -1,6 +1,6 @@
 //
 //  BPprotocol.swift
-//  CBDoorLock
+//  E5AKR
 //
 //  Created by BluePacket on 2017/3/30.
 //  Copyright © 2017年 BluePacket. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 
 class BPprotocol{
-    //E3AK cmd define
+    //E5AK cmd define
     public static let cmd_user_enroll:UInt8 =   0x01
     public static let cmd_user_identify:UInt8 = 0x02
     public static let cmd_keep_open:UInt8 = 0x03
@@ -40,6 +40,7 @@ class BPprotocol{
     public static let cmd_sensor_degree:UInt8 = 0x1C
     public static let cmd_set_admin_card:UInt8 = 0x1D
     public static let cmd_set_user_card:UInt8 = 0x1E
+    public static let cmd_read_card:UInt8      = 0x21;    
     //cmd data len define
     public static let len_user_enroll:Int = 30
     public static let len_user_identify:Int = 16

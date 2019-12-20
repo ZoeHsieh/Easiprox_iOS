@@ -1,6 +1,6 @@
 //
 //  SettingsTableViewController.swift
-//  E3AK
+//  E5AKR
 //
 //  Created by BluePacket on 2017/6/12.
 //  Copyright © 2017年 BluePacket. All rights reserved.
@@ -26,16 +26,14 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
     @IBOutlet weak var activityHistoryButton: UIButton!
     @IBOutlet weak var backupButton: UIButton!
     @IBOutlet weak var restoreButton: UIButton!
-    
     @IBOutlet var loadingView: UIView!
-    
     @IBOutlet weak var deviceNameTitle: UILabel!
     @IBOutlet weak var deviceNameLabel: UILabel!
     @IBOutlet weak var adminPWDTitle: UILabel!
     
     @IBOutlet weak var adminPWDLabel: UILabel!
     
-    
+   
     @IBOutlet weak var adminCardTitle: UILabel!
     
     @IBOutlet weak var adminCardLabel: UILabel!
@@ -69,7 +67,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
     @IBOutlet weak var aboutTitle: UILabel!
     
     @IBOutlet weak var backBar: UINavigationItem!
-    
+   
     @IBOutlet weak var label_progress_dg_title: UILabel!
     
     @IBOutlet weak var label_progress_dg_msg: UILabel!
@@ -90,10 +88,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
     @IBOutlet weak var label_msg_dg_title: UILabel!
     
     @IBOutlet weak var label_msg_dg_msg: UILabel!
-    
-    
-    
-    
+   
     @IBOutlet weak var EditCardDialogTitle: UILabel!
     
     @IBOutlet weak var CardDialogCancelBtn: UIButton!
@@ -154,15 +149,15 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
     var restoreProcIndex:Int = 0
     static var  settingStatus:Int = 0
     var connectTimer:Timer? = nil
-    /*******/
+    /******/
     var setupStatus:Int = 0
     let setupHandle:Int = 0
     let setupBackup:Int = 1
     let setupRestore:Int = 2
     let setupLogin:Int = 3
-    
+    private var readCardValue = ""
     var displayAlerDialog:UIAlertController? = nil
-    
+    var isloginCompleted = false
     @IBOutlet weak var deviceTimeLabel: UILabel!
     
     @IBOutlet weak var backButton: UIBarButtonItem!
@@ -178,14 +173,14 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         var newCard = ""
         for i in 0 ... CardInputs.count - 1{
             if CardInputs[i]?.text != " "{
-                newCard += (CardInputs[i]?.text)!
-                
+            newCard += (CardInputs[i]?.text)!
+            
                 cardNum +=   (CardInputs[i]?.text?.count)!
                 
             }
         }
         if newCard == "" && cardNum == 0{
-            newCard = BPprotocol.spaceCardStr
+           newCard = BPprotocol.spaceCardStr
         }
         self.CardDialogFrame.removeFromSuperview();
         print("cardNum = \(cardNum) newCard=\(newCard)")
@@ -195,112 +190,114 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             return
         }
         
-        if(newCard != BPprotocol.spaceCardStr){
+      if(newCard != BPprotocol.spaceCardStr){
+        
+        guard UInt32(newCard) != nil
             
-            guard UInt32(newCard) != nil
-                
-                else{
-                    self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
-                    return
-            }
-            
-            if newCard == BPprotocol.INVALID_CARD{
+            else{
                 self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
                 return
-            }
-            
-            
-            
-            let cardArr = Config.userListArr.map{ $0["card"] as! String }
-            
-            
-            if cardArr.contains(newCard){
-                
-                self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_card"))
-                return
-            }
-            
-            
-            
-            self.tmpAdminCard = newCard
-            
-            let cardUint8 = Util.StringDecToUINT8(data: self.tmpAdminCard!, len: (self.tmpAdminCard?.count)!)
-            
-            
-            
-            
-            
-            let cmd = Config.bpProtocol.setAdminCard(Card: cardUint8)
-            Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
-            
-            for j in 0 ... cmd.count - 1{
-                
-                print(String(format:"%02x ",cmd[j]))
-            }
-            
-        }else{
-            
-            let cardData:[UInt8] = [0xFF,0xFF,0xFF,0xFF]
-            let cmd = Config.bpProtocol.setAdminCard(Card: cardData)
-            Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
-            self.tmpAdminCard = BPprotocol.spaceCardStr
-            
+        }
+       
+        if newCard == BPprotocol.INVALID_CARD{
+            self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_Admin_card"))
+            return
         }
         
         
         
+        let cardArr = Config.userListArr.map{ $0["card"] as! String }
         
         
-        self.CardDialogFrame.removeFromSuperview();
-    }
-    
-    
-    
-    @IBAction func CardCancelBtnListener(_ sender: Any) {
-        
-        self.CardDialogFrame.removeFromSuperview();
-        
-        
-    }
-    
-    @IBAction func progress_cancel_Action(_ sender: Any) {
-        if setupStatus == setupRestore{
+        if cardArr.contains(newCard){
             
-            
-            
-            Config.bleManager.disconnectByCMD(char: bpChar)
-            
-            
-            backToMainPage()
-            self.restoreCount = 0;
-        }else if setupStatus == setupBackup{
-            self.backupCount = 0;
-            isCancel = true
+            self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_card"))
+            return
         }
-        self.msgFrame.removeFromSuperview();
         
         
+     
+        self.tmpAdminCard = newCard
+        
+        let cardUint8 = Util.StringDecToUINT8(data: self.tmpAdminCard!, len: (self.tmpAdminCard?.count)!)
+        
+        
+        
+        
+        
+        let cmd = Config.bpProtocol.setAdminCard(Card: cardUint8)
+        Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
+        
+        for j in 0 ... cmd.count - 1{
+            
+            print(String(format:"%02x ",cmd[j]))
+        }
+        
+    }else{
+        
+    let cardData:[UInt8] = [0xFF,0xFF,0xFF,0xFF]
+    let cmd = Config.bpProtocol.setAdminCard(Card: cardData)
+    Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
+    self.tmpAdminCard = BPprotocol.spaceCardStr
+    
     }
-    @IBAction func msg_dg_okAction(_ sender: Any) {
+    
+    
+    
+    
+    
+    self.CardDialogFrame.removeFromSuperview();
+}
+
+
+
+@IBAction func CardCancelBtnListener(_ sender: Any) {
+    
+    self.CardDialogFrame.removeFromSuperview();
+    
+    
+}
+    
+
+
+@IBAction func progress_cancel_Action(_ sender: Any) {
+    if setupStatus == setupRestore{
         
-        self.msgFrame.removeFromSuperview();
+        
+        
+        Config.bleManager.disconnectByCMD(char: bpChar)
+        
+        
+        backToMainPage()
+        self.restoreCount = 0;
+    }else if setupStatus == setupBackup{
         self.backupCount = 0;
-        self.backupMax = 0
+        isCancel = true
+    }
+    self.msgFrame.removeFromSuperview();
+    
+    
+}
+@IBAction func msg_dg_okAction(_ sender: Any) {
+    
+    self.msgFrame.removeFromSuperview();
+    self.backupCount = 0;
+    self.backupMax = 0
+    
+    if setupStatus == setupRestore{
         
-        if setupStatus == setupRestore{
-            
-            Config.bleManager.disconnectByCMD(char: bpChar)
-            setupStatus = setupHandle
-            self.backToMainPage()
-        }
-        
-        
+        Config.bleManager.disconnectByCMD(char: bpChar)
+        setupStatus = setupHandle
+        self.backToMainPage()
     }
     
+    
+}
+
     
     @IBAction func backPageListener(_ sender: Any) {
         
-        
+       
         switch SettingsTableViewController.settingStatus{
             
         default:
@@ -310,21 +307,21 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 
                 Config.bleManager.disconnect()
             }
-            
+          
             backToMainPage()
             
             
-            
+        
             break
             
             
         }
-        
+
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         title = GetSimpleLocalizedString("Settings")
         usersButton.setTitle(GetSimpleLocalizedString("Users"), for: .normal)
         activityHistoryButton.setTitle(GetSimpleLocalizedString("Activity History"), for: .normal)
@@ -341,7 +338,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         tamperLevelTitle.text = GetSimpleLocalizedString("Tamper Sensor Level")
         
         rssiTitle.text = GetSimpleLocalizedString("Proximity Read Range")
-        
+       
         deviceTimeTitle.text = GetSimpleLocalizedString("Device Time")
         aboutTitle.text = GetSimpleLocalizedString("About Us")
         
@@ -354,17 +351,17 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         activityHistoryButton.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)
         backupButton.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)
         restoreButton.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)
-        
+       
         dateFormatter.dateStyle = .medium // show short-style date format
         dateFormatter.timeStyle = .short
-        tableView.register(R.nib.settingsTableViewSectionFooter)
+            tableView.register(R.nib.settingsTableViewSectionFooter)
         
-        setUIVisable(enable: false)
+            setUIVisable(enable: false)
         
-        Config.bleManager.setCentralManagerDelegate(vc_delegate: self)
+            Config.bleManager.setCentralManagerDelegate(vc_delegate: self)
         
         delayOnMainQueue(delay: 1, closure: {
-            Config.bleManager.connect(bleDevice: self.selectedDevice)
+             Config.bleManager.connect(bleDevice: self.selectedDevice)
             self.StartConnectTimer()
             self.deviceNameLabel.text = self.selectedDevice.name
             Config.deviceName =  self.deviceNameLabel.text!
@@ -376,9 +373,6 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         
     }
     
-    
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         navigationController?.isNavigationBarHidden = false
         Config.bleManager.setCentralManagerDelegate(vc_delegate: self)
@@ -387,9 +381,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             
         case settingStatesCase.config_device
             .rawValue:
-            
+           
             Config.bleManager.writeData(cmd: SettingsTableViewController.tmpConfig, characteristic: bpChar)
-            
+           
             break
             
         case settingStatesCase.config_deviceTime.rawValue:
@@ -400,7 +394,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             tmpDeviceTime = cmd
             break
         case settingStatesCase.sensor_level.rawValue:
-            
+          
             let cmd = Config.bpProtocol.setSensorDegree(Level: SettingsTableViewController.tmpSensorLevel)
             
             Config.bleManager.writeData(cmd: cmd, characteristic: bpChar)
@@ -411,8 +405,8 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             rssiLabel.text = String(format:"%d",readExpectLevelFromDbByUUID(selectedDevice.identifier.uuidString))
             break
         }
-        SettingsTableViewController.settingStatus = settingStatesCase.setting_none.rawValue
-    }
+         SettingsTableViewController.settingStatus = settingStatesCase.setting_none.rawValue
+    }    
     func setUIVisable(enable:Bool){
         
         usersButton.isHidden = !enable
@@ -423,9 +417,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             self.view.addSubview(loadingView)
             loadingView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 64)
         }else{
-            
-            loadingView.isHidden = true
-            
+        
+           loadingView.isHidden = true
+         
         }
     }
     @IBAction func didTapUsers(_ sender: Any) {
@@ -433,9 +427,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
     }
     
     @IBAction func didTapActivityHistory(_ sender: Any) {
-        // let vc = ActivityHistoryViewController(nib: R.nib.activityHistoryViewController)
-        //  vc.bpChar = self.bpChar
-        // navigationController?.pushViewController(vc, animated: true)
+       // let vc = ActivityHistoryViewController(nib: R.nib.activityHistoryViewController)
+         //  vc.bpChar = self.bpChar
+       // navigationController?.pushViewController(vc, animated: true)
         //performSegue(withIdentifier: "showHistory", sender: nil)
         
     }
@@ -457,14 +451,14 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 } else if (buttonIndex >= controller.firstOtherButtonIndex){
                     self.executeBackup()
                     
-                    
+
                 }
         })
     }
     
     @IBAction func didTapRestore(_ sender: Any) {
         
-        
+     
         
         let isBackupDone:Bool = UserDefaults.standard.bool(forKey: Config.backupOK)
         
@@ -494,36 +488,26 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     // MARK: - Table view data source
-    
+
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    /*
-     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     
-     cell?.selectionStyle = .none;
-     return cell!
-     }*/
+   
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return Config.adminSettingMenuItem
     }
     
-    
-    
+
+
     override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        
+       
         let footerView = R.nib.settingsTableViewSectionFooter.firstView(owner: nil)
         footerView?.setVersion(version: newFwVersion!)
         return footerView
-        
+
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -571,9 +555,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 
                 let cmd = Config.bpProtocol.setDeviceName(deviceName:nameUint8, nameLen: newName.utf8.count)
                 Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar)
-                
+              
             })
-            
+            break
         case 1:
             print("fw= \(newFwVersion)")
             let index = newFwVersion?.index((newFwVersion?.startIndex)!, offsetBy: 1)
@@ -584,9 +568,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             if currentVR > Config.check_version {
                 checkFlag = true
             }
+            checkFlag = true
             if Config.isUserListOK || checkFlag {
                 self.displayAlerDialog = alertWithTextField(title: self.GetSimpleLocalizedString("settings_Admin_pwd_Edit"), subTitle: "", placeHolder: self.GetSimpleLocalizedString("4~8 digits"), keyboard: .numberPad, defaultValue: adminPWDLabel.text!, Tag: 1, handler: { (inputText) in
-                    
                     guard let newPWD: String = inputText else{
                         
                         //self.showAlert(message: "Wrong format!")
@@ -601,9 +585,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                         
                         let pwArr = Config.userListArr.map{ $0["pw"] as! String }
                         
-                        
+                       
                         if pwArr.contains(inputText!){
-                            
+                           
                             self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("users_manage_edit_status_duplication_password"))
                             return
                         }
@@ -622,11 +606,12 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                             
                             print(String(format:"%02x ",cmd[j]))
                         }
-                        
+                       
                     }else{
-                        self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("wrong format!"))
+                     self.showToastDialog(title: "", message: self.GetSimpleLocalizedString("wrong format!"))
                     } })
             }
+            break
         case 2:
             
             
@@ -668,11 +653,8 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         case 6:
             let vc = SensorLevelViewController(nib: R.nib.sensorLevelViewController)
             navigationController?.pushViewController(vc, animated: true)
-        case 7:/*
-             let vc = DoorRe_lockTimeViewController(nib: R.nib.doorReLockTimeViewController)
-             navigationController?.pushViewController(vc, animated: true)*/
-            
-            self.displayAlerDialog = alertWithTextField(title:self.GetSimpleLocalizedString( "Edit Door Re-lock Time (1~1800 seconds)"), subTitle: "", placeHolder: "1~1800", keyboard: .numberPad, defaultValue: delayTimeLabel.text!, Tag: 2, handler: { (inputText) in
+        case 7:
+              self.displayAlerDialog = alertWithTextField(title:self.GetSimpleLocalizedString( "Edit Door Re-lock Time (1~1800 seconds)"), subTitle: "", placeHolder: "1~1800", keyboard: .numberPad, defaultValue: delayTimeLabel.text!, Tag: 2, handler: { (inputText) in
                 guard let newDelayTime: String = inputText else{
                     
                     //self.showAlert(message: "Wrong format!")
@@ -681,7 +663,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 
                 if !((inputText?.isEmpty)!){
                     
-                    
+                  
                     let delayTime = Int16(newDelayTime)
                     if delayTime! > 0 && delayTime! <= 1800 {
                         let cmd = Config.bpProtocol.setDeviceConfig(door_option: self.currConfig[0], lockType: self.currConfig[1], delayTime: delayTime!, G_sensor_option: self.currConfig[4])
@@ -707,14 +689,14 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             let vc = AboutUsViewController(nib: R.nib.aboutUsViewController)
             vc.deviceModel = selectedModel
             navigationController?.pushViewController(vc, animated: true)
-            
+             break
         default:
             break
         }
     }
     
-    
-    
+
+   
     
     
     public override func centralManager(_ central: CBCentralManager, didFailToConnect peripheral: CBPeripheral, error: Error?) {
@@ -745,6 +727,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         Config.bleManager.writeData(cmd: cmd, characteristic: bpChar)
         
         setupStatus = setupLogin
+         isloginCompleted = false
     }
     
     
@@ -774,7 +757,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         case BPprotocol.cmd_admin_login:
             
             if cmd[4] == BPprotocol.result_success{
-                
+                Config.isUserListOK = false
                 Config.isHistoryDataOK = false
                 
             }else{
@@ -795,21 +778,10 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             
             break
         case BPprotocol.cmd_device_config:
-            SettingsTableViewController.tmpConfig.append(UInt8(0xC0))
-            for i in 0 ... cmd.count - 1{
-                SettingsTableViewController.tmpConfig.append(cmd[i])
-            }
-            SettingsTableViewController.tmpConfig.append(UInt8(0xC0))
-            for j in 0 ... 4 {
-                
-                print(String(format:"config=%02X",(cmd[j+4])))
-            }
-            
-            
-            
-            UI_updateDevConfig(data: data)
-            setUIVisable(enable: true)
-            //comment out for  solved app crash issue.
+           
+                    UI_updateDevConfig(data: data)
+                    setUIVisable(enable: true)
+           
             self.setcurrentdate()
             
             break
@@ -864,13 +836,10 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             break
             
         case BPprotocol.cmd_user_counter:
-            
-            userMax = Int16( UInt16(cmd[4]) << 8 | UInt16(cmd[5] & 0x00FF))
-            print("user Max =%d",userMax)
-            if userMax == 0 {
-                Config.isUserListOK = true
-            }
-            
+           
+                userMax = Int16( UInt16(cmd[4]) << 8 | UInt16(cmd[5] & 0x00FF))
+                print("user Max =%d",userMax)
+                
             break
             
         case BPprotocol.cmd_set_admin_pwd:
@@ -883,14 +852,14 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 }
             }
             let pwd = String(bytes: PWDArray, encoding: .ascii) ?? "12345"
-            
+                
             print(pwd)
-            
+                    
             adminPWDLabel.text = pwd
             
-            
+        
             Config.ADMINPWD = adminPWDLabel.text!
-            
+                
             break
             
         case BPprotocol.cmd_set_admin_card:
@@ -904,10 +873,10 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                     checkCnt += 1
                 }
             }
-            
+           
             if(checkCnt < 4){
-                Card = Util.UINT8toStringDecForCard(data: data, len: 4)
-                //                Util.debugPrint(tag: self.title!, message:  String(format:"Admin Card=%s",Card))
+             Card = Util.UINT8toStringDecForCard(data: data, len: 4)
+//                Util.debugPrint(tag: self.title!, message:  String(format:"Admin Card=%s",Card))
             }
             
             adminCardLabel.text = Card
@@ -962,22 +931,22 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             
         default:
             print("loginProc ERROR\r\n")
-            
+                
         }
         
         if loginProcIndex < cmdList.count{
             
-            let cmd = cmdList[loginProcIndex]
-            Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
-            
-            loginProcIndex += 1
+        let cmd = cmdList[loginProcIndex]
+        Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
+        
+        loginProcIndex += 1
             
         }else{
             setupStatus = setupHandle
+            isloginCompleted = true
         }
     }
     func executeBackup(){
-        
         backupProcIndex = 0
         backupMax = 0
         backupCount = 0
@@ -1182,23 +1151,59 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         
         
         switch cmd[0]{
+        case BPprotocol.cmd_read_card:
+          var data = [UInt8]()
+             for i in 4 ... cmd.count - 1{
+                 data.append(cmd[i])
+             }
+          
+          if(data.count == 4){
+                readCardValue = Util.UINT8toStringDecForCard(data: data, len: 4)
             
+            if readCardValue.count != 10{ return }
+               
+               let CardInputs = [ CardInput1,CardInput2,
+                                         CardInput3, CardInput4,
+                                         CardInput5,CardInput6,
+                                         CardInput7,CardInput8,
+                                         CardInput9, CardInput10]
+               let CardValue = readCardValue
+               
+               for i in 0 ... CardInputs.count - 1{
+                    
+                        
+                        if CardValue != BPprotocol.spaceCardStr{
+                            let start = CardValue.index(CardValue.startIndex, offsetBy: i)
+                            let end = CardValue.index(CardValue.startIndex, offsetBy: i+1)
+                            let range = start..<end
+                            CardInputs[i]?.text = CardValue.substring(with: range)
+                            
+                          }else{
+                            CardInputs[i]?.text = " "
+                       
+                        }
+                        
+                      
+                   CardInputs[i]?.endEditing(true)
+               }
+               
+               readCardValue = ""
+
+            }
+
+                break
             
         case BPprotocol.cmd_device_config:
+      
+           if cmd[4] == BPprotocol.result_success{
             
-            for j in 0 ... (SettingsTableViewController.tmpConfig.count) - 1 {
-                
-                print(String(format:"tmp=%02X",(SettingsTableViewController.tmpConfig[j])))
+            var tmpData = [UInt8]()
+            
+            for i in 5 ... (SettingsTableViewController.tmpConfig.count) - 1 {
+                tmpData.append(SettingsTableViewController.tmpConfig[i])
             }
-            if cmd[4] == BPprotocol.result_success{
-                
-                var tmpData = [UInt8]()
-                
-                for i in 5 ... (SettingsTableViewController.tmpConfig.count) - 1 {
-                    tmpData.append(SettingsTableViewController.tmpConfig[i])
-                }
-                UI_updateDevConfig(data: tmpData)
-                
+            UI_updateDevConfig(data: tmpData)
+            
             }
             
         case BPprotocol.cmd_device_name:
@@ -1354,12 +1359,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         {
             Config.TamperSensorDegree = BPprotocol.sensor_level1
         }
-        ////
-        
-        ////
         
         Config.ADMINCARD = (UserDefaults.standard.object(forKey: Config.ADMIN_CARDTag_backup) as? String)!
-        
+       
         let cmd = Config.bpProtocol.setDeviceConfig(door_option: Config.doorSensor! , lockType: Config.doorLockType!, delayTime: Int16(Config.doorOpenTime!), G_sensor_option: Config.TamperSensor!)
         Config.bleManager.writeData(cmd: cmd, characteristic: self.bpChar!)
         
@@ -1409,7 +1411,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 cardUInt8 = Util.StringDecToUINT8(data:Config.ADMINCARD , len: 4)
             }
             
+            
             let cmd = Config.bpProtocol.setAdminCard(Card: cardUInt8)
+            
             Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
             
             
@@ -1525,7 +1529,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             print(String(format:"r-cmd[%d]=%02x\r\n",i,cmd[i]))
         }
         if datalen == Int16(cmd.count - 4) {
-            
+           
             if setupStatus == setupHandle{
                 
                 AdminSettingHandle(cmd: cmd)
@@ -1540,7 +1544,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 AdminLoginProc(cmd: cmd)
                 
             }
-            
+          
         }
         
     }
@@ -1564,6 +1568,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         isCancel = false
         
     }
+    
     func showEditCardDialog(Title:String, CardValue:String) {
         
         
@@ -1608,17 +1613,15 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             CardInputs[i]?.delegate = self
             CardInputs[i]?.tag = 200
             CardInputs[i]?.addTarget(self, action: #selector(self.CardEditChange(field:)), for: UIControl.Event.editingChanged)
-            
-            
-            
-            
+         
         }
-        CardInputs[0]?.becomeFirstResponder()
-        
-        
+        if(CardValue == BPprotocol.spaceCardStr)
+        {
+            CardInputs[0]?.becomeFirstResponder()
+        }
         
     }
-    
+   
     @objc func CardEditChange(field: UITextField){
         
         var cardNum = 0
@@ -1630,7 +1633,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         
         
         if ( (field.text?.count)! > 1 ) {
-            
+           
             let start = field.text?.index(after:(field.text?.startIndex)! )
             let end = field.text?.endIndex
             //let range = start..<end
@@ -1672,10 +1675,10 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             if (CardInputs[i]?.text?.count==1 && (CardInputs[i]?.isEditing)! ){
                 
                 if(i < (CardInputs.count - 1)){
-                    CardInputs[i+1]?.becomeFirstResponder()
-                    
+                CardInputs[i+1]?.becomeFirstResponder()
+            
                 }else{
-                    CardInputs[i]?.resignFirstResponder()
+                CardInputs[i]?.resignFirstResponder()
                     
                 }
                 break
@@ -1763,7 +1766,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         backToMainPage()
         
     }
-    
+
     func StartConnectTimer(){
         if connectTimer == nil {
             
@@ -1773,7 +1776,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         }
         
     }
-    
+
     func UI_updateDevConfig( data:[UInt8]){
         
         if data[0] != 0x00{
@@ -1784,12 +1787,13 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         let index:Int = Int(data[1])
         doorActionLabel.text = Config.doorActionItem[index]
         delayTimeLabel.text = String(format:"%d",UInt16(data[2]) * 256 + UInt16(data[3]))
-        
+       
         if data[4] != 0x00{
             tamperSwitch.setOn(true, animated: false)
         }else{
             tamperSwitch.setOn(false, animated: false)
         }
+        
         currConfig = data
     }
     
@@ -1805,7 +1809,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         
         let  char = string.cString(using: String.Encoding.utf8)!
         let isBackSpace = strcmp(char, "\\b")
-        
+       
         
         var cardNum = 0
         if (isBackSpace == -92) {
@@ -1837,12 +1841,12 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                 
                 CardDialogConfirmBtn.isEnabled = true
             }
-            return false
+             return false
         }
         
+    
         
-        
-        }
+       }
         return true
     }
     
@@ -1876,20 +1880,20 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             if(!Config.isHistoryDataOK){
                 Config.historyListArr.removeAll()
             }
-            
-        }
         
+        }
+       
         
         
     }
     
-    
-    
-    
-    
+
     override func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        //print("TTTTTTTTTT")
-        self.setcurrentdate()
+        
+        if isloginCompleted{
+            self.setcurrentdate()
+            
+        }
     }
     
     
