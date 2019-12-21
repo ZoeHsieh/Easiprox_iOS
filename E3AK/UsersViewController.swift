@@ -97,37 +97,47 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate,AddUserViewCon
         SearchBar.returnKeyType = UIReturnKeyType.done
         SearchBar.placeholder = self.GetSimpleLocalizedString("UserList_search_placeHolder")
         
-        if Config.deviceType == Config.deviceType_Keypad{
-            
-            
-            tableView.register(R.nib.usersTableViewCell_Keypad)
-            
-        }else{
-            self.tableView.rowHeight = 120;
-            tableView.register(R.nib.usersTableViewCell)
-            
-        }
-        userCount = 1
-        print(userMax)
+        
+       self.tableView.rowHeight = 120;
+       tableView.register(R.nib.usersTableViewCell)
+        
         Config.bleManager.setPeripheralDelegate(vc_delegate: self)
-        
-        
-        if !Config.isUserListOK && userMax > 0{
-            Config.userListArr.removeAll()
-            showDownloadDialog()
-            let cmd = Config.bpProtocol.getUserInfo(UserCount: userCount)
-            Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
-            
-            
-        }else{
-            print("Userload")
-            if userMax == 0 && (Config.userListArr.count == 0) || (Config.userListArr.count == 0) {
-              showMessageDialog(Title:"" , Message: GetSimpleLocalizedString("no_user_note"))
-            }
-             localUserArr = Config.userListArr
-            tableView.reloadData()
-        }
-        UsersViewController.status = userViewStatesCase.userNone.rawValue
+        let cmdData = Config.bpProtocol.getUserCount()
+                       Config.bleManager.writeData(cmd: cmdData, characteristic: bpChar)
+//        ////zzzzzzzzz
+//        if Config.deviceType == Config.deviceType_Keypad{
+//
+//
+//            tableView.register(R.nib.usersTableViewCell_Keypad)
+//
+//        }else{
+//            self.tableView.rowHeight = 120;
+//            tableView.register(R.nib.usersTableViewCell)
+//
+//        }
+//        userCount = 1
+//        print(userMax)
+//        Config.bleManager.setPeripheralDelegate(vc_delegate: self)
+//
+//        ////xxxxxxxxxxx
+//        if !Config.isUserListOK && userMax > 0{
+//            Config.userListArr.removeAll()
+//            showDownloadDialog()
+//            let cmd = Config.bpProtocol.getUserInfo(UserCount: userCount)
+//            Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
+//
+//
+//        }else{
+//            print("Userload")
+//            if userMax == 0 && (Config.userListArr.count == 0) || (Config.userListArr.count == 0) {
+//              showMessageDialog(Title:"" , Message: GetSimpleLocalizedString("no_user_note"))
+//            }
+//             localUserArr = Config.userListArr
+//            tableView.reloadData()
+//        }
+//        //////xxxx
+//        UsersViewController.status = userViewStatesCase.userNone.rawValue
+//        /////zzzzzz
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -183,9 +193,8 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate,AddUserViewCon
         let navVC: UINavigationController = UINavigationController(rootViewController: vc)
             present(navVC, animated: true, completion: nil)
         }else{
-        
-            UIApplication.shared.keyWindow?.addSubview(self.downloadFrame)
-            isDownloadViewShowing = true
+         UIApplication.shared.keyWindow?.addSubview(self.downloadFrame)
+         isDownloadViewShowing = true
         }
     }
 
@@ -259,6 +268,35 @@ class UsersViewController: BLE_ViewController,UISearchBarDelegate,AddUserViewCon
                     }
                 }
                 break
+                ///xxx  12/20新增
+                case BPprotocol.cmd_user_counter:
+                  userMax = Int16( UInt16(cmd[4]) << 8 | UInt16(cmd[5] & 0x00FF))
+                
+                  userCount = 1
+                  print(userMax)
+                         
+                  
+                  if !Config.isUserListOK && userMax > 0{
+                      Config.userListArr.removeAll()
+                      showDownloadDialog()
+                      let cmd = Config.bpProtocol.getUserInfo(UserCount: userCount)
+                      Config.bleManager.writeData(cmd: cmd, characteristic: bpChar!)
+                      
+                      
+                  }else{
+                     
+                      if userMax == 0 && (Config.userListArr.count == 0) || (Config.userListArr.count == 0) {
+                         if(!Config.isUserListOK){
+                             showMessageDialog(Title:"" , Message: GetSimpleLocalizedString("no_user_note"))
+                             Config.isUserListOK = true
+                         }
+                      }
+                       localUserArr = Config.userListArr
+                      tableView.reloadData()
+                  }
+                 break
+                ///xxxxx
+                
                 
 //            case BPprotocol.cmd_user_add:
 //                self.localUserArr = Config.userListArr

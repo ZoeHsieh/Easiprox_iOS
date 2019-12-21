@@ -115,6 +115,17 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         let leftBarButtonItem = UIBarButtonItem(customView: leftBtn)
         navigationItem.leftBarButtonItem = leftBarButtonItem
         
+        /// 12/20
+        let rightBtn = UIButton(type: .custom)
+        rightBtn.setTitle(self.GetSimpleLocalizedString("Add"), for: .normal)
+        rightBtn.setTitleColor(UIColor.flatGreen(), for: .normal)
+        rightBtn.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
+        rightBtn.addTarget(self, action: #selector(didTapItem), for: .touchUpInside)
+        let rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        /// 12/20
+        
+        
         accountTextField.setTextFieldPaddingView()
         accountTextField.setTextFieldBorder()
         
