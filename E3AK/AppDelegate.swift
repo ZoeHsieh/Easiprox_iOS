@@ -30,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
        
-
+        UIApplication.shared.isIdleTimerDisabled = true //恆亮1224
         let isfirst = Config.saveParam.bool(forKey: Config.firstOpen)
         var storyboard:UIStoryboard!
         
