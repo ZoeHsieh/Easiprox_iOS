@@ -185,3 +185,5 @@ Date = "日期";
 "over_range_alarm" = "超過範圍";
 "History_search_placeHolder" = "請輸入User ID";
 "UserList_search_placeHolder" = "請輸入User ID";
+
+"notice_for_card_in_user_add" = "Click below to enter the card/fob number, or scan the card on the keypad/reader.";

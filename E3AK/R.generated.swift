@@ -1041,7 +1041,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 157 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 158 localization keys.
     struct localizable {
       /// Base translation:  Event List
       ///
@@ -1175,6 +1175,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: zh-Hant, Base, it, fr, es, ja, ar
       static let users_manage_edit_status_duplication_card = Rswift.StringResource(key: "users_manage_edit_status_duplication_card", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
+      /// Base translation: Click below to enter the card/fob number, or scan the card on the keypad/reader.
+      ///
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static let notice_for_card_in_user_add = Rswift.StringResource(key: "notice_for_card_in_user_add", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: Confirm
       ///
       /// Locales: zh-Hant, Base, it, fr, es, ja, ar
@@ -2165,6 +2169,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("users_manage_edit_status_duplication_card", bundle: bundle, value: "Card/Fob Duplication!!", comment: "")
+      }
+
+      /// Base translation: Click below to enter the card/fob number, or scan the card on the keypad/reader.
+      ///
+      /// Locales: zh-Hant, Base, it, fr, es, ja, ar
+      static func notice_for_card_in_user_add(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("notice_for_card_in_user_add", bundle: hostingBundle, value: "Click below to enter the card/fob number, or scan the card on the keypad/reader.", comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "notice_for_card_in_user_add"
+        }
+
+        return NSLocalizedString("notice_for_card_in_user_add", bundle: bundle, value: "Click below to enter the card/fob number, or scan the card on the keypad/reader.", comment: "")
       }
 
       /// Base translation: Confirm

@@ -85,7 +85,7 @@ class Config{
     public static var deviceType:String = Config.deviceType_Keypad_Card
     public static var devCategory:String = ""
     public static var deviceModel:String = "E5AKR"
-    public static var deviceSeries:String = "Easiprox⁺,DG-800⁺,Easiprox⁺ Slim,DG-160⁺,DG-360⁺,DG-365⁺,DG Series"  //只找這幾個
+    public static var deviceSeries:String = "Easiprox⁺,DG-800⁺,Easiprox⁺ Slim,DG-160⁺,DG-360⁺,DG-365⁺"  //只找這幾個
     public static var doorSensor: UInt8?
     public static var doorLockType: UInt8?
     public static var doorOpenTime: UInt16?

@@ -187,3 +187,5 @@ Date = "日付";
 "over_range_alarm" = "検出範囲外です、0〜255の数字を入力してください。";
 "History_search_placeHolder" = "ユーザーIDを入力し、ユーザーを探します。";
 "UserList_search_placeHolder" = "ユーザーIDを入力し、ユーザーを探します。";
+
+"notice_for_card_in_user_add" = "Click below to enter the card/fob number, or scan the card on the keypad/reader.";

@@ -46,7 +46,7 @@ class AdvertisingData{
         ,0x0018:"DG-760"   //分離式
         ,0x0019:"DG-360⁺"   //e5ar2
         ,0x001A:"DG-365⁺"
-        ,0xFFFF:"DG Series"
+        
     ]
     
     //Device Category list

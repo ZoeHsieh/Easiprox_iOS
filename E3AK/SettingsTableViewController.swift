@@ -1188,6 +1188,9 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
                }
                
                readCardValue = ""
+            
+            ///1223
+            CardEditChange(field: CardInputs[0]!)
 
             }
 
@@ -1615,10 +1618,16 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             CardInputs[i]?.addTarget(self, action: #selector(self.CardEditChange(field:)), for: UIControl.Event.editingChanged)
          
         }
+        
+        ///1223
+        CardEditChange(field: CardInputs[0]!)
+        
         if(CardValue == BPprotocol.spaceCardStr)
         {
             CardInputs[0]?.becomeFirstResponder()
         }
+        
+      
         
     }
    

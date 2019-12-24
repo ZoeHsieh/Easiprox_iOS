@@ -188,3 +188,5 @@ Date = "Data";
 "History_search_placeHolder" = "Inserire un ID utilizzatore per cercare utilizzatore";
 "UserList_search_placeHolder" = "Inserire un ID utilizzatore per cercare utilizzatore";
 
+"notice_for_card_in_user_add" = "Click below to enter the card/fob number, or scan the card on the keypad/reader.";
+

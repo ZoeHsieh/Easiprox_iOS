@@ -36,6 +36,9 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
     @IBOutlet weak var CardInput10: UITextField!
     @IBOutlet weak var EditCardUI: UIStackView!
     @IBOutlet weak var EditCardBG: UITextField!
+    @IBOutlet weak var lb_notice_card: UILabel!
+    
+    
     var tmpID:String = ""
     var tmpPassword:String = ""
     var tmpCard:String = ""
@@ -105,6 +108,8 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
 
 
     func configUI() {
+        lb_notice_card.text = self.GetSimpleLocalizedString("notice_for_card_in_user_add")
+        lb_notice_card.numberOfLines = 0
         
         setNavigationBarRightItemWithTitle(title: self.GetSimpleLocalizedString("Add"))
         let leftBtn = UIButton(type: .custom)
@@ -116,13 +121,13 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
         navigationItem.leftBarButtonItem = leftBarButtonItem
         
         /// 12/20
-        let rightBtn = UIButton(type: .custom)
-        rightBtn.setTitle(self.GetSimpleLocalizedString("Add"), for: .normal)
-        rightBtn.setTitleColor(UIColor.flatGreen(), for: .normal)
-        rightBtn.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
-        rightBtn.addTarget(self, action: #selector(didTapItem), for: .touchUpInside)
-        let rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
-        navigationItem.rightBarButtonItem = rightBarButtonItem
+//        let rightBtn = UIButton(type: .custom)
+//        rightBtn.setTitle(self.GetSimpleLocalizedString("Add"), for: .normal)
+//        rightBtn.setTitleColor(UIColor.flatGreen(), for: .normal)
+//        rightBtn.frame = CGRect(x: 0, y: 0, width: 60, height: 30)
+//        rightBtn.addTarget(self, action: #selector(didTapItem), for: .touchUpInside)
+//        let rightBarButtonItem = UIBarButtonItem(customView: rightBtn)
+//        navigationItem.rightBarButtonItem = rightBarButtonItem
         /// 12/20
         
         
@@ -203,6 +208,8 @@ class AddUserViewController: BLE_ViewController, UITextFieldDelegate{
                                            }
                                            
                                            readCardValue = ""
+                                ///1223
+                                userAddTextFieldDidChange(field: CardInputs[0]!)
                                }
 
                                break

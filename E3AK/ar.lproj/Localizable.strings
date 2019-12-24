@@ -191,3 +191,5 @@ Date = "تاريخ";
 "over_range_alarm" = "خارج النطاق من فضلك أدخل الرقم من (0 الي 255)";
 "History_search_placeHolder" = "أدخل هوية المستخدم حتي تتمكن من البحث عنة";
 "UserList_search_placeHolder" = "أدخل هوية المستخدم حتي تتمكن من البحث عنة";
+
+"notice_for_card_in_user_add" = "Click below to enter the card/fob number, or scan the card on the keypad/reader.";

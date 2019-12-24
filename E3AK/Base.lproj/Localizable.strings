@@ -191,3 +191,5 @@ Date = "Date";
 "over_range_alarm" = "Out of range!! Please enter a number within 0-255.";
 "History_search_placeHolder" = "Enter an user ID to search user.";
 "UserList_search_placeHolder" = "Enter an user ID to search user.";
+
+"notice_for_card_in_user_add" = "Click below to enter the card/fob number, or scan the card on the keypad/reader.";

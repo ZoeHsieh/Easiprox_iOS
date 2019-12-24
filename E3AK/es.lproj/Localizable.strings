@@ -188,3 +188,5 @@ Date = "Fecha";
 "over_range_alarm" = "Fuera de parámetro, escribir un número entre 0 y 255";
 "History_search_placeHolder" = "Escribir un ID para encontrar al usuario";
 "UserList_search_placeHolder" = "Escribir un ID para encontrar al usuario";
+
+"notice_for_card_in_user_add" = "Click below to enter the card/fob number, or scan the card on the keypad/reader.";
