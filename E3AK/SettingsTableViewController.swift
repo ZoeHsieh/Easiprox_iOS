@@ -778,13 +778,32 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
             
             break
         case BPprotocol.cmd_device_config:
-           
-                    UI_updateDevConfig(data: data)
-                    setUIVisable(enable: true)
-           
+            
+            SettingsTableViewController.tmpConfig.append(UInt8(0xC0))
+            for i in 0 ... cmd.count - 1{
+                SettingsTableViewController.tmpConfig.append(cmd[i])
+            }
+            SettingsTableViewController.tmpConfig.append(UInt8(0xC0))
+            for j in 0 ... 4 {
+                
+                print(String(format:"config=%02X",(cmd[j+4])))
+            }
+            
+            
+            
+            UI_updateDevConfig(data: data)
+            setUIVisable(enable: true)
+            //comment out for  solved app crash issue.
             self.setcurrentdate()
             
             break
+           
+//                    UI_updateDevConfig(data: data)
+//                    setUIVisable(enable: true)
+//
+//            self.setcurrentdate()
+//
+//            break
             
         case BPprotocol.cmd_device_name:
             

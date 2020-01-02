@@ -1633,8 +1633,8 @@ struct R: Rswift.Validatable {
       static let eroll_success = Rswift.StringResource(key: "eroll_success", tableName: "Localizable", bundle: R.hostingBundle, locales: ["zh-Hant", "Base", "it", "fr", "es", "ja", "ar"], comment: nil)
       /// Base translation: You can find default passcode from the manual. Please change your Admin passcode for security control.
       ///
-      /// Locales: Base, ar
-      static let youCanFindDefaultPasscodeFromTheManualPleaseChangeYourAdminPasscodeForSecurityControl = Rswift.StringResource(key: "You can find default passcode from the manual. Please change your Admin passcode for security control.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base", "ar"], comment: nil)
+      /// Locales: Base, fr, ar
+      static let youCanFindDefaultPasscodeFromTheManualPleaseChangeYourAdminPasscodeForSecurityControl = Rswift.StringResource(key: "You can find default passcode from the manual. Please change your Admin passcode for security control.", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base", "fr", "ar"], comment: nil)
       /// Base translation: You must connect to a Bluetooth device to set up
       ///
       /// Locales: zh-Hant, Base, it, fr, es, ja, ar
@@ -3883,7 +3883,7 @@ struct R: Rswift.Validatable {
 
       /// Base translation: You can find default passcode from the manual. Please change your Admin passcode for security control.
       ///
-      /// Locales: Base, ar
+      /// Locales: Base, fr, ar
       static func youCanFindDefaultPasscodeFromTheManualPleaseChangeYourAdminPasscodeForSecurityControl(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("You can find default passcode from the manual. Please change your Admin passcode for security control.", bundle: hostingBundle, value: "You can find default passcode from the manual. Please change your Admin passcode for security control.", comment: "")
