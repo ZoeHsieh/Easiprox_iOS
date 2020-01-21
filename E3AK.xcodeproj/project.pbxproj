@@ -197,6 +197,12 @@
 		A64225D914BD7EDE8E8A1993 /* Pods-E3AK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E3AK.release.xcconfig"; path = "Pods/Target Support Files/Pods-E3AK/Pods-E3AK.release.xcconfig"; sourceTree = "<group>"; };
 		ACE183542BC52DFF62D58F7F /* Pods-E3AK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-E3AK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-E3AK/Pods-E3AK.debug.xcconfig"; sourceTree = "<group>"; };
 		B171D6CA715EACE4668F19A3 /* Pods_E3AK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_E3AK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C87C589E23C45DB2009C85C8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/Main.strings; sourceTree = "<group>"; };
+		C87C589F23C45DB3009C85C8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = tr.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C87C58A023C45DB3009C85C8 /* tr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = tr; path = E3AK/tr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C87C58A123C47C03009C85C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Main.strings; sourceTree = "<group>"; };
+		C87C58A223C47C04009C85C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		C87C58A323C47C04009C85C8 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = E3AK/de.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C8B46821206B64FC003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		C8B46822206B64FD003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C8B46823206B64FE003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = E3AK/ar.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -443,6 +449,8 @@
 				es,
 				ja,
 				ar,
+				tr,
+				de,
 			);
 			mainGroup = A09BC3511EE798CC00F38AB8;
 			productRefGroup = A09BC35B1EE798CC00F38AB8 /* Products */;
@@ -632,6 +640,8 @@
 				462EB1BD1F53CC6C0087493C /* es */,
 				464A1A761F675FCA00462E16 /* ja */,
 				C8B46823206B64FE003F4981 /* ar */,
+				C87C58A023C45DB3009C85C8 /* tr */,
+				C87C58A323C47C04009C85C8 /* de */,
 			);
 			name = Localizable.strings;
 			path = ..;
@@ -646,6 +656,8 @@
 				462EB1BB1F53CC6C0087493C /* es */,
 				464A1A741F675FCA00462E16 /* ja */,
 				C8B46821206B64FC003F4981 /* ar */,
+				C87C589E23C45DB2009C85C8 /* tr */,
+				C87C58A123C47C03009C85C8 /* de */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -659,6 +671,8 @@
 				462EB1BC1F53CC6C0087493C /* es */,
 				464A1A751F675FCA00462E16 /* ja */,
 				C8B46822206B64FD003F4981 /* ar */,
+				C87C589F23C45DB3009C85C8 /* tr */,
+				C87C58A223C47C04009C85C8 /* de */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -786,12 +800,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.9.1;
+				CURRENT_PROJECT_VERSION = 3.0.1;
 				DEVELOPMENT_TEAM = 29BSP4UNAK;
 				INFOPLIST_FILE = E3AK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.9;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.gianni.easiprox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -809,12 +823,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2.9.1;
+				CURRENT_PROJECT_VERSION = 3.0.1;
 				DEVELOPMENT_TEAM = 29BSP4UNAK;
 				INFOPLIST_FILE = E3AK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.9;
+				MARKETING_VERSION = 3.0;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.gianni.easiprox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

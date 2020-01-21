@@ -1,0 +1,196 @@
+/*
+ Localizable.strings
+ Easiprox
+ 
+ Created by louise on 2020.01.07
+ Copyright © 2020年 com.E3AK. All rights reserved.
+ */
+
+"OPEN" = "AÇIK";
+"DOOR CLOSED" = "KİLİTLİ";
+"DOOR OPENED" = "KİLİTLİ DEĞİL";
+Welcome = "Hoşgeldiniz";
+"Searching" = "Aranıyor…";
+"AUTO_ENABLE_CONFLICT" = "Lütfen önce 'OTOMATİK' seçeneğini devre dışı bırakın!!";
+"enroll_dialog_title" = "Oturum aç:";
+"Open"= "Açık";
+"settings_device_vr" = "Yazılım Sürümü";
+
+Next = "Sonraki";
+Skip = "Atla";
+"Search result" = "Arama sonuçları";
+"Please press Next to continue" = "Devam etmek için lütfen \"SONRAKİ\" tuşuna basın";
+"Your ID" = "Kimliğiniz";
+Password = "Şifre";
+"You can find default passcode from the manual. Please change your Admin passcode for security control." = "Varsayılan şifreyi kılavuzdan bulabilirsiniz. Güvenlik kontrolü için lütfen Yönetici şifrenizi değiştirin.";
+"There's no users, add now?" = "Hiç kullanıcı yok. Yeni kullanıcılar eklemek için \"EKLE\" tuşuna basın.";
+Add = "Ekle";
+"Confirm" = "Onaylama";
+Cancel = "İptal";
+"Please Choose" = "Lütfen seçin";
+Auto = "Otomatik";
+Settings = "Ayarlar";
+Enroll = "Oturum aç:";
+Users = "Kullanıcılar";
+"Activity History" = "Etkinlik Geçmişi";
+Backup = "Veriyi yedekle";
+Restore = "Yedeği geri yükle";
+"Device Name" = "Cihaz Adı";
+"Door Sensor" = "Manyetik Kontak";
+"Door Lock Action" = "Kilitleme Eylemi";
+"Use Re-lock Time" = "Kapı Yeniden Kilitlenme Süresi";
+"Door Always Unlocked" = "Kapı Daima Kilitli Değil";
+"Door Always Locked" = "Kapı Daima Kilitli";
+"Tamper Sensor" = "Sabotaj Alarmı";
+"Tamper Sensor Level" = "Sabotaj Sensörü Seviyesi";
+"Proximity Read Range" = "Proximity Okuma Mesafesi";
+"Door Re-lock Time" = "Kapı Yeniden Kilitlenme Süresi";
+"Sec." = "Saniye";
+"Please choose" = "Lütfen seçin";
+"Can't find device" = "Cihaz bulunamıyor.";
+"please try later" = "Lütfen daha sonra tekrar deneyin";
+"Searching…" = "Aranıyor…";
+"Please wait a moment…" = "Lütfen bekleyiniz…";
+"Device Distance" = "Cihaz mesafesi";
+"Proximity Read Range Settings" = "Proximity Okuma Mesafesi";
+"Edit Door Re-lock Time (1~1800 seconds)" = "Kapı Yeniden Kilitlenme Süresini Düzenle (1 ~ 1800 saniye)";
+"Please enter the number of seconds" = "Lütfen saniye sayısını girin";
+ID = "Kimlik";
+"Password/PIN Code" = "Şifre";
+"Password" = "Şifre";
+"Card" = "Kart / Anahtarlık";
+
+"Add Users" = "Kullanıcı Ekle";
+"Please Provide Up to 16 characters" = "Kimlik: 16 karaktere kadar";
+"4~8 digits" = "Şifre: 4~8 basamaklı";
+"User Info" = "Kullanıcı Bilgisi";
+Delete = "Sil";
+"Password/PIN Code (4~8 Digits)" = "Şifre: 4~8 basamaklı";
+
+"Enable Keypad PIN Code to Access" = "Erişmek için Tuş Takımı PIN Kodunu Etkinleştir";
+"Access Types/Schedule" = "Erişim Türleri / Zamanlaması";/*"Access Types/Schedule";*/
+TYPES = "Erişim Türleri";
+Permanent = "Kalıcı";
+Schedule = "Geçici";
+"Access Times" = "Kez Sayısı";
+"Please enter access times" = "Lütfen Kez Sayısını girin (0 ~ 255)";
+Recurrent = "Zamanlanmış";
+Start = "Başlangıç saati";
+End = "Bitiş saati";
+Repeat = "Tekrar";
+Start = "Başlangıç saati";
+End = "Bitiş saati";
+"Repeat Select" = "Tekrar";
+Monday = "Her Pazartesi";
+Tuesday = "Her Salı";
+Wednesday = "Her Çarşamba";
+Thursday = "Her Perşembe";
+Friday = "Her Cuma";
+Saturday = "Her Cumartesi";
+Sunday = "Her Pazar";
+Date = "Tarih";
+"Lock Action" = "Kilidi Açan";
+"Add more" = "Daha Ekle";
+"Finish Done" = "Tamamlandı";
+"Please Setting Proximity Read Range" = "Proximity Okuma Mesafesi";
+"Incorrect password. Please try again" = "Yanlış şifre. Lütfen tekrar deneyin.";
+"Please enter ID" = "Lütfen kimliğinizi girin.";
+"Please enter password" = "Lütfen şifrenizi girin.";
+//"4~8 digits" = "4~8 basamaklı";
+//"Edit Device Name" = "Cihaz Adı Düzenle";
+"Up to 16 characters" = "16 karaktere kadar";
+"Edit Device Name" = "Edit Device Name";
+"Delete User?" = "Kullanıcı Sil?";
+"Restore all data now?" = "Tüm veriler şimdi geri yüklensin mi?";
+"Backup all data now?" = "Tüm veriler şimdi yedeklensin mi?";
+"Backup…" = "Yedekleniyor…";
+"Restoring…" = "Geri yükleniyor…";
+"Backup Done" = "Yedekleme tamamlandı";
+"Restore Done" = "Geri yükleme tamamlandı";
+"You must connect to a Bluetooth device to set up" = "Kurulum için bir Bluetooth cihazına bağlanmalısınız";
+"If you forgot your ID or password, please contact your administrator." = "Kimliğinizi veya şifrenizi unuttuysanız, lütfen yöneticinize başvurun.";
+"Device Time" = "Cihaz saati";
+"About Us" = "Hakkımızda";
+"Automatic Setting" = "Otomatik Ayar";
+"Search" = "Arama";
+"Keypad Access" = "Tuş Takımı Erişimi";
+"Phone Access" = "Telefon Erişimi";
+"Card Access" = "Kart / Anahtarlık Erişimi";
+
+"Time in" = "Zaman";
+"User Name" = "Kimlik";
+
+
+/*settings result toast*/
+"program_success" = "Başarılı";
+"program_fail" = "Başarısız";
+
+/*restore dialog*/
+"restore_check_dialog_title" = "Bu cihazı geri yüklemek istediğinizden emin misiniz?";
+"restore_status_file_not_found" = "Yedekleme Dosyası Bulunamadı !! Lütfen önce yedekleme yapın!!";
+"restore_status" = "Geri Yükleme Durumu";
+"restore_completed" = "Geri Yükleme Tamamlandı!";
+"restore_dialog_title" = "Cihaz Verilerini Geri Yükle";
+"restore_dialog_message" = "Geri yükleniyor ...";
+
+/*backup dialog*/
+"backup_dialog_title" = "Yedekleme Cihazı Verileri";
+"backup_dialog_message" = "Yedekleniyor…";
+"backup_status" = "Yedekleme Durumu";
+"backup_completed" = "Yedekleme tamamlandı!!";
+
+/*download dialog*/
+"download_dialog_title" = "İndir";
+"download_dialog_message" = "Yükleniyor…";
+"settings_users_manage_list" = " Kullanıcı Listesi";
+"settings_history_list" = " Olay Listesi";
+"settings_Admin_pwd_Edit" = "Yönetici Şifresini Düzenle";
+"settings_Admin_card_Edit" = "Yönetici Kart / Anahtarlık Düzenle";
+/*user data check*/
+"users_manage_edit_status_Admin_name" = "Geçersiz ID !!";
+"users_manage_edit_status_Admin_pwd" = "Geçersiz Şifre !!";
+"users_manage_edit_status_Admin_card" = "Geçersiz Kart/Anahtarlık !!";
+"users_manage_edit_status_busy" = "Sistem meşgul !!";
+"users_manage_edit_status_duplication_name" = "Kimlik Çoğaltma !!";
+"users_manage_edit_status_duplication_password" = "Şifre Çoğaltma !!";
+"users_manage_edit_status_duplication_card" = "Kart / Anahtarlık Çoğaltma !!";
+
+"users_manage_edit_status_duplication_card" = "Kart / Anahtarlık Çoğaltma !!";
+"settings_Admin_pwd" = "Yönetici Şifresi";
+"settings_Admin_card" = "Yönetici Kart / Anahtarlık";
+"wrong format!" = "Format hatası!";
+"users_id_edit_dialog_title" = "Kimliği düzenle: (16 karakter)";
+"users_pwd_edit_dialog_title" = "Şifreyi Düzenle: (4 ~ 8 basamak)";
+"users_card_edit_dialog_title" = "Kart / Anahtarlık Düzenle: (10 basamaklı)";
+"progress_dialog_hide_btn_title" = "GİZLE";
+"progress_dialog_cancel_btn_title" = "İPTAL";
+"users_edit_access_control_dialog_type_times_mark" = "Geçerli kez sayısı:";
+"weekly_Sun" = "[PA]";
+"weekly_Mon" = "[PT]";
+"weekly_Tue" = "[SA]";
+"weekly_Wed" = "[ÇA]";
+"weekly_Thu" = "[PE]";
+"weekly_Fri" = "[CU]";
+"weekly_Sat" = "[CT]";
+"Every Week" = "Her Hafta";
+"openType_Button" = "Buton";
+"openType_Alarm" = "Alarm";
+"openType_Keypad" = "Tuş Takımı";
+"Device Model" = "Cihaz Modelleri:";
+"APP version" = "Uygulama sürümü:";
+"no_user_note" = "Hiç kullanıcı yok. Yeni kullanıcılar eklemek için \"EKLE\" ye basın.";
+"open_fail_permission_denied" = "Erişim reddedildi. Lütfen Yöneticinize Başvurun.";
+"open_fail_no_eroll" = "Erişim reddedildi. Lütfen Erişim İçin İlk Oturum Açın.";
+"open_fail_unknown" = "Erişim reddedildi. Lütfen Yöneticinize Başvurun.";
+"eroll_fail" = "Giriş başarısız. Lütfen Giriş Bilgilerinizi Doğrulayın veya Yöneticinize başvurun.";
+"eroll_success" = "Başarıyla giriş yaptınız. Şimdi bir kapının kilidini açabilirsin.";
+
+"Level 1" = "Seviye 1 (Yüksek Hassasiyet)";
+"Level 2" = "Seviye 2 (Orta Hassasiyet)";
+"Level 3" = "Seviye 3 (Düşük Hassasiyet)";
+"over_range_alarm" = "Aralık dışında !! Lütfen 0-255 arasında bir sayı girin.";
+"History_search_placeHolder" = "Kullanıcıyı aramak için bir kullanıcı kimliği girin.";
+"UserList_search_placeHolder" = "Kullanıcıyı aramak için bir kullanıcı kimliği girin.";
+
+"notice_for_card_in_user_add" = "Kart / Anahtarlık numarasını girmek için aşağıya tıklayın veya tuş takımı / okuyucudaki kartı tarayın.";
+

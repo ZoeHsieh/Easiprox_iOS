@@ -1,0 +1,196 @@
+/*
+ Localizable.strings
+ Easiprox
+ 
+ Created by louise on 2020.01.08
+ Copyright © 2020年 com.E3AK. All rights reserved.
+ */
+
+"OPEN" = "OFFEN";
+"DOOR CLOSED" = "GESPERRT";
+"DOOR OPENED" = "ENTSPERRT";
+Welcome = "Willkommen";
+"Searching" = "Am Durchsuchen …";
+"AUTO_ENABLE_CONFLICT" = "Bitte deaktivieren Sie zuerst 'AUTO'!";
+"enroll_dialog_title" = "Einloggen";
+"Open"= "Offen";
+"settings_device_vr" = "Firmwareversion";
+
+Next = "Weiter";
+Skip = "Überspringen";
+"Search result" = "Suchergebnis";
+"Please press Next to continue" = "Bitte drücken Sie \"Weiter\" um fortzufahren";
+"Your ID" = "Ihre ID";
+Password = "Passwort";
+"You can find default passcode from the manual. Please change your Admin passcode for security control." = "Sie finden das Standardpasswort im Handbuch. Bitte ändern Sie das Administratorpasswort zur Sicherheitskontrolle";
+"There's no users, add now?" = "Kein Benutzer vorhanden. Drücken Sie \"Hinzufügen\" um neue Benutzer hinzuzufügen.";
+Add = "Hinzufügen";
+"Confirm" = "Bestätigen";
+Cancel = "Abbrechen";
+"Please Choose" = "Bitte wählen";
+Auto = "Automatisch";
+Settings = "Einstellungen";
+Enroll = "Einloggen";
+Users = "Benutzer";
+"Activity History" = "Protokoll";
+Backup = "Daten sichern";
+Restore = "Daten wiederherstellen";
+"Device Name" = "Gerätename";
+"Door Sensor" = "Türsensor";
+"Door Lock Action" = "Sperraktion";
+"Use Re-lock Time" = "Türentsperrzeit";
+"Door Always Unlocked" = "Tür ständig entsperrt";
+"Door Always Locked" = "Tür ständig gesperrt";
+"Tamper Sensor" = "Tür ständig gesperrt";
+"Tamper Sensor Level" = "Manipulations-Sensorstufe";
+"Proximity Read Range" = "Proximity Lesebereich";
+"Door Re-lock Time" = "Türentsperrzeit";
+"Sec." = "Sek.";
+"Please choose" = "Bitte wählen";
+"Can't find device" = "Gerät nicht gefunden";
+"please try later" = "Bitte versuchen Sie es später";
+"Searching…" = "Am Durchsuchen …";
+"Please wait a moment…" = "Bitte warten Sie einen Moment";
+"Device Distance" = "Gerätedistanz";
+"Proximity Read Range Settings" = "Proximity Lesebereich";
+"Edit Door Re-lock Time (1~1800 seconds)" = "Bearbeiten der Türentsperrzeit (1…1800 Sek.)";
+"Please enter the number of seconds" = "Bitte geben Sie die Anzahl der Sekunden ein";
+ID = "ID";
+"Password/PIN Code" = "Passwort/PIN";
+"Password" = "Passwort";
+"Card" = "Karte/Tag";
+
+"Add Users" = "Benutzer hinzufügen";
+"Please Provide Up to 16 characters" = "ID: Max. 16 Zeichen";
+"4~8 digits" = "Passwort (4…8 Stellen)";
+"User Info" = "Benutzerinformation";
+Delete = "Löschen";
+"Password/PIN Code (4~8 Digits)" = "Passwort (4…8 Stellen)";
+
+"Enable Keypad PIN Code to Access" = "Für den Zugang die Tastatur-PIN freischalten";
+"Access Types/Schedule" = "Zutrittstypen / Verzeichnis";/*"Access Types/Schedule";*/
+TYPES = "Zutrittstypen";
+Permanent = "Permanent";
+Schedule = "Temporär";
+"Access Times" = "Zutrittsanzahl";
+"Please enter access times" = "Bitte geben Sie die Zutrittsanzahl ein (0…255)";
+Recurrent = "Geplant";
+Start = "Startzeit";
+End = "Endezeit";
+Repeat = "Wiederholen";
+Start = "Startzeit";
+End = "Endezeit";
+"Repeat Select" = "Wiederholen";
+Monday = "Jeden Montag";
+Tuesday = "Jeden Dienstag";
+Wednesday = "Jeden Mittwoch";
+Thursday = "Jeden Donnerstag";
+Friday = "Jeden Freitag";
+Saturday = "Jeden Samstag";
+Sunday = "Jeden Sonntag";
+Date = "Datum";
+"Lock Action" = "Entsperrt von";
+"Add more" = "Weitere hinzufügen";
+"Finish Done" = "Erledigt";
+"Please Setting Proximity Read Range" = "Proximity Lesebereich";
+"Incorrect password. Please try again" = "Fehlerhaftes Passwort. Bitte versuchen Sie es erneut.";
+"Please enter ID" = "Bitte die ID eingeben";
+"Please enter password" = "Bitte das Passwort eingeben";
+//"4~8 digits" = "4~8 digits";
+//"Edit Device Name" = "Edit Device Name";
+"Up to 16 characters" = "Bis zu 16 Zeichen";
+"Edit Device Name" = "Bearbeiten Sie den Gerätenamen";
+"Delete User?" = "Benutzer löschen??";
+"Restore all data now?" = "Alle Daten wiederherstellen?";
+"Backup all data now?" = "Alle Daten sichern??";
+"Backup…" = "Datensicherung …";
+"Restoring…" = "Wiederherstellung …";
+"Backup Done" = "Datensicherung abgeschlossen";
+"Restore Done" = "Wiederherstellung abgeschlossen";
+"You must connect to a Bluetooth device to set up" = "Zur Konfiguration benötigen Sie die Verbindung zu einem Bluetooth-Gerät";
+"If you forgot your ID or password, please contact your administrator." = "Falls Sie Ihre ID oder Ihr Passwort vergessen haben, kontaktieren Sie bitte den Administrator.";
+"Device Time" = "Gerätezeit";
+"About Us" = "Auskunft über uns";
+"Automatic Setting" = "Automatische Einstellung";
+"Search" = "Suchen";
+"Keypad Access" = "Tastaturzutritt";
+"Phone Access" = "Telefonzutritt";
+"Card Access" = "Karte/Tagzutritt";
+
+"Time in" = "Zeit";
+"User Name" = "ID";
+
+
+/*settings result toast*/
+"program_success" = "Erfolg";
+"program_fail" = "Gescheitert";
+
+/*restore dialog*/
+"restore_check_dialog_title" = "Sind Sie sicher, dass dieses Gerät wieder hergestellt werden soll?";
+"restore_status_file_not_found" = "Sicherungsdatei nicht gefunden! Bitte führen Sie zuerst eine Datensicherung durch.";
+"restore_status" = "Wiederherstellungsstatus";
+"restore_completed" = "Wiederherstellen beendet";
+"restore_dialog_title" = "Wiederherstellen der Gerätedaten";
+"restore_dialog_message" = "Wiederherstellen";
+
+/*backup dialog*/
+"backup_dialog_title" = "Gerätedaten sichern";
+"backup_dialog_message" = "Datensicherung";
+"backup_status" = "Datensicherungsstatus";
+"backup_completed" = "Datensicherung beendet";
+
+/*download dialog*/
+"download_dialog_title" = "Daten herunterladen";
+"download_dialog_message" = "Daten laden";
+"settings_users_manage_list" = "Benutzerliste";
+"settings_history_list" = "Ereignisliste";
+"settings_Admin_pwd_Edit" = "Administratorpasswort bearbeiten";
+"settings_Admin_card_Edit" = "Administrator Karte/Tag bearbeiten";
+/*user data check*/
+"users_manage_edit_status_Admin_name" = "Ungültige ID!";
+"users_manage_edit_status_Admin_pwd" = "Ungültiges Passwort!";
+"users_manage_edit_status_Admin_card" = "Ungültige Karte/Tag!";
+"users_manage_edit_status_busy" = "System arbeitet!";
+"users_manage_edit_status_duplication_name" = "Doppelte ID!";
+"users_manage_edit_status_duplication_password" = "Doppeltes Passwort!";
+"users_manage_edit_status_duplication_card" = "Doppelte Karte/Tag!";
+
+"users_manage_edit_status_duplication_card" = "Doppelte Karte/Tag!";
+"settings_Admin_pwd" = "Administratorpasswort";
+"settings_Admin_card" = "Administrator Karte/Tag";
+"wrong format!" = "Formatfehler";
+"users_id_edit_dialog_title" = "ID bearbeiten (16 Zeichen):";
+"users_pwd_edit_dialog_title" = "Passwort bearbeien (4…8 Stellen)";
+"users_card_edit_dialog_title" = "Karte/Tag bearbeiten (10 Stellen)";
+"progress_dialog_hide_btn_title" = "VERBERGEN";
+"progress_dialog_cancel_btn_title" = "ABBRECHEN";
+"users_edit_access_control_dialog_type_times_mark" = "Momentane Zutrittanzahl";
+"weekly_Sun" = "[So]";
+"weekly_Mon" = "[Mo]";
+"weekly_Tue" = "[Di]";
+"weekly_Wed" = "[Mi]";
+"weekly_Thu" = "[Do]";
+"weekly_Fri" = "[Fr]";
+"weekly_Sat" = "[Sa]";
+"Every Week" = "Jede Woche";
+"openType_Button" = "Taste";
+"openType_Alarm" = "Alarm";
+"openType_Keypad" = "Tastatur";
+"Device Model" = "Gerätetyp:";
+"APP version" = "Programmversion:";
+"no_user_note" = "Kein Benutzer vorhanden. Drücken Sie \"Hinzufügen\" um neue Benutzer hinzuzufügen.";
+"open_fail_permission_denied" = "Zugang verweigert. Bitte kontaktieren Sie den Administrator.";
+"open_fail_no_eroll" = "Zugang verweigert. Um Zugang zu erhalten loggen Sie sich bitte ein.";
+"open_fail_unknown" = "Zugang verweigert. Bitte kontaktieren Sie den Administrator.";
+"eroll_fail" = "Login gescheitert. Bitte prüfen Sie ihre Login-Information oder kontaktieren sie den Administrator.";
+"eroll_success" = "Ihr Login war erfolgreich. Sie können nun eine Tür entsperren.";
+
+"Level 1" = "Stufe 1 (hohe Sicherheit)";
+"Level 2" = "Stufe 2 (mittlere Sicherheit)";
+"Level 3" = "Stufe 3 (niedrige Sicherheit)";
+"over_range_alarm" = "Bereichsüberschreitung! Bitte geben Sie eine Nummer zwischen 0 und 255 ein.";
+"History_search_placeHolder" = "Geben Sie eine Benutzer-ID ein um Benutzer zu suchen.";
+"UserList_search_placeHolder" = "Geben Sie eine Benutzer-ID ein um Benutzer zu suchen.";
+
+"notice_for_card_in_user_add" = "Clicken Sie unten um die Karte/Tagnummer einzugeben oder scannen Sie die Karte mittels Tastatur/Kartenleser.";
+

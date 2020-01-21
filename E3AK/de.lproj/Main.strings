@@ -1,0 +1,378 @@
+
+/* Class = "UILabel"; text = "感應距離"; ObjectID = "039-CP-7Jh"; */
+"039-CP-7Jh.text" = "感應距離";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "0T7-DN-oCM"; */
+"0T7-DN-oCM.normalTitle" = "CANCEL";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "0hG-MP-Wpi"; */
+"0hG-MP-Wpi.normalTitle" = "Cancel";
+
+/* Class = "UILabel"; text = "MESSAGE"; ObjectID = "0o8-yw-8YJ"; */
+"0o8-yw-8YJ.text" = "MESSAGE";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "23y-H3-bfl"; */
+"23y-H3-bfl.normalTitle" = "CANCEL";
+
+/* Class = "UIBarButtonItem"; title = "新增"; ObjectID = "2La-YR-DFP"; */
+"2La-YR-DFP.title" = "新增";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "2YY-z3-Ban"; */
+"2YY-z3-Ban.normalTitle" = "Cancel";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "2f6-q4-oPq"; */
+"2f6-q4-oPq.text" = "0";
+
+/* Class = "UILabel"; text = "感應距離"; ObjectID = "3Hd-6U-eRE"; */
+"3Hd-6U-eRE.text" = "感應距離";
+
+/* Class = "UILabel"; text = "E3AK001"; ObjectID = "3tw-pI-kF0"; */
+"3tw-pI-kF0.text" = "E3AK001";
+
+/* Class = "UIButton"; normalTitle = "自動感應開門"; ObjectID = "43g-pZ-Hqp"; */
+"43g-pZ-Hqp.normalTitle" = "自動感應開門";
+
+/* Class = "UILabel"; text = "2 Jun 2017 09:41 AM"; ObjectID = "4cy-xO-mcF"; */
+"4cy-xO-mcF.text" = "2 Jun 2017 09:41 AM";
+
+/* Class = "UIButton"; normalTitle = "註冊"; ObjectID = "4eK-T1-AK5"; */
+"4eK-T1-AK5.normalTitle" = "註冊";
+
+/* Class = "UILabel"; text = "MESSAGE"; ObjectID = "4xH-JZ-PFl"; */
+"4xH-JZ-PFl.text" = "MESSAGE";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "59p-z8-pNK"; */
+"59p-z8-pNK.text" = "0";
+
+/* Class = "UINavigationItem"; title = "使用者"; ObjectID = "6Q2-U1-0NW"; */
+"6Q2-U1-0NW.title" = "使用者";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "6VL-gW-EAK"; */
+"6VL-gW-EAK.text" = "0";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "7QT-1m-RS9"; */
+"7QT-1m-RS9.text" = "-";
+
+/* Class = "UILabel"; text = "防拆感應等級"; ObjectID = "7s5-0r-NDf"; */
+"7s5-0r-NDf.text" = "防拆感應等級";
+
+/* Class = "UIButton"; normalTitle = "使用者"; ObjectID = "804-eg-BiN"; */
+"804-eg-BiN.normalTitle" = "使用者";
+
+/* Class = "UILabel"; text = "About Us"; ObjectID = "8Eh-Lh-Stc"; */
+"8Eh-Lh-Stc.text" = "About Us";
+
+/* Class = "UILabel"; text = "Edit Card"; ObjectID = "8e5-x2-3JH"; */
+"8e5-x2-3JH.text" = "Edit Card";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "8mU-z1-ix8"; */
+"8mU-z1-ix8.text" = "-";
+
+/* Class = "UILabel"; text = "型號ABC123"; ObjectID = "9QN-b2-WLW"; */
+"9QN-b2-WLW.text" = "型號ABC123";
+
+/* Class = "UILabel"; text = "EA3K001"; ObjectID = "9sB-Be-oyu"; */
+"9sB-Be-oyu.text" = "EA3K001";
+
+/* Class = "UILabel"; text = "DOOR CLOSED"; ObjectID = "CgH-RW-nGz"; */
+"CgH-RW-nGz.text" = "DOOR CLOSED";
+
+/* Class = "UILabel"; text = "100/100"; ObjectID = "Cy5-U0-kfA"; */
+"Cy5-U0-kfA.text" = "100/100";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "D0l-hd-JeV"; */
+"D0l-hd-JeV.text" = "-";
+
+/* Class = "UILabel"; text = "Download Users List"; ObjectID = "DI0-NO-UPB"; */
+"DI0-NO-UPB.text" = "Download Users List";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "Ecq-5w-d1x"; */
+"Ecq-5w-d1x.text" = "10";
+
+/* Class = "UITableViewSection"; headerTitle = "帳號(最多16字元)"; ObjectID = "Ehp-uu-pVE"; */
+"Ehp-uu-pVE.headerTitle" = "帳號(最多16字元)";
+
+/* Class = "UIButton"; normalTitle = "資料備份"; ObjectID = "FCv-g9-U2b"; */
+"FCv-g9-U2b.normalTitle" = "資料備份";
+
+/* Class = "UILabel"; text = "percent"; ObjectID = "Fix-DM-msB"; */
+"Fix-DM-msB.text" = "percent";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "GyT-hm-2px"; */
+"GyT-hm-2px.text" = "0";
+
+/* Class = "UILabel"; text = "About Us"; ObjectID = "H6h-SH-Gte"; */
+"H6h-SH-Gte.text" = "About Us";
+
+/* Class = "UITableViewSection"; headerTitle = "卡片(10個字元)"; ObjectID = "HDs-ZE-ssa"; */
+"HDs-ZE-ssa.headerTitle" = "卡片(10個字元)";
+
+/* Class = "UILabel"; text = "裝置名稱"; ObjectID = "HHS-EA-AfI"; */
+"HHS-EA-AfI.text" = "裝置名稱";
+
+/* Class = "UITableViewSection"; footerTitle = "星期二、四、五、六，時間為04:00 ~ 16:00"; ObjectID = "HLc-L3-A0r"; */
+"HLc-L3-A0r.footerTitle" = "星期二、四、五、六，時間為04:00 ~ 16:00";
+
+/* Class = "UILabel"; text = "開鎖方式"; ObjectID = "Hn5-4C-63s"; */
+"Hn5-4C-63s.text" = "開鎖方式";
+
+/* Class = "UILabel"; text = " "; ObjectID = "I7O-BB-E66"; */
+"I7O-BB-E66.text" = " ";
+
+/* Class = "UIButton"; normalTitle = "資料還原"; ObjectID = "I9b-HL-YwZ"; */
+"I9b-HL-YwZ.normalTitle" = "資料還原";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "IAD-Qw-QKH"; */
+"IAD-Qw-QKH.text" = "0";
+
+/* Class = "UILabel"; text = "進出管制模式"; ObjectID = "J5w-RH-JE5"; */
+"J5w-RH-JE5.text" = "進出管制模式";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "JXh-kE-jCw"; */
+"JXh-kE-jCw.text" = "0";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "Jle-QD-JK7"; */
+"Jle-QD-JK7.text" = "0";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "Juc-Rn-Omq"; */
+"Juc-Rn-Omq.text" = "-";
+
+/* Class = "UIButton"; normalTitle = "設定"; ObjectID = "Jzd-AD-XRA"; */
+"Jzd-AD-XRA.normalTitle" = "設定";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "K2g-3O-e7n"; */
+"K2g-3O-e7n.text" = "-";
+
+/* Class = "UITableViewSection"; headerTitle = "密碼(4~8個字元)"; ObjectID = "L0B-1b-Vak"; */
+"L0B-1b-Vak.headerTitle" = "密碼(4~8個字元)";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "LFc-a5-bPI"; */
+"LFc-a5-bPI.normalTitle" = "Confirm";
+
+/* Class = "UILabel"; text = "防拆感應"; ObjectID = "Mlx-db-6RP"; */
+"Mlx-db-6RP.text" = "防拆感應";
+
+/* Class = "UILabel"; text = "啟用卡片開門"; ObjectID = "NCt-LK-X6T"; */
+"NCt-LK-X6T.text" = "啟用卡片開門";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "NKS-3H-ZWN"; */
+"NKS-3H-ZWN.normalTitle" = "OK";
+
+/* Class = "UILabel"; text = "12345"; ObjectID = "Nre-Rf-gVr"; */
+"Nre-Rf-gVr.text" = "12345";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "OCr-fz-p4H"; */
+"OCr-fz-p4H.text" = "0";
+
+/* Class = "UILabel"; text = "門鎖動作"; ObjectID = "OIc-7U-oM4"; */
+"OIc-7U-oM4.text" = "門鎖動作";
+
+/* Class = "UIButton"; normalTitle = "OPEN"; ObjectID = "QR8-78-5Zm"; */
+"QR8-78-5Zm.normalTitle" = "OPEN";
+
+/* Class = "UIButton"; normalTitle = "CANCEL"; ObjectID = "Qlw-Hj-mva"; */
+"Qlw-Hj-mva.normalTitle" = "CANCEL";
+
+/* Class = "UIButton"; normalTitle = "HIDE"; ObjectID = "QyG-JA-bG0"; */
+"QyG-JA-bG0.normalTitle" = "HIDE";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "RMr-aa-Kmm"; */
+"RMr-aa-Kmm.text" = "0";
+
+/* Class = "UILabel"; text = "Download Users List"; ObjectID = "RoG-eQ-zEb"; */
+"RoG-eQ-zEb.text" = "Download Users List";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "RqI-bd-MHm"; */
+"RqI-bd-MHm.text" = "Loading...";
+
+/* Class = "UILabel"; text = "延遲上鎖時間"; ObjectID = "RxD-CG-wCj"; */
+"RxD-CG-wCj.text" = "延遲上鎖時間";
+
+/* Class = "UILabel"; text = "日期"; ObjectID = "SIQ-J8-r8j"; */
+"SIQ-J8-r8j.text" = "日期";
+
+/* Class = "UITextField"; text = "0000"; ObjectID = "SJc-y7-idY"; */
+"SJc-y7-idY.text" = "0000";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "SYw-gT-3ec"; */
+"SYw-gT-3ec.text" = "0";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "TZX-EK-doo"; */
+"TZX-EK-doo.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "U7r-L3-Og0"; */
+"U7r-L3-Og0.text" = "-";
+
+/* Class = "UILabel"; text = "EA3K001"; ObjectID = "UYi-f3-Eag"; */
+"UYi-f3-Eag.text" = "EA3K001";
+
+/* Class = "UILabel"; text = "Edit Card"; ObjectID = "VfT-3F-4qg"; */
+"VfT-3F-4qg.text" = "Edit Card";
+
+/* Class = "UITextField"; text = "0000000000000"; ObjectID = "W1x-WV-2i4"; */
+"W1x-WV-2i4.text" = "0000000000000";
+
+/* Class = "UIBarButtonItem"; title = " "; ObjectID = "XPo-rA-IsL"; */
+"XPo-rA-IsL.title" = " ";
+
+/* Class = "UISearchBar"; placeholder = "搜尋"; ObjectID = "YgN-w3-B3b"; */
+"YgN-w3-B3b.placeholder" = "搜尋";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "Ypz-1O-MmP"; */
+"Ypz-1O-MmP.text" = "Loading...";
+
+/* Class = "UILabel"; text = "2秒"; ObjectID = "Ysx-57-y05"; */
+"Ysx-57-y05.text" = "2秒";
+
+/* Class = "UIButton"; normalTitle = "Confirm"; ObjectID = "Z40-vh-SrJ"; */
+"Z40-vh-SrJ.normalTitle" = "Confirm";
+
+/* Class = "UIButton"; normalTitle = "歷史進出記錄"; ObjectID = "aN8-Vo-GaN"; */
+"aN8-Vo-GaN.normalTitle" = "歷史進出記錄";
+
+/* Class = "UILabel"; text = "裝置名稱"; ObjectID = "agB-d8-X8M"; */
+"agB-d8-X8M.text" = "裝置名稱";
+
+/* Class = "UILabel"; text = "Level 1"; ObjectID = "bJa-qS-vH6"; */
+"bJa-qS-vH6.text" = "Level 1";
+
+/* Class = "UILabel"; text = "10"; ObjectID = "bMN-BN-Ex7"; */
+"bMN-BN-Ex7.text" = "10";
+
+/* Class = "UILabel"; text = "User ID"; ObjectID = "bVB-8V-Gy9"; */
+"bVB-8V-Gy9.text" = "User ID";
+
+/* Class = "UINavigationItem"; title = "設定"; ObjectID = "bai-JW-8T4"; */
+"bai-JW-8T4.title" = "設定";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "bh6-Wk-2dk"; */
+"bh6-Wk-2dk.text" = "0";
+
+/* Class = "UINavigationItem"; title = "設定"; ObjectID = "cLd-k0-94S"; */
+"cLd-k0-94S.title" = "設定";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "dfR-wq-sXp"; */
+"dfR-wq-sXp.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "emD-ho-Oky"; */
+"emD-ho-Oky.text" = "-";
+
+/* Class = "UILabel"; text = "管理者卡片"; ObjectID = "fow-2l-ifH"; */
+"fow-2l-ifH.text" = "管理者卡片";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "fvL-fD-7rK"; */
+"fvL-fD-7rK.text" = "0";
+
+/* Class = "UILabel"; text = "Download Users List"; ObjectID = "gPj-P9-5AH"; */
+"gPj-P9-5AH.text" = "Download Users List";
+
+/* Class = "UILabel"; text = "門位偵測"; ObjectID = "hS7-E7-OcL"; */
+"hS7-E7-OcL.text" = "門位偵測";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "i8S-Hm-iFd"; */
+"i8S-Hm-iFd.text" = "-";
+
+/* Class = "UILabel"; text = "percent"; ObjectID = "ind-R9-Gby"; */
+"ind-R9-Gby.text" = "percent";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "jsj-Op-Pez"; */
+"jsj-Op-Pez.text" = "-";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "k39-oc-IWf"; */
+"k39-oc-IWf.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "刪除"; ObjectID = "kPg-Ql-jkm"; */
+"kPg-Ql-jkm.normalTitle" = "刪除";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "kRu-zv-jmX"; */
+"kRu-zv-jmX.text" = "-";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "kkq-AU-BEy"; */
+"kkq-AU-BEy.text" = "Loading...";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "kyh-SJ-H11"; */
+"kyh-SJ-H11.text" = "-";
+
+/* Class = "UILabel"; text = "啟用手機開門"; ObjectID = "lMp-Af-d67"; */
+"lMp-Af-d67.text" = "啟用手機開門";
+
+/* Class = "UIButton"; normalTitle = "HIDE"; ObjectID = "lPZ-yw-nef"; */
+"lPZ-yw-nef.normalTitle" = "HIDE";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "n21-Zc-1bp"; */
+"n21-Zc-1bp.text" = "0";
+
+/* Class = "UILabel"; text = "依據延遲上鎖時間"; ObjectID = "oNL-R7-X0P"; */
+"oNL-R7-X0P.text" = "依據延遲上鎖時間";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "oWy-u4-kRo"; */
+"oWy-u4-kRo.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "pQO-fC-ixm"; */
+"pQO-fC-ixm.text" = "-";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "pZM-wf-9bS"; */
+"pZM-wf-9bS.text" = "-";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "py4-15-V7k"; */
+"py4-15-V7k.text" = "0";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "qXw-yF-uQB"; */
+"qXw-yF-uQB.text" = "0";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "qcZ-LA-3fe"; */
+"qcZ-LA-3fe.text" = "-";
+
+/* Class = "UILabel"; text = "Device Time"; ObjectID = "qeR-rF-S6F"; */
+"qeR-rF-S6F.text" = "Device Time";
+
+/* Class = "UILabel"; text = "100/100"; ObjectID = "rOy-wc-NqI"; */
+"rOy-wc-NqI.text" = "100/100";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "tBM-9T-mSr"; */
+"tBM-9T-mSr.text" = "Loading...";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "teS-7G-Hf3"; */
+"teS-7G-Hf3.text" = "0";
+
+/* Class = "UITextField"; text = "chris"; ObjectID = "tp1-ZH-Nt4"; */
+"tp1-ZH-Nt4.text" = "chris";
+
+/* Class = "UILabel"; text = "啟用按鍵密碼開門"; ObjectID = "uK2-Fs-2BA"; */
+"uK2-Fs-2BA.text" = "啟用按鍵密碼開門";
+
+/* Class = "UILabel"; text = "週期排程"; ObjectID = "upQ-xl-13x"; */
+"upQ-xl-13x.text" = "週期排程";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "uwf-aa-B9w"; */
+"uwf-aa-B9w.text" = "0";
+
+/* Class = "UILabel"; text = "-"; ObjectID = "vCz-5P-Y72"; */
+"vCz-5P-Y72.text" = "-";
+
+/* Class = "UILabel"; text = "管理者密碼"; ObjectID = "vK1-yE-Zpb"; */
+"vK1-yE-Zpb.text" = "管理者密碼";
+
+/* Class = "UILabel"; text = "1234567890"; ObjectID = "vrd-tk-j0e"; */
+"vrd-tk-j0e.text" = "1234567890";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "w2A-fd-aGk"; */
+"w2A-fd-aGk.text" = "0";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "wW9-Ko-ymq"; */
+"wW9-Ko-ymq.normalTitle" = "OK";
+
+/* Class = "UINavigationItem"; title = "使用者資訊"; ObjectID = "xYG-mV-diF"; */
+"xYG-mV-diF.title" = "使用者資訊";
+
+/* Class = "UILabel"; text = "100/100"; ObjectID = "xgl-aB-UQ7"; */
+"xgl-aB-UQ7.text" = "100/100";
+
+/* Class = "UITextField"; text = "0"; ObjectID = "y7J-cZ-r7E"; */
+"y7J-cZ-r7E.text" = "0";
+
+/* Class = "UILabel"; text = "Loading..."; ObjectID = "zGr-r2-gyy"; */
+"zGr-r2-gyy.text" = "Loading...";
+
+/* Class = "UILabel"; text = "percent"; ObjectID = "zwW-4K-4aT"; */
+"zwW-4K-4aT.text" = "percent";
