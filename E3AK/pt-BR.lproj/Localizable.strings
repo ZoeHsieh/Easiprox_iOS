@@ -1,0 +1,195 @@
+/*
+ Localizable.strings
+ Easiprox
+ 
+ Created by louise on 2020.03.10
+ Copyright © 2020年 com.E3AK. All rights reserved.
+ */
+
+"OPEN" = "ABERTO";
+"DOOR CLOSED" = "PORTA FECHADA";
+"DOOR OPENED" = "PORTA ABERTA";
+Welcome = "BEM VINDO";
+"Searching" = "PROCURANDO";
+"AUTO_ENABLE_CONFLICT" = "POR FAVOR, DESABILITE 'AUTO' PRIMEIRO!";
+"enroll_dialog_title" = "LOGIN:";
+"Open"= "ABERTO";
+"settings_device_vr" = "VERSÃO DO FIRMWARE";
+
+Next = "PRÓXIMO";
+Skip = "SAIR";
+"Search result" = "RESULTADO ENCONTRADO";
+"Please press Next to continue" = "POR FAVOR, PRESSIONE \"PRÓXIMO\" PARA CONTINUAR";
+"Your ID" = "SEU USUÁRIO";
+Password = "SENHA";
+"You can find default passcode from the manual. Please change your Admin passcode for security control." = "VOCÊ PODE ENCONTRAR A SENHA PADRÃO NO MANUAL. POR FAVOR MUDE SUA SENHA DE ADMINISTRADOR PARA SUA SEGURANÇA.";
+"There's no users, add now?" = "NÃO EXISTE USUÁRIO. DIGITE ADICIONAR PARA INCLUIR NOVO USUÁRIO.";
+Add = "ADICIONAR";
+"Confirm" = "CONFIRMAR";
+Cancel = "CANCELAR";
+"Please Choose" = "POR FAVOR ESCOLHA";
+Auto = "AUTO";
+Settings = "CONFIGURAÇÕES";
+Enroll = "LOGIN";
+Users = "USUÁRIOS";
+"Activity History" = "AUDITORIA";
+Backup = "BACKUP";
+Restore = "RESTAURAÇÃO DO BACKUP";
+"Device Name" = "NOME DO DISPOSITIVO";
+"Door Sensor" = "SENSOR DE PORTA";
+"Door Lock Action" = "AÇÃO DA FECHADURA";
+"Use Re-lock Time" = "TEMPO DE TRAVAMENTO";
+"Door Always Unlocked" = "PORTA SEMPRE ABERTA";
+"Door Always Locked" = "PORTA SEMPRE FECHADA";
+"Tamper Sensor" = "ALARME DE TAMPER";
+"Tamper Sensor Level" = "SENSOR DE TAMPER";
+"Proximity Read Range" = "ALCANCE DE LEITURA";
+"Door Re-lock Time" = "TEMPO DE TRAVAMENTO DA PORTA";
+"Sec." = "SEGUNDOS";
+"Please choose" = "POR FAVOR ESCOLHA";
+"Can't find device" = "NÃO FOI POSSÍVEL ENCONTRAR O DISPOSITIVO";
+"please try later" = "POR FAVOR TENTE MAIS TARDE";
+"Searching…" = "PROCURANDO....";
+"Please wait a moment…" = "POR FVOR, ESPERE UM MOMENTO...";
+"Device Distance" = "DISTÂNCIA DO LEITOR";
+"Proximity Read Range Settings" = "ALCANCE DE LEITURA";
+"Edit Door Re-lock Time (1~1800 seconds)" = "CONFIGURE O TEMPO DE TRAVAMENTO (1~1800 SEGUNDOS)";
+"Please enter the number of seconds" = "POR FAVOR COLOQUE NÚMERO DE SEGUNDOS";
+ID = "USUÁRIO";
+"Password/PIN Code" = "SENHA";
+"Password" = "SENHA";
+"Card" = "CARTÃO";
+
+"Add Users" = "ADICIONAR USUÁRIOS";
+"Please Provide Up to 16 characters" = "USUÁRIO: ATÉ 16 CARACTÉRES";
+"4~8 digits" = "SENHA: 4~8 DÍGITOS";
+"User Info" = "INFORMAÇÕES DO USUÁRIO";
+Delete = "APAGAR";
+"Password/PIN Code (4~8 Digits)" = "SENHA (4~8 DÍGITOS)";
+
+"Enable Keypad PIN Code to Access" = "HABILITAR SENHA PARA ACESSAR";
+"Access Types/Schedule" = "TIPOS DE ACESSO / AGENDAMENTO";/*"Access Types/Schedule";*/
+TYPES = "TIPOS DE ACESSO";
+Permanent = "PERMANENTE";
+Schedule = "TEMPORÁRIO";
+"Access Times" = "NÚMERO DE VEZES";
+"Please enter access times" = "POR FAVOR ENTRE COM NÚMERO DE VEZES (0~255)";
+Recurrent = "AGENDAMENTO";
+Start = "HORÁRIO DE INÍCIO";
+End = "HORÁRIO FINAL";
+Repeat = "REPETIR";
+Start = "HORÁRIO DE INÍCIO";
+End = "HORÁRIO FINAL";
+"Repeat Select" = "REPETIR";
+Monday = "TODA SEGUNDA-FEIRA";
+Tuesday = "TODA TERÇA-FEIRA";
+Wednesday = "TODA QUARTA-FEIRA";
+Thursday = "TODA QUINTA-FEIRA";
+Friday = "TODA SEXTA-FEIRA";
+Saturday = "TODO SÁBADO";
+Sunday = "TODO DOMINGO";
+Date = "DATA";
+"Lock Action" = "DESTRAVADO POR";
+"Add more" = "ADICIONAR MAIS";
+"Finish Done" = "FEITO";
+"Please Setting Proximity Read Range" = "ALCANCE DE LEITURA";
+"Incorrect password. Please try again" = "SENHA INCORRETA. TENTE NOVAMENTE";
+"Please enter ID" = "POR FAVOR ENTRE COM SEU USUÁRIO";
+"Please enter password" = "POR FAVOR ENTRE COM SUA SENHA";
+//"4~8 digits" = "4~8 digits";
+//"Edit Device Name" = "Edit Device Name";
+"Up to 16 characters" = "ATÉ 16 CARACTERES";
+"Edit Device Name" = "EDITE O NOME DO DISPOSITIVO";
+"Delete User?" = "APAGAR USUÁRIO?";
+"Restore all data now?" = "RESTAURAR TODA INFORMAÇÃO AGORA?";
+"Backup all data now?" = "INICIAR BACKUP AGORA?";
+"Backup…" = "BACKUP...";
+"Restoring…" = "RESTAURANDO...";
+"Backup Done" = "BACKUP FINALIZADO";
+"Restore Done" = "RESTAURAÇÃO FEITA";
+"You must connect to a Bluetooth device to set up" = "Você precisa conectar ao Bluetooth para configurar";
+"If you forgot your ID or password, please contact your administrator." = "Se você esqueceu seu usuário ou senha, por favor contate o administrador.";
+"Device Time" = "HORÁRIO DO DISPOSITIVO";
+"About Us" = "SOBRE NÓS";
+"Automatic Setting" = "CONFIGURAÇÃO AUTOMÁTICA";
+"Search" = "PROCURAR";
+"Keypad Access" = "TECLADO DE ACESSO";
+"Phone Access" = "TELEFONE DE ACESSO";
+"Card Access" = "CARTÃO DE ACESSO";
+
+"Time in" = "HORÁRIO";
+"User Name" = "USUÁRIO";
+
+
+/*settings result toast*/
+"program_success" = "SUCESSO";
+"program_fail" = "FALHA";
+
+/*restore dialog*/
+"restore_check_dialog_title" = "Você tem certeza que quer restaurar o dispositivo?";
+"restore_status_file_not_found" = "Arquivo de backup não encontrado. Por favor faça o backup antes.";
+"restore_status" = "STATUS DA RESTAURAÇÃO";
+"restore_completed" = "RESTAURAÇÃO COMPLETA!";
+"restore_dialog_title" = "RESTAURAÇÃO DA INFORMAÇÃO";
+"restore_dialog_message" = "RESTAURANDO";
+
+/*backup dialog*/
+"backup_dialog_title" = "BACKUP DA INFORMAÇÃO";
+"backup_dialog_message" = "BACKUP...";
+"backup_status" = "STATUS DO BACKUP";
+"backup_completed" = "BACKUP FINALIZADO";
+
+/*download dialog*/
+"download_dialog_title" = "DOWNLOAD";
+"download_dialog_message" = "CARREGANDO...";
+"settings_users_manage_list" = "LISTA DE USUÁRIOS";
+"settings_history_list" = "LISTA DE EVENTOS";
+"settings_Admin_pwd_Edit" = "EDITAR SENHA ADMINISTRADOR";
+"settings_Admin_card_Edit" = "EDITAR CARTÃO ADMINISTRADOR";
+/*user data check*/
+"users_manage_edit_status_Admin_name" = "USUÁRIO INVÁLIDO";
+"users_manage_edit_status_Admin_pwd" = "SENHA INVÁLIDA";
+"users_manage_edit_status_Admin_card" = "CARTÃO INVÁLIDO";
+"users_manage_edit_status_busy" = "SISTEMA OCUPADO";
+"users_manage_edit_status_duplication_name" = "USUÁRIO DUPLICADO";
+"users_manage_edit_status_duplication_password" = "SENHA DUPLICADO";
+"users_manage_edit_status_duplication_card" = "CARTÃO DUPLICADO";
+
+"users_manage_edit_status_duplication_card" = "CARTÃO DUPLICADO";
+"settings_Admin_pwd" = "SENHA ADMINISTRADOR";
+"settings_Admin_card" = "CARTÃO ADMINISTRADOR";
+"wrong format!" = "FORMATO ERRADO";
+"users_id_edit_dialog_title" = "Editar Usuário (16 caractéres)";
+"users_pwd_edit_dialog_title" = "Editar Senha (4~8 dígitos)";
+"users_card_edit_dialog_title" = "Editar cartão (10 dígitos)";
+"progress_dialog_hide_btn_title" = "OCULTAR";
+"progress_dialog_cancel_btn_title" = "CANCELAR";
+"users_edit_access_control_dialog_type_times_mark" = "NÚMERO TOTAL DE HORÁRIOS:";
+"weekly_Sun" = "[DOM]";
+"weekly_Mon" = "[SEG]";
+"weekly_Tue" = "[TER]";
+"weekly_Wed" = "[QUA]";
+"weekly_Thu" = "[QUI]";
+"weekly_Fri" = "[SEX]";
+"weekly_Sat" = "[SAB]";
+"Every Week" = "TODA SEMANA";
+"openType_Button" = "Button";
+"openType_Alarm" = "ALARME";
+"openType_Keypad" = "TECLADO";
+"Device Model" = "MODELOS DE DISPOSITIVOS";
+"APP version" = "VERSÃO DO APP";
+"no_user_note" = "NÃO EXISTE USUÁRIO. DIGITE ADICIONAR PARA INCLUIR NOVO USUÁRIO.";
+"open_fail_permission_denied" = "Acesso Negado. Por favor contate seu administrador";
+"open_fail_no_eroll" = "Acesso Negado. Por favor registrar-se primeiro para ter acesso.";
+"open_fail_unknown" = "Acesso Negado. Por favor contate seu administrador";
+"eroll_fail" = "Falha ao Registrar. Favor verificar seus dados ou contatar seu administrador";
+"eroll_success" = "Você se registrou com sucesso. Agora destrave sua porta.";
+
+"Level 1" = "NIVEL 1 (ALTA SENSIBILIDADE)";
+"Level 2" = "NIVEL 2 (MÉDIA SENSIBILIDADE)";
+"Level 3" = "NÍVEL 3 (BAIXA SENSIBILIDADE)";
+"over_range_alarm" = "Fora de alcance!! Por favor entre com número entre 0-255.";
+"History_search_placeHolder" = "ENTRE COM USUÁRIO PARA ENCONTRÁ-LO";
+"UserList_search_placeHolder" = "ENTRE COM USUÁRIO PARA ENCONTRÁ-LO";
+
+"notice_for_card_in_user_add" = "Clique abaixo para entrar com número do cartão ou faça leitura do cartão no leitor.";
