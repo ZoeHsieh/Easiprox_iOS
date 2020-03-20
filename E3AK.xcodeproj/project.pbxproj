@@ -92,6 +92,7 @@
 		A0FF10601EF1496A00F30987 /* Intro_AddMoreUserFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF105F1EF1496A00F30987 /* Intro_AddMoreUserFooterView.swift */; };
 		A0FF10621EF1497F00F30987 /* Intro_AddMoreUserFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0FF10611EF1497F00F30987 /* Intro_AddMoreUserFooterView.xib */; };
 		A0FF3FAD1EEA7E0900379D37 /* Intro_DistanceSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0FF3FAC1EEA7E0900379D37 /* Intro_DistanceSettingsViewController.swift */; };
+		C8E844172421B608004905A4 /* MyButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E844162421B608004905A4 /* MyButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -209,6 +210,7 @@
 		C8B46821206B64FC003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
 		C8B46822206B64FD003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		C8B46823206B64FE003F4981 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = E3AK/ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C8E844162421B608004905A4 /* MyButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 				A01EDB451EEF899500330CD7 /* UITextField.swift */,
 				A024BA851EF7B0180032C2EC /* UIButton.swift */,
 				740AF23E1F0A41AC00958B34 /* UInt8_Extenstion.swift */,
+				C8E844162421B608004905A4 /* MyButton.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				74509C6A1F02468D003E135A /* BPprotocol.swift in Sources */,
 				A09BC37B1EE7DAC200F38AB8 /* UIViewController.swift in Sources */,
 				74B7B2C12011D5EF008AAAF8 /* AdvertisingData.swift in Sources */,
+				C8E844172421B608004905A4 /* MyButton.swift in Sources */,
 				A01EDB461EEF899500330CD7 /* UITextField.swift in Sources */,
 				A01EDB501EEFF8D300330CD7 /* UsersTableViewCell.swift in Sources */,
 				A0CCF7B91EEE475800EB1A99 /* Intro_UserViewController.swift in Sources */,
@@ -807,12 +811,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.1.1;
+				CURRENT_PROJECT_VERSION = 3.2.1;
 				DEVELOPMENT_TEAM = 29BSP4UNAK;
 				INFOPLIST_FILE = E3AK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.gianni.easiprox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -830,12 +834,12 @@
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3.1.1;
+				CURRENT_PROJECT_VERSION = 3.2.1;
 				DEVELOPMENT_TEAM = 29BSP4UNAK;
 				INFOPLIST_FILE = E3AK/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 3.1;
+				MARKETING_VERSION = 3.2;
 				PRODUCT_BUNDLE_IDENTIFIER = tw.gianni.easiprox;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

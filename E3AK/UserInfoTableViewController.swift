@@ -346,7 +346,11 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
                     headerView.addConstraint(NSLayoutConstraint(item: note_titleLabel, attribute: NSLayoutConstraint.Attribute.leading, relatedBy: NSLayoutConstraint.Relation.equal, toItem: headerView, attribute: NSLayoutConstraint.Attribute.leading, multiplier: 1.0, constant: 15))
                     headerView.addConstraint(NSLayoutConstraint(item: note_titleLabel, attribute: NSLayoutConstraint.Attribute.trailing, relatedBy: NSLayoutConstraint.Relation.equal, toItem: headerView, attribute: NSLayoutConstraint.Attribute.trailing, multiplier: 1.0, constant: -15.0))
                     
-                    headerView.addConstraint(NSLayoutConstraint(item: note_titleLabel, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: titleLabel, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0))
+                    headerView.addConstraint(NSLayoutConstraint(item: note_titleLabel,
+                                                                attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: titleLabel, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0))
+                    
+                    
+                    
                 }
                 
                 return headerView
@@ -360,6 +364,8 @@ class UserInfoTableViewController: BLE_tableViewController , UITextFieldDelegate
         switch section {
         case 3:
             return UserInfoTableViewController.titleForFooter
+        case 1:
+            return " "
         default:
             return ""
         }

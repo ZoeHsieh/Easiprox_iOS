@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MessageUI
+import SafariServices
 
-class AboutUsViewController: BLE_ViewController {
+class AboutUsViewController: BLE_ViewController,MFMailComposeViewControllerDelegate,SFSafariViewControllerDelegate {
 
     @IBOutlet weak var appversionButton: UIButton!
     
@@ -24,14 +26,21 @@ class AboutUsViewController: BLE_ViewController {
        
 
         title = GetSimpleLocalizedString("About Us")
-        DeviceModelTitle.text = GetSimpleLocalizedString("Device Model")
-        deviceModelName.text = "Easiprox⁺\nEasiprox⁺ Slim\nDG-800⁺\nDG-160⁺"
-        //DeviceModelTitle.text = deviceModelName
+//        DeviceModelTitle.text = GetSimpleLocalizedString("Device Model")
+//        deviceModelName.text = "Easiprox⁺\nEasiprox⁺ Slim\nDG-800⁺\nDG-160⁺"
+        
         let version : String = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String
-        //DeviceModelValue.text = "E3AK"//deviceModel
+        
         appversionButton.setTitle(GetSimpleLocalizedString("APP version") + version, for: .normal)
     }
-
+    
+    @IBAction func open_URL(_ sender: UIButton) {
+        goToURL()
+    }
+    @IBAction func send_Mail(_ sender: UIButton) {
+        sendMail()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -47,5 +56,29 @@ class AboutUsViewController: BLE_ViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+
+    func goToURL() {
+            if let url = URL(string: "http://www.gianni.com.tw/") {
+            let safari = SFSafariViewController(url: url)
+            safari.delegate = self
+            present(safari, animated: true, completion: nil)}
+        }
+    
+    func sendMail() {
+        if MFMailComposeViewController.canSendMail() {
+            let mail = MFMailComposeViewController()
+            mail.mailComposeDelegate = self
+            mail.setToRecipients(["inquiry1@gianni.com.tw"])
+            mail.setSubject("Send from Easiprox APP")
+            mail.setMessageBody("", isHTML: true)
+            
+            present(mail, animated: true)
+        }
+        
+    }
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true)
+    }
 
 }

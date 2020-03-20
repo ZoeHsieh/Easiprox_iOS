@@ -321,7 +321,11 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        usersButton.adjustButtonEdgeInsets()
+        activityHistoryButton.adjustButtonEdgeInsets()
+        backupButton.adjustButtonEdgeInsets()
+        restoreButton.adjustButtonEdgeInsets()
+        
         title = GetSimpleLocalizedString("Settings")
         usersButton.setTitle(GetSimpleLocalizedString("Users"), for: .normal)
         activityHistoryButton.setTitle(GetSimpleLocalizedString("Activity History"), for: .normal)
@@ -342,10 +346,7 @@ class SettingsTableViewController: BLE_tableViewController, UITextFieldDelegate,
         deviceTimeTitle.text = GetSimpleLocalizedString("Device Time")
         aboutTitle.text = GetSimpleLocalizedString("About Us")
         
-        usersButton.adjustButtonEdgeInsets()
-        activityHistoryButton.adjustButtonEdgeInsets()
-        backupButton.adjustButtonEdgeInsets()
-        restoreButton.adjustButtonEdgeInsets()
+        
         
         usersButton.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)
         activityHistoryButton.setShadowWithColor(color: UIColor.gray, opacity: 0.3, offset: CGSize(width: 0, height: 3), radius: 2, viewCornerRadius: 2.0)

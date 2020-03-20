@@ -19,6 +19,7 @@ extension UIButton {
         //  below the image
         let imageSize = imageView?.frame.size
         titleEdgeInsets = UIEdgeInsets(top: 0.0, left: -imageSize!.width, bottom: -(imageSize!.height + spacing), right: 0.0)
+        
         // raise the image and push it right so it appears centered/        //  above the text
         let titleSize: CGSize = (titleLabel?.frame.size)!
         imageEdgeInsets = UIEdgeInsets( top: -(titleSize.height), left: 0.0, bottom: 0.0, right: -titleSize.width)
